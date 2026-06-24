@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morrowind Visualisation Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="./">MVP</a></h1>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="download">Download</a></li>
+                <li><a href="orthographics">Orthographics</a></li>
+                <li><a href="tools">Tools</a></li>
+                <li><a href="https://ms-arch.gitbook.io/morrowind-visualisation-project">Documentation</a></li>
+            </ul>
+            <a href="javascript:void(0);" class="nav-toggle" id="navToggle">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero hero-home">
+        <img src="screenshots/Overview.jpg" alt="Overview" class="hero-bg-img">
+        <div class="hero-overlay-glow"></div>
+        <div class="hero-content">
+            <img src="logos/mvp.svg" alt="Morrowind Visualisation Project" class="hero-logo">
+            <div class="hero-buttons">
+                <a href="download" class="btn btn-primary">Download</a>
+                <a href="https://www.youtube.com/@ms-arch" class="btn btn-secondary">YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>About This Project</h2>
+            <div class="about-content">
+                <p>The Morrowind Visualisation Project aims to showcase Morrowind mods in a new light through taking advantage of Unreal Engine 5's capabilities. Immersive experiences are built on an ecosystem of tools and a carefully curated modlist.</p>
+                <p>This is not a remaster - it's an explorable experience that pushes the limit.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>Featuring</h2>
+            <div class="about-content partners-logos">
+                <a href="https://www.oaab.dev/" target="_blank"><img src="logos/oaab_logo.png" alt="OAAB" class="logo-small"></a>
+                <a href="https://www.tamriel-rebuilt.org/" target="_blank"><img src="logos/tamriel_rebuilt.png" alt="Tamriel Rebuilt" class="logo-wide"></a>
+                <a href="https://www.project-tamriel.com/" target="_blank"><img src="logos/project_tamriel_inverted.png" alt="Project Tamriel" class="logo-wide"></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>The Elder Scrolls III: Morrowind © Bethesda Softworks.
+                <br>Morrowind Visualisation Project is an unofficial, fan-made project.</br>
+            </p>
+            <p><a href="https://www.youtube.com/@ms-arch">YouTube</a> <span class="footer-sep">|</span> <a href="https://ms-arch.gitbook.io/morrowind-visualisation-project">Documentation</a> <span class="footer-sep">|</span> <a href="https://github.com/ms-arch-mvp">GitHub</a></p>
+        </div>
+    </footer>
+    <script>
+        (function () {
+            var navbar = document.querySelector('.navbar');
+            var toggle = document.getElementById('navToggle');
+            var links = document.getElementById('navLinks');
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            window.addEventListener('load', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                }
+            });
+
+            toggle.addEventListener('click', function () {
+                links.classList.toggle('open');
+                navbar.classList.toggle('menu-open');
+            });
+        })();
+    </script>
+</body>
+</html>
