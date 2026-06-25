@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-    /* Black and gold - GitBook style */
-    --primary-color: #caa560;        /* Golden yellow accent */
-    --secondary-color: #caa560;      /* Same yellow for consistency */
-    --accent-color: #caa560;         /* Same as primary */
-    --dark-bg: #000000;              /* Pure black - main background */
-    --light-bg: #0a0a0a;             /* Almost pure black - secondary background */
-    --text-light: #FFFFFF;           /* White - main text */
-    --text-muted: #999999;           /* Light gray - secondary text */
-    --border-color: #1a1a1a;         /* Very dark gray - borders */
-    --gold-accent: #caa560;          /* Golden yellow - highlights */
+    /* Colors */
+    --accent-color: #caa560;
+    --accent-hover: #e8c47f;
+    --accent-rgb: 202, 165, 96;
+    --accent-surface-subtle: rgba(var(--accent-rgb), 0.02);
+    --accent-surface: rgba(var(--accent-rgb), 0.05);
+    --accent-surface-medium: rgba(var(--accent-rgb), 0.08);
+    --accent-surface-strong: rgba(var(--accent-rgb), 0.1);
+    --accent-shadow: rgba(var(--accent-rgb), 0.15);
+    --accent-shadow-strong: rgba(var(--accent-rgb), 0.2);
+
+    --primary-color: var(--accent-color);
+    --secondary-color: var(--accent-color);
+    --gold-accent: var(--accent-color);
+    --dark-bg: #000000;
+    --light-bg: #0a0a0a;
+    --text-light: #FFFFFF;
+    --text-muted: #999999;
+    --border-color: #1a1a1a;
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -221,7 +230,7 @@ a:hover {
 .hero-overlay-glow {
     position: absolute;
     inset: 0;
-    background: radial-gradient(120% 85% at 75% 15%, rgba(202, 165, 96, 0.12), transparent 58%);
+    background: radial-gradient(120% 85% at 75% 15%, rgba(var(--accent-rgb), 0.12), transparent 58%);
     animation: heroGlow 9s ease-in-out infinite;
     z-index: 1;
     pointer-events: none;
@@ -289,10 +298,10 @@ a:hover {
 }
 
 .btn-primary:hover {
-    background-color: #e8c47f;
-    border-color: #e8c47f;
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(202, 165, 96, 0.4);
+    box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.4);
 }
 
 .btn-secondary {
@@ -337,7 +346,7 @@ a:hover {
 }
 
 .feature-card {
-    background-color: rgba(212, 165, 116, 0.05);
+    background-color: var(--accent-surface);
     border: 1px solid var(--border-color);
     border-left: 4px solid var(--primary-color);
     padding: var(--spacing-lg);
@@ -346,9 +355,9 @@ a:hover {
 }
 
 .feature-card:hover {
-    background-color: rgba(212, 165, 116, 0.1);
+    background-color: var(--accent-surface-strong);
     transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(212, 165, 116, 0.2);
+    box-shadow: 0 8px 16px var(--accent-shadow-strong);
 }
 
 .feature-card h3 {
@@ -409,7 +418,7 @@ a:hover {
 }
 
 .utility-card {
-    background-color: rgba(212, 165, 116, 0.02);
+    background-color: var(--accent-surface-subtle);
     border: 1px solid var(--border-color);
     border-top: 3px solid var(--primary-color);
     padding: var(--spacing-lg);
@@ -466,7 +475,7 @@ a:hover {
 
 /* Info Box */
 .info-box {
-    background-color: rgba(202, 165, 96, 0.08);
+    background-color: var(--accent-surface-medium);
     border-left: 4px solid var(--gold-accent);
     border-radius: 4px;
     padding: var(--spacing-md) var(--spacing-lg);
@@ -500,7 +509,7 @@ a:hover {
 
 .ortho-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(212, 165, 116, 0.15);
+    box-shadow: 0 8px 16px var(--accent-shadow);
     border-color: var(--primary-color);
 }
 
@@ -564,7 +573,7 @@ a:hover {
 }
 
 .download-card {
-    background-color: rgba(212, 165, 116, 0.02);
+    background-color: var(--accent-surface-subtle);
     border: 2px solid var(--border-color);
     border-left: 4px solid var(--primary-color);
     padding: var(--spacing-lg);
@@ -576,9 +585,9 @@ a:hover {
 
 .download-card:hover {
     border-color: var(--primary-color);
-    background-color: rgba(212, 165, 116, 0.08);
+    background-color: var(--accent-surface-medium);
     transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(212, 165, 116, 0.15);
+    box-shadow: 0 8px 16px var(--accent-shadow);
 }
 
 .download-card h3 {
@@ -587,7 +596,7 @@ a:hover {
 
 .download-card .version {
     display: inline-block;
-    background-color: rgba(212, 165, 116, 0.15);
+    background-color: var(--accent-shadow);
     color: var(--gold-accent);
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: 4px;
@@ -636,7 +645,7 @@ a:hover {
 }
 
 .tool-item {
-    background-color: rgba(212, 165, 116, 0.05);
+    background-color: var(--accent-surface);
     border: 1px solid var(--border-color);
     padding: var(--spacing-lg);
     border-radius: 4px;
