@@ -832,9 +832,9 @@ footer .container p:last-child {
         display: block;
         width: 100%;
         box-sizing: border-box;
-        padding: var(--spacing-md) var(--spacing-md);
-        margin: var(--spacing-xs) 0;
-        font-size: 1.2rem;
+        padding: 0.75rem var(--spacing-md);
+        margin: 0.25rem 0;
+        font-size: 1.1rem;
         border-bottom: none;
         transition: background-color 0.3s ease, color 0.3s ease;
     }
@@ -912,7 +912,7 @@ footer .container p:last-child {
     }
 
     .nav-links {
-        gap: var(--spacing-sm);
+        gap: 0;
         font-size: 0.9rem;
     }
 
@@ -968,6 +968,7 @@ footer .container p:last-child {
     max-width: 220px;
     width: auto;
 }
+
 
 
 
