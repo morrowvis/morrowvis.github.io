@@ -784,10 +784,12 @@ footer .container p:last-child {
 @media (max-width: 768px) {
     .navbar {
         background-color: transparent;
+        padding: var(--spacing-sm) 0;
     }
 
     .navbar.menu-open {
         background-color: #000000;
+        padding: var(--spacing-sm) 0;
     }
 
     .navbar .container {
@@ -968,6 +970,7 @@ footer .container p:last-child {
     max-width: 220px;
     width: auto;
 }
+
 
 
 
