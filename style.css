@@ -1,5 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/InterVariable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TeX Gyre Heros';
+    src: url('fonts/texgyreheros-regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
+@font-face {
+    font-family: 'TeX Gyre Heros';
+    src: url('fonts/texgyreheros-bold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TeX Gyre Heros';
+    src: url('fonts/texgyreheros-bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 :root {
     /* Colors */
     --accent-color: #caa560;
@@ -66,7 +94,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'TeX Gyre Heros', 'Nimbus Sans', 'Nimbus Sans L', Arial, sans-serif;
     color: var(--text-light);
     font-weight: 600;
     margin-bottom: var(--spacing-md);
@@ -940,3 +968,6 @@ footer .container p:last-child {
     max-width: 220px;
     width: auto;
 }
+
+
+
