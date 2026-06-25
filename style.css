@@ -291,7 +291,7 @@ a:hover {
 }
 
 .hero .subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-light);
     margin-bottom: var(--spacing-lg);
 }
@@ -832,9 +832,9 @@ footer .container p:last-child {
         display: block;
         width: 100%;
         box-sizing: border-box;
-        padding: 0.75rem var(--spacing-md);
+        padding: 0.875rem var(--spacing-md);
         margin: 0.25rem 0;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         border-bottom: none;
         transition: background-color 0.3s ease, color 0.3s ease;
     }
@@ -968,6 +968,8 @@ footer .container p:last-child {
     max-width: 220px;
     width: auto;
 }
+
+
 
 
 
