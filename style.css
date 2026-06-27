@@ -781,7 +781,7 @@ footer .container p:last-child {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: landscape) and (max-height: 500px) {
     .navbar {
         background-color: transparent;
         padding: var(--spacing-sm) 0;
