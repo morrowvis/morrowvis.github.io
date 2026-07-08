@@ -460,6 +460,39 @@ a:hover {
     margin-top: auto;
 }
 
+/* Exclusions card — visually set apart from the active tools */
+.utility-card--exclusions {
+    background-color: transparent;
+    border: 1px dashed var(--border-color);
+    border-top: 3px solid var(--text-muted);
+    opacity: 0.85;
+}
+
+.utility-card--exclusions h2 {
+    color: var(--text-muted);
+}
+
+.exclusions-list {
+    list-style: none;
+    margin: var(--spacing-sm) 0 0;
+    padding: 0;
+    color: var(--text-muted);
+}
+
+.exclusions-list li {
+    padding: var(--spacing-xs) 0;
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.exclusions-list li::before {
+    content: '\2022';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
 .utility-card h2 {
     margin-bottom: var(--spacing-sm);
     text-transform: none;
