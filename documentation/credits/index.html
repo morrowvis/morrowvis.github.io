@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits | Morrowind Visualisation Project</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../logos/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../../">MVP</a></h1>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../download">Download</a></li>
+                <li><a href="../../orthographics">Orthographics</a></li>
+                <li><a href="../../tools">Tools</a></li>
+                <li class="has-dropdown">
+                    <a href="../" class="dropdown-toggle active">Documentation <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../goals/">Goals</a></li>
+                        <li><a href="../roadmap/">Roadmap</a></li>
+                        <li><a href="./">Credits</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><span class="dropdown-label">Pipeline</span></li>
+                        <li><a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/pipeline/nif-to-ue5">NIF to UE5</a></li>
+                        <li><a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/pipeline/json-to-ue5">JSON to UE5</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="javascript:void(0);" class="nav-toggle" id="navToggle">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+
+    <section class="credits-hero">
+        <div class="container">
+            <p class="doc-crumb"><a href="../">Documentation</a> / Credits</p>
+            <h1>Credits</h1>
+            <p class="doc-lede" style="margin: 0 0 var(--spacing-md);">Every mod, tool, and asset pack this project builds on. Jump to a category, or scroll through by region.</p>
+        </div>
+    </section>
+
+    <div class="credits-jump">
+        <div class="credits-jump-inner">
+            <select id="jumpSelect" aria-label="Jump to category">
+                <option value="">Jump to category&hellip;</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="container" id="creditsRoot" style="padding-top: var(--spacing-lg);"></div>
+
+    <section class="credits-section" id="special-thanks">
+        <div class="container">
+            <h2 class="credits-group-title">The Elder Scrolls III: Morrowind</h2>
+            <p>Vanilla assets used are the property of Bethesda.</p>
+
+            <h2 class="credits-group-title">Special Thanks</h2>
+            <div class="credits-thanks-list" id="thanksList"></div>
+
+            <p>All the modders who have provided permissions, and all the Fab content creators who have provided support.</p>
+            <p>If you want to play any of the included mods yourself, give them a try on <a href="https://www.nexusmods.com/morrowind/mods/57200">MGE XE</a> or <a href="https://openmw.org/">OpenMW</a>.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>The Elder Scrolls III: Morrowind © Bethesda Softworks.
+                <br>Morrowind Visualisation Project is an unofficial, fan-made project.</br>
+            </p>
+            <p><a href="https://www.youtube.com/@ms-arch">YouTube</a> <span class="footer-sep">|</span> <a href="../">Documentation</a> <span class="footer-sep">|</span> <a href="https://github.com/ms-arch-mvp">GitHub</a></p>
+        </div>
+    </footer>
+
+    <script src="../../nav.js"></script>
+    <script src="credits-data.js"></script>
+    <script>
+        (function () {
+            const root = document.getElementById('creditsRoot');
+            const jumpSelect = document.getElementById('jumpSelect');
+            const thanksList = document.getElementById('thanksList');
+
+            function slugify(s) {
+                return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            }
+
+            // External-link icon, reused for every card regardless of source site.
+            const ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>';
+
+            function siteLabel(url) {
+                try {
+                    const host = new URL(url).hostname.replace(/^www\./, '');
+                    if (host.includes('nexusmods.com')) return null; // default site, no need to repeat
+                    if (host.includes('fab.com')) return 'Fab.com';
+                    if (host.includes('patreon.com')) return 'Patreon';
+                    if (host.includes('github.com')) return 'GitHub';
+                    if (host.includes('morroblivion.com')) return 'morroblivion.com';
+                    if (host.includes('morrowind-modding.github.io')) return 'Modding Wiki';
+                    if (host.includes('youtube.com')) return 'YouTube';
+                    return host;
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            function renderCard(item) {
+                const [name, url, note] = item;
+                const label = siteLabel(url);
+                const a = document.createElement('a');
+                a.className = 'credit-card';
+                a.href = url;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.innerHTML =
+                    '<span class="credit-icon">' + ICON + '</span>' +
+                    '<span class="credit-text">' +
+                        '<span class="credit-name">' + name + '</span>' +
+                        (label ? '<span class="credit-site">' + label + '</span>' : '') +
+                    '</span>';
+                return a;
+            }
+
+            let lastGroup = null;
+            const jumpFragment = document.createDocumentFragment();
+
+            CREDITS.forEach(function (block) {
+                const slug = slugify(block.category) + (block.subhead ? '-' + slugify(block.subhead) : '');
+                const section = document.createElement('section');
+                section.className = 'credits-section';
+                section.id = slug;
+
+                if (block.group) {
+                    // Grouped category (e.g. "Overhauls... by City/Settlement" > "Ald-Ruhn"):
+                    // group heading is top-level, category is one level below.
+                    if (block.group !== lastGroup) {
+                        const groupHeading = document.createElement('h2');
+                        groupHeading.className = 'credits-group-title';
+                        groupHeading.textContent = block.group;
+                        root.appendChild(groupHeading);
+                        lastGroup = block.group;
+                    }
+                    const sub = document.createElement('h3');
+                    sub.className = block.subhead ? 'credits-subhead-title' : 'credits-section-title';
+                    sub.textContent = block.subhead || block.category;
+                    section.appendChild(sub);
+                } else {
+                    // No group: this category sits at the same top level as a group heading
+                    // (e.g. "New Lands" is the same depth as "Overhauls..."), unless it's a
+                    // subhead of the category just rendered above it (e.g. "Only select
+                    // textures used" under "Models and Textures").
+                    lastGroup = null;
+                    const heading = document.createElement(block.subhead ? 'h3' : 'h2');
+                    heading.className = block.subhead ? 'credits-subhead-title' : 'credits-group-title';
+                    heading.textContent = block.subhead || block.category;
+                    section.appendChild(heading);
+                }
+
+                const grid = document.createElement('div');
+                grid.className = 'credit-grid';
+                block.items.forEach(function (item) {
+                    grid.appendChild(renderCard(item));
+                    if (item[2]) {
+                        // Attach inline note directly after the card's row by wrapping;
+                        // simplest: append a small note spanning full width below this card only
+                        // when a note exists for it.
+                    }
+                });
+                section.appendChild(grid);
+
+                // Render any per-item notes (rare) below the grid, referencing the mod name.
+                const notes = block.items.filter(function (i) { return i[2]; });
+                notes.forEach(function (i) {
+                    const p = document.createElement('p');
+                    p.className = 'credits-note';
+                    p.textContent = i[0] + ': ' + i[2];
+                    section.appendChild(p);
+                });
+
+                root.appendChild(section);
+
+                if (!block.subhead) {
+                    const opt = document.createElement('option');
+                    opt.value = '#' + slug;
+                    opt.textContent = block.category;
+                    jumpFragment.appendChild(opt);
+                }
+            });
+
+            jumpSelect.appendChild(jumpFragment);
+            jumpSelect.addEventListener('change', function () {
+                if (this.value) {
+                    document.querySelector(this.value).scrollIntoView({ behavior: 'smooth' });
+                    this.value = '';
+                }
+            });
+
+            SPECIAL_THANKS.forEach(function ([name, url]) {
+                const a = document.createElement('a');
+                a.href = url;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.textContent = name;
+                thanksList.appendChild(a);
+            });
+        })();
+    </script>
+</body>
+</html>

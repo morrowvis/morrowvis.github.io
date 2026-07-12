@@ -18,7 +18,18 @@
                 <li><a href="download">Download</a></li>
                 <li><a href="orthographics">Orthographics</a></li>
                 <li><a href="tools">Tools</a></li>
-                <li><a href="https://ms-arch.gitbook.io/morrowind-visualisation-project">Documentation</a></li>
+                <li class="has-dropdown">
+                    <a href="documentation/" class="dropdown-toggle">Documentation <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="documentation/goals/">Goals</a></li>
+                        <li><a href="documentation/roadmap/">Roadmap</a></li>
+                        <li><a href="documentation/credits/">Credits</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><span class="dropdown-label">Pipeline</span></li>
+                        <li><a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/pipeline/nif-to-ue5">NIF to UE5</a></li>
+                        <li><a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/pipeline/json-to-ue5">JSON to UE5</a></li>
+                    </ul>
+                </li>
             </ul>
             <a href="javascript:void(0);" class="nav-toggle" id="navToggle">
                 <i class="fa fa-bars"></i>
@@ -66,31 +77,6 @@
             <p><a href="https://www.youtube.com/@ms-arch">YouTube</a> <span class="footer-sep">|</span> <a href="https://ms-arch.gitbook.io/morrowind-visualisation-project">Documentation</a> <span class="footer-sep">|</span> <a href="https://github.com/ms-arch-mvp">GitHub</a></p>
         </div>
     </footer>
-    <script>
-        (function () {
-            var navbar = document.querySelector('.navbar');
-            var toggle = document.getElementById('navToggle');
-            var links = document.getElementById('navLinks');
-
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-
-            window.addEventListener('load', function () {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                }
-            });
-
-            toggle.addEventListener('click', function () {
-                links.classList.toggle('open');
-                navbar.classList.toggle('menu-open');
-            });
-        })();
-    </script>
+    <script src="nav.js"></script>
 </body>
 </html>
