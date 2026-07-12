@@ -57,31 +57,6 @@
             <p><a href="https://www.youtube.com/@ms-arch">YouTube</a> <span class="footer-sep">|</span> <a href="https://ms-arch.gitbook.io/morrowind-visualisation-project">Documentation</a> <span class="footer-sep">|</span> <a href="https://github.com/ms-arch-mvp">GitHub</a></p>
         </div>
     </footer>
-    <script>
-        (function () {
-            var navbar = document.querySelector('.navbar');
-            var toggle = document.getElementById('navToggle');
-            var links = document.getElementById('navLinks');
-
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-
-            window.addEventListener('load', function () {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                }
-            });
-
-            toggle.addEventListener('click', function () {
-                links.classList.toggle('open');
-                navbar.classList.toggle('menu-open');
-            });
-        })();
-    </script>
+    <script src="nav.js"></script>
 </body>
 </html>
