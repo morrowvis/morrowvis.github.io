@@ -11,7 +11,6 @@ const CREDITS = [
     ["Skyrim Home Of The Nords", "https://www.nexusmods.com/morrowind/mods/44921"],
     ["Lyithdonea - The Azurian Isles", "https://www.nexusmods.com/morrowind/mods/43749"],
     ["Tamriel Rebuilt Border", "https://www.nexusmods.com/morrowind/mods/56462"],
-    ["Anthology Solstheim", "https://www.nexusmods.com/morrowind/mods/43436"]
   ]},
 
   { group: "Overhauls, Locations, Additions by City/Settlement", category: "Ald-Ruhn", items: [
