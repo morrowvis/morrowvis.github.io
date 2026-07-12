@@ -1136,7 +1136,113 @@ footer .container p:last-child {
 }
 
 .doc-content .container {
-    max-width: 860px;
+    max-width: 1180px;
+}
+
+.doc-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-xl);
+}
+
+.doc-sidebar {
+    position: sticky;
+    top: 90px;
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.doc-main {
+    flex: 1;
+    min-width: 0;
+    max-width: 780px;
+}
+
+.doc-sidebar-list,
+.doc-sidebar-children {
+    list-style: none;
+}
+
+.doc-sidebar-children {
+    display: none;
+    padding-left: var(--spacing-md);
+}
+
+.doc-sidebar-item.open > .doc-sidebar-children {
+    display: block;
+}
+
+.doc-sidebar-parent-row {
+    display: flex;
+    align-items: center;
+}
+
+.doc-sidebar-toggle {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.doc-sidebar-item.open > .doc-sidebar-parent-row .doc-sidebar-toggle i {
+    transform: rotate(90deg);
+}
+
+.doc-sidebar-nav a {
+    display: block;
+    padding: 6px 8px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    border-radius: 4px;
+    overflow-wrap: break-word;
+}
+
+.doc-sidebar-parent-link {
+    flex: 1;
+}
+
+.doc-sidebar-nav a:hover {
+    color: var(--text-light);
+    background-color: var(--accent-surface);
+}
+
+.doc-sidebar-nav a.active {
+    color: var(--gold-accent);
+    background-color: var(--accent-surface);
+    font-weight: 600;
+}
+
+.heading-anchor {
+    margin-left: 8px;
+    opacity: 0;
+    color: var(--gold-accent);
+    text-decoration: none;
+    font-size: 0.8em;
+    transition: opacity 0.15s ease;
+}
+
+h1:hover .heading-anchor,
+h2:hover .heading-anchor,
+h3:hover .heading-anchor {
+    opacity: 1;
+}
+
+@media (max-width: 900px) {
+    .doc-layout {
+        flex-direction: column;
+    }
+    .doc-sidebar {
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+    .doc-main {
+        max-width: none;
+    }
 }
 
 .doc-content h1 {
@@ -1211,39 +1317,9 @@ footer .container p:last-child {
     padding: 160px var(--spacing-md) var(--spacing-md);
 }
 
-.credits-jump {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background-color: rgba(0, 0, 0, 0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-    padding: var(--spacing-sm) 0;
-}
-
-.credits-jump-inner {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-}
-
-.credits-jump-inner select {
-    background-color: var(--light-bg);
-    color: var(--text-light);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 6px 10px;
-    font-family: var(--font-family);
-    font-size: 0.85rem;
-    width: 100%;
-}
-
 .credits-section {
     padding: var(--spacing-lg) 0;
-    scroll-margin-top: 70px;
+    scroll-margin-top: 90px;
 }
 
 .credits-section-title {
@@ -1251,15 +1327,15 @@ footer .container p:last-child {
     color: var(--gold-accent);
     text-transform: none;
     letter-spacing: 0;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: var(--spacing-xs);
     margin-bottom: var(--spacing-md);
+    scroll-margin-top: 90px;
 }
 
 .credits-group-title {
     font-size: var(--font-size-2xl);
     margin-top: var(--spacing-sm);
     margin-bottom: var(--spacing-xs);
+    scroll-margin-top: 90px;
 }
 
 .credits-subhead-title {
@@ -1267,10 +1343,9 @@ footer .container p:last-child {
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: none;
-    padding-bottom: 0;
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-sm);
+    scroll-margin-top: 90px;
 }
 
 .credits-note {
@@ -1324,15 +1399,15 @@ footer .container p:last-child {
 
 .credit-card .credit-name {
     color: var(--text-light);
-    font-size: 0.92rem;
-    line-height: 1.3;
+    font-size: 1.05rem;
+    line-height: 1.35;
     display: block;
     overflow-wrap: break-word;
 }
 
 .credit-card .credit-site {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1355,7 +1430,13 @@ footer .container p:last-child {
     display: block;
     break-inside: avoid;
     padding: 4px 0;
-    border-bottom: 1px solid var(--border-color);
+    font-size: 1.05rem;
+}
+
+.credits-divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: var(--spacing-xl) 0;
 }
 
 @media (max-width: 700px) {
@@ -1373,8 +1454,5 @@ footer .container p:last-child {
 @media (max-width: 600px) {
     .credit-grid {
         grid-template-columns: 1fr;
-    }
-    .credits-jump-inner {
-        flex-direction: column;
     }
 }
