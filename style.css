@@ -1029,11 +1029,12 @@ footer .container p:last-child {
     position: absolute;
     top: 100%;
     left: 0;
+    margin-top: 8px;
     min-width: 220px;
     background-color: rgba(0, 0, 0, 0.95);
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    padding: var(--spacing-xs) 0;
+    padding: var(--spacing-sm) 0;
     list-style: none;
     z-index: 200;
 }
@@ -1049,7 +1050,7 @@ footer .container p:last-child {
 
 .dropdown-menu a {
     display: block;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: 10px var(--spacing-md);
     font-weight: 400;
     font-size: 0.9rem;
     border-bottom: none;
@@ -1145,6 +1146,7 @@ footer .container p:last-child {
     gap: var(--spacing-xl);
 }
 
+/* Sidebar renders after .doc-main in the DOM so it sits on the right. */
 .doc-sidebar {
     position: sticky;
     top: 90px;
@@ -1158,51 +1160,44 @@ footer .container p:last-child {
     max-width: 780px;
 }
 
-.doc-sidebar-list,
-.doc-sidebar-children {
+.doc-sidebar-list {
     list-style: none;
 }
 
-.doc-sidebar-children {
-    display: none;
-    padding-left: var(--spacing-md);
-}
-
-.doc-sidebar-item.open > .doc-sidebar-children {
-    display: block;
+.doc-sidebar-item {
+    margin: 0;
 }
 
 .doc-sidebar-parent-row {
     display: flex;
     align-items: center;
-}
-
-.doc-sidebar-toggle {
-    background: none;
-    border: none;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 5px 8px;
+    font-size: 0.88rem;
     color: var(--text-muted);
+    border-radius: 4px;
     cursor: pointer;
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    transition: transform 0.2s ease;
 }
 
-.doc-sidebar-item.open > .doc-sidebar-parent-row .doc-sidebar-toggle i {
-    transform: rotate(90deg);
+.doc-sidebar-parent-row i {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.doc-sidebar-parent-row:hover,
+.doc-sidebar-parent-row.active {
+    color: var(--gold-accent);
+    background-color: var(--accent-surface);
 }
 
 .doc-sidebar-nav a {
     display: block;
-    padding: 6px 8px;
+    padding: 5px 8px;
     font-size: 0.88rem;
     color: var(--text-muted);
     border-radius: 4px;
     overflow-wrap: break-word;
-}
-
-.doc-sidebar-parent-link {
-    flex: 1;
 }
 
 .doc-sidebar-nav a:hover {
@@ -1216,19 +1211,81 @@ footer .container p:last-child {
     font-weight: 600;
 }
 
-.heading-anchor {
-    margin-left: 8px;
-    opacity: 0;
-    color: var(--gold-accent);
-    text-decoration: none;
-    font-size: 0.8em;
-    transition: opacity 0.15s ease;
+/* Popup for a group's items - centred over the page, closes on selection. */
+.doc-sidebar-modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
 }
 
-h1:hover .heading-anchor,
-h2:hover .heading-anchor,
-h3:hover .heading-anchor {
-    opacity: 1;
+.doc-sidebar-modal-backdrop.open {
+    display: flex;
+}
+
+.doc-sidebar-modal {
+    position: relative;
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    width: 90%;
+    max-width: 420px;
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.doc-sidebar-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.doc-sidebar-modal-close:hover {
+    color: var(--text-light);
+}
+
+.doc-sidebar-modal-title {
+    color: var(--gold-accent);
+    margin-bottom: var(--spacing-md);
+    padding-right: var(--spacing-lg);
+}
+
+.doc-sidebar-modal-list {
+    list-style: none;
+}
+
+.doc-sidebar-modal-list a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 4px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.doc-sidebar-modal-list a:hover {
+    background-color: var(--accent-surface);
+    color: var(--gold-accent);
+}
+
+/* Heading text itself becomes the anchor link - no separate "#" symbol. */
+.heading-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.heading-link:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 900px) {
@@ -1247,20 +1304,6 @@ h3:hover .heading-anchor {
 
 .doc-content h1 {
     margin-bottom: var(--spacing-sm);
-}
-
-.doc-content .doc-crumb {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-bottom: var(--spacing-md);
-}
-
-.doc-content .doc-crumb a {
-    color: var(--text-muted);
-}
-
-.doc-content .doc-crumb a:hover {
-    color: var(--gold-accent);
 }
 
 .doc-content ul.goal-list,
@@ -1295,6 +1338,12 @@ h3:hover .heading-anchor {
     color: var(--text-muted);
 }
 
+.doc-content h1,
+.doc-content h2,
+.doc-content h3 {
+    scroll-margin-top: 110px;
+}
+
 .doc-content h3 {
     margin-top: var(--spacing-lg);
 }
@@ -1319,7 +1368,6 @@ h3:hover .heading-anchor {
 
 .credits-section {
     padding: var(--spacing-lg) 0;
-    scroll-margin-top: 90px;
 }
 
 .credits-section-title {
@@ -1328,14 +1376,12 @@ h3:hover .heading-anchor {
     text-transform: none;
     letter-spacing: 0;
     margin-bottom: var(--spacing-md);
-    scroll-margin-top: 90px;
 }
 
 .credits-group-title {
     font-size: var(--font-size-2xl);
     margin-top: var(--spacing-sm);
     margin-bottom: var(--spacing-xs);
-    scroll-margin-top: 90px;
 }
 
 .credits-subhead-title {
@@ -1345,7 +1391,6 @@ h3:hover .heading-anchor {
     letter-spacing: 1px;
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-sm);
-    scroll-margin-top: 90px;
 }
 
 .credits-note {
@@ -1357,7 +1402,7 @@ h3:hover .heading-anchor {
 
 .credit-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
 }
 
@@ -1405,15 +1450,6 @@ h3:hover .heading-anchor {
     overflow-wrap: break-word;
 }
 
-.credit-card .credit-site {
-    display: block;
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 2px;
-}
-
 .credit-note-inline {
     color: var(--text-muted);
     font-size: 0.85rem;
@@ -1421,14 +1457,12 @@ h3:hover .heading-anchor {
 }
 
 .credits-thanks-list {
-    column-count: 3;
-    column-gap: var(--spacing-lg);
+    display: block;
     margin-bottom: var(--spacing-md);
 }
 
 .credits-thanks-list a {
     display: block;
-    break-inside: avoid;
     padding: 4px 0;
     font-size: 1.05rem;
 }
@@ -1439,16 +1473,39 @@ h3:hover .heading-anchor {
     margin: var(--spacing-xl) 0;
 }
 
-@media (max-width: 700px) {
-    .credits-thanks-list {
-        column-count: 1;
-    }
+/* Coloured panels behind each big group of credit cards. Muted so the gold
+   accent and card contents still read clearly on top. Cycle through
+   panel-red / panel-blue / panel-teal / panel-purple / panel-green. */
+.credits-panel {
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid transparent;
 }
 
-@media (max-width: 900px) {
-    .credit-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.credits-panel.panel-red {
+    background-color: rgba(140, 45, 45, 0.12);
+    border-color: rgba(190, 80, 80, 0.28);
+}
+
+.credits-panel.panel-blue {
+    background-color: rgba(45, 65, 120, 0.12);
+    border-color: rgba(80, 110, 180, 0.28);
+}
+
+.credits-panel.panel-teal {
+    background-color: rgba(30, 95, 95, 0.12);
+    border-color: rgba(60, 145, 145, 0.28);
+}
+
+.credits-panel.panel-purple {
+    background-color: rgba(90, 55, 120, 0.12);
+    border-color: rgba(140, 95, 180, 0.28);
+}
+
+.credits-panel.panel-green {
+    background-color: rgba(55, 95, 55, 0.12);
+    border-color: rgba(95, 145, 95, 0.28);
 }
 
 @media (max-width: 600px) {
