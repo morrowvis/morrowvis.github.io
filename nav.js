@@ -18,7 +18,7 @@
     const navHTML =
         '<nav class="navbar">' +
             '<div class="container">' +
-                '<div class="logo"><h1><a href="' + BASE + '">MVP</a></h1></div>' +
+                '<div class="logo"><h1><a href="' + (BASE || './') + 'index.html">MVP</a></h1></div>' +
                 '<ul class="nav-links" id="navLinks">' +
                     '<li><a href="' + BASE + 'download" data-page="download">Download</a></li>' +
                     '<li><a href="' + BASE + 'orthographics" data-page="orthographics">Orthographics</a></li>' +
