@@ -1,7 +1,6 @@
 // Credits data for Morrowind Visualisation Project.
 // Each entry: [display name, url, optional note]
 // Site caption is derived automatically from the URL's domain (see credits.html),
-// except where noted, so most Nexus Mods links don't repeat "Nexus Mods" text.
 
 const CREDITS = [
   { group: null, category: "New Lands", items: [

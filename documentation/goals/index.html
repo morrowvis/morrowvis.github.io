@@ -13,12 +13,11 @@
 
     <section class="doc-content">
         <div class="container doc-layout">
-            <aside class="doc-sidebar" id="goalsSidebarMount"></aside>
             <div class="doc-main">
-                <p class="doc-crumb"><a href="../">Documentation</a> / Goals</p>
                 <h1>Goals</h1>
                 <div id="goalsRoot"></div>
             </div>
+            <aside class="doc-sidebar" id="goalsSidebarMount"></aside>
         </div>
     </section>
 
@@ -29,6 +28,10 @@
     <script src="goals-data.js"></script>
     <script>
         (function () {
+            // Flip to false to remove the coloured background panel behind the
+            // overview list - the rest of the page is unaffected either way.
+            const GOALS_COLOR_PANEL = true;
+
             const root = document.getElementById('goalsRoot');
 
             function makeList(items, className) {
@@ -42,15 +45,14 @@
                 return ul;
             }
 
-            const overviewList = makeList(GOALS_MAIN, 'goal-list');
-            overviewList.id = 'overview';
-            overviewList.style.scrollMarginTop = '90px';
-            root.appendChild(overviewList);
-
-            const hint = document.createElement('div');
-            hint.className = 'doc-hint';
-            hint.textContent = GOALS_HINT;
-            root.appendChild(hint);
+            const overviewWrap = document.createElement('div');
+            overviewWrap.id = 'overview';
+            overviewWrap.style.scrollMarginTop = '110px';
+            if (GOALS_COLOR_PANEL) {
+                overviewWrap.className = 'credits-panel panel-blue';
+            }
+            overviewWrap.appendChild(makeList(GOALS_MAIN, 'goal-list'));
+            root.appendChild(overviewWrap);
 
             const sidebarTree = [{ label: 'Overview', id: 'overview' }];
 
