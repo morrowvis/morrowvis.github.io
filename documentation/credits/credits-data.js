@@ -33,7 +33,8 @@ const CREDITS = [
     ["Balmora Temple Redone", "https://www.nexusmods.com/morrowind/mods/52724"],
     ["Balmora Underworld", "https://www.nexusmods.com/morrowind/mods/42448"],
     ["Balmora Arches and a Waterfall", "https://www.nexusmods.com/morrowind/mods/53386"],
-    ["Caius' Rooftop Renovations", "https://www.nexusmods.com/morrowind/mods/50272"]
+    ["Caius' Rooftop Renovations", "https://www.nexusmods.com/morrowind/mods/50272"],
+    ["Even Seedier Eight Plates", "https://www.nexusmods.com/morrowind/mods/49236"]
   ]},
   { group: "Overhauls, Locations, Additions by City/Settlement", category: "Caldera", items: [
     ["Caldera Governors Manor Redone", "https://www.nexusmods.com/morrowind/mods/53220"],
