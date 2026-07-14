@@ -50,9 +50,10 @@ const GOALS_SECTIONS = [
   {
     title: "Modlist",
     items: [
+      "Avoid changing the footprint of any major city.",
       "Add more lights.",
       "Add more clutter.",
-      "Avoid changing the footprint of any major city.",
+      "Include unique and atmospheric interiors.",
       'Use vanilla mods rather than <a href="https://www.nexusmods.com/morrowind/mods/49231">BCoM</a> for more control over the project.',
       "Resolve any unpatched conflicts through manual edits in Unreal."
     ]
