@@ -3,53 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation | Morrowind Visualisation Project</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" type="image/svg+xml" href="../logos/favicon.svg">
+    <title>Morrowind Visualisation Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="logos/favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body data-page="documentation">
+<body data-page="home">
     <div id="navbarMount"></div>
 
-    <section class="hero" style="background-image: url('../screenshots/Screenshot 2026-06-11 161828.jpg');">
+    <section class="hero hero-home">
+        <img src="screenshots/Overview.jpg" alt="Overview" class="hero-bg-img">
+        <div class="hero-overlay-glow"></div>
         <div class="hero-content">
-            <h1>Documentation</h1>
+            <img src="logos/mvp.svg" alt="Morrowind Visualisation Project" class="hero-logo">
+            <div class="hero-buttons">
+                <a href="download" class="btn btn-primary">Download</a>
+                <a href="https://www.youtube.com/@ms-arch" class="btn btn-secondary">YouTube</a>
+            </div>
         </div>
     </section>
 
     <section class="about">
         <div class="container">
-            <div class="doc-nav-grid">
-                <a href="goals/" class="doc-nav-card">
-                    <h3>Goals</h3>
-                </a>
-                <a href="roadmap/" class="doc-nav-card">
-                    <h3>Roadmap</h3>
-                </a>
-                <a href="credits/" class="doc-nav-card">
-                    <h3>Credits</h3>
-                </a>
+            <h2>About This Project</h2>
+            <div class="about-content">
+                <p>Morrowind Visualisation Project aims to showcase Morrowind mods in a new light through taking advantage of Unreal Engine 5's capabilities. Immersive experiences are built on an ecosystem of tools and a carefully curated modlist.</p>
             </div>
+        </div>
+    </section>
 
-            <h3 class="pipeline-title">Pipeline</h3>
-            <div class="pipeline-links">
-                <a href="pipeline/nif-to-ue5/"><i class="fa fa-file-text-o"></i> NIF to UE5</a>
-                <a href="pipeline/json-to-ue5/"><i class="fa fa-file-text-o"></i> JSON to UE5</a>
-            </div>
-
-            <h3 class="pipeline-title">Tools</h3>
-            <div class="pipeline-links">
-                <a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/export-cells/functions"><i class="fa fa-file-text-o"></i> Export Cells</a>
-                <a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/io_scene_mw_mvp/functions"><i class="fa fa-file-text-o"></i> io_scene_mw_mvp</a>
-                <a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/thumbnail-generator/functions"><i class="fa fa-file-text-o"></i> Thumbnail Generator</a>
-                <a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/morrowind-blender-thumbnail-generator/functions"><i class="fa fa-file-text-o"></i> Morrowind Blender Thumbnail Generator</a>
-                <a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/morrowind-gallery-data/functions"><i class="fa fa-file-text-o"></i> Morrowind Gallery Data Builder</a>
+    <section class="about">
+        <div class="container">
+            <h2>Featuring</h2>
+            <div class="about-content partners-logos">
+                <a href="https://www.oaab.dev/" target="_blank"><img src="logos/oaab_logo.png" alt="OAAB" class="logo-small"></a>
+                <a href="https://www.tamriel-rebuilt.org/" target="_blank"><img src="logos/tamriel_rebuilt.png" alt="Tamriel Rebuilt" class="logo-wide"></a>
+                <a href="https://www.project-tamriel.com/" target="_blank"><img src="logos/project_tamriel_inverted.png" alt="Project Tamriel" class="logo-wide"></a>
             </div>
         </div>
     </section>
 
     <div id="footerMount"></div>
-    <script>window.SITE_BASE = '../';</script>
-    <script src="../nav.js"></script>
+    <script>window.SITE_BASE = '';</script>
+    <script src="nav.js"></script>
 </body>
 </html>
