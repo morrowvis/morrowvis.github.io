@@ -96,7 +96,7 @@ const CREDITS = [
     ["The Quiet Imperial Pelagiad", "https://www.nexusmods.com/morrowind/mods/49378"],
     ["Arkayn Rites", "https://www.nexusmods.com/morrowind/mods/59170"],
     ["A New Windmill for Pelagiad", "https://www.nexusmods.com/morrowind/mods/50316"],
-    ["Carefully Cluttered Cozy Cat Cottage", "https://www.nexusmods.com/morrowind/mods/54647"]
+    ["Provincial Bath Shoppe - Of Perfumes and Parvenues", "https://www.nexusmods.com/morrowind/mods/55012"]
   ]},
   { group: "Overhauls, Locations, Additions by City/Settlement", category: "Raven Rock", items: [
     ["Raven Rock Enhanced", "https://www.nexusmods.com/morrowind/mods/55970"]
@@ -216,9 +216,6 @@ const CREDITS = [
     ["Little Landscape - Arkngthand", "https://www.nexusmods.com/morrowind/mods/54761"],
     ["Little Landscape - Foyada of Dead Mer", "https://www.nexusmods.com/morrowind/mods/54788"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Isinifier Plains", items: [
-    ["The Patchwork Airship - Fleshing out a vanilla quest", "https://www.nexusmods.com/morrowind/mods/53133"]
-  ]},
   { group: "Overhauls, Locations, Additions by Region", category: "Red Mountain", items: [
     ["The Red Tower - Red Mountain Terrain Overhaul", "https://www.nexusmods.com/morrowind/mods/57476"]
   ]},
@@ -230,6 +227,12 @@ const CREDITS = [
     ["Sanctus Shrine", "https://www.nexusmods.com/morrowind/mods/47841"],
     ["OAAB Vertical Shipwreck", "https://www.nexusmods.com/morrowind/mods/52268"],
     ["Anna-Sera", "https://www.nexusmods.com/morrowind/mods/51343"]
+  ]},
+  { group: "Overhauls, Locations, Additions by Region", category: "Solstheim, Hirstaang Forest", items: [
+    ["Nordic Moldy Horker", "https://www.nexusmods.com/morrowind/mods/59590"]
+  ]},
+  { group: "Overhauls, Locations, Additions by Region", category: "Solstheim, Isinifier Plains", items: [
+    ["The Patchwork Airship - Fleshing out a vanilla quest", "https://www.nexusmods.com/morrowind/mods/53133"]
   ]},
   { group: "Overhauls, Locations, Additions by Region", category: "West Gash", items: [
     ["The Stonewood pass reworked", "https://www.nexusmods.com/morrowind/mods/49464"],
