@@ -56,6 +56,15 @@
             overviewWrap.appendChild(makeList(GOALS_MAIN, 'goal-list'));
             root.appendChild(overviewWrap);
 
+            const hint = document.createElement('div');
+            hint.className = 'doc-hint';
+            GOALS_HINT.forEach(function (text) {
+                const p = document.createElement('p');
+                p.textContent = text;
+                hint.appendChild(p);
+            });
+            root.appendChild(hint);
+
             const sidebarTree = [{ label: 'Overview', id: 'overview' }];
 
             GOALS_SECTIONS.forEach(function (section) {
