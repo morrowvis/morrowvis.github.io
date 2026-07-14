@@ -304,6 +304,14 @@ a:hover {
     margin-top: 100px;
 }
 
+.hero-note {
+    margin-top: var(--spacing-md);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
@@ -1142,37 +1150,31 @@ footer .container p:last-child {
 }
 
 .doc-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-xl);
+    position: relative;
 }
 
-/* Wraps doc-main and centres it within the space left of the sidebar,
-   regardless of viewport width - this is what actually achieves GitBook-like
-   centred content (a plain grid with fr spacer columns doesn't reliably do
-   this once the container has its own max-width). */
+/* Centred against the true page width - the sidebar is taken out of flow
+   (position: fixed, below) so it no longer eats into this centering.
+   Since content is centred (not left-aligned), its right edge moves out by
+   half its own width growth, so the cutoff below is viewport-width based
+   and roughly double the sidebar's reserved zone (240px sidebar + 48px gap
+   + 48px margin), not just that zone once. */
 .doc-main-wrap {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    justify-content: center;
+    max-width: min(780px, calc(100vw - 640px));
+    margin: 0 auto;
 }
 
-.doc-main {
-    width: 100%;
-    max-width: 780px;
+.doc-layout--wide .doc-main-wrap {
+    max-width: min(960px, calc(100vw - 640px));
 }
 
-.doc-layout--wide .doc-main {
-    max-width: 960px;
-}
-
-/* Sidebar pinned to the far right; renders after .doc-main-wrap in the DOM. */
+/* Floats independently near the top-right of the viewport - out of flow, so
+   it never competes with .doc-main-wrap for centering space. */
 .doc-sidebar {
+    position: fixed;
+    top: 120px;
+    right: var(--spacing-xl);
     width: 240px;
-    flex-shrink: 0;
-    position: sticky;
-    top: 90px;
 }
 
 .doc-sidebar-list {
@@ -1333,16 +1335,8 @@ footer .container p:last-child {
 }
 
 @media (max-width: 900px) {
-    .doc-layout {
-        display: block;
-    }
-
-    .doc-main-wrap {
-        display: block;
-    }
-
-    .doc-main,
-    .doc-layout--wide .doc-main {
+    .doc-main-wrap,
+    .doc-layout--wide .doc-main-wrap {
         max-width: none;
     }
 
@@ -1430,6 +1424,10 @@ footer .container p:last-child {
     margin: var(--spacing-lg) 0;
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+.doc-hint p:last-child {
+    margin-bottom: 0;
 }
 
 .doc-content h1,
@@ -1602,28 +1600,30 @@ footer .container p:last-child {
 }
 
 .credits-panel.panel-newlands {
-    background-color: rgba(150, 110, 55, 0.14);
-    border-color: rgba(200, 155, 90, 0.3);
+    background-image: linear-gradient(135deg, rgba(235, 200, 120, 0.18), rgba(190, 140, 60, 0.08));
+    border-color: rgba(225, 185, 110, 0.35);
 }
 
 .credits-panel.panel-overhauls {
-    background-color: rgba(150, 65, 40, 0.14);
-    border-color: rgba(200, 105, 65, 0.3);
+    background-image: linear-gradient(135deg, rgba(230, 150, 70, 0.2), rgba(180, 90, 40, 0.09));
+    border-color: rgba(220, 145, 80, 0.35);
 }
 
 .credits-panel.panel-quests {
-    background-color: rgba(95, 105, 55, 0.14);
-    border-color: rgba(145, 155, 90, 0.3);
+    background-image: linear-gradient(135deg, rgba(240, 210, 130, 0.16), rgba(205, 155, 75, 0.07));
+    border-color: rgba(230, 195, 120, 0.32);
 }
 
 .credits-panel.panel-dungeons {
-    background-color: rgba(55, 75, 90, 0.16);
-    border-color: rgba(95, 120, 140, 0.32);
+    background-image: linear-gradient(135deg, rgba(210, 130, 55, 0.2), rgba(140, 75, 30, 0.1));
+    border-color: rgba(200, 125, 65, 0.35);
 }
 
+/* Matches the Tools page cards exactly. */
 .credits-panel.panel-black {
-    background-color: rgba(255, 255, 255, 0.025);
-    border-color: var(--border-color);
+    background-color: var(--accent-surface-subtle);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--primary-color);
 }
 
 .credits-panel.panel-blue {
