@@ -1039,7 +1039,6 @@ footer .container p:last-child {
     z-index: 200;
 }
 
-.nav-links li.has-dropdown:hover .dropdown-menu,
 .nav-links li.has-dropdown.open .dropdown-menu {
     display: block;
 }
@@ -1061,7 +1060,8 @@ footer .container p:last-child {
     background-color: var(--accent-surface);
 }
 
-.dropdown-divider {
+.dropdown-menu li.dropdown-divider {
+    width: auto;
     height: 1px;
     background-color: var(--border-color);
     margin: var(--spacing-xs) var(--spacing-sm);
@@ -1146,18 +1146,32 @@ footer .container p:last-child {
     gap: var(--spacing-xl);
 }
 
-/* Sidebar renders after .doc-main in the DOM so it sits on the right. */
-.doc-sidebar {
-    position: sticky;
-    top: 90px;
-    width: 240px;
-    flex-shrink: 0;
+/* Wraps doc-main and centres it within the space left of the sidebar,
+   regardless of viewport width - this is what actually achieves GitBook-like
+   centred content (a plain grid with fr spacer columns doesn't reliably do
+   this once the container has its own max-width). */
+.doc-main-wrap {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .doc-main {
-    flex: 1;
-    min-width: 0;
+    width: 100%;
     max-width: 780px;
+}
+
+.doc-layout--wide .doc-main {
+    max-width: 960px;
+}
+
+/* Sidebar pinned to the far right; renders after .doc-main-wrap in the DOM. */
+.doc-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 90px;
 }
 
 .doc-sidebar-list {
@@ -1237,6 +1251,25 @@ footer .container p:last-child {
     max-height: 70vh;
     overflow-y: auto;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-accent) var(--dark-bg);
+}
+
+.doc-sidebar-modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.doc-sidebar-modal::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+.doc-sidebar-modal::-webkit-scrollbar-thumb {
+    background-color: var(--gold-accent);
+    border-radius: 4px;
+}
+
+.doc-sidebar-modal::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-color);
 }
 
 .doc-sidebar-modal-close {
@@ -1288,17 +1321,77 @@ footer .container p:last-child {
     text-decoration: underline;
 }
 
+/* Mobile: sidebar becomes a slide-in drawer from the right, like GitBook,
+   triggered by a floating button. Hidden entirely above the breakpoint. */
+.doc-sidebar-mobile-toggle {
+    display: none;
+}
+
+.doc-sidebar-backdrop {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .doc-layout {
-        flex-direction: column;
+        display: block;
     }
-    .doc-sidebar {
-        position: relative;
-        top: 0;
-        width: 100%;
+
+    .doc-main-wrap {
+        display: block;
     }
-    .doc-main {
+
+    .doc-main,
+    .doc-layout--wide .doc-main {
         max-width: none;
+    }
+
+    .doc-sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 280px;
+        max-width: 80vw;
+        background-color: var(--dark-bg);
+        border-left: 1px solid var(--border-color);
+        padding: 90px var(--spacing-md) var(--spacing-md);
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.25s ease;
+        z-index: 410;
+    }
+
+    .doc-sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    .doc-sidebar-mobile-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--primary-color);
+        color: var(--text-light);
+        border: 1px solid var(--border-color);
+        border-radius: 999px;
+        padding: 12px 18px;
+        font-size: 0.9rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        z-index: 405;
+    }
+
+    .doc-sidebar-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 400;
+    }
+
+    .doc-sidebar-backdrop.open {
+        display: block;
     }
 }
 
@@ -1344,8 +1437,20 @@ footer .container p:last-child {
     scroll-margin-top: 110px;
 }
 
+/* Panels add their own padding above the heading, so they need extra
+   scroll-margin to clear the fixed navbar without the panel's top edge
+   getting cut off. */
+.credits-panel h2,
+.credits-panel h3 {
+    scroll-margin-top: 175px;
+}
+
 .doc-content h3 {
     margin-top: var(--spacing-lg);
+}
+
+.doc-content .credits-section-title {
+    margin-top: 0;
 }
 
 .doc-content .see-also {
@@ -1367,7 +1472,7 @@ footer .container p:last-child {
 }
 
 .credits-section {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-sm) 0;
 }
 
 .credits-section-title {
@@ -1463,8 +1568,16 @@ footer .container p:last-child {
 
 .credits-thanks-list a {
     display: block;
-    padding: 4px 0;
+    padding: 4px 8px;
+    margin: 0 -8px;
+    border-radius: 4px;
     font-size: 1.05rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.credits-thanks-list a:hover {
+    color: #ffffff;
+    background-color: var(--accent-surface);
 }
 
 .credits-divider {
@@ -1473,9 +1586,13 @@ footer .container p:last-child {
     margin: var(--spacing-xl) 0;
 }
 
-/* Coloured panels behind each big group of credit cards. Muted so the gold
-   accent and card contents still read clearly on top. Cycle through
-   panel-red / panel-blue / panel-teal / panel-purple / panel-green. */
+/* Coloured panels behind credit groups. I don't have file access to
+   screenshots/Overview.jpg to sample exact pixel values, so these are
+   approximations of typical Vvardenfell tones (ash amber, Red Mountain
+   ember, ashland olive, cavern slate) - swap the rgba() values below for
+   real sampled colours whenever you have them.
+   Only New Lands / Overhauls / Quests and Adventures / Dungeons get colour;
+   everything else uses the plain dark panel-black box. */
 .credits-panel {
     border-radius: 8px;
     padding: var(--spacing-lg);
@@ -1483,29 +1600,34 @@ footer .container p:last-child {
     border: 1px solid transparent;
 }
 
-.credits-panel.panel-red {
-    background-color: rgba(140, 45, 45, 0.12);
-    border-color: rgba(190, 80, 80, 0.28);
+.credits-panel.panel-newlands {
+    background-color: rgba(150, 110, 55, 0.14);
+    border-color: rgba(200, 155, 90, 0.3);
+}
+
+.credits-panel.panel-overhauls {
+    background-color: rgba(150, 65, 40, 0.14);
+    border-color: rgba(200, 105, 65, 0.3);
+}
+
+.credits-panel.panel-quests {
+    background-color: rgba(95, 105, 55, 0.14);
+    border-color: rgba(145, 155, 90, 0.3);
+}
+
+.credits-panel.panel-dungeons {
+    background-color: rgba(55, 75, 90, 0.16);
+    border-color: rgba(95, 120, 140, 0.32);
+}
+
+.credits-panel.panel-black {
+    background-color: rgba(255, 255, 255, 0.025);
+    border-color: var(--border-color);
 }
 
 .credits-panel.panel-blue {
     background-color: rgba(45, 65, 120, 0.12);
     border-color: rgba(80, 110, 180, 0.28);
-}
-
-.credits-panel.panel-teal {
-    background-color: rgba(30, 95, 95, 0.12);
-    border-color: rgba(60, 145, 145, 0.28);
-}
-
-.credits-panel.panel-purple {
-    background-color: rgba(90, 55, 120, 0.12);
-    border-color: rgba(140, 95, 180, 0.28);
-}
-
-.credits-panel.panel-green {
-    background-color: rgba(55, 95, 55, 0.12);
-    border-color: rgba(95, 145, 95, 0.28);
 }
 
 @media (max-width: 600px) {

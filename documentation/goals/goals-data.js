@@ -38,7 +38,7 @@ const GOALS_SECTIONS = [
   },
   {
     title: "Pipeline",
-    seeAlso: 'See <a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/pipeline/nif-to-ue5">NIF to UE5</a> and <a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/pipeline/json-to-ue5">JSON to UE5</a>.',
+    seeAlso: 'See <a href="../nif-to-ue5/">NIF to UE5</a> and <a href="../json-to-ue5/">JSON to UE5</a>.',
     items: [
       "Maximise speed, accuracy, and ease of use when setting up UE5 levels from Morrowind's exported scene graph data.",
       "Simplify the architecture of scenes by translating NIF hierarchies into a more standard Unreal structure.",

@@ -20,11 +20,15 @@ window.addHeadingAnchor = function (headingEl, id) {
     headingEl.appendChild(a);
 };
 
+// Set by renderDocSidebar() once the mobile drawer exists on this page.
+let closeMobileDrawer = function () {};
+
 function goToSection(id) {
     const el = document.getElementById(id);
     if (!el) return;
     history.pushState(null, '', '#' + id);
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    closeMobileDrawer();
 }
 
 // Single shared modal, reused for every expandable group.
@@ -137,6 +141,37 @@ window.renderDocSidebar = function (mountEl, tree) {
 
     nav.appendChild(ul);
     mountEl.appendChild(nav);
+
+    // Mobile: turn the sidebar into a slide-in drawer with a floating toggle
+    // button and a backdrop, GitBook-style.
+    const toggleBtn = document.createElement('button');
+    toggleBtn.type = 'button';
+    toggleBtn.className = 'doc-sidebar-mobile-toggle';
+    toggleBtn.innerHTML = '<i class="fa fa-list"></i> Contents';
+    document.body.appendChild(toggleBtn);
+
+    const backdrop = document.createElement('div');
+    backdrop.className = 'doc-sidebar-backdrop';
+    document.body.appendChild(backdrop);
+
+    function openDrawer() {
+        mountEl.classList.add('mobile-open');
+        backdrop.classList.add('open');
+    }
+    function closeDrawer() {
+        mountEl.classList.remove('mobile-open');
+        backdrop.classList.remove('open');
+    }
+    closeMobileDrawer = closeDrawer;
+
+    toggleBtn.addEventListener('click', function () {
+        if (mountEl.classList.contains('mobile-open')) {
+            closeDrawer();
+        } else {
+            openDrawer();
+        }
+    });
+    backdrop.addEventListener('click', closeDrawer);
 
     // Highlight (but never auto-open) whichever entry matches the section
     // currently in view.
