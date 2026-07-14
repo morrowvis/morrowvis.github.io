@@ -18,8 +18,9 @@
     </section>
 
     <section class="doc-content" style="padding-top: 0;">
-        <div class="container doc-layout">
-            <div class="doc-main" style="max-width: none;">
+        <div class="container doc-layout doc-layout--wide">
+            <div class="doc-main-wrap">
+            <div class="doc-main">
                 <div id="creditsRoot"></div>
 
                 <section class="credits-section">
@@ -34,6 +35,7 @@
                     <p>All the modders who have provided permissions, and all the Fab content creators who have provided support.</p>
                     <p>If you want to play any of the included mods yourself, give them a try on <a href="https://www.nexusmods.com/morrowind/mods/57200">MGE XE</a> or <a href="https://openmw.org/">OpenMW</a>.</p>
                 </section>
+            </div>
             </div>
             <aside class="doc-sidebar" id="creditsSidebarMount"></aside>
         </div>
@@ -66,13 +68,18 @@
                 return a;
             }
 
-            const PANEL_COLORS = ['panel-red', 'panel-blue', 'panel-teal', 'panel-purple', 'panel-green'];
+            const PANEL_COLOR_MAP = {
+                'New Lands': 'panel-newlands',
+                'Overhauls, Locations, Additions by City/Settlement': 'panel-overhauls',
+                'Overhauls, Locations, Additions by Region': 'panel-overhauls',
+                'Quests and Adventures': 'panel-quests',
+                'Dungeons': 'panel-dungeons'
+            };
 
             let lastGroup = null;
             let currentGroupNode = null;
             let currentPanel = null;
             let currentTopKey = null;
-            let panelIndex = 0;
             const sidebarTree = [];
 
             CREDITS.forEach(function (block) {
@@ -80,8 +87,7 @@
                 if (topKey !== currentTopKey) {
                     currentTopKey = topKey;
                     currentPanel = document.createElement('div');
-                    currentPanel.className = 'credits-panel ' + PANEL_COLORS[panelIndex % PANEL_COLORS.length];
-                    panelIndex++;
+                    currentPanel.className = 'credits-panel ' + (PANEL_COLOR_MAP[topKey] || 'panel-black');
                     root.appendChild(currentPanel);
                 }
 
