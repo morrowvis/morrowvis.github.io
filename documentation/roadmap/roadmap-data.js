@@ -9,7 +9,8 @@ const ROADMAP = [
       "Public release of Morrowind Visualisation Project executable",
       "Rendered and edited videos",
       "2nd May 2027 Morrowind 25th anniversary video",
-      "High resolution orthographic renders"
+      "High resolution orthographic renders",
+      "Testing all current PTR exteriors development"
     ]
   },
   {
@@ -18,7 +19,7 @@ const ROADMAP = [
       'Update and test water from <a href="https://www.fab.com/listings/196c70cd-1283-4249-bf6b-c3019d1cbe11">Fluid Flux</a> as it develops: for flow on static meshes as well as interior bodies of water',
       "Investigate improved materials (e.g. lights, crystals) as well as Substrate",
       "Investigate improvements in Unreal Engine 5.8",
-      "Balance lighting levels, targeting HDR OLED at night"
+      "Continual improvement of MegaLights setup"
     ]
   },
   {
@@ -33,7 +34,8 @@ const ROADMAP = [
   {
     title: "Commentary Nodes",
     items: [
-      "Add more commentary from mod authors"
+      "Add more commentary from mod authors",
+      "Add commentary nodes for every city in TR"
     ]
   },
   {
