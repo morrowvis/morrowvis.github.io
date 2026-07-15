@@ -52,8 +52,8 @@
                     '<br>Morrowind Visualisation Project is an unofficial, fan-made project.</br>' +
                 '</p>' +
                 '<p><a href="https://www.youtube.com/@ms-arch">YouTube</a> <span class="footer-sep">|</span> ' +
-                '<a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/">GitBook</a> <span class="footer-sep">|</span> ' +
-                '<a href="https://github.com/ms-arch-mvp">GitHub</a></p>' +
+                '<a href="https://github.com/ms-arch-mvp">GitHub</a> <span class="footer-sep">|</span> ' +
+                '<a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/">GitBook</a></p>' +
             '</div>' +
         '</footer>';
 
