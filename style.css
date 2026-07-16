@@ -1391,7 +1391,9 @@ footer .container p:last-child {
     content: '\2022';
     position: absolute;
     left: 0;
-    color: var(--gold-accent);
+    /* GitBook's list-marker grey: its .text-tint resolves to rgb(var(--tint-11)),
+       which is 174 174 174 in the dark theme. */
+    color: #aeaeae;
     font-weight: bold;
 }
 
