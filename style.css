@@ -845,8 +845,12 @@ footer .container p:last-child {
         display: block;
     }
 
+    /* Fades in with the bar's 0.3s background transition instead of snapping in.
+       'display' can't be transitioned, so the panel stays laid out (it's
+       absolutely positioned, so it costs no layout) and is hidden with
+       opacity/visibility instead. */
     .nav-links {
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -858,10 +862,18 @@ footer .container p:last-child {
         background-color: #000000;
         padding: var(--spacing-md) 0;
         list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        /* visibility only flips once the fade-out has finished */
+        transition: opacity 0.3s ease, visibility 0s linear 0.3s;
     }
 
     .nav-links.open {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity 0.3s ease, visibility 0s linear 0s;
     }
 
     .nav-links li {
@@ -1450,12 +1462,14 @@ footer .container p:last-child {
            it isn't cut off on initial load before the address bar collapses. */
         bottom: calc(20px + env(safe-area-inset-bottom, 0px));
         right: 20px;
+        /* Black on gold, matching the .btn-primary treatment used elsewhere. */
         background-color: var(--primary-color);
-        color: var(--text-light);
+        color: #000000;
         border: 1px solid var(--border-color);
         border-radius: 999px;
         padding: 12px 18px;
         font-size: 0.9rem;
+        font-weight: 600;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         cursor: pointer;
         z-index: 405;
