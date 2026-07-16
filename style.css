@@ -769,6 +769,17 @@ footer .container p:last-child {
         border-bottom: none;
     }
 
+    /* The burger panel is solid black, so the home/tools black hover would be
+       invisible against it - keep the normal gold in the mobile menu. Sits in
+       this block so it tracks the burger menu exactly, short-landscape included.
+       (The border needs no reset: 'border-bottom: none' above kills the style,
+       so the black border-colour can't render anyway.) */
+    body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover,
+    body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover,
+    body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active {
+        color: var(--gold-accent);
+    }
+
     h1 {
         font-size: 2rem;
     }
@@ -1015,19 +1026,22 @@ footer .container p:last-child {
     margin-bottom: 0;
 }
 
+/* Same low-alpha register as the credits panels: the hue is kept, but the fill
+   sits close to black so the card reads as a tint rather than a coloured block.
+   The bottom accent line is left strong - it's the identifying mark. */
 .doc-nav-card--goals {
     border-bottom-color: rgba(80, 110, 180, 0.7);
-    background-image: linear-gradient(180deg, rgba(30, 45, 80, 0.24), rgba(16, 26, 50, 0.1));
+    background-image: linear-gradient(180deg, rgba(30, 45, 80, 0.11), rgba(16, 26, 50, 0.04));
 }
 
 .doc-nav-card--roadmap {
     border-bottom-color: rgba(150, 88, 42, 0.7);
-    background-image: linear-gradient(180deg, rgba(90, 52, 22, 0.24), rgba(55, 29, 12, 0.1));
+    background-image: linear-gradient(180deg, rgba(90, 52, 22, 0.11), rgba(55, 29, 12, 0.04));
 }
 
 .doc-nav-card--credits {
     border-bottom-color: rgba(150, 118, 62, 0.7);
-    background-image: linear-gradient(180deg, rgba(90, 70, 35, 0.24), rgba(55, 40, 16, 0.1));
+    background-image: linear-gradient(180deg, rgba(90, 70, 35, 0.11), rgba(55, 40, 16, 0.04));
 }
 
 .pipeline-title {

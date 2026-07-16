@@ -96,6 +96,28 @@
         });
     }
 
+    // Menu state is only CSS classes, and nothing cleared them when the layout
+    // flipped between the desktop bar and the burger menu - so a class set in one
+    // mode lingered into the other, where it means something different. '.open'
+    // on the links list is the obvious one: inert on desktop, but exactly what
+    // reveals the burger panel. Reset everything when the breakpoint is crossed.
+    // Query must stay in step with the navbar breakpoint in style.css.
+    const mobileNav = window.matchMedia('(max-width: 1024px), (orientation: landscape) and (max-height: 500px)');
+
+    function closeAllMenus() {
+        links.classList.remove('open');
+        navbar.classList.remove('menu-open');
+        document.querySelectorAll('.has-dropdown.open').forEach(function (p) {
+            p.classList.remove('open');
+        });
+    }
+
+    if (mobileNav.addEventListener) {
+        mobileNav.addEventListener('change', closeAllMenus);
+    } else if (mobileNav.addListener) {
+        mobileNav.addListener(closeAllMenus); // Safari < 14
+    }
+
     // Dropdown open/close is driven entirely by JS (not CSS :hover) so it can
     // be forgiving: closing is delayed briefly so a quick mouse movement
     // across the small gap between the toggle and the menu doesn't slam it
