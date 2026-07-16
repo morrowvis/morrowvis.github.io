@@ -35,11 +35,12 @@
 
             SECTIONS.forEach(function (section) {
                 const id = docSlugify(section.title);
-                const h2 = document.createElement('h2');
-                h2.className = 'credits-group-title';
-                h2.textContent = section.title;
-                addHeadingAnchor(h2, id);
-                root.appendChild(h2);
+                // Plain h3, matching how Goals/Roadmap render their section
+                // headings - rather than the 2rem credits-group-title.
+                const h3 = document.createElement('h3');
+                h3.textContent = section.title;
+                addHeadingAnchor(h3, id);
+                root.appendChild(h3);
 
                 if (section.items) {
                     const ul = document.createElement('ul');
@@ -54,9 +55,11 @@
 
                 if (section.subsections) {
                     section.subsections.forEach(function (sub) {
-                        const h3 = document.createElement('h3');
-                        h3.textContent = sub.subtitle;
-                        root.appendChild(h3);
+                        // Just bold text, not another heading step.
+                        const subHeading = document.createElement('h4');
+                        subHeading.className = 'doc-subheading';
+                        subHeading.textContent = sub.subtitle;
+                        root.appendChild(subHeading);
 
                         const ul = document.createElement('ul');
                         ul.className = 'goal-list';
