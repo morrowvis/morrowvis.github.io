@@ -1405,14 +1405,18 @@ footer .container p:last-child {
     display: none;
 }
 
-/* Kept in step with the navbar breakpoint (1024px) so the sidebar folds into
-   its drawer at the exact width the burger menu appears - otherwise there's a
-   band where the burger shows but the docked sidebar still squeezes the
-   content column down to one letter per line. */
-@media (max-width: 1024px), (orientation: landscape) and (max-height: 500px) {
-    .doc-main-wrap,
+/* The sidebar folds into its Contents-button drawer at a GREATER width (1400px)
+   than the burger menu, so it's out of the way before the docked column would
+   get cramped. Here the content is still a constrained, centred column (it no
+   longer reserves the now-hidden sidebar) - it only goes full-width once the
+   burger appears, in the 1024px block below. */
+@media (max-width: 1400px), (orientation: landscape) and (max-height: 500px) {
+    .doc-main-wrap {
+        max-width: 780px;
+    }
+
     .doc-layout--wide .doc-main-wrap {
-        max-width: none;
+        max-width: 960px;
     }
 
     .doc-sidebar {
@@ -1464,6 +1468,14 @@ footer .container p:last-child {
 
     .doc-sidebar-backdrop.open {
         display: block;
+    }
+}
+
+/* Content only goes full-width once the burger menu itself appears (1024px). */
+@media (max-width: 1024px), (orientation: landscape) and (max-height: 500px) {
+    .doc-main-wrap,
+    .doc-layout--wide .doc-main-wrap {
+        max-width: none;
     }
 }
 
@@ -1619,7 +1631,7 @@ footer .container p:last-child {
 
 .credit-card .credit-name {
     color: var(--text-light);
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 700;
     line-height: 1.35;
     display: block;
@@ -1724,11 +1736,9 @@ footer .container p:last-child {
     color: var(--gold-accent);
 }
 
-/* Credit cards use two columns only once there's genuine room for them. In the
-   docked layout the content column stays fairly narrow until the viewport is
-   wide, so below this the cards would crush - collapse them to a single column
-   instead. (The text-only doc pages are unaffected; this only touches the grid.) */
-@media (max-width: 1400px) {
+/* Credit cards drop to a single column once the burger menu appears (full-width
+   content) - above that, the constrained/docked column has room for two. */
+@media (max-width: 1024px) {
     .credit-grid {
         grid-template-columns: 1fr;
     }
