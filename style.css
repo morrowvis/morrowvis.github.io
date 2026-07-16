@@ -1202,10 +1202,12 @@ footer .container p:last-child {
     position: relative;
 }
 
-/* Centred against the true page width - the sidebar is taken out of flow
+/* Docked state only (>1400px - below that the sidebar becomes a drawer and the
+   1400px block drops this calc, since there's no docked sidebar left to avoid).
+   Centred against the true page width - the sidebar is taken out of flow
    (position: fixed, below) so it no longer eats into this centering.
    Since content is centred (not left-aligned), its right edge moves out by
-   half its own width growth, so the cutoff below is viewport-width based
+   half its own width growth, so the cutoff here is viewport-width based
    and roughly double the sidebar's reserved zone (240px sidebar + 48px gap
    + 48px margin), not just that zone once. */
 .doc-main-wrap {
@@ -1505,6 +1507,36 @@ footer .container p:last-child {
     font-weight: bold;
 }
 
+/* Secondary line under a goal item (e.g. the project names under a reference). */
+.goal-note {
+    display: block;
+    margin-top: 2px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Faint GitBook-style underline on links in the documentation BODY only.
+   Scoped to .doc-main - the sidebar <aside> sits inside .doc-content too and its
+   items are <li><a>, so anything scoped to .doc-content underlines the sidebar
+   as well. Credit cards and heading anchors aren't in prose so they're excluded;
+   the Special Thanks list is a <div>, so it's opted in explicitly. */
+.doc-main p a,
+.doc-main li a,
+.doc-main .credits-thanks-list a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(var(--accent-rgb), 0.35);
+    text-underline-offset: 3px;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+/* Follow the text to white on hover, rather than staying gold. */
+.doc-main p a:hover,
+.doc-main li a:hover,
+.doc-main .credits-thanks-list a:hover {
+    text-decoration-color: currentColor;
+}
+
 .doc-hint {
     background-color: var(--accent-surface);
     border-left: 4px solid var(--primary-color);
@@ -1592,11 +1624,14 @@ footer .container p:last-child {
     gap: var(--spacing-sm);
 }
 
+/* Neutral white tint rather than the gold accent wash - lifts the card slightly
+   off whatever panel it sits on without laying an unrelated gold film over the
+   sampled panel colours. */
 .credit-card {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    background-color: var(--accent-surface-subtle);
+    background-color: rgba(255, 255, 255, 0.008);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: var(--spacing-xs) var(--spacing-md);
@@ -1607,7 +1642,7 @@ footer .container p:last-child {
 
 .credit-card:hover {
     border-color: var(--primary-color);
-    background-color: var(--accent-surface-medium);
+    background-color: rgba(255, 255, 255, 0.035);
 }
 
 .credit-card .credit-icon {
@@ -1623,6 +1658,14 @@ footer .container p:last-child {
 .credit-card .credit-icon svg {
     width: 18px;
     height: 18px;
+}
+
+/* Per-host brand logos (Nexus, Fab, Patreon, Modding Wiki). The SVGs keep their
+   own colours as authored. */
+.credit-card .credit-icon .credit-logo {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
 }
 
 .credit-card .credit-text {
@@ -1686,24 +1729,42 @@ footer .container p:last-child {
     border: 1px solid transparent;
 }
 
+/* Each panel is drawn from a different element of screenshots/Overview.jpg
+   rather than the scene's overall (grey, hazy) average - the haze desaturates
+   the whole image, but the individual regions do carry real hue:
+     newlands  - the gold sunlight on the water   (#705542, 25deg)
+     overhauls - the mauve sky / glacier / rock   (#60545e, 310deg)
+     quests    - the yellow-green foliage + glow  (#b8be7d, 65deg)
+     dungeons  - the volcanic rose-brown rock     (~10deg)
+   The hues stay distinct but the alpha is deliberately very low, so each panel
+   reads as near-black with only a hint of colour rather than a coloured block. */
 .credits-panel.panel-newlands {
-    background-image: linear-gradient(135deg, rgba(48, 38, 20, 0.32), rgba(28, 21, 10, 0.2));
-    border-color: rgba(70, 55, 28, 0.4);
+    background-image: linear-gradient(135deg, rgba(112, 95, 62, 0.11), rgba(60, 50, 30, 0.04));
+    border-color: rgba(130, 110, 70, 0.2);
 }
 
 .credits-panel.panel-overhauls {
-    background-image: linear-gradient(135deg, rgba(48, 28, 12, 0.34), rgba(28, 15, 7, 0.2));
-    border-color: rgba(72, 42, 19, 0.4);
+    background-image: linear-gradient(135deg, rgba(102, 77, 98, 0.11), rgba(52, 40, 50, 0.04));
+    border-color: rgba(118, 92, 114, 0.2);
+}
+
+/* Second Overhauls group (by Region) - the indigo-violet of the glacier ice
+   streaks (#342d4c, 253deg, ~41% sat: the most saturated cool tone in the
+   image). Violet rather than steel-blue, so it pairs with the mauve
+   City/Settlement panel instead of fighting the warm palette. */
+.credits-panel.panel-overhauls-region {
+    background-image: linear-gradient(135deg, rgba(74, 66, 112, 0.08), rgba(38, 34, 58, 0.03));
+    border-color: rgba(96, 88, 140, 0.16);
 }
 
 .credits-panel.panel-quests {
-    background-image: linear-gradient(135deg, rgba(50, 40, 19, 0.28), rgba(30, 24, 10, 0.18));
-    border-color: rgba(70, 55, 27, 0.35);
+    background-image: linear-gradient(135deg, rgba(104, 107, 64, 0.1), rgba(52, 54, 32, 0.04));
+    border-color: rgba(120, 124, 76, 0.18);
 }
 
 .credits-panel.panel-dungeons {
-    background-image: linear-gradient(135deg, rgba(40, 22, 9, 0.34), rgba(22, 11, 4, 0.22));
-    border-color: rgba(58, 33, 15, 0.4);
+    background-image: linear-gradient(135deg, rgba(97, 69, 63, 0.12), rgba(48, 34, 31, 0.045));
+    border-color: rgba(114, 82, 74, 0.2);
 }
 
 /* Matches the Tools page cards' background exactly, no top accent line. */
@@ -1737,8 +1798,10 @@ footer .container p:last-child {
 }
 
 /* Credit cards drop to a single column once the burger menu appears (full-width
-   content) - above that, the constrained/docked column has room for two. */
-@media (max-width: 1024px) {
+   content) - above that, the constrained/docked column has room for two.
+   Condition matches the navbar/doc blocks exactly, short-landscape clause
+   included, so the grid can't stay 2-up while the burger is showing. */
+@media (max-width: 1024px), (orientation: landscape) and (max-height: 500px) {
     .credit-grid {
         grid-template-columns: 1fr;
     }
