@@ -1462,6 +1462,21 @@ footer .container p:last-child {
     font-size: var(--font-size-lg);
 }
 
+/* Pipeline pages (NIF/JSON to UE5): sub-headings read as plain bold text rather
+   than another heading step, so the hierarchy stays as shallow as Goals/Roadmap.
+   Overrides the shared h1-h6 rule, which would otherwise make these uppercase,
+   letter-spaced and set in the heading font. */
+.doc-main .doc-subheading {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold-accent);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+}
+
 .doc-content .credits-section-title {
     margin-top: 0;
 }
