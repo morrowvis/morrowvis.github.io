@@ -118,20 +118,46 @@
         }, 400);
     }
 
-    document.querySelectorAll('.has-dropdown').forEach(function (parent) {
-        parent.addEventListener('mouseenter', function () {
-            openDropdown(parent);
+    // Only wire hover-to-open on devices that actually hover. On touch, a tap
+    // fires a synthetic mouseenter which would open (then the same tap's click
+    // sees it as already-open and navigates) - which is exactly why tapping
+    // "Documentation" jumped straight to the page instead of showing sub-items.
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (canHover) {
+        document.querySelectorAll('.has-dropdown').forEach(function (parent) {
+            parent.addEventListener('mouseenter', function () {
+                openDropdown(parent);
+            });
+            parent.addEventListener('mouseleave', function () {
+                scheduleClose(parent);
+            });
         });
-        parent.addEventListener('mouseleave', function () {
-            scheduleClose(parent);
-        });
-    });
+    }
 
     document.querySelectorAll('.dropdown-toggle').forEach(function (toggleLink) {
         toggleLink.addEventListener('click', function (e) {
             const parent = toggleLink.closest('.has-dropdown');
             if (!parent) return;
-            if (!parent.classList.contains('open')) {
+
+            // Tapping the caret toggles the submenu open/closed and never
+            // navigates, so touch users can reveal the sub-items. The label
+            // text still follows the link to the Documentation page.
+            if (e.target.closest('.fa-caret-down')) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (parent.classList.contains('open')) {
+                    parent.classList.remove('open');
+                } else {
+                    openDropdown(parent);
+                }
+                return;
+            }
+
+            // On hover devices the menu is already open by the time the label
+            // is clicked, so this just lets the link through; if somehow it's
+            // closed, open it rather than navigate on the first click.
+            if (canHover && !parent.classList.contains('open')) {
                 e.preventDefault();
                 openDropdown(parent);
             }
