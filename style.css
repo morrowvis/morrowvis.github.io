@@ -896,6 +896,10 @@ footer .container p:last-child {
         min-height: 300px;
         padding: var(--spacing-lg) var(--spacing-md);
         padding-top: 10rem;
+        /* A fixed background repaints against the viewport on scroll, which on
+           mobile leaves a flickering seam along the image's bottom edge. Pin it
+           to the element instead. */
+        background-attachment: scroll;
     }
 
     .hero h1 {
@@ -937,47 +941,14 @@ footer .container p:last-child {
         width: 100%;
     }
 
+    /* In the burger menu, "Documentation" is just a plain link to the docs
+       page - drop the nested submenu and its caret entirely to keep it tidy. */
     .dropdown-menu {
-        position: static;
-        width: 100%;
-        margin-top: 0;
-        background-color: transparent;
-        border: none;
-        border-radius: 0;
-        padding: 0;
+        display: none !important;
     }
 
-    .dropdown-menu li {
-        width: 100%;
-    }
-
-    .dropdown-menu a {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
-        padding: 0.75rem var(--spacing-md);
-        margin: 0.35rem 0;
-        font-size: 1.05rem;
-        background-color: #000000;
-        border: 1px solid var(--border-color);
-        border-radius: 4px;
-        white-space: normal;
-    }
-
-    .dropdown-menu a:hover {
-        background-color: #1a1a1a !important;
-    }
-
-    .dropdown-menu li.dropdown-divider {
-        width: 80%;
-        margin: var(--spacing-sm) auto;
-    }
-
-    .dropdown-menu .dropdown-label {
-        display: block;
-        text-align: center;
-        padding: 4px 0;
+    .dropdown-toggle .fa-caret-down {
+        display: none;
     }
 }
 
@@ -1169,17 +1140,17 @@ footer .container p:last-child {
 
 .doc-nav-card--goals {
     border-left-color: rgba(80, 110, 180, 0.7);
-    background-image: linear-gradient(135deg, rgba(30, 45, 80, 0.24), rgba(16, 26, 50, 0.1));
+    background-image: linear-gradient(180deg, rgba(30, 45, 80, 0.24), rgba(16, 26, 50, 0.1));
 }
 
 .doc-nav-card--roadmap {
     border-left-color: rgba(150, 88, 42, 0.7);
-    background-image: linear-gradient(135deg, rgba(90, 52, 22, 0.24), rgba(55, 29, 12, 0.1));
+    background-image: linear-gradient(180deg, rgba(90, 52, 22, 0.24), rgba(55, 29, 12, 0.1));
 }
 
 .doc-nav-card--credits {
     border-left-color: rgba(150, 118, 62, 0.7);
-    background-image: linear-gradient(135deg, rgba(90, 70, 35, 0.24), rgba(55, 40, 16, 0.1));
+    background-image: linear-gradient(180deg, rgba(90, 70, 35, 0.24), rgba(55, 40, 16, 0.1));
 }
 
 .pipeline-title {
@@ -1252,6 +1223,27 @@ footer .container p:last-child {
     top: 120px;
     right: var(--spacing-xl);
     width: 240px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-accent) var(--dark-bg);
+}
+
+/* Custom scrollbar for when the sidebar (mobile drawer) overflows - matches
+   the group popout modal's gold scrollbar. */
+.doc-sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.doc-sidebar::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+.doc-sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--gold-accent);
+    border-radius: 4px;
+}
+
+.doc-sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-color);
 }
 
 .doc-sidebar-list {
@@ -1412,7 +1404,11 @@ footer .container p:last-child {
     display: none;
 }
 
-@media (max-width: 900px) {
+/* Kept in step with the navbar breakpoint (1024px) so the sidebar folds into
+   its drawer at the exact width the burger menu appears - otherwise there's a
+   band where the burger shows but the docked sidebar still squeezes the
+   content column down to one letter per line. */
+@media (max-width: 1024px), (orientation: landscape) and (max-height: 500px) {
     .doc-main-wrap,
     .doc-layout--wide .doc-main-wrap {
         max-width: none;
@@ -1443,7 +1439,9 @@ footer .container p:last-child {
         align-items: center;
         gap: 8px;
         position: fixed;
-        bottom: 20px;
+        /* Sit clear of the mobile browser's bottom toolbar / home indicator so
+           it isn't cut off on initial load before the address bar collapses. */
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
         right: 20px;
         background-color: var(--primary-color);
         color: var(--text-light);
@@ -1727,5 +1725,62 @@ footer .container p:last-child {
 @media (max-width: 600px) {
     .credit-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Reclaim horizontal space on phones - the stacked container + section +
+       panel paddings were squeezing the credit/goal boxes. */
+    .doc-content {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .doc-content .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .credits-hero {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .credits-panel {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .credit-card {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .doc-tools-panel .credit-card {
+        padding: var(--spacing-sm);
+    }
+
+    /* Was 2rem (font-size-2xl) - larger than the 1.5rem page <h1> on phones.
+       Bring group titles like "New Lands" back under the page title. */
+    .credits-group-title {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* Orthographics: tighten padding in portrait only so the images get more of
+   the narrow screen. Landscape is deliberately left as-is. */
+@media (orientation: portrait) and (max-width: 1024px) {
+    .orthographics-section {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .ortho-item h3 {
+        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-xs);
+    }
+
+    .ortho-item p {
+        padding: 0 var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .ortho-item .btn-link {
+        padding: var(--spacing-sm);
     }
 }
