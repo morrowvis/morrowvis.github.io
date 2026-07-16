@@ -209,18 +209,22 @@ a:hover {
    the gold hover colour is hard to read - black reads far better against it.
    Limited to :not(.scrolled) because once scrolled the bar turns solid black,
    where black-on-black would disappear; there the normal gold hover applies. */
-body[data-page="home"] .navbar:not(.scrolled) .nav-links a:hover,
-body[data-page="tools"] .navbar:not(.scrolled) .nav-links a:hover,
-body[data-page="tools"] .navbar:not(.scrolled) .nav-links a.active {
+/* '> li > a' restricts this to the top-level links only. The dropdown items are
+   nested deeper (.nav-links > li > .dropdown-menu > li > a) and must keep the
+   gold hover - they sit on the menu's near-black panel, where black would be
+   invisible. */
+body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover,
+body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover,
+body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active {
     color: #000000;
 }
 
 /* Border kept off the Documentation toggle, which deliberately has no underline
    - these selectors outrank the .dropdown-toggle:hover rule that clears it, so
    it has to be excluded here rather than relying on that. */
-body[data-page="home"] .navbar:not(.scrolled) .nav-links a:hover:not(.dropdown-toggle),
-body[data-page="tools"] .navbar:not(.scrolled) .nav-links a:hover:not(.dropdown-toggle),
-body[data-page="tools"] .navbar:not(.scrolled) .nav-links a.active:not(.dropdown-toggle) {
+body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
+body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
+body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.dropdown-toggle) {
     border-bottom-color: #000000;
 }
 
