@@ -1418,6 +1418,16 @@ footer .container p:last-child {
     margin-top: var(--spacing-lg);
 }
 
+/* Subsection headings on the doc pages (Goals/Roadmap/NIF/JSON build these as
+   plain h3s). The default 1.5rem sat too close to the 2rem group title above
+   them, so step down to 1.25rem for a clearer hierarchy - which also matches
+   .credits-section-title.
+   :not([class]) keeps this off the Credits headings, which carry their own
+   classes and sizes; a plain '.doc-main h3' would outrank and break those. */
+.doc-main h3:not([class]) {
+    font-size: var(--font-size-lg);
+}
+
 .doc-content .credits-section-title {
     margin-top: 0;
 }
