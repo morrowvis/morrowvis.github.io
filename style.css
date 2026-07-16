@@ -608,7 +608,6 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
     margin-top: auto;
 }
 
-
 /* Downloads Section */
 .downloads-section {
     padding: var(--spacing-xl) var(--spacing-md);
@@ -931,13 +930,6 @@ footer .container p:last-child {
     max-width: 220px;
     width: auto;
 }
-
-
-
-
-
-
-
 
 /* ============================================
    Documentation section
@@ -1379,6 +1371,13 @@ footer .container p:last-child {
     margin-bottom: var(--spacing-lg);
 }
 
+/* A list ending a panel would stack its own bottom margin on top of the panel's
+   padding, leaving twice as much space below the content as above it. */
+.credits-panel > ul.goal-list:last-child,
+.credits-panel > ul.roadmap-list:last-child {
+    margin-bottom: 0;
+}
+
 .doc-content ul.goal-list li,
 .doc-content ul.roadmap-list li {
     padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-lg);
@@ -1648,36 +1647,9 @@ footer .container p:last-child {
      dungeons  - the volcanic rose-brown rock     (~10deg)
    The hues stay distinct but the alpha is deliberately very low, so each panel
    reads as near-black with only a hint of colour rather than a coloured block. */
-.credits-panel.panel-newlands {
-    background-image: linear-gradient(135deg, rgba(112, 95, 62, 0.11), rgba(60, 50, 30, 0.04));
-    border-color: rgba(130, 110, 70, 0.2);
-}
 
-.credits-panel.panel-overhauls {
-    background-image: linear-gradient(135deg, rgba(102, 77, 98, 0.11), rgba(52, 40, 50, 0.04));
-    border-color: rgba(118, 92, 114, 0.2);
-}
-
-/* Second Overhauls group (by Region) - the indigo-violet of the glacier ice
-   streaks (#342d4c, 253deg, ~41% sat: the most saturated cool tone in the
-   image). Violet rather than steel-blue, so it pairs with the mauve
-   City/Settlement panel instead of fighting the warm palette. */
-.credits-panel.panel-overhauls-region {
-    background-image: linear-gradient(135deg, rgba(74, 66, 112, 0.08), rgba(38, 34, 58, 0.03));
-    border-color: rgba(96, 88, 140, 0.16);
-}
-
-.credits-panel.panel-quests {
-    background-image: linear-gradient(135deg, rgba(104, 107, 64, 0.1), rgba(52, 54, 32, 0.04));
-    border-color: rgba(120, 124, 76, 0.18);
-}
-
-.credits-panel.panel-dungeons {
-    background-image: linear-gradient(135deg, rgba(97, 69, 63, 0.12), rgba(48, 34, 31, 0.045));
-    border-color: rgba(114, 82, 74, 0.2);
-}
-
-/* Matches the Tools page cards' background exactly, no top accent line. */
+/* Fallback for any group without its own tint. Matches the Tools page cards'
+   background exactly, no top accent line. */
 .credits-panel.panel-black {
     background-color: var(--accent-surface-subtle);
     border: 1px solid var(--border-color);

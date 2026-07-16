@@ -94,13 +94,49 @@
                 return a;
             }
 
-            const PANEL_COLOR_MAP = {
-                'New Lands': 'panel-newlands',
-                'Overhauls, Locations, Additions by City/Settlement': 'panel-overhauls',
-                'Overhauls, Locations, Additions by Region': 'panel-overhauls-region',
-                'Quests and Adventures': 'panel-quests',
-                'Dungeons': 'panel-dungeons'
-            };
+            // Panel tints are a continuous sweep down the page rather than a
+            // per-group colour, so neighbouring panels always step by an even
+            // amount instead of jumping around. Hue starts at the image's yellow
+            // and runs backwards through its warm arc and on into its mauve/blue
+            // one: yellow > gold > amber > red > rose > violet > indigo > slate.
+            // Derived from position, so it spans exactly the panels present and
+            // re-flows by itself if a group is added or removed.
+            const HUE_START = 60;   // the scene's yellow
+            const HUE_SWEEP = 190;  // degrees travelled backwards -> ends ~230 (slate)
+            const TINT_SAT = 0.38;
+            const TINT_VAL = 0.42;
+
+            function hsvToRgb(h, s, v) {
+                const c = v * s;
+                const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+                const m = v - c;
+                let rgb;
+                if (h < 60) rgb = [c, x, 0];
+                else if (h < 120) rgb = [x, c, 0];
+                else if (h < 180) rgb = [0, c, x];
+                else if (h < 240) rgb = [0, x, c];
+                else if (h < 300) rgb = [x, 0, c];
+                else rgb = [c, 0, x];
+                return rgb.map(function (n) { return Math.round((n + m) * 255); });
+            }
+
+            // Panel order, resolved up front so each one knows its place in the sweep.
+            const panelKeys = [];
+            CREDITS.forEach(function (block) {
+                const k = block.group || block.category;
+                if (panelKeys.indexOf(k) === -1) panelKeys.push(k);
+            });
+
+            function tintPanel(el, index) {
+                const t = panelKeys.length > 1 ? index / (panelKeys.length - 1) : 0;
+                const hue = (HUE_START - t * HUE_SWEEP + 360) % 360;
+                const base = hsvToRgb(hue, TINT_SAT, TINT_VAL);
+                const deep = base.map(function (c) { return Math.round(c * 0.53); });
+                const edge = base.map(function (c) { return Math.min(255, Math.round(c * 1.16)); });
+                el.style.backgroundImage =
+                    'linear-gradient(135deg, rgba(' + base.join(', ') + ', 0.11), rgba(' + deep.join(', ') + ', 0.04))';
+                el.style.borderColor = 'rgba(' + edge.join(', ') + ', 0.2)';
+            }
 
             let lastGroup = null;
             let currentGroupNode = null;
@@ -113,7 +149,8 @@
                 if (topKey !== currentTopKey) {
                     currentTopKey = topKey;
                     currentPanel = document.createElement('div');
-                    currentPanel.className = 'credits-panel ' + (PANEL_COLOR_MAP[topKey] || 'panel-black');
+                    currentPanel.className = 'credits-panel';
+                    tintPanel(currentPanel, panelKeys.indexOf(topKey));
                     root.appendChild(currentPanel);
                 }
 
