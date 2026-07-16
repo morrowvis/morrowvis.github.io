@@ -65,7 +65,7 @@ const GOALS_SECTIONS = [
   {
     title: "Inspirations / References",
     items: [
-      '<a href="https://www.youtube.com/@gregcoulthard5565/videos">Bethesda Unreal projects by Greg Coulthard</a> (MorrowindUnreal, ObliviUnreal, SkyrimUnreal, FalloutNVUnreal)',
+      '<a href="https://www.youtube.com/@gregcoulthard5565/videos">Bethesda Unreal projects by Greg Coulthard</a><span class="goal-note">MorrowindUnreal, ObliviUnreal, SkyrimUnreal, FalloutNVUnreal</span>',
       '<a href="https://www.youtube.com/watch?v=n89NFtIUWDI">Morrowind to Elden Ring</a>',
       '<a href="https://www.nexusmods.com/games/oblivion/search?keyword=twmp">TWMP for Oblivion</a>',
       '<a href="https://noclip.website/">noclip.website</a>',

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credits | Morrowind Visualisation Project</title>
     <link rel="stylesheet" href="../../style.css">
-    <link rel="icon" type="image/svg+xml" href="../../logos/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body data-page="credits">
@@ -52,8 +52,31 @@
             const root = document.getElementById('creditsRoot');
             const thanksList = document.getElementById('thanksList');
 
-            // External-link icon, reused for every card regardless of source site.
+            // Generic external-link icon, used for any host without its own logo.
             const ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>';
+
+            // Per-host brand logos. Forced to flat white in CSS (.credit-logo).
+            const LOGO_BASE = (window.SITE_BASE || '') + 'logos/';
+            const HOST_LOGOS = [
+                { test: /(^|\.)nexusmods\.com$/, file: 'nexus.svg' },
+                { test: /(^|\.)fab\.com$/, file: 'fab.svg' },
+                { test: /(^|\.)patreon\.com$/, file: 'patreon.svg' },
+                // Matches github.com only - the wiki below is a *.github.io host.
+                { test: /(^|\.)github\.com$/, file: 'github.svg' },
+                { test: /^morrowind-modding\.github\.io$/, file: 'morrowind-modding-wiki.png' }
+            ];
+
+            function iconFor(url) {
+                let host;
+                try {
+                    host = new URL(url, location.href).hostname.toLowerCase();
+                } catch (e) {
+                    return ICON;
+                }
+                const hit = HOST_LOGOS.find(function (l) { return l.test.test(host); });
+                if (!hit) return ICON;
+                return '<img class="credit-logo" src="' + LOGO_BASE + hit.file + '" alt="" loading="lazy">';
+            }
 
             function renderCard(item) {
                 const [name, url, note] = item;
@@ -63,7 +86,7 @@
                 a.target = '_blank';
                 a.rel = 'noopener noreferrer';
                 a.innerHTML =
-                    '<span class="credit-icon">' + ICON + '</span>' +
+                    '<span class="credit-icon">' + iconFor(url) + '</span>' +
                     '<span class="credit-text">' +
                         '<span class="credit-name">' + name + '</span>' +
                         (note ? '<span class="credit-note-inline">' + note + '</span>' : '') +
@@ -74,7 +97,7 @@
             const PANEL_COLOR_MAP = {
                 'New Lands': 'panel-newlands',
                 'Overhauls, Locations, Additions by City/Settlement': 'panel-overhauls',
-                'Overhauls, Locations, Additions by Region': 'panel-overhauls',
+                'Overhauls, Locations, Additions by Region': 'panel-overhauls-region',
                 'Quests and Adventures': 'panel-quests',
                 'Dungeons': 'panel-dungeons'
             };
@@ -142,6 +165,14 @@
                 section.appendChild(grid);
 
                 currentPanel.appendChild(section);
+            });
+
+            // These two headings are static markup rather than generated from
+            // CREDITS, so they never got the anchor treatment the rest do -
+            // which is why they weren't clickable links.
+            ['elder-scrolls-iii-morrowind', 'special-thanks'].forEach(function (id) {
+                const el = document.getElementById(id);
+                if (el) addHeadingAnchor(el, id);
             });
 
             sidebarTree.push({ label: 'The Elder Scrolls III: Morrowind', id: 'elder-scrolls-iii-morrowind' });
