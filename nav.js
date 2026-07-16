@@ -105,11 +105,21 @@
     const mobileNav = window.matchMedia('(max-width: 1024px), (orientation: landscape) and (max-height: 500px)');
 
     function closeAllMenus() {
+        // Crossing into mobile applies opacity:0 *and* its transition in the same
+        // style change, so the panel would animate down from the desktop bar's
+        // opacity:1 - i.e. flash open and fade out. Suppress the transition,
+        // force a reflow so the hidden state lands un-animated, then restore it
+        // so real toggles still fade.
+        links.classList.add('no-transition');
+
         links.classList.remove('open');
         navbar.classList.remove('menu-open');
         document.querySelectorAll('.has-dropdown.open').forEach(function (p) {
             p.classList.remove('open');
         });
+
+        void links.offsetWidth; // reflow: commit the above with transitions off
+        links.classList.remove('no-transition');
     }
 
     if (mobileNav.addEventListener) {

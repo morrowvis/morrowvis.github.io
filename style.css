@@ -186,6 +186,13 @@ a:hover {
     gap: var(--spacing-lg);
 }
 
+/* Applied by nav.js only for the frame in which the breakpoint flips. Crossing
+   into mobile applies opacity:0 and its transition at the same time, so the
+   panel would animate from the desktop bar's opacity:1 and visibly flash. */
+.nav-links.no-transition {
+    transition: none !important;
+}
+
 .nav-links a {
     color: var(--text-light);
     font-weight: 500;
@@ -256,9 +263,13 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
     margin-bottom: var(--spacing-md);
 }
 
+/* Equal top/bottom padding reserves clearance for the fixed navbar while still
+   leaving the content optically centred in the viewport. Previously this was
+   padding: 0, so on a short window the centred content rose right up under the
+   navbar - every other hero reserves space via .hero's 150px top padding. */
 .hero-home {
     min-height: 100vh;
-    padding: 0 var(--spacing-md);
+    padding: 120px var(--spacing-md);
     margin-top: 0;
 }
 
@@ -334,6 +345,15 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 100px;
+}
+
+/* On a short window that 100px gap is what makes the hero block too tall for the
+   viewport, pushing the logo up toward the navbar. Tighten it so the block still
+   fits. (Home is the only page with these buttons.) */
+@media (max-height: 800px) {
+    .hero-buttons {
+        margin-top: var(--spacing-lg);
+    }
 }
 
 .hero-note {
