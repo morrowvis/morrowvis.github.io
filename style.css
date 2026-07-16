@@ -995,7 +995,7 @@ footer .container p:last-child {
 .doc-nav-card {
     background-color: var(--accent-surface-subtle);
     border: 1px solid var(--border-color);
-    border-left: 4px solid var(--primary-color);
+    border-bottom: 4px solid var(--primary-color);
     border-radius: 4px;
     padding: var(--spacing-lg);
     transition: all 0.3s ease;
@@ -1016,22 +1016,29 @@ footer .container p:last-child {
 }
 
 .doc-nav-card--goals {
-    border-left-color: rgba(80, 110, 180, 0.7);
+    border-bottom-color: rgba(80, 110, 180, 0.7);
     background-image: linear-gradient(180deg, rgba(30, 45, 80, 0.24), rgba(16, 26, 50, 0.1));
 }
 
 .doc-nav-card--roadmap {
-    border-left-color: rgba(150, 88, 42, 0.7);
+    border-bottom-color: rgba(150, 88, 42, 0.7);
     background-image: linear-gradient(180deg, rgba(90, 52, 22, 0.24), rgba(55, 29, 12, 0.1));
 }
 
 .doc-nav-card--credits {
-    border-left-color: rgba(150, 118, 62, 0.7);
+    border-bottom-color: rgba(150, 118, 62, 0.7);
     background-image: linear-gradient(180deg, rgba(90, 70, 35, 0.24), rgba(55, 40, 16, 0.1));
 }
 
 .pipeline-title {
     margin-top: var(--spacing-xl);
+}
+
+/* Extra breathing room above the first section heading (Pipeline), which follows
+   the nav-card grid. Targeted via the adjacent grid so the second heading
+   (Tools) - same class, but it follows a panel - keeps its normal spacing. */
+.doc-nav-grid + .pipeline-title {
+    margin-top: calc(var(--spacing-xl) * 1.5);
 }
 
 .doc-content {
