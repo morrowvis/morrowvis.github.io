@@ -200,7 +200,8 @@ a:hover {
     border-bottom-color: var(--gold-accent);
 }
 
-.nav-links a.dropdown-toggle.active {
+.nav-links a.dropdown-toggle.active,
+.nav-links a.dropdown-toggle:hover {
     border-bottom-color: transparent;
 }
 
@@ -1619,6 +1620,7 @@ footer .container p:last-child {
 .credit-card .credit-name {
     color: var(--text-light);
     font-size: 1.05rem;
+    font-weight: 700;
     line-height: 1.35;
     display: block;
     overflow-wrap: break-word;
@@ -1722,11 +1724,17 @@ footer .container p:last-child {
     color: var(--gold-accent);
 }
 
-@media (max-width: 600px) {
+/* Credit cards use two columns only once there's genuine room for them. In the
+   docked layout the content column stays fairly narrow until the viewport is
+   wide, so below this the cards would crush - collapse them to a single column
+   instead. (The text-only doc pages are unaffected; this only touches the grid.) */
+@media (max-width: 1400px) {
     .credit-grid {
         grid-template-columns: 1fr;
     }
+}
 
+@media (max-width: 600px) {
     /* Reclaim horizontal space on phones - the stacked container + section +
        panel paddings were squeezing the credit/goal boxes. */
     .doc-content {
