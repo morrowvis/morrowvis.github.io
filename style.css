@@ -1056,13 +1056,22 @@ footer .container p:last-child {
     background-image: linear-gradient(180deg, rgba(90, 70, 35, 0.11), rgba(55, 40, 16, 0.04));
 }
 
+/* Each section heading sits under a rule. Matches .credits-divider's weight and
+   colour; margin-top is the gap above the line, padding-top the gap from the
+   line down to the text. */
 .pipeline-title {
     margin-top: var(--spacing-xl);
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--spacing-lg);
+    /* These headings are anchor targets, but this page isn't inside .doc-content
+       so it misses that block's scroll-margin - without this the fixed navbar
+       would cover the heading when you jump to it. */
+    scroll-margin-top: 110px;
 }
 
-/* Extra breathing room above the first section heading (Pipeline), which follows
-   the nav-card grid. Targeted via the adjacent grid so the second heading
-   (Tools) - same class, but it follows a panel - keeps its normal spacing. */
+/* Extra breathing room above the first heading (Pipeline), which follows the
+   nav-card grid. Targeted via the adjacent grid so the second heading (Tools) -
+   same class, but it follows a panel - keeps the standard gap. */
 .doc-nav-grid + .pipeline-title {
     margin-top: calc(var(--spacing-xl) * 1.5);
 }
