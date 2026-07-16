@@ -1,1 +1,2 @@
-Website for Morrowind Visualisation Project. This repository can be used as a reference for building other websites.
+Website for Morrowind Visualisation Project. 
+<br>This repository can be used as a reference for building other websites.
