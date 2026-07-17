@@ -123,7 +123,8 @@
             const TINT_VAL = 0.42;
             const TINT_ALPHA = 0.16;        // how much colour reaches the page
             const TINT_BORDER_ALPHA = 0.26;
-            const FADE_START = '30%';       // where the rightward fade to black begins
+            const FADE_LEFT = 0.25;         // black already sitting on the left edge
+            const FADE_START = '30%';       // held to here, then the fade rightwards begins
             const FADE_STRENGTH = 0.65;     // how far it goes by the right edge (1 = full black)
 
             function hsvToRgb(h, s, v) {
@@ -172,7 +173,8 @@
                 // the panels above and below - hence the fade is horizontal, so
                 // the two don't fight each other.
                 el.style.backgroundImage =
-                    'linear-gradient(90deg, rgba(0, 0, 0, 0) ' + FADE_START +
+                    'linear-gradient(90deg, rgba(0, 0, 0, ' + FADE_LEFT + ') 0%' +
+                    ', rgba(0, 0, 0, ' + FADE_LEFT + ') ' + FADE_START +
                     ', rgba(0, 0, 0, ' + FADE_STRENGTH + ') 100%),' +
                     ' linear-gradient(180deg,' +
                     ' rgba(' + top.join(', ') + ', ' + TINT_ALPHA + '),' +
