@@ -106,9 +106,20 @@
             // backwards from the Overview.jpg yellow through its warm arc into its
             // mauve/blue one: yellow > gold > amber > red > rose > violet > slate.
             // Position-derived, so it spans exactly the panels present.
-            const HUE_START = 60;    // the scene's yellow
-            const HUE_SWEEP = 190;   // degrees travelled backwards -> ends ~230 (slate)
+            // 50, not 60: hue 60 is mathematically pure yellow (R=G) but reads
+            // olive/green at these low saturations - 50 carries enough red to
+            // read as yellow.
+            const HUE_START = 50;
+            const HUE_SWEEP = 180;   // degrees travelled backwards -> ends ~230 (slate)
+            // Saturation is high at the top and eases off down the sweep. Counter-
+            // intuitive, but over black the result is colour x alpha, so a dark
+            // low-saturation yellow is - by definition - brown. What reads as
+            // olive is the blue channel surviving; crushing it with saturation is
+            // what keeps it gold at this darkness. Lowering it (i.e. "paler") does
+            // the opposite.
+            const TINT_SAT_TOP = 0.82;
             const TINT_SAT = 0.46;
+            const TINT_VAL_TOP = 0.58;
             const TINT_VAL = 0.42;
             const TINT_ALPHA = 0.16;        // how much colour reaches the page
             const TINT_BORDER_ALPHA = 0.26;
@@ -136,19 +147,23 @@
                 if (panelKeys.indexOf(k) === -1) panelKeys.push(k);
             });
 
-            // Hue at any point along the sweep, 0 = top of the first panel,
-            // 1 = bottom of the last.
-            function hueAt(t) {
-                return (HUE_START - t * HUE_SWEEP + 360) % 360;
+            // The sweep at any point along it: 0 = top of the first panel,
+            // 1 = bottom of the last. Everything is a function of t, so any two
+            // panels agree exactly wherever they meet.
+            function colourAt(t) {
+                const hue = (HUE_START - t * HUE_SWEEP + 360) % 360;
+                const sat = TINT_SAT_TOP + (TINT_SAT - TINT_SAT_TOP) * t;
+                const val = TINT_VAL_TOP + (TINT_VAL - TINT_VAL_TOP) * t;
+                return hsvToRgb(hue, sat, val);
             }
 
             function tintPanel(el, index) {
                 const n = panelKeys.length;
-                // This panel's slice of the sweep. Its end hue is the next
-                // panel's start hue, so the run continues unbroken between boxes.
-                const top = hsvToRgb(hueAt(index / n), TINT_SAT, TINT_VAL);
-                const bottom = hsvToRgb(hueAt((index + 1) / n), TINT_SAT, TINT_VAL);
-                const mid = hsvToRgb(hueAt((index + 0.5) / n), TINT_SAT, TINT_VAL);
+                // This panel's slice of the sweep. Its end colour is the next
+                // panel's start colour, so the run continues unbroken between boxes.
+                const top = colourAt(index / n);
+                const bottom = colourAt((index + 1) / n);
+                const mid = colourAt((index + 0.5) / n);
                 const edge = mid.map(function (c) { return Math.min(255, Math.round(c * 1.16)); });
                 // Two layers. Listed first = painted on top: a black wash that
                 // knocks the tint back towards the right edge, stopping short of
