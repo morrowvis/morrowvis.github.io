@@ -162,7 +162,11 @@
                     ' linear-gradient(180deg,' +
                     ' rgba(' + top.join(', ') + ', ' + TINT_ALPHA + '),' +
                     ' rgba(' + bottom.join(', ') + ', ' + TINT_ALPHA + '))';
-                el.style.borderColor = 'rgba(' + edge.join(', ') + ', ' + TINT_BORDER_ALPHA + ')';
+                // Published as a custom property too: it inherits to the credit
+                // cards inside, so their outlines pick up this panel's colour.
+                const edgeColor = 'rgba(' + edge.join(', ') + ', ' + TINT_BORDER_ALPHA + ')';
+                el.style.setProperty('--panel-edge', edgeColor);
+                el.style.borderColor = edgeColor;
             }
 
             let lastGroup = null;
