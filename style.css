@@ -212,23 +212,19 @@ a:hover {
     border-bottom-color: transparent;
 }
 
-/* Home and Tools: a bright hero image sits under the transparent navbar, where
-   the gold hover colour is hard to read - black reads far better against it.
-   Limited to :not(.scrolled) because once scrolled the bar turns solid black,
-   where black-on-black would disappear; there the normal gold hover applies. */
-/* '> li > a' restricts this to the top-level links only. The dropdown items are
-   nested deeper (.nav-links > li > .dropdown-menu > li > a) and must keep the
-   gold hover - they sit on the menu's near-black panel, where black would be
-   invisible. */
+/* Home and Tools: a bright hero sits under the transparent navbar, where gold
+   is hard to read - black reads better. Three constraints are load-bearing:
+     :not(.scrolled)  - scrolled, the bar is solid black; black would vanish.
+     > li > a         - top-level links only; dropdown items sit on the menu's
+                        near-black panel and must keep the gold hover.
+     :not(.dropdown-toggle) on the border - these selectors outrank the rule
+                        that clears the Documentation underline. */
 body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover,
 body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover,
 body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active {
     color: #000000;
 }
 
-/* Border kept off the Documentation toggle, which deliberately has no underline
-   - these selectors outrank the .dropdown-toggle:hover rule that clears it, so
-   it has to be excluded here rather than relying on that. */
 body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
 body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
 body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.dropdown-toggle) {
@@ -1632,13 +1628,8 @@ footer .container p:last-child {
     margin: var(--spacing-xl) 0;
 }
 
-/* Coloured panels behind credit groups. I don't have file access to
-   screenshots/Overview.jpg to sample exact pixel values, so these are
-   approximations of typical Vvardenfell tones (ash amber, Red Mountain
-   ember, ashland olive, cavern slate) - swap the rgba() values below for
-   real sampled colours whenever you have them.
-   Only New Lands / Overhauls / Quests and Adventures / Dungeons get colour;
-   everything else uses the plain dark panel-black box. */
+/* On the credits page each panel's tint is set inline by the page's own script
+   (a hue sweep down the page); the classes below are for panels elsewhere. */
 .credits-panel {
     border-radius: 8px;
     padding: var(--spacing-lg);
@@ -1646,18 +1637,7 @@ footer .container p:last-child {
     border: 1px solid transparent;
 }
 
-/* Each panel is drawn from a different element of screenshots/Overview.jpg
-   rather than the scene's overall (grey, hazy) average - the haze desaturates
-   the whole image, but the individual regions do carry real hue:
-     newlands  - the gold sunlight on the water   (#705542, 25deg)
-     overhauls - the mauve sky / glacier / rock   (#60545e, 310deg)
-     quests    - the yellow-green foliage + glow  (#b8be7d, 65deg)
-     dungeons  - the volcanic rose-brown rock     (~10deg)
-   The hues stay distinct but the alpha is deliberately very low, so each panel
-   reads as near-black with only a hint of colour rather than a coloured block. */
-
-/* Fallback for any group without its own tint. Matches the Tools page cards'
-   background exactly, no top accent line. */
+/* Documentation index link panels. Matches the Tools page cards' background. */
 .credits-panel.panel-black {
     background-color: var(--accent-surface-subtle);
     border: 1px solid var(--border-color);

@@ -311,7 +311,8 @@ const CREDITS = [
     ["OAAB_Data", "https://www.nexusmods.com/morrowind/mods/49042"],
     ["Tamriel_Data", "https://www.nexusmods.com/morrowind/mods/44537"],
     ["Dr_Data", "https://www.nexusmods.com/morrowind/mods/51776?tab=posts"],
-    ["SOV_Data", "https://www.nexusmods.com/morrowind/mods/55322"]
+    ["SOV_Data", "https://www.nexusmods.com/morrowind/mods/55322"],
+    ["The Art of Morrowind - High Quality", "https://www.nexusmods.com/morrowind/mods/55590"]
   ]},
 
   { group: null, category: "Patches", items: [
