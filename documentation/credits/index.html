@@ -94,8 +94,9 @@
                 return a;
             }
 
-            // Panel tints sweep continuously down the page instead of being set
-            // per group, so neighbours always step by an even amount. Hue runs
+            // The panels together form ONE gradient running down the page: each
+            // one starts at its own hue and ends exactly where the next begins,
+            // at constant intensity, so the colour never resets per box. Hue runs
             // backwards from the Overview.jpg yellow through its warm arc into its
             // mauve/blue one: yellow > gold > amber > red > rose > violet > slate.
             // Position-derived, so it spans exactly the panels present.
@@ -104,8 +105,9 @@
             const TINT_SAT = 0.46;
             const TINT_VAL = 0.42;
             const TINT_ALPHA = 0.16;        // how much colour reaches the page
-            const TINT_ALPHA_FAR = 0.06;    // gradient's far stop
             const TINT_BORDER_ALPHA = 0.26;
+            const FADE_START = '30%';       // where the rightward fade to black begins
+            const FADE_STRENGTH = 0.65;     // how far it goes by the right edge (1 = full black)
 
             function hsvToRgb(h, s, v) {
                 const c = v * s;
@@ -128,16 +130,32 @@
                 if (panelKeys.indexOf(k) === -1) panelKeys.push(k);
             });
 
+            // Hue at any point along the sweep, 0 = top of the first panel,
+            // 1 = bottom of the last.
+            function hueAt(t) {
+                return (HUE_START - t * HUE_SWEEP + 360) % 360;
+            }
+
             function tintPanel(el, index) {
-                const t = panelKeys.length > 1 ? index / (panelKeys.length - 1) : 0;
-                const hue = (HUE_START - t * HUE_SWEEP + 360) % 360;
-                const base = hsvToRgb(hue, TINT_SAT, TINT_VAL);
-                const deep = base.map(function (c) { return Math.round(c * 0.53); });
-                const edge = base.map(function (c) { return Math.min(255, Math.round(c * 1.16)); });
+                const n = panelKeys.length;
+                // This panel's slice of the sweep. Its end hue is the next
+                // panel's start hue, so the run continues unbroken between boxes.
+                const top = hsvToRgb(hueAt(index / n), TINT_SAT, TINT_VAL);
+                const bottom = hsvToRgb(hueAt((index + 1) / n), TINT_SAT, TINT_VAL);
+                const mid = hsvToRgb(hueAt((index + 0.5) / n), TINT_SAT, TINT_VAL);
+                const edge = mid.map(function (c) { return Math.min(255, Math.round(c * 1.16)); });
+                // Two layers. Listed first = painted on top: a black wash that
+                // knocks the tint back towards the right edge, stopping short of
+                // full black so some colour survives there. Underneath, the hue
+                // sweep runs top-to-bottom (180deg) so it stays continuous with
+                // the panels above and below - hence the fade is horizontal, so
+                // the two don't fight each other.
                 el.style.backgroundImage =
-                    'linear-gradient(135deg,' +
-                    ' rgba(' + base.join(', ') + ', ' + TINT_ALPHA + '),' +
-                    ' rgba(' + deep.join(', ') + ', ' + TINT_ALPHA_FAR + '))';
+                    'linear-gradient(90deg, rgba(0, 0, 0, 0) ' + FADE_START +
+                    ', rgba(0, 0, 0, ' + FADE_STRENGTH + ') 100%),' +
+                    ' linear-gradient(180deg,' +
+                    ' rgba(' + top.join(', ') + ', ' + TINT_ALPHA + '),' +
+                    ' rgba(' + bottom.join(', ') + ', ' + TINT_ALPHA + '))';
                 el.style.borderColor = 'rgba(' + edge.join(', ') + ', ' + TINT_BORDER_ALPHA + ')';
             }
 
