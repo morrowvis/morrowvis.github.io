@@ -295,7 +295,8 @@ const CREDITS = [
     ["Improved Lights for All Shaders", "https://www.nexusmods.com/morrowind/mods/51463"],
     ["Smoking Yurts", "https://www.nexusmods.com/morrowind/mods/52281"],
     ["Furled Sails for Ships", "https://www.nexusmods.com/morrowind/mods/57521"],
-    ["Immersive Travel - MWSE", "https://www.nexusmods.com/morrowind/mods/54063", "Asset use"]
+    ["Immersive Travel - MWSE", "https://www.nexusmods.com/morrowind/mods/54063", "Asset use"],
+    ["Let There Be Darkness - Lua Lighting Overhaul", "https://www.nexusmods.com/morrowind/mods/47912"]
   ]},
 
   { group: null, category: "Bonus", items: [
