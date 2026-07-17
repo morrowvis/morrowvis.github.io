@@ -94,17 +94,18 @@
                 return a;
             }
 
-            // Panel tints are a continuous sweep down the page rather than a
-            // per-group colour, so neighbouring panels always step by an even
-            // amount instead of jumping around. Hue starts at the image's yellow
-            // and runs backwards through its warm arc and on into its mauve/blue
-            // one: yellow > gold > amber > red > rose > violet > indigo > slate.
-            // Derived from position, so it spans exactly the panels present and
-            // re-flows by itself if a group is added or removed.
-            const HUE_START = 60;   // the scene's yellow
-            const HUE_SWEEP = 190;  // degrees travelled backwards -> ends ~230 (slate)
-            const TINT_SAT = 0.38;
+            // Panel tints sweep continuously down the page instead of being set
+            // per group, so neighbours always step by an even amount. Hue runs
+            // backwards from the Overview.jpg yellow through its warm arc into its
+            // mauve/blue one: yellow > gold > amber > red > rose > violet > slate.
+            // Position-derived, so it spans exactly the panels present.
+            const HUE_START = 60;    // the scene's yellow
+            const HUE_SWEEP = 190;   // degrees travelled backwards -> ends ~230 (slate)
+            const TINT_SAT = 0.46;
             const TINT_VAL = 0.42;
+            const TINT_ALPHA = 0.16;        // how much colour reaches the page
+            const TINT_ALPHA_FAR = 0.06;    // gradient's far stop
+            const TINT_BORDER_ALPHA = 0.26;
 
             function hsvToRgb(h, s, v) {
                 const c = v * s;
@@ -134,8 +135,10 @@
                 const deep = base.map(function (c) { return Math.round(c * 0.53); });
                 const edge = base.map(function (c) { return Math.min(255, Math.round(c * 1.16)); });
                 el.style.backgroundImage =
-                    'linear-gradient(135deg, rgba(' + base.join(', ') + ', 0.11), rgba(' + deep.join(', ') + ', 0.04))';
-                el.style.borderColor = 'rgba(' + edge.join(', ') + ', 0.2)';
+                    'linear-gradient(135deg,' +
+                    ' rgba(' + base.join(', ') + ', ' + TINT_ALPHA + '),' +
+                    ' rgba(' + deep.join(', ') + ', ' + TINT_ALPHA_FAR + '))';
+                el.style.borderColor = 'rgba(' + edge.join(', ') + ', ' + TINT_BORDER_ALPHA + ')';
             }
 
             let lastGroup = null;
