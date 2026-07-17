@@ -259,10 +259,9 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
     margin-bottom: var(--spacing-md);
 }
 
-/* Equal top/bottom padding reserves clearance for the fixed navbar while still
-   leaving the content optically centred in the viewport. Previously this was
-   padding: 0, so on a short window the centred content rose right up under the
-   navbar - every other hero reserves space via .hero's 150px top padding. */
+/* Equal top/bottom padding: reserves clearance for the fixed navbar (the content
+   is only centred, so on a short window it would otherwise ride up under it)
+   while keeping it optically centred in the viewport. */
 .hero-home {
     min-height: 100vh;
     padding: 120px var(--spacing-md);
@@ -1033,9 +1032,8 @@ footer .container p:last-child {
     margin-bottom: 0;
 }
 
-/* Same low-alpha register as the credits panels: the hue is kept, but the fill
-   sits close to black so the card reads as a tint rather than a coloured block.
-   The bottom accent line is left strong - it's the identifying mark. */
+/* Fills sit near black so the cards read as a tint; the bottom accent line is
+   left strong, as it's what identifies each one. */
 .doc-nav-card--goals {
     border-bottom-color: rgba(80, 110, 180, 0.7);
     background-image: linear-gradient(180deg, rgba(30, 45, 80, 0.11), rgba(16, 26, 50, 0.04));
@@ -1457,12 +1455,10 @@ footer .container p:last-child {
     margin-top: var(--spacing-lg);
 }
 
-/* Subsection headings on the doc pages (Goals/Roadmap/NIF/JSON build these as
-   plain h3s). The default 1.5rem sat too close to the 2rem group title above
-   them, so step down to 1.25rem for a clearer hierarchy - which also matches
-   .credits-section-title.
-   :not([class]) keeps this off the Credits headings, which carry their own
-   classes and sizes; a plain '.doc-main h3' would outrank and break those. */
+/* Subsection headings (Goals/Roadmap/NIF/JSON build these as plain h3s), sized
+   to clear the 2rem group title above them.
+   :not([class]) is load-bearing: the Credits headings carry their own classes
+   and sizes, and a plain '.doc-main h3' would outrank and break them. */
 .doc-main h3:not([class]) {
     font-size: var(--font-size-lg);
 }
@@ -1537,9 +1533,8 @@ footer .container p:last-child {
     gap: var(--spacing-sm);
 }
 
-/* Neutral white tint rather than the gold accent wash - lifts the card slightly
-   off whatever panel it sits on without laying an unrelated gold film over the
-   sampled panel colours. */
+/* Neutral tint: lifts the card off whatever panel it sits on without casting a
+   colour over the panel's own tint. */
 .credit-card {
     display: flex;
     align-items: center;
@@ -1707,8 +1702,7 @@ footer .container p:last-child {
         padding: var(--spacing-sm);
     }
 
-    /* Was 2rem (font-size-2xl) - larger than the 1.5rem page <h1> on phones.
-       Bring group titles like "New Lands" back under the page title. */
+    /* Must stay under the page <h1>, which drops to 1.5rem here. */
     .credits-group-title {
         font-size: var(--font-size-xl);
     }
