@@ -1033,17 +1033,21 @@ footer .container p:last-child {
     margin-bottom: 0;
 }
 
-/* Border alpha matches the credits panels' (0.26). */
+/* Brighter than the credits panels' 0.26 - these are nav targets rather than
+   background tint, so the outline is doing the identifying. */
 .doc-nav-card--goals {
-    border-color: rgba(80, 110, 180, 0.26);
+    border-color: rgba(80, 110, 180, 0.45);
 }
 
 .doc-nav-card--roadmap {
-    border-color: rgba(150, 88, 42, 0.26);
+    border-color: rgba(150, 88, 42, 0.45);
 }
 
+/* Matches the colour at the top of the credits page's own gradient, so the card
+   previews the page it links to. Derived from that sweep's opening values
+   (hue 50, sat 0.82, val 0.58) - if those move, this needs moving with them. */
 .doc-nav-card--credits {
-    border-color: rgba(150, 118, 62, 0.26);
+    border-color: rgba(171, 137, 32, 0.45);
 }
 
 /* Each section heading sits under a rule. Matches .credits-divider's weight and
