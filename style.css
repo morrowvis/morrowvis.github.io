@@ -1009,8 +1009,10 @@ footer .container p:last-child {
     margin-top: var(--spacing-lg);
 }
 
+/* Same near-black fill as the .credit-card buttons further down the page - the
+   colour identifying each card lives in its border, not its background. */
 .doc-nav-card {
-    background-color: var(--accent-surface-subtle);
+    background-color: rgba(255, 255, 255, 0.008);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: var(--spacing-lg);
@@ -1022,7 +1024,7 @@ footer .container p:last-child {
 
 .doc-nav-card:hover {
     border-color: var(--primary-color);
-    background-color: var(--accent-surface-medium);
+    background-color: rgba(255, 255, 255, 0.035);
     transform: translateY(-4px);
     box-shadow: 0 8px 16px var(--accent-shadow);
 }
@@ -1031,23 +1033,17 @@ footer .container p:last-child {
     margin-bottom: 0;
 }
 
-/* Fills sit near black so the cards read as a tint; the whole outline carries
-   the colour that identifies each one. Border alpha matches the credits panels'
-   (0.26), keeping it only slightly stronger than the fill rather than a hard
-   line around a near-black box. */
+/* Border alpha matches the credits panels' (0.26). */
 .doc-nav-card--goals {
     border-color: rgba(80, 110, 180, 0.26);
-    background-image: linear-gradient(180deg, rgba(30, 45, 80, 0.11), rgba(16, 26, 50, 0.04));
 }
 
 .doc-nav-card--roadmap {
     border-color: rgba(150, 88, 42, 0.26);
-    background-image: linear-gradient(180deg, rgba(90, 52, 22, 0.11), rgba(55, 29, 12, 0.04));
 }
 
 .doc-nav-card--credits {
     border-color: rgba(150, 118, 62, 0.26);
-    background-image: linear-gradient(180deg, rgba(90, 70, 35, 0.11), rgba(55, 40, 16, 0.04));
 }
 
 /* Each section heading sits under a rule. Matches .credits-divider's weight and
