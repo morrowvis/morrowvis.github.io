@@ -1548,6 +1548,14 @@ footer .container p:last-child {
     min-width: 0;
 }
 
+/* Borrow the containing panel's edge colour so the cards read as part of it.
+   --panel-edge is set on the panel by the credits page script and inherits down;
+   the fallback covers cards in panels that don't set it (documentation index).
+   Must stay above :hover, which has equal specificity and needs to win. */
+.credits-panel .credit-card {
+    border-color: var(--panel-edge, var(--border-color));
+}
+
 .credit-card:hover {
     border-color: var(--primary-color);
     background-color: rgba(255, 255, 255, 0.035);
