@@ -1012,7 +1012,6 @@ footer .container p:last-child {
 .doc-nav-card {
     background-color: var(--accent-surface-subtle);
     border: 1px solid var(--border-color);
-    border-bottom: 4px solid var(--primary-color);
     border-radius: 4px;
     padding: var(--spacing-lg);
     transition: all 0.3s ease;
@@ -1032,20 +1031,22 @@ footer .container p:last-child {
     margin-bottom: 0;
 }
 
-/* Fills sit near black so the cards read as a tint; the bottom accent line is
-   left strong, as it's what identifies each one. */
+/* Fills sit near black so the cards read as a tint; the whole outline carries
+   the colour that identifies each one. Border alpha matches the credits panels'
+   (0.26), keeping it only slightly stronger than the fill rather than a hard
+   line around a near-black box. */
 .doc-nav-card--goals {
-    border-bottom-color: rgba(80, 110, 180, 0.7);
+    border-color: rgba(80, 110, 180, 0.26);
     background-image: linear-gradient(180deg, rgba(30, 45, 80, 0.11), rgba(16, 26, 50, 0.04));
 }
 
 .doc-nav-card--roadmap {
-    border-bottom-color: rgba(150, 88, 42, 0.7);
+    border-color: rgba(150, 88, 42, 0.26);
     background-image: linear-gradient(180deg, rgba(90, 52, 22, 0.11), rgba(55, 29, 12, 0.04));
 }
 
 .doc-nav-card--credits {
-    border-bottom-color: rgba(150, 118, 62, 0.7);
+    border-color: rgba(150, 118, 62, 0.26);
     background-image: linear-gradient(180deg, rgba(90, 70, 35, 0.11), rgba(55, 40, 16, 0.04));
 }
 
