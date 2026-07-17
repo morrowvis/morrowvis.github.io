@@ -255,7 +255,7 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
 .hero-logo {
     max-width: 100%;
     height: auto;
-    width: 600px; /* adjust to match your old text's visual width */
+    width: 600px;
     margin-bottom: var(--spacing-md);
 }
 
@@ -1638,8 +1638,12 @@ footer .container p:last-child {
     border: 1px solid var(--border-color);
 }
 
+/* Flat tint plus the same rightward fade the credits panels use (their script
+   applies it inline; this one is static, so it's declared here). The colour sits
+   in background-color, underneath the wash. */
 .credits-panel.panel-blue {
     background-color: rgba(30, 45, 80, 0.2);
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.65) 100%);
     border-color: rgba(45, 65, 110, 0.35);
 }
 
