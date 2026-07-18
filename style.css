@@ -259,12 +259,13 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
     margin-bottom: var(--spacing-md);
 }
 
-/* Equal top/bottom padding: reserves clearance for the fixed navbar (the content
-   is only centred, so on a short window it would otherwise ride up under it)
-   while keeping it optically centred in the viewport. */
+/* Top padding is the navbar's ~115px plus a real gap, so the logo keeps clear of
+   it at ANY viewport height. Matching the bottom padding (120px) would leave the
+   clearance depending entirely on centring slack, which disappears as the window
+   shortens - the content then rides up under the bar. */
 .hero-home {
     min-height: 100vh;
-    padding: 120px var(--spacing-md);
+    padding: 195px var(--spacing-md) 120px;
     margin-top: 0;
 }
 
@@ -345,7 +346,7 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
 /* On a short window that 100px gap is what makes the hero block too tall for the
    viewport, pushing the logo up toward the navbar. Tighten it so the block still
    fits. (Home is the only page with these buttons.) */
-@media (max-height: 800px) {
+@media (max-height: 900px) {
     .hero-buttons {
         margin-top: var(--spacing-lg);
     }
@@ -1444,12 +1445,18 @@ footer .container p:last-child {
     scroll-margin-top: 110px;
 }
 
-/* Panels add their own padding above the heading, so they need extra
-   scroll-margin to clear the fixed navbar without the panel's top edge
-   getting cut off. */
-.credits-panel h2,
-.credits-panel h3 {
+/* Two cases, and they need different offsets.
+   h2 opens a panel, so the panel's own padding (48px) plus the heading's margin
+   (16px) sit above it - anchoring at 110px would put the panel's top edge at
+   ~46px, behind the ~83px navbar, clipping it. 175px clears the whole box.
+   h3 sits mid-panel with nothing above it to protect, so it just needs to clear
+   the navbar like any other heading. */
+.credits-panel h2 {
     scroll-margin-top: 175px;
+}
+
+.credits-panel h3 {
+    scroll-margin-top: 110px;
 }
 
 .doc-content h3 {
