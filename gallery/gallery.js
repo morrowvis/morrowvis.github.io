@@ -124,9 +124,21 @@
 
         lbImg = lb.querySelector('.lightbox-img');
 
+        const prevBtn = lb.querySelector('.lightbox-prev');
+        const nextBtn = lb.querySelector('.lightbox-next');
+
         lb.querySelector('.lightbox-close').addEventListener('click', close);
-        lb.querySelector('.lightbox-prev').addEventListener('click', function () { show(index - 1); });
-        lb.querySelector('.lightbox-next').addEventListener('click', function () { show(index + 1); });
+        prevBtn.addEventListener('click', function () { show(index - 1); });
+        nextBtn.addEventListener('click', function () { show(index + 1); });
+
+        // Clicking an arrow must not leave it focused. It would stay focused
+        // silently, then the first arrow-key press makes the browser treat that
+        // focus as keyboard-driven - :focus-visible starts matching and pins the
+        // arrow visible and highlighted. Preventing the default on mousedown
+        // stops the button taking focus at all; Tab still focuses it normally.
+        [prevBtn, nextBtn].forEach(function (b) {
+            b.addEventListener('mousedown', function (e) { e.preventDefault(); });
+        });
 
         // Backdrop click closes; clicks on the image or controls must not.
         lb.addEventListener('click', function (e) {
