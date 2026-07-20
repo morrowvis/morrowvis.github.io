@@ -1971,3 +1971,14 @@ body.lightbox-open {
     .lightbox-prev { left: 8px; }
     .lightbox-next { right: 8px; }
 }
+
+/* Portrait phones: a landscape image only occupies a band across the middle, so
+   vertically-centred arrows sit on top of it. Drop them into the empty area
+   below instead, clear of the home indicator. */
+@media (orientation: portrait) and (max-width: 900px) {
+    .lightbox-nav {
+        top: auto;
+        bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+        transform: none;
+    }
+}
