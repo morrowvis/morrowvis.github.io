@@ -1762,10 +1762,15 @@ footer .container p:last-child {
     padding: 0 var(--spacing-md) var(--spacing-xl);
 }
 
-/* Even gutters in both directions - one gap value, no row/column split. */
+/* Even gutters in both directions - one gap value, no row/column split.
+   align-items: start stops the default stretch: the source images are not all
+   the same aspect (16:9 and 1.83:1 here), and stretching made the shorter one's
+   frame taller than its image, leaving dead space inside the border. Each frame
+   now takes its height from its own image, whatever aspect that is. */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: start;
     gap: var(--spacing-md);
     max-width: 1600px;
     margin: 0 auto;
@@ -1808,9 +1813,18 @@ footer .container p:last-child {
     position: fixed;
     inset: 0;
     z-index: 500;
-    background: rgba(0, 0, 0, 0.94);
+    background: #000000;
     align-items: center;
     justify-content: center;
+}
+
+/* Mobile browsers size a fixed element to the layout viewport, which the
+   address bar can overhang - dvh tracks the visible area instead, so the
+   lightbox genuinely covers the screen. */
+@supports (height: 100dvh) {
+    .lightbox {
+        height: 100dvh;
+    }
 }
 
 .lightbox.open {
@@ -1825,22 +1839,57 @@ body.lightbox-open {
 .lightbox-stage {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-md);
 }
 
+/* Explicit 100% rather than max-*: with only a max, an image smaller than the
+   stage renders at its natural size, so the 1600px thumbnail would show small
+   and then jump when the 3839px original replaced it. Sized this way both fill
+   the stage identically and only sharpness changes.
+   object-fit keeps the aspect intact - the image is never cropped.
+   pointer-events: none lets clicks reach the stage below, which closes; the
+   image now covers the whole viewport, so there is no backdrop left to click. */
 .lightbox-img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    pointer-events: none;
     transition: opacity 0.2s ease;
 }
 
-/* While the full-size file downloads, the upscaled thumbnail is showing. */
+/* Applied only once a load is known to be slow (see gallery.html). Fades the
+   outgoing image away rather than clearing it, so a cached image swaps straight
+   in with no black frame between. */
 .lightbox.is-loading .lightbox-img {
-    opacity: 0.55;
+    opacity: 0;
+}
+
+.lightbox-spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    margin: -22px 0 0 -22px;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    border-top-color: var(--gold-accent);
+    border-radius: 50%;
+    animation: lightboxSpin 0.8s linear infinite;
+    pointer-events: none;
+}
+
+.lightbox.is-loading .lightbox-spinner {
+    display: block;
+}
+
+@keyframes lightboxSpin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lightbox-spinner {
+        animation-duration: 2.4s;
+    }
 }
 
 .lightbox-close,
@@ -1874,6 +1923,9 @@ body.lightbox-open {
     font-size: 1.6rem;
 }
 
+/* Hidden until the pointer approaches that side of the screen (see gallery.html).
+   pointer-events is dropped with the opacity, so an invisible arrow can't
+   swallow a click meant for the backdrop. */
 .lightbox-nav {
     top: 50%;
     transform: translateY(-50%);
@@ -1881,29 +1933,34 @@ body.lightbox-open {
     height: 72px;
     border-radius: 4px;
     font-size: 1.4rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, color 0.2s ease,
+                border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.lightbox.show-prev .lightbox-prev,
+.lightbox.show-next .lightbox-next,
+.lightbox-nav:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Touch devices never fire the mousemove that reveals these, so show them. */
+@media (hover: none) {
+    .lightbox-nav {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 
 .lightbox-prev { left: 20px; }
 .lightbox-next { right: 20px; }
 
-.lightbox-count {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-}
-
 @media (max-width: 600px) {
     .gallery-section {
         padding-left: var(--spacing-sm);
         padding-right: var(--spacing-sm);
-    }
-
-    .lightbox-stage {
-        padding: var(--spacing-sm);
     }
 
     .lightbox-nav {
