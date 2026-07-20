@@ -10,11 +10,11 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Morrowind Visualisation Project">
     <meta property="og:title" content="Gallery">
-    <meta property="og:url" content="https://morrowvis.com/gallery">
+    <meta property="og:url" content="https://morrowvis.com/gallery/">
     <meta property="og:image" content="https://morrowvis.com/images/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body data-page="gallery">
@@ -32,12 +32,13 @@
 
     <div id="footerMount"></div>
 
-    <script>window.SITE_BASE = '';</script>
-    <script src="nav.js"></script>
-    <script src="gallery/gallery-data.js"></script>
+    <script>window.SITE_BASE = '../';</script>
+    <script src="../nav.js"></script>
+    <script src="gallery-data.js"></script>
     <script src="gallery.js"></script>
     <script>
-        initGallery({ mount: '#galleryGrid', images: GALLERY, base: 'gallery/' });
+        // base '' - the images sit alongside this page, in ./thumbs and ./full
+        initGallery({ mount: '#galleryGrid', images: GALLERY, base: '' });
     </script>
 </body>
 </html>
