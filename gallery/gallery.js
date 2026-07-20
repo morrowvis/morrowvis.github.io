@@ -36,14 +36,14 @@
         lb.classList.remove('show-prev', 'show-next');
     }
 
-    function show(i) {
+    // opening: true when the lightbox is being opened, false when navigating
+    // between images. The two want different behaviour for the image already
+    // sitting in the element - see below.
+    function show(i, opening) {
         index = (i + items.length) % items.length;
         const item = items[index];
         const wanted = index;
 
-        // The current image is deliberately left in place for now: it is only
-        // hidden if the next one turns out to be slow (below), so a cached image
-        // swaps straight in with no black frame between.
         clearTimeout(spinTimer);
         lb.classList.remove('is-loading');
 
@@ -69,6 +69,11 @@
             // on an image that was ready instantly.
             reveal();
         } else {
+            // Whatever is in the element is the previously viewed image. When
+            // navigating that is what we want - it holds the frame rather than
+            // flashing black. When opening it is a different picture entirely,
+            // so drop it instead of showing the wrong one.
+            if (opening) lbImg.removeAttribute('src');
             // Only once it's clearly slow: fades the previous image out and
             // brings the spinner up together.
             spinTimer = setTimeout(function () {
@@ -91,8 +96,13 @@
         }
         document.body.classList.add('lightbox-open');
 
+        // Set the image before the lightbox becomes visible. A cached image is
+        // then already in place for the first painted frame; assigning it after
+        // .open would show the previously viewed image for a frame while the new
+        // one decoded.
+        show(i, true);
+
         lb.classList.add('open');
-        show(i);
         lb.querySelector('.lightbox-close').focus();
     }
 
