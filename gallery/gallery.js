@@ -180,7 +180,9 @@
 
         if (!grid || !images.length) return;
 
-        const base = opts.base || 'gallery/';
+        // Not `opts.base || ...`: a page sitting inside its own gallery folder
+        // passes '' for base, which would fall through to the default.
+        const base = opts.base === undefined ? 'gallery/' : opts.base;
         const galleryPaths = {
             thumbs: opts.thumbs || (base + 'thumbs/'),
             full:   opts.full   || (base + 'full/')
