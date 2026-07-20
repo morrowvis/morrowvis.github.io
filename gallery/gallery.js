@@ -103,7 +103,11 @@
         document.body.classList.remove('lightbox-open');
         document.body.style.paddingRight = '';
         lb.style.right = '';
-        lbImg.removeAttribute('src');   // stop any in-flight download
+        // The last image is deliberately left in place. Assigning src never
+        // paints synchronously - even from cache the browser needs a frame to
+        // decode - and it holds the previous frame while that happens. Clearing
+        // it here left nothing to hold, so reopening flashed black. (This is
+        // exactly why arrow navigation never flashed.)
         index = -1;
         if (lastFocus) lastFocus.focus();
     }
