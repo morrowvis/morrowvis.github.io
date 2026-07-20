@@ -1855,6 +1855,13 @@ body.lightbox-open {
     transition: opacity 0.2s ease;
 }
 
+/* No src yet (first open, or cleared on close). Sized to fill the viewport, an
+   empty <img> paints as a full-screen broken-image box - a bordered frame with
+   the broken icon in the corner. Take it out of the flow until it has one. */
+.lightbox-img:not([src]) {
+    display: none;
+}
+
 /* Applied only once a load is known to be slow (see gallery.html). Fades the
    outgoing image away rather than clearing it, so a cached image swaps straight
    in with no black frame between. */
