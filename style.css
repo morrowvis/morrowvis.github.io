@@ -1784,7 +1784,7 @@ footer .container p:last-child {
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
-    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
 .gallery-item img {
@@ -1796,8 +1796,6 @@ footer .container p:last-child {
 .gallery-item:hover,
 .gallery-item:focus-visible {
     border-color: var(--primary-color);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px var(--accent-shadow);
     outline: none;
 }
 
