@@ -37,7 +37,7 @@
     const footerHTML =
         '<footer>' +
             '<div class="container">' +
-                '<p>The Elder Scrolls III: Morrowind &copy; Bethesda Softworks.' +
+                '<p>The Elder Scrolls III: Morrowind <span class="footer-bethesda">&copy; Bethesda Softworks.</span>' +
                     '<br>Morrowind Visualisation Project is an unofficial, fan-made project.</br>' +
                 '</p>' +
                 '<p><a href="https://www.youtube.com/@ms-arch">YouTube</a> <span class="footer-sep">|</span> ' +
