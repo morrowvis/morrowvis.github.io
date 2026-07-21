@@ -814,6 +814,20 @@ footer .container p:last-child {
         background-attachment: scroll;
     }
 
+    /* Content section right after a hero banner. Docs, tools, download and
+       orthographics all share this shape - a hero, then a <section> whose first
+       child is a grid - so one rule governs them all: trim the xl vertical
+       padding that's too much on small screens, and zero the first block's top
+       margin so it doesn't stack on top of the section's own top padding. */
+    .hero + section {
+        padding-top: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+    }
+
+    .hero + section > .container > :first-child {
+        margin-top: 0;
+    }
+
     .hero h1 {
         font-size: 2rem;
     }
@@ -1755,18 +1769,10 @@ footer .container p:last-child {
    the narrow screen. Landscape is deliberately left as-is. */
 @media (orientation: portrait) and (max-width: 1024px) {
     .orthographics-section {
-        /* Vertical padding was --spacing-xl (64px) top and bottom - too much on a
-           phone. Trim it so the content sits closer to the banner and footer. */
-        padding-top: var(--spacing-md);
-        padding-bottom: var(--spacing-md);
+        /* Extra horizontal trim so the wide ortho images get more of the narrow
+           screen. Vertical padding is handled globally by `.hero + section`. */
         padding-left: var(--spacing-sm);
         padding-right: var(--spacing-sm);
-    }
-
-    /* The grid is the section's only child, so this top margin just doubled the
-       section's top padding - drop it here to close the gap under the banner. */
-    .ortho-grid {
-        margin-top: 0;
     }
 
     /* The WIP note below the grid: tighten its gap from the images on phones. */
