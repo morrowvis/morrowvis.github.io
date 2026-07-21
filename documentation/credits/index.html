@@ -100,32 +100,18 @@
                 return a;
             }
 
-            // The panels together form ONE gradient running down the page: each
-            // one starts at its own hue and ends exactly where the next begins,
-            // at constant intensity, so the colour never resets per box. Hue runs
-            // backwards from the Overview.jpg yellow through its warm arc into its
-            // mauve/blue one: yellow > gold > amber > red > rose > violet > slate.
-            // Position-derived, so it spans exactly the panels present.
-            // 50, not 60: hue 60 is mathematically pure yellow (R=G) but reads
-            // olive/green at these low saturations - 50 carries enough red to
-            // read as yellow.
-            const HUE_START = 50;
-            const HUE_SWEEP = 180;   // degrees travelled backwards -> ends ~230 (slate)
-            // Saturation is high at the top and eases off down the sweep. Counter-
-            // intuitive, but over black the result is colour x alpha, so a dark
-            // low-saturation yellow is - by definition - brown. What reads as
-            // olive is the blue channel surviving; crushing it with saturation is
-            // what keeps it gold at this darkness. Lowering it (i.e. "paler") does
-            // the opposite.
-            const TINT_SAT_TOP = 0.82;
+            // One hue sweep down the panels (yellow -> slate), sampled from Overview.jpg.
+            const HUE_START = 50;           // 50 not 60: 60 reads olive when this dark
+            const HUE_SWEEP = 180;          // degrees swept, backwards -> ends ~230 (slate)
+            const TINT_SAT_TOP = 0.82;      // high sat keeps the top gold, not brown, over black
             const TINT_SAT = 0.46;
             const TINT_VAL_TOP = 0.58;
             const TINT_VAL = 0.42;
             const TINT_ALPHA = 0.16;        // how much colour reaches the page
             const TINT_BORDER_ALPHA = 0.26;
             const FADE_LEFT = 0.25;         // black already sitting on the left edge
-            const FADE_START = '30%';       // held to here, then the fade rightwards begins
-            const FADE_STRENGTH = 0.65;     // how far it goes by the right edge (1 = full black)
+            const FADE_START = '30%';       // held to here, then fades rightwards
+            const FADE_STRENGTH = 0.65;     // darkness at the right edge (1 = full black)
 
             function hsvToRgb(h, s, v) {
                 const c = v * s;
@@ -148,9 +134,7 @@
                 if (panelKeys.indexOf(k) === -1) panelKeys.push(k);
             });
 
-            // The sweep at any point along it: 0 = top of the first panel,
-            // 1 = bottom of the last. Everything is a function of t, so any two
-            // panels agree exactly wherever they meet.
+            // Colour at position t along the sweep (0 = top of first panel, 1 = bottom of last).
             function colourAt(t) {
                 const hue = (HUE_START - t * HUE_SWEEP + 360) % 360;
                 const sat = TINT_SAT_TOP + (TINT_SAT - TINT_SAT_TOP) * t;
@@ -160,18 +144,12 @@
 
             function tintPanel(el, index) {
                 const n = panelKeys.length;
-                // This panel's slice of the sweep. Its end colour is the next
-                // panel's start colour, so the run continues unbroken between boxes.
+                // This panel's slice; its bottom colour is the next panel's top, so the run is unbroken.
                 const top = colourAt(index / n);
                 const bottom = colourAt((index + 1) / n);
                 const mid = colourAt((index + 0.5) / n);
                 const edge = mid.map(function (c) { return Math.min(255, Math.round(c * 1.16)); });
-                // Two layers. Listed first = painted on top: a black wash that
-                // knocks the tint back towards the right edge, stopping short of
-                // full black so some colour survives there. Underneath, the hue
-                // sweep runs top-to-bottom (180deg) so it stays continuous with
-                // the panels above and below - hence the fade is horizontal, so
-                // the two don't fight each other.
+                // Horizontal black wash over the vertical hue sweep, so the fade doesn't break continuity.
                 el.style.backgroundImage =
                     'linear-gradient(90deg, rgba(0, 0, 0, ' + FADE_LEFT + ') 0%' +
                     ', rgba(0, 0, 0, ' + FADE_LEFT + ') ' + FADE_START +
@@ -179,8 +157,7 @@
                     ' linear-gradient(180deg,' +
                     ' rgba(' + top.join(', ') + ', ' + TINT_ALPHA + '),' +
                     ' rgba(' + bottom.join(', ') + ', ' + TINT_ALPHA + '))';
-                // Published as a custom property too: it inherits to the credit
-                // cards inside, so their outlines pick up this panel's colour.
+                // Exposed as a custom property so the cards inside inherit this panel's edge colour.
                 const edgeColor = 'rgba(' + edge.join(', ') + ', ' + TINT_BORDER_ALPHA + ')';
                 el.style.setProperty('--panel-edge', edgeColor);
                 el.style.borderColor = edgeColor;
@@ -252,9 +229,7 @@
                 currentPanel.appendChild(section);
             });
 
-            // These two headings are static markup rather than generated from
-            // CREDITS, so they never got the anchor treatment the rest do -
-            // which is why they weren't clickable links.
+            // Static headings (not generated from CREDITS) need the anchor added by hand.
             ['elder-scrolls-iii-morrowind', 'special-thanks'].forEach(function (id) {
                 const el = document.getElementById(id);
                 if (el) addHeadingAnchor(el, id);

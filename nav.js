@@ -1,23 +1,12 @@
-// Shared navbar + footer for every page.
-//
-// Usage: put an empty <div id="navbarMount"></div> as the first thing in <body>,
-// and an empty <div id="footerMount"></div> where the footer should go, then:
-//
-//   <script>window.SITE_BASE = '../../';</script>   <!-- path back to site root -->
-//   <script src="../../nav.js"></script>
-//
-// Set data-page on <body> (e.g. data-page="credits") to highlight the matching
-// nav link. Documentation subpages (goals/roadmap/credits/pipeline) also light
-// up the "Documentation" parent link.
+// Shared navbar + footer. Needs <div id="navbarMount"></div> and
+// <div id="footerMount"></div>, window.SITE_BASE = path to root, and
+// data-page on <body> to highlight the matching nav link.
 
 (function () {
     const BASE = window.SITE_BASE || '';
     const PAGE = document.body.dataset.page || '';
     const DOC_PAGES = ['documentation', 'goals', 'roadmap', 'credits', 'nif-to-ue5', 'json-to-ue5'];
 
-    // Same extension-less convention as the rest of the nav (download,
-    // orthographics, tools) - relies on the host serving directory indexes,
-    // same as every other link here.
     const HOME_HREF = BASE === '' ? './' : BASE;
 
     const navHTML =
@@ -96,20 +85,11 @@
         });
     }
 
-    // Menu state is only CSS classes, and nothing cleared them when the layout
-    // flipped between the desktop bar and the burger menu - so a class set in one
-    // mode lingered into the other, where it means something different. '.open'
-    // on the links list is the obvious one: inert on desktop, but exactly what
-    // reveals the burger panel. Reset everything when the breakpoint is crossed.
-    // Query must stay in step with the navbar breakpoint in style.css.
+    // Reset menu state when crossing the breakpoint - kept in step with style.css.
     const mobileNav = window.matchMedia('(max-width: 1024px), (orientation: landscape) and (max-height: 500px)');
 
     function closeAllMenus() {
-        // Crossing into mobile applies opacity:0 *and* its transition in the same
-        // style change, so the panel would animate down from the desktop bar's
-        // opacity:1 - i.e. flash open and fade out. Suppress the transition,
-        // force a reflow so the hidden state lands un-animated, then restore it
-        // so real toggles still fade.
+        // no-transition + reflow so the panel snaps shut instead of animating on resize.
         links.classList.add('no-transition');
 
         links.classList.remove('open');
@@ -118,7 +98,7 @@
             p.classList.remove('open');
         });
 
-        void links.offsetWidth; // reflow: commit the above with transitions off
+        void links.offsetWidth;   // force the reflow
         links.classList.remove('no-transition');
     }
 
@@ -128,11 +108,7 @@
         mobileNav.addListener(closeAllMenus); // Safari < 14
     }
 
-    // Dropdown open/close is driven entirely by JS (not CSS :hover) so it can
-    // be forgiving: closing is delayed briefly so a quick mouse movement
-    // across the small gap between the toggle and the menu doesn't slam it
-    // shut. Click still works for touch (first tap opens, click outside or
-    // on the toggle again closes/navigates).
+    // JS-driven dropdown (not CSS :hover) so the close can be delayed.
     let closeTimer = null;
 
     function openDropdown(parent) {
@@ -150,10 +126,7 @@
         }, 400);
     }
 
-    // Only wire hover-to-open on devices that actually hover. On touch, a tap
-    // fires a synthetic mouseenter which would open (then the same tap's click
-    // sees it as already-open and navigates) - which is exactly why tapping
-    // "Documentation" jumped straight to the page instead of showing sub-items.
+    // Hover-to-open only where hovering exists; on touch it would open-then-navigate.
     const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     if (canHover) {
@@ -172,9 +145,7 @@
             const parent = toggleLink.closest('.has-dropdown');
             if (!parent) return;
 
-            // Tapping the caret toggles the submenu open/closed and never
-            // navigates, so touch users can reveal the sub-items. The label
-            // text still follows the link to the Documentation page.
+            // The caret toggles the submenu; the label text still navigates.
             if (e.target.closest('.fa-caret-down')) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -186,9 +157,7 @@
                 return;
             }
 
-            // On hover devices the menu is already open by the time the label
-            // is clicked, so this just lets the link through; if somehow it's
-            // closed, open it rather than navigate on the first click.
+            // Hover already opened it; open (not navigate) if somehow still closed.
             if (canHover && !parent.classList.contains('open')) {
                 e.preventDefault();
                 openDropdown(parent);
