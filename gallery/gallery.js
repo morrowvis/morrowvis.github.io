@@ -68,9 +68,13 @@
 
         lb.classList.add('open');
         lb.querySelector('.lightbox-close').focus();
+
+        // Add a history entry so the phone's Back button closes the image (via
+        // popstate below) instead of navigating away from the gallery.
+        history.pushState({ lbOpen: true }, '');
     }
 
-    function close() {
+    function close(fromPopstate) {
         clearTimeout(spinTimer);
         hideNav();
         lb.classList.remove('open', 'is-loading');
@@ -79,6 +83,12 @@
         lb.style.right = '';
         index = -1;   // leave the last image in the element so reopening doesn't flash black
         if (lastFocus) lastFocus.focus();
+
+        // Balance the entry pushed on open. When Back closed the lightbox the
+        // browser already popped it (fromPopstate), so don't pop again.
+        if (fromPopstate !== true && history.state && history.state.lbOpen) {
+            history.back();
+        }
     }
 
     // Built once, shared by every gallery on the page.
@@ -100,7 +110,7 @@
         const prevBtn = lb.querySelector('.lightbox-prev');
         const nextBtn = lb.querySelector('.lightbox-next');
 
-        lb.querySelector('.lightbox-close').addEventListener('click', close);
+        lb.querySelector('.lightbox-close').addEventListener('click', function () { close(); });
         prevBtn.addEventListener('click', function () { show(index - 1); });
         nextBtn.addEventListener('click', function () { show(index + 1); });
 
@@ -143,6 +153,12 @@
             if (e.key === 'Escape') close();
             else if (e.key === 'ArrowLeft') show(index - 1);
             else if (e.key === 'ArrowRight') show(index + 1);
+        });
+
+        // Phone Back button (or browser Back) while the image is open: close it
+        // instead of leaving the page. The pushed entry has already been popped.
+        window.addEventListener('popstate', function () {
+            if (lb.classList.contains('open')) close(true);
         });
     }
 
