@@ -1975,9 +1975,11 @@ body.lightbox-open {
 .lightbox-next { right: 20px; }
 
 @media (max-width: 600px) {
+    /* Full-bleed thumbnails on phones: no side padding, so the single-column
+       grid spans the whole screen width (vertical gap between rows stays). */
     .gallery-section {
-        padding-left: var(--spacing-sm);
-        padding-right: var(--spacing-sm);
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .lightbox-nav {
