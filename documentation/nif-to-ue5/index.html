@@ -41,8 +41,7 @@
 
             SECTIONS.forEach(function (section) {
                 const id = docSlugify(section.title);
-                // Plain h3, matching how Goals/Roadmap render their section
-                // headings - rather than the 2rem credits-group-title.
+                // Plain h3, like Goals/Roadmap section headings.
                 const h3 = document.createElement('h3');
                 h3.textContent = section.title;
                 addHeadingAnchor(h3, id);

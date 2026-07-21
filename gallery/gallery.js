@@ -1,31 +1,13 @@
-// Reusable image gallery: a grid of thumbnails plus a full-screen lightbox.
-//
-// Usage:
-//   <div class="gallery-grid" id="galleryGrid"></div>
-//   <script src="gallery/gallery-data.js"></script>   <!-- defines GALLERY -->
-//   <script src="gallery.js"></script>
-//   <script>initGallery({ mount: '#galleryGrid', images: GALLERY, base: 'gallery/' });</script>
-//
-// Options:
-//   mount   grid container, element or selector          (required)
-//   images  array of { file, w, h } - as built by build_gallery.bat (required)
-//   base    folder containing thumbs/ and full/          (default 'gallery/')
-//   thumbs  override the thumbnails folder
-//   full    override the full-size folder
-//
-// initGallery can be called more than once on a page; every grid shares a
-// single lightbox, which adopts whichever gallery was clicked.
+// Reusable thumbnail grid + full-screen lightbox.
+// initGallery({ mount, images, base }) - images is the { file, w, h } list from
+// build_gallery.bat. Call it once per grid; all grids share one lightbox.
 
 (function () {
     'use strict';
 
-    // Loads faster than this never show a spinner - below roughly this long it
-    // reads as a glitch rather than as progress.
-    const SPINNER_DELAY = 180;
-    // Distance from either edge of the screen that reveals a nav arrow.
-    const EDGE_ZONE = 200;
-    // Travel before a touch drag counts as a swipe.
-    const SWIPE_MIN = 50;
+    const SPINNER_DELAY = 180;   // ms before a slow load shows the spinner
+    const EDGE_ZONE = 200;       // px from a screen edge that reveals an arrow
+    const SWIPE_MIN = 50;        // px of travel before a drag counts as a swipe
 
     let lb = null, lbImg = null;
     let items = [], paths = { thumbs: '', full: '' };
@@ -36,9 +18,7 @@
         lb.classList.remove('show-prev', 'show-next');
     }
 
-    // opening: true when the lightbox is being opened, false when navigating
-    // between images. The two want different behaviour for the image already
-    // sitting in the element - see below.
+    // opening: dropped the stale image on open, kept it while navigating.
     function show(i, opening) {
         index = (i + items.length) % items.length;
         const item = items[index];
@@ -64,18 +44,9 @@
         full.src = paths.full + item.file;
 
         if (full.complete) {
-            // Already in cache (revisit, or a local/fast disk): onload still
-            // fires async, so without this the spinner would flash for a frame
-            // on an image that was ready instantly.
-            reveal();
+            reveal();   // cached: onload still fires async, so reveal now
         } else {
-            // Whatever is in the element is the previously viewed image. When
-            // navigating that is what we want - it holds the frame rather than
-            // flashing black. When opening it is a different picture entirely,
-            // so drop it instead of showing the wrong one.
             if (opening) lbImg.removeAttribute('src');
-            // Only once it's clearly slow: fades the previous image out and
-            // brings the spinner up together.
             spinTimer = setTimeout(function () {
                 if (index === wanted) lb.classList.add('is-loading');
             }, SPINNER_DELAY);
@@ -85,10 +56,7 @@
     function openAt(i) {
         lastFocus = document.activeElement;
 
-        // Locking the body hides the page's scrollbar, which widens the viewport
-        // by its width - and since the lightbox is sized to the viewport, the
-        // image would visibly jump as it opened. Measure the scrollbar first and
-        // hold both the page and the lightbox at their pre-lock width.
+        // Hold page + lightbox at pre-lock width so hiding the scrollbar can't jump the image.
         const sbw = window.innerWidth - document.documentElement.clientWidth;
         if (sbw > 0) {
             document.body.style.paddingRight = sbw + 'px';
@@ -96,33 +64,24 @@
         }
         document.body.classList.add('lightbox-open');
 
-        // Set the image before the lightbox becomes visible. A cached image is
-        // then already in place for the first painted frame; assigning it after
-        // .open would show the previously viewed image for a frame while the new
-        // one decoded.
-        show(i, true);
+        show(i, true);   // set the image before .open so a cached one is there on the first frame
 
         lb.classList.add('open');
         lb.querySelector('.lightbox-close').focus();
     }
 
     function close() {
-        clearTimeout(spinTimer);   // else a pending spinner appears after closing
-        hideNav();                 // don't reappear pre-revealed next time
+        clearTimeout(spinTimer);
+        hideNav();
         lb.classList.remove('open', 'is-loading');
         document.body.classList.remove('lightbox-open');
         document.body.style.paddingRight = '';
         lb.style.right = '';
-        // The last image is deliberately left in place. Assigning src never
-        // paints synchronously - even from cache the browser needs a frame to
-        // decode - and it holds the previous frame while that happens. Clearing
-        // it here left nothing to hold, so reopening flashed black. (This is
-        // exactly why arrow navigation never flashed.)
-        index = -1;
+        index = -1;   // leave the last image in the element so reopening doesn't flash black
         if (lastFocus) lastFocus.focus();
     }
 
-    // Built once and shared by every gallery on the page.
+    // Built once, shared by every gallery on the page.
     function ensureLightbox() {
         if (lb) return;
 
@@ -145,32 +104,23 @@
         prevBtn.addEventListener('click', function () { show(index - 1); });
         nextBtn.addEventListener('click', function () { show(index + 1); });
 
-        // Clicking an arrow must not leave it focused. It would stay focused
-        // silently, then the first arrow-key press makes the browser treat that
-        // focus as keyboard-driven - :focus-visible starts matching and pins the
-        // arrow visible and highlighted. Preventing the default on mousedown
-        // stops the button taking focus at all; Tab still focuses it normally.
+        // Don't let a click focus an arrow, or a later key press pins it visible via :focus-visible.
         [prevBtn, nextBtn].forEach(function (b) {
             b.addEventListener('mousedown', function (e) { e.preventDefault(); });
         });
 
-        // Backdrop click closes; clicks on the image or controls must not.
         lb.addEventListener('click', function (e) {
-            // A swipe is followed by a click, which would otherwise close the
-            // lightbox the moment you tried to change image.
-            if (swiped) { swiped = false; return; }
+            if (swiped) { swiped = false; return; }   // the click that follows a swipe
             if (e.target === lb || e.target.classList.contains('lightbox-stage')) close();
         });
 
-        // Arrows stay hidden until the pointer nears that edge of the screen, so
-        // they don't sit over the image while you're looking at it.
+        // Reveal an arrow only when the pointer nears that edge.
         lb.addEventListener('mousemove', function (e) {
             lb.classList.toggle('show-prev', e.clientX < EDGE_ZONE);
             lb.classList.toggle('show-next', e.clientX > window.innerWidth - EDGE_ZONE);
         });
         lb.addEventListener('mouseleave', hideNav);
 
-        // Swipe left/right to move between images on touch.
         lb.addEventListener('touchstart', function (e) {
             if (e.touches.length !== 1) return;   // ignore pinch/zoom
             swiped = false;
@@ -182,8 +132,7 @@
             if (!e.changedTouches.length) return;
             const dx = e.changedTouches[0].clientX - touchX;
             const dy = e.changedTouches[0].clientY - touchY;
-            // Must be mostly horizontal, so a scroll-ish drag doesn't navigate.
-            if (Math.abs(dx) > SWIPE_MIN && Math.abs(dx) > Math.abs(dy)) {
+            if (Math.abs(dx) > SWIPE_MIN && Math.abs(dx) > Math.abs(dy)) {   // mostly horizontal
                 swiped = true;
                 show(index + (dx < 0 ? 1 : -1));
             }
@@ -206,8 +155,7 @@
 
         if (!grid || !images.length) return;
 
-        // Not `opts.base || ...`: a page sitting inside its own gallery folder
-        // passes '' for base, which would fall through to the default.
+        // Explicit undefined check: base may legitimately be ''.
         const base = opts.base === undefined ? 'gallery/' : opts.base;
         const galleryPaths = {
             thumbs: opts.thumbs || (base + 'thumbs/'),
@@ -224,9 +172,7 @@
 
             const img = document.createElement('img');
             img.src = galleryPaths.thumbs + item.file;
-            // Intrinsic size from the manifest: lets the browser reserve the slot
-            // before the image arrives, so the grid doesn't jump.
-            img.width = item.w;
+            img.width = item.w;     // manifest dimensions reserve the slot, so the grid doesn't jump
             img.height = item.h;
             img.loading = 'lazy';
             img.decoding = 'async';
@@ -234,8 +180,7 @@
 
             btn.appendChild(img);
             btn.addEventListener('click', function () {
-                // Point the shared lightbox at this grid's images.
-                items = images;
+                items = images;   // point the shared lightbox at this grid
                 paths = galleryPaths;
                 openAt(i);
             });
