@@ -42,7 +42,7 @@
                 '</p>' +
                 '<p><a href="https://www.youtube.com/@ms-arch">YouTube</a> <span class="footer-sep">|</span> ' +
                 '<a href="https://github.com/ms-morrowvis">GitHub</a> <span class="footer-sep">|</span> ' +
-                '<a href="https://ms-arch.gitbook.io/morrowind-visualisation-project/">GitBook</a></p>' +
+                '<a href="https://ms-arch.gitbook.io/morrowvis/">GitBook</a></p>' +
             '</div>' +
         '</footer>';
 
