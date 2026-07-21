@@ -802,16 +802,20 @@ footer .container p:last-child {
         font-size: 1.5rem;
     }
 
+    /* All heroes (incl. the homepage's hero-home): a fixed background repaints
+       against the viewport on scroll, which on mobile leaves a flickering seam
+       along the image's bottom edge - pin it to the element instead. */
     .hero {
-        min-height: 220px;
-        padding: var(--spacing-md) var(--spacing-md);
-        /* Was 10rem: sized for the desktop navbar. The mobile navbar is ~83px,
-           so clear it with a smaller gap (matches the doc pages' 105px top). */
-        padding-top: 105px;
-        /* A fixed background repaints against the viewport on scroll, which on
-           mobile leaves a flickering seam along the image's bottom edge. Pin it
-           to the element instead. */
         background-attachment: scroll;
+    }
+
+    /* Content-page banners only - NOT the homepage's full-screen hero-home,
+       which keeps its tall, spacious layout. Clear the ~83px mobile navbar and
+       give a compact but not-too-short banner. */
+    .hero:not(.hero-home) {
+        min-height: 260px;
+        padding: var(--spacing-md) var(--spacing-md);
+        padding-top: 105px;
     }
 
     /* Content section right after a hero banner. Docs, tools, download and
@@ -819,19 +823,19 @@ footer .container p:last-child {
        child is a grid - so one rule governs them all: trim the xl vertical
        padding that's too much on small screens, and zero the first block's top
        margin so it doesn't stack on top of the section's own top padding. */
-    .hero + section {
+    .hero:not(.hero-home) + section {
         padding-top: var(--spacing-md);
         padding-bottom: var(--spacing-md);
     }
 
-    .hero + section > .container > :first-child {
+    .hero:not(.hero-home) + section > .container > :first-child {
         margin-top: 0;
     }
 
     /* ...and the last block's bottom margin (e.g. the trailing gap under the
        final panel on the documentation index) so it doesn't add to the
        section's bottom padding. */
-    .hero + section > .container > :last-child {
+    .hero:not(.hero-home) + section > .container > :last-child {
         margin-bottom: 0;
     }
 
