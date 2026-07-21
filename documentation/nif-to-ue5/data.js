@@ -7,7 +7,7 @@ const SECTIONS = [
       {
         subtitle: "NIF to glTF",
         items: [
-          'Every object is exported from Morrowind using <a href="https://github.com/ms-arch-mvp/Export_Cells">Export Cells</a>.',
+          'Every object is exported from Morrowind using <a href="https://github.com/ms-morrowvis/Export_Cells">Export Cells</a>.',
           "All files are batch processed as Blender files.",
           "The imports simplify node switching and Glow in the Dahrk geometry.",
           "The meshes are merged.",
@@ -44,7 +44,7 @@ const SECTIONS = [
       "A throttle limit ($MaxJobs, default 20) controls how many Blender instances run simultaneously.",
       "Once all files are dispatched, the script enters a final loop that waits for every remaining process to finish before moving on to the next stage (glTF export, merging, finalization, etc.).",
       "Each Blender instance runs independently with its own arguments and writes its own output file.",
-      'Parallelization is similarly used in <a href="https://github.com/ms-arch-mvp/Morrowind_Thumbnail_Generator">Morrowind Thumbnail Generator</a>.'
+      'Parallelization is similarly used in <a href="https://github.com/ms-morrowvis/Morrowind_Thumbnail_Generator">Morrowind Thumbnail Generator</a>.'
     ]
   }
 ];

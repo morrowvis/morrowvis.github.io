@@ -4,7 +4,7 @@ const SECTIONS = [
   {
     title: "JSONs",
     items: [
-      'Every world cell is exported from Morrowind using <a href="https://github.com/ms-arch-mvp/Export_Cells">Export Cells</a> as a JSON file that includes all references and no landscape.',
+      'Every world cell is exported from Morrowind using <a href="https://github.com/ms-morrowvis/Export_Cells">Export Cells</a> as a JSON file that includes all references and no landscape.',
       "Interior cells that are being targeted in the project are all exported as JSON files."
     ]
   },
