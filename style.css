@@ -862,16 +862,6 @@ footer .container p:last-child {
     .has-dropdown {
         width: 100%;
     }
-
-    /* In the burger menu, "Documentation" is just a plain link to the docs
-       page - drop the nested submenu and its caret entirely to keep it tidy. */
-    .dropdown-menu {
-        display: none !important;
-    }
-
-    .dropdown-toggle .fa-caret-down {
-        display: none;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1033,6 +1023,52 @@ footer .container p:last-child {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text-muted);
+}
+
+/* Mobile: the Documentation submenu becomes an inline accordion inside the
+   burger menu. The caret to the right of the label toggles it (see nav.js); it
+   opens in flow and pushes the items below it down, rather than floating as the
+   desktop popup does. Placed after the base rules above so it wins on order
+   (they're higher up the file), which is why the old code needed !important. */
+@media (max-width: 1024px), (orientation: landscape) and (max-height: 500px) {
+    /* Caret sits at the far right of the row and is the tap target that expands. */
+    .dropdown-toggle .fa-caret-down {
+        display: inline-block;
+        float: right;
+        margin: 0;
+        padding: 0.15em 0.4em;
+        font-size: 1em;
+        transition: transform 0.2s ease;
+    }
+
+    .nav-links li.has-dropdown.open .dropdown-toggle .fa-caret-down {
+        transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        min-width: 0;
+        margin-top: 0;
+        padding: 0 0 var(--spacing-xs);
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        transition: none;
+    }
+
+    .nav-links li.has-dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    /* Indent the nested items so they read as under Documentation. */
+    .dropdown-menu a {
+        padding-left: var(--spacing-lg);
+        white-space: normal;
+    }
 }
 
 /* Doc nav cards */
@@ -1740,7 +1776,14 @@ footer .container p:last-child {
     }
 
     .doc-content {
-        padding-bottom: var(--spacing-lg);
+        padding-bottom: var(--spacing-md);
+    }
+
+    /* The injected doc content ends in a list/section whose trailing bottom
+       margin (a between-blocks separator) is dead space on the last one - drop
+       it so the content sits a consistent distance above the footer. */
+    .doc-main > :last-child > :last-child {
+        margin-bottom: 0;
     }
 
     .doc-content .container,
