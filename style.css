@@ -803,9 +803,11 @@ footer .container p:last-child {
     }
 
     .hero {
-        min-height: 300px;
-        padding: var(--spacing-lg) var(--spacing-md);
-        padding-top: 10rem;
+        min-height: 220px;
+        padding: var(--spacing-md) var(--spacing-md);
+        /* Was 10rem: sized for the desktop navbar. The mobile navbar is ~83px,
+           so clear it with a smaller gap (matches the doc pages' 105px top). */
+        padding-top: 105px;
         /* A fixed background repaints against the viewport on scroll, which on
            mobile leaves a flickering seam along the image's bottom edge. Pin it
            to the element instead. */
@@ -1703,21 +1705,27 @@ footer .container p:last-child {
 }
 
 @media (max-width: 600px) {
-    /* Reclaim horizontal space on phones - the stacked container + section +
-       panel paddings were squeezing the credit/goal boxes. */
-    .doc-content {
+    /* Consistent, tighter page heading on phones. The 160px top clears the
+       desktop navbar (~115px), but the mobile navbar is ~83px so it left too
+       big a gap. Same left inset so the Goals / Credits / Gallery headings land
+       in the same spot instead of at 16 / 32 / 48px. (Gallery is done in the
+       gallery mobile block below - its base rule is defined later in the file,
+       so it has to be overridden after that to win on source order.) */
+    .doc-content,
+    .credits-hero {
+        padding-top: 105px;
         padding-left: var(--spacing-sm);
         padding-right: var(--spacing-sm);
     }
 
-    .doc-content .container {
+    .doc-content {
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .doc-content .container,
+    .credits-hero .container {
         padding-left: 0;
         padding-right: 0;
-    }
-
-    .credits-hero {
-        padding-left: var(--spacing-sm);
-        padding-right: var(--spacing-sm);
     }
 
     .credits-panel {
@@ -1824,6 +1832,10 @@ footer .container p:last-child {
     background: #000000;
     align-items: center;
     justify-content: center;
+    /* Claim touch gestures for our swipe handler so a horizontal drag changes
+       image instead of the browser scrolling / back-swiping the page. */
+    touch-action: none;
+    overscroll-behavior: contain;
 }
 
 /* Mobile browsers size a fixed element to the layout viewport, which the
@@ -1978,6 +1990,21 @@ body.lightbox-open {
     /* Full-bleed thumbnails on phones: no side padding, so the single-column
        grid spans the whole screen width (vertical gap between rows stays). */
     .gallery-section {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: var(--spacing-lg);
+    }
+
+    /* Heading: match the doc/credits position + tighter top. The base
+       .gallery-hero is defined earlier in the file, so this override lives here
+       (after it) to win on source order. */
+    .gallery-hero {
+        padding-top: 105px;
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .gallery-hero .container {
         padding-left: 0;
         padding-right: 0;
     }
