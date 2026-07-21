@@ -912,6 +912,16 @@ footer .container p:last-child {
     gap: var(--spacing-lg);
 }
 
+/* Bigger click target for thin wordmarks (Tamriel Rebuilt is a ~23px strip)
+   without changing the layout: the padding grows the hit area, and an equal
+   negative margin pulls the surrounding logos back to exactly where they were,
+   so nothing moves visually. */
+.partners-logos a {
+    display: inline-flex;
+    padding: 22px;
+    margin: -22px;
+}
+
 .partners-logos img {
     height: auto;
 }
