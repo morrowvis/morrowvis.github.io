@@ -1,14 +1,11 @@
-// Shared sidebar + heading-anchor helpers for the Documentation pages
-// (Goals, Roadmap, Credits). Each page builds its own tree from its own
-// data file and calls renderDocSidebar() once the content is in the DOM.
+// Shared sidebar + heading-anchor helpers. Each doc page builds its own tree
+// and calls renderDocSidebar() once its content is in the DOM.
 
 window.docSlugify = function (s) {
     return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 };
 
-// Gives a heading a real id, and turns its own text into a link to itself
-// (rather than a separate decorative symbol), so hovering it shows it's
-// linkable and right-click > copy link works normally.
+// Gives a heading an id and wraps its text in a self-link (so copy-link works).
 window.addHeadingAnchor = function (headingEl, id) {
     headingEl.id = id;
     const text = headingEl.textContent;
@@ -142,8 +139,7 @@ window.renderDocSidebar = function (mountEl, tree) {
     nav.appendChild(ul);
     mountEl.appendChild(nav);
 
-    // Mobile: turn the sidebar into a slide-in drawer with a floating toggle
-    // button and a backdrop, GitBook-style.
+    // Mobile: floating "Contents" button + backdrop that open the drawer.
     const toggleBtn = document.createElement('button');
     toggleBtn.type = 'button';
     toggleBtn.className = 'doc-sidebar-mobile-toggle';
@@ -173,8 +169,7 @@ window.renderDocSidebar = function (mountEl, tree) {
     });
     backdrop.addEventListener('click', closeDrawer);
 
-    // Highlight (but never auto-open) whichever entry matches the section
-    // currently in view.
+    // Highlight (never auto-open) the entry for the section in view.
     function clearActive() {
         allLinks.forEach(function (a) { a.classList.remove('active'); });
         parentRows.forEach(function (p) { p.row.classList.remove('active'); });
