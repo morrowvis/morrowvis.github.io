@@ -828,6 +828,13 @@ footer .container p:last-child {
         margin-top: 0;
     }
 
+    /* ...and the last block's bottom margin (e.g. the trailing gap under the
+       final panel on the documentation index) so it doesn't add to the
+       section's bottom padding. */
+    .hero + section > .container > :last-child {
+        margin-bottom: 0;
+    }
+
     .hero h1 {
         font-size: 2rem;
     }
@@ -1745,6 +1752,23 @@ footer .container p:last-child {
     /* The 64px gap above the footer is a lot on a phone - halve it site-wide. */
     footer {
         margin-top: var(--spacing-md);
+    }
+
+    /* Stack + centre the footer on phones (desktop keeps left/right split). */
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    footer .container p:first-child,
+    footer .container p:last-child {
+        text-align: center;
+    }
+
+    /* "© Bethesda Softworks" drops to its own line on phones. */
+    .footer-bethesda {
+        display: block;
     }
 
     .credits-panel {
