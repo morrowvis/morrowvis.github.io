@@ -31,11 +31,11 @@ const GOALS_HINT = [
 const GOALS_SECTIONS = [
   {
     title: "Export Cells",
-    seeAlso: 'See <a href="https://github.com/ms-morrowvis/Export_Cells">Export Cells</a> on GitHub.',
+    seeAlso: 'See <a href="https://github.com/morrowvis/Export_Cells">Export Cells</a> on GitHub.',
     items: [
       "Develop a robust, artist-friendly framework for exporting modded cells from Morrowind using MWSE.",
       "Design the JSON exporter module to streamline complexity and readability.",
-      'Develop <a href="https://github.com/ms-morrowvis/io_scene_mw_mvp">io_scene_mw_mvp</a> to effectively handle imports from Export Cells.',
+      'Develop <a href="https://github.com/morrowvis/io_scene_mw_mvp">io_scene_mw_mvp</a> to effectively handle imports from Export Cells.',
       "Develop extended export modes to handle multiple scenarios."
     ]
   },
