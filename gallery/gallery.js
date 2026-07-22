@@ -12,7 +12,7 @@
     let lb = null, lbImg = null;
     let items = [], paths = { thumbs: '', full: '' };
     let index = -1, lastFocus = null, spinTimer = null;
-    let touchX = 0, touchY = 0, swiped = false;
+    let touchX = 0, touchY = 0, swiped = false, multiTouch = false;
 
     function hideNav() {
         lb.classList.remove('show-prev', 'show-next');
@@ -132,13 +132,16 @@
         lb.addEventListener('mouseleave', hideNav);
 
         lb.addEventListener('touchstart', function (e) {
-            if (e.touches.length !== 1) return;   // ignore pinch/zoom
+            if (e.touches.length > 1) { multiTouch = true; return; }   // pinch-zoom, not a swipe
+            multiTouch = false;
             swiped = false;
             touchX = e.touches[0].clientX;
             touchY = e.touches[0].clientY;
         }, { passive: true });
 
         lb.addEventListener('touchend', function (e) {
+            if (e.touches.length > 0) return;              // wait for the last finger up
+            if (multiTouch) { multiTouch = false; return; }   // the gesture was a pinch-zoom
             if (!e.changedTouches.length) return;
             const dx = e.changedTouches[0].clientX - touchX;
             const dy = e.changedTouches[0].clientY - touchY;

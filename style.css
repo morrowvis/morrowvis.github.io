@@ -1934,9 +1934,10 @@ footer .container p:last-child {
     background: #000000;
     align-items: center;
     justify-content: center;
-    /* Claim touch gestures for our swipe handler so a horizontal drag changes
-       image instead of the browser scrolling / back-swiping the page. */
-    touch-action: none;
+    /* Allow pinch-zoom of the image, but nothing else: single-finger panning
+       stays disabled so a horizontal drag runs our swipe handler (changes image)
+       instead of scrolling / back-swiping the page. */
+    touch-action: pinch-zoom;
     overscroll-behavior: contain;
 }
 
