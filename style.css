@@ -1073,6 +1073,11 @@ footer .container p:last-child {
         padding-left: var(--spacing-lg);
         white-space: normal;
     }
+
+    /* The "Pipeline" group label lines up with those items, not its base indent. */
+    .dropdown-menu .dropdown-label {
+        padding-left: var(--spacing-lg);
+    }
 }
 
 /* Doc nav cards */
