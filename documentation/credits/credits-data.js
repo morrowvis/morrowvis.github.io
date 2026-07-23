@@ -288,7 +288,7 @@ const CREDITS = [
     ["The Wake of Hanin - Ibar-Dad Overhaul", "https://www.nexusmods.com/morrowind/mods/56206"],
     ["Drethos Ancestral Tomb", "https://www.nexusmods.com/morrowind/mods/53481"],
     ["Daedric Shrine Overhaul Vaermina", "https://www.nexusmods.com/morrowind/mods/53242"],
-    ["Kumarahaz - The Bandit Lair", "https://www.nexusmods.com/morrowind/mods/56192"]
+    ["Kumarahaz - The Bandit Lair", "https://www.nexusmods.com/morrowind/mods/56192"],
     ["Unholy Trinity - Dagoth Ur - Vemynal - Odrosal Remade", "https://www.nexusmods.com/morrowind/mods/55564"]
   ]},
 
