@@ -473,5 +473,6 @@ const SPECIAL_THANKS = [
   ["Greg Coulthard", "https://www.youtube.com/@gregcoulthard5565"],
   ["Krystian Komisarek (Imaginary Blend)", "https://imaginaryblend.com/"],
   ["Iraisynn Attinom", "https://iraisynn.attinom.net/"],
-  ["PS Studios", "https://www.fab.com/sellers/PS%20Studios"]
+  ["PS Studios", "https://www.fab.com/sellers/PS%20Studios"],
+  ["NiceShadow", "https://www.fab.com/sellers/NiceShadow?lang=en"]
 ];
