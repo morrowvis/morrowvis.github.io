@@ -297,7 +297,9 @@ const CREDITS = [
     ["Smoking Yurts", "https://www.nexusmods.com/morrowind/mods/52281"],
     ["Furled Sails for Ships", "https://www.nexusmods.com/morrowind/mods/57521"],
     ["Immersive Travel - MWSE", "https://www.nexusmods.com/morrowind/mods/54063", "Asset use"],
-    ["Let There Be Darkness - Lua Lighting Overhaul", "https://www.nexusmods.com/morrowind/mods/47912"]
+    ["Let There Be Darkness - Lua Lighting Overhaul", "https://www.nexusmods.com/morrowind/mods/47912"],
+    ["Dwemer Lightning Rods", "https://www.nexusmods.com/morrowind/mods/50236"],
+    ["OAAB Scroll Qualities", "https://www.nexusmods.com/morrowind/mods/49045"]
   ]},
 
   { group: null, category: "Bonus", items: [
