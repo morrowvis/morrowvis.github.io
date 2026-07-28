@@ -41,7 +41,9 @@
             clearTimeout(spinTimer);
             lb.classList.remove('is-loading');
         };
-        full.src = paths.full + item.file;
+        // Thumbs are JPG, full images are WebP (near-lossless). The manifest
+        // stores the .jpg (thumb) name; swap the extension for the full image.
+        full.src = paths.full + item.file.replace(/\.jpe?g$/i, '.webp');
 
         if (full.complete) {
             reveal();   // cached: onload still fires async, so reveal now
