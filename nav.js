@@ -15,7 +15,7 @@
                 '<div class="logo"><h1><a href="' + HOME_HREF + '">MVP</a></h1></div>' +
                 '<ul class="nav-links" id="navLinks">' +
                     '<li><a href="' + BASE + 'download" data-page="download">Download</a></li>' +
-                    '<li><a href="' + BASE + 'orthographics" data-page="orthographics">Orthographics</a></li>' +
+                    '<li><a href="' + BASE + 'orthographics/" data-page="orthographics">Orthographics</a></li>' +
                     '<li><a href="' + BASE + 'tools" data-page="tools">Tools</a></li>' +
                     '<li class="has-dropdown">' +
                         '<a href="' + BASE + 'documentation/" class="dropdown-toggle" data-page="documentation">Documentation <i class="fa fa-caret-down"></i></a>' +
