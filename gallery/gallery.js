@@ -84,7 +84,16 @@
         document.body.style.paddingRight = '';
         lb.style.right = '';
         index = -1;   // leave the last image in the element so reopening doesn't flash black
-        if (lastFocus) lastFocus.focus();
+
+        // Restore focus to the thumbnail that opened the lightbox - but NOT when the
+        // phone/browser Back button closed it. Back isn't a pointer action, so
+        // re-focusing the thumb lights up its :focus-visible ring and leaves it
+        // highlighted after the grid returns. Drop focus instead on that path.
+        if (fromPopstate === true) {
+            if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+        } else if (lastFocus) {
+            lastFocus.focus();
+        }
 
         // Balance the entry pushed on open. When Back closed the lightbox the
         // browser already popped it (fromPopstate), so don't pop again.
