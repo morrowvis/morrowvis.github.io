@@ -1854,6 +1854,34 @@ footer .container p:last-child {
     .credits-group-title {
         font-size: var(--font-size-xl);
     }
+
+    /* Doc index (main documentation page): tighten the vertical rhythm on phones -
+       the desktop card gaps, card padding and section-heading gaps leave big
+       stretches of empty space once everything stacks into one column. */
+    body[data-page="documentation"] .about {
+        padding-top: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+    }
+
+    .doc-nav-grid {
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+    }
+
+    .doc-nav-card {
+        padding: var(--spacing-md);
+    }
+
+    .pipeline-title,
+    .doc-nav-grid + .pipeline-title {
+        margin-top: var(--spacing-lg);
+        padding-top: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .doc-tools-panel {
+        margin-bottom: var(--spacing-md);
+    }
 }
 
 /* Orthographics: tighten padding in portrait only so the images get more of
