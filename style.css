@@ -238,6 +238,10 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
     cursor: pointer;
 }
 
+.nav-toggle svg {
+    display: block;
+}
+
 /* Hero Section */
 .hero {
     background: center/cover no-repeat fixed;
