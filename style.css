@@ -1402,7 +1402,9 @@ footer .container p:last-child {
         max-width: 80vw;
         background-color: var(--dark-bg);
         border-left: 1px solid var(--border-color);
-        padding: 90px var(--spacing-md) var(--spacing-md);
+        /* Small top gap only: the drawer sits above the navbar and fully covers it,
+           so it doesn't need the old ~90px allowance to clear it. */
+        padding: 40px var(--spacing-md) var(--spacing-md);
         overflow-y: auto;
         transform: translateX(100%);
         transition: transform 0.25s ease;
