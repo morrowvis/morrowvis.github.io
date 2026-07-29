@@ -242,6 +242,19 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
     display: block;
 }
 
+/* Hamburger morphs to an X when the menu is open: outer bars rotate to cross,
+   middle bar fades. transform-box:fill-box makes each bar rotate about its own
+   centre; the translateY matches the 10-unit bar spacing so the X stays centred. */
+.nav-toggle svg line {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.navbar.menu-open .nav-toggle svg line:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.navbar.menu-open .nav-toggle svg line:nth-child(2) { opacity: 0; }
+.navbar.menu-open .nav-toggle svg line:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
 /* Hero Section */
 .hero {
     background: center/cover no-repeat fixed;
