@@ -30,7 +30,7 @@
                         '</ul>' +
                     '</li>' +
                 '</ul>' +
-                '<a href="javascript:void(0);" class="nav-toggle" id="navToggle" aria-label="Menu"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>' +
+                '<a href="javascript:void(0);" class="nav-toggle" id="navToggle" aria-label="Menu"><svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><line x1="5" y1="6" x2="27" y2="6"/><line x1="5" y1="16" x2="27" y2="16"/><line x1="5" y1="26" x2="27" y2="26"/></svg></a>' +
             '</div>' +
         '</nav>';
 
