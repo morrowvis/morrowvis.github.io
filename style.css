@@ -1416,7 +1416,7 @@ footer .container p:last-child {
     .doc-sidebar-mobile-toggle {
         display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
         position: fixed;
         /* Sit clear of the mobile browser's bottom toolbar / home indicator so
            it isn't cut off on initial load before the address bar collapses. */
@@ -1426,10 +1426,11 @@ footer .container p:last-child {
         background-color: var(--primary-color);
         color: #000000;
         border: 1px solid var(--border-color);
-        border-radius: 999px;
-        padding: 12px 18px;
-        font-size: 0.9rem;
-        font-weight: 600;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        padding: 0;
+        font-size: 1.2rem;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         cursor: pointer;
         z-index: 405;

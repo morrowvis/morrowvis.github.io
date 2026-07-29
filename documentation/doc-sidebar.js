@@ -143,7 +143,8 @@ window.renderDocSidebar = function (mountEl, tree) {
     const toggleBtn = document.createElement('button');
     toggleBtn.type = 'button';
     toggleBtn.className = 'doc-sidebar-mobile-toggle';
-    toggleBtn.innerHTML = '<i class="fa fa-list"></i> Contents';
+    toggleBtn.setAttribute('aria-label', 'Contents');
+    toggleBtn.innerHTML = '<i class="fa fa-list"></i>';
     document.body.appendChild(toggleBtn);
 
     const backdrop = document.createElement('div');
