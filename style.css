@@ -1925,10 +1925,18 @@ footer .container p:last-child {
     height: auto;
 }
 
-.gallery-item:hover,
 .gallery-item:focus-visible {
     border-color: var(--primary-color);
     outline: none;
+}
+
+/* :hover only where the device truly hovers. On touch, :hover "sticks" after a
+   tap and would leave the thumbnail highlighted until you tap elsewhere (e.g.
+   after closing the lightbox with the Back button). */
+@media (hover: hover) {
+    .gallery-item:hover {
+        border-color: var(--primary-color);
+    }
 }
 
 @media (max-width: 900px) {
@@ -2045,14 +2053,23 @@ body.lightbox-open {
     transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.lightbox-close:hover,
-.lightbox-nav:hover,
 .lightbox-close:focus-visible,
 .lightbox-nav:focus-visible {
     color: var(--gold-accent);
     border-color: var(--primary-color);
     background: rgba(0, 0, 0, 0.8);
     outline: none;
+}
+
+/* :hover only on real hover devices. On touch, a tap sticks the hover and leaves
+   the arrow / close button gold-bordered until you tap elsewhere. */
+@media (hover: hover) {
+    .lightbox-close:hover,
+    .lightbox-nav:hover {
+        color: var(--gold-accent);
+        border-color: var(--primary-color);
+        background: rgba(0, 0, 0, 0.8);
+    }
 }
 
 .lightbox-close {
