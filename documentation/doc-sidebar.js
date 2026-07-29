@@ -23,7 +23,14 @@ let closeMobileDrawer = function () {};
 function goToSection(id) {
     const el = document.getElementById(id);
     if (!el) return;
-    history.pushState(null, '', '#' + id);
+    // If the mobile drawer's history entry is on top, replace it with the section
+    // hash so closing via a link doesn't leave a dangling Back step; otherwise add
+    // a normal history entry for the section.
+    if (history.state && history.state.docDrawer) {
+        history.replaceState(null, '', '#' + id);
+    } else {
+        history.pushState(null, '', '#' + id);
+    }
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     closeMobileDrawer();
 }
@@ -154,10 +161,19 @@ window.renderDocSidebar = function (mountEl, tree) {
     function openDrawer() {
         mountEl.classList.add('mobile-open');
         backdrop.classList.add('open');
+        // History entry so the phone Back button closes the drawer (via the popstate
+        // handler below) instead of navigating away from the page.
+        history.pushState({ docDrawer: true }, '');
     }
-    function closeDrawer() {
+    function closeDrawer(fromPopstate) {
+        if (!mountEl.classList.contains('mobile-open')) return;
         mountEl.classList.remove('mobile-open');
         backdrop.classList.remove('open');
+        // Balance the entry pushed on open. When Back closed the drawer the browser
+        // already popped it (fromPopstate), so don't pop again.
+        if (fromPopstate !== true && history.state && history.state.docDrawer) {
+            history.back();
+        }
     }
     closeMobileDrawer = closeDrawer;
 
@@ -168,7 +184,13 @@ window.renderDocSidebar = function (mountEl, tree) {
             openDrawer();
         }
     });
-    backdrop.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', function () { closeDrawer(); });
+
+    // Phone/browser Back while the drawer is open: close it instead of leaving the
+    // page. The pushed entry has already been popped by the browser.
+    window.addEventListener('popstate', function () {
+        if (mountEl.classList.contains('mobile-open')) closeDrawer(true);
+    });
 
     // Highlight (never auto-open) the entry for the section in view.
     function clearActive() {
