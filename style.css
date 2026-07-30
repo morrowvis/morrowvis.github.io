@@ -949,6 +949,28 @@ footer .container p:last-child {
     display: inline-flex;
     padding: 22px;
     margin: -22px;
+    position: relative;
+    isolation: isolate;
+}
+
+/* Soft gold halo (site accent) that fades in behind each logo on hover. The
+   pseudo-element sits at z-index -1 inside the anchor's own stacking context
+   (isolation: isolate), so it glows behind the logo but above the section. */
+.partners-logos a::before {
+    content: "";
+    position: absolute;
+    inset: -36px;
+    z-index: -1;
+    background: radial-gradient(closest-side, rgba(var(--accent-rgb), 0.08), rgba(var(--accent-rgb), 0));
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+@media (hover: hover) {
+    .partners-logos a:hover::before {
+        opacity: 1;
+    }
 }
 
 .partners-logos img {
