@@ -36,6 +36,9 @@ const CREDITS = [
     ["Caius' Rooftop Renovations", "https://www.nexusmods.com/morrowind/mods/50272"],
     ["Even Seedier Eight Plates", "https://www.nexusmods.com/morrowind/mods/49236"]
   ]},
+  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Bodrum", items: [
+    ["Bodrum Guild of Mages", "https://www.nexusmods.com/morrowind/mods/56308"],
+  ]},
   { group: "Overhauls, Locations, Additions by City/Settlement", category: "Caldera", items: [
     ["Caldera Governors Manor Redone", "https://www.nexusmods.com/morrowind/mods/53220"],
     ["Tamrielic Treasures - A Caldera shop with mannequins", "https://www.nexusmods.com/morrowind/mods/53487"],
@@ -149,7 +152,7 @@ const CREDITS = [
     ["Library of Vivec Enhanced", "https://www.nexusmods.com/morrowind/mods/50181"]
   ]},
 
-  { group: "Overhauls, Locations, Additions by Region", category: "Ascadian Isles", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Ascadian Isles Region", items: [
     ["Ascadia - Land of Pilgrimage", "https://www.nexusmods.com/morrowind/mods/55707"],
     ["Little Landscapes - Vivec Islands", "https://www.nexusmods.com/morrowind/mods/53276"],
     ["OAAB - Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
@@ -157,7 +160,7 @@ const CREDITS = [
     ["Little Landscape - Path to Balmora", "https://www.nexusmods.com/morrowind/mods/53343"],
     ["Hawia Infrastructure", "https://www.nexusmods.com/morrowind/mods/56510"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Ashlands", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Ashlands Region", items: [
     ["Tales from the Ashlands - The Great Hive Baan Binif", "https://www.nexusmods.com/morrowind/mods/51419"],
     ["Bal'laku - The Lonely Towers", "https://www.nexusmods.com/morrowind/mods/51060"],
     ["Crown of Urshilaku", "https://www.nexusmods.com/morrowind/mods/54251"],
@@ -173,7 +176,7 @@ const CREDITS = [
     ["Dwemer Legacy Reforged - Bthungthumz and Druscashti", "https://www.nexusmods.com/morrowind/mods/55073"],
     ["Faces of Vel - Ash Mire", "https://www.nexusmods.com/morrowind/mods/44200"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Azura's Coast", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Azura's Coast Region", items: [
     ["Azura's Coast Redone", "https://www.nexusmods.com/morrowind/mods/53466"],
     ["Concept Art Scamp Overhaul", "https://www.nexusmods.com/morrowind/mods/57514"],
     ["Telvanni Sea Beacons", "https://www.nexusmods.com/morrowind/mods/50957"],
@@ -186,7 +189,7 @@ const CREDITS = [
     ["Duskmoth Ruins", "https://www.nexusmods.com/morrowind/mods/51163"],
     ["Smuggler's Market", "https://www.nexusmods.com/morrowind/mods/51698"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Bitter Coast", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Bitter Coast Region", items: [
     ["Hla Odai", "https://www.nexusmods.com/morrowind/mods/51942"],
     ["Fishermans island", "https://www.nexusmods.com/morrowind/mods/59134"],
     ["Little Landscapes - Bitter Coast Waterway", "https://www.nexusmods.com/morrowind/mods/53262"],
@@ -198,17 +201,20 @@ const CREDITS = [
     ["Seamless abandoned shack", "https://www.nexusmods.com/morrowind/mods/49527"],
     ["Weird Science", "https://www.nexusmods.com/morrowind/mods/51416"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Grazelands", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Grazelands Region", items: [
     ["OAAB Grazelands", "https://www.nexusmods.com/morrowind/mods/49075"],
     ["RR Mod Series - Telvanni Lighthouse Tel Vos", "https://www.nexusmods.com/morrowind/mods/42744"],
     ["The Song of the Grazelands", "https://www.nexusmods.com/morrowind/mods/54652"],
     ["Thickle-Lo Grove", "https://www.nexusmods.com/morrowind/mods/51689"],
     ["The Fiend of Ald Andalor", "https://www.nexusmods.com/morrowind/mods/57828"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Mainland", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Mainland, Aanthirin Region", items: [
     ["Keelhouse - A quest and house mod for Tamriel Rebuilt", "https://www.nexusmods.com/morrowind/mods/53395"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Molag Amur", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Mainland, Sunad Mora Region", items: [
+    ["Daedric Sanctuary Yamuninisharn", "https://www.nexusmods.com/morrowind/mods/59738"]
+  ]},
+  { group: "Overhauls, Locations, Additions by Region", category: "Molag Amur Region", items: [
     ["The Mountain of Fear", "https://www.nexusmods.com/morrowind/mods/52859"],
     ["Molag Amur Mountains", "https://www.nexusmods.com/morrowind/mods/54247"],
     ["Concept Art Molag Amur Region - The Great Scathes", "https://www.nexusmods.com/morrowind/mods/52971"],
@@ -217,7 +223,7 @@ const CREDITS = [
     ["Little Landscape - Arkngthand", "https://www.nexusmods.com/morrowind/mods/54761"],
     ["Little Landscape - Foyada of Dead Mer", "https://www.nexusmods.com/morrowind/mods/54788"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Red Mountain", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Red Mountain Region", items: [
     ["The Red Tower - Red Mountain Terrain Overhaul", "https://www.nexusmods.com/morrowind/mods/57476"]
   ]},
   { group: "Overhauls, Locations, Additions by Region", category: "Sheogorad", items: [
@@ -229,13 +235,13 @@ const CREDITS = [
     ["OAAB Vertical Shipwreck", "https://www.nexusmods.com/morrowind/mods/52268"],
     ["Anna-Sera", "https://www.nexusmods.com/morrowind/mods/51343"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Solstheim, Hirstaang Forest", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Solstheim, Hirstaang Forest Region", items: [
     ["Nordic Moldy Horker", "https://www.nexusmods.com/morrowind/mods/59590"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Solstheim, Isinifier Plains", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Solstheim, Isinifier Plains Region", items: [
     ["The Patchwork Airship - Fleshing out a vanilla quest", "https://www.nexusmods.com/morrowind/mods/53133"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "West Gash", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "West Gash Region", items: [
     ["The Stonewood pass reworked", "https://www.nexusmods.com/morrowind/mods/49464"],
     ["The Haunted Tavern of the West Gash", "https://www.nexusmods.com/morrowind/mods/22286"],
     ["Ald Gash - a Redoran Lighthouse", "https://www.nexusmods.com/morrowind/mods/52292"],
@@ -245,7 +251,7 @@ const CREDITS = [
     ["Dwemer Legacy Reforged - Arkngthunch-Sturdumz", "https://www.nexusmods.com/morrowind/mods/54807"],
     ["Immersive Drulene Falen's Hut", "https://www.nexusmods.com/morrowind/mods/49623"]
   ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Multiple regions", items: [
+  { group: "Overhauls, Locations, Additions by Region", category: "Multiple Regions", items: [
     ["Daedric Shrine Overhaul FULL", "https://www.nexusmods.com/morrowind/mods/54679"],
     ["Shipyards of Vvardenfell (Sadrith Mora - Seyda Neen - Gnaar Mok)", "https://www.nexusmods.com/morrowind/mods/51928"],
     ["OAAB Shipwrecks", "https://www.nexusmods.com/morrowind/mods/51364"],
