@@ -16,7 +16,7 @@ const GOALS_MAIN = [
   "Showcase bonus levels with alternate takes on locations significant to Morrowind's modding history, outside the constraints of the modlist.",
   "Bring increased accessibility and exposure to modded cells.",
   "Develop systems also applicable to architectural visualisations.",
-  "Develop a control system for versatile traversal and environmental control.",
+  "Develop a powerful traversal system with real-time environmental control.",
   "Act as a proof of concept for what's possible with this approach.",
   "Keep the scope feasible, including handling mod updates.",
   "Keep the workflow straightforward and elegant to allow continual expansion.",
