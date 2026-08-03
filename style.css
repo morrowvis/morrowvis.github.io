@@ -936,9 +936,20 @@ footer .container p:last-child {
 .partners-logos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* Each wrapped line centres its own logos as a group (flex-wrap makes
+       justify-content apply per line), rather than space-between spreading them
+       to the row's edges - so a lone trailing item on the last line sits in the
+       middle instead of jumping to a far edge. */
+    justify-content: center;
     align-items: center;
-    gap: var(--spacing-lg);
+    /* The anchors below carry margin:-22px on every side (a hit-area trick), which
+       eats 44px out of whatever gap is set here - so the gap has to add that back
+       to leave the intended amount of visible space between logos. */
+    gap: calc(var(--spacing-xl) + 44px);
+    /* Wider than .about-content's 800px text column: the first three logos take
+       ~590px of layout width, so at 800px the bigger gap above would overflow and
+       wrap the third logo onto its own line. */
+    max-width: 960px;
 }
 
 /* Bigger click target for thin wordmarks (Tamriel Rebuilt is a ~23px strip)
@@ -949,32 +960,40 @@ footer .container p:last-child {
     display: inline-flex;
     padding: 22px;
     margin: -22px;
-    position: relative;
-    isolation: isolate;
-}
-
-/* Soft gold halo (site accent) that fades in behind each logo on hover. The
-   pseudo-element sits at z-index -1 inside the anchor's own stacking context
-   (isolation: isolate), so it glows behind the logo but above the section. */
-.partners-logos a::before {
-    content: "";
-    position: absolute;
-    inset: -36px;
-    z-index: -1;
-    background: radial-gradient(closest-side, rgba(var(--accent-rgb), 0.08), rgba(var(--accent-rgb), 0));
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    pointer-events: none;
-}
-
-@media (hover: hover) {
-    .partners-logos a:hover::before {
-        opacity: 1;
-    }
 }
 
 .partners-logos img {
     height: auto;
+    transition: filter 0.35s ease;
+}
+
+/* Gold glow that traces the logo artwork itself. drop-shadow works off the
+   image's alpha channel, so the halo follows the visible shape (letterforms,
+   emblem) instead of the element's box - unlike a radial-gradient behind it,
+   which read as a big circle and clipped at the edges. Two stacked shadows give
+   a tight core plus a softer bloom; the second is applied to the first's result.
+
+   The blur radii are the same for every logo, so all the halos reach equally far
+   past their artwork. Only --glow varies, scaling how dense that halo is: a logo
+   glows in proportion to how much opaque pixel mass it gives drop-shadow to
+   blur, so sparse, heavily anti-aliased marks need a higher value to read as
+   strongly as a chunky one. Measured opaque coverage is noted per logo below;
+   raise or lower that single number to balance a logo against its neighbours. */
+@media (hover: hover) {
+    .partners-logos a:hover img {
+        filter: drop-shadow(0 0 12px rgba(var(--accent-rgb), calc(0.55 * var(--glow, 1))))
+                drop-shadow(0 0 34px rgba(var(--accent-rgb), calc(0.40 * var(--glow, 1))));
+    }
+}
+
+/* Project Tamriel: ~17% opaque over 54px - middling mass, wants a modest lift. */
+.partners-logos img.glow-up {
+    --glow: 1.45;
+}
+
+/* Tamriel Rebuilt: ~7% opaque over just 23px, the least mass in the row. */
+.partners-logos img.glow-max {
+    --glow: 1.9;
 }
 
 .about-content.partners-logos img.logo-small {
@@ -984,6 +1003,14 @@ footer .container p:last-child {
 
 .about-content.partners-logos img.logo-wide {
     max-width: 220px;
+    width: auto;
+}
+
+/* Square brand icons (as opposed to the flat wordmarks above) render much taller
+   at the same max-width, so they need a smaller cap to sit at a similar visual
+   weight. */
+.about-content.partners-logos img.logo-icon {
+    max-width: 90px;
     width: auto;
 }
 
