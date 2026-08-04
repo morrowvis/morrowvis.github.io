@@ -309,12 +309,15 @@ const CREDITS = [
   ]},
 
   { group: null, category: "Bonus", items: [
+    ["Tamriel Rebuilt Preview - Almalexia", "https://www.tamriel-rebuilt.org/about/frequently-asked-questions/almalexia"],
+    ["Tamriel Rebuild Preview - Blacklight", "https://wiki.project-tamriel.com/wiki/Blacklight"],
     ["Pelagiad Expanded WIP", "https://www.nexusmods.com/morrowind/mods/26905"],
-    ["Equimanthrone - The Daedric Tower PL", "https://www.nexusmods.com/morrowind/mods/46532"],
+    ["Equimanthrone - The Daedric Tower", "https://web.archive.org/web/20221018213639/https://mw.modhistory.com/download-44-13568"],
     ["Epic Sadrith Mora", "https://www.nexusmods.com/morrowind/mods/43057"],
     ["Epic Balmora", "https://www.nexusmods.com/morrowind/mods/43014"],
     ["Landscape Overhaul for The White Wolf of Lokken Mountain", "https://www.nexusmods.com/morrowind/mods/48862"],
-    ["Firemoth Reclaimed", "https://www.nexusmods.com/morrowind/mods/51939"]
+    ["Firemoth Reclaimed", "https://www.nexusmods.com/morrowind/mods/51939"],
+    ["Emba-5", "https://www.youtube.com/watch?v=wj80Tg8qVXU"]
   ]},
 
   { group: null, category: "Modders Resources", items: [
