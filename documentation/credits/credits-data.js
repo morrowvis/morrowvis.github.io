@@ -16,7 +16,8 @@ const CREDITS = [
     ["Ald'ruhn", "https://www.nexusmods.com/morrowind/mods/50120"],
     ["Ald Skar Inn Overhaul", "https://www.nexusmods.com/morrowind/mods/54495"],
     ["Of Bones and Barbarians - An Ald Ruhn Blacksmith", "https://www.nexusmods.com/morrowind/mods/53732"],
-    ["Ald'ruhn-under-Skar", "https://www.nexusmods.com/morrowind/mods/50332"]
+    ["Ald'ruhn-under-Skar", "https://www.nexusmods.com/morrowind/mods/50332"],
+    ["Redoran Council Overhall", "https://www.nexusmods.com/morrowind/mods/49817"]
   ]},
   { group: "Overhauls, Locations, Additions by City/Settlement", category: "Ald Velothi", items: [
     ["Properly cluttered Ald Velothi", "https://www.nexusmods.com/morrowind/mods/48811"]
