@@ -294,8 +294,10 @@ const CREDITS = [
     ["The Vestiges of Tukushapal", "https://www.nexusmods.com/morrowind/mods/56829"],
     ["The Wake of Hanin - Ibar-Dad Overhaul", "https://www.nexusmods.com/morrowind/mods/56206"],
     ["Drethos Ancestral Tomb", "https://www.nexusmods.com/morrowind/mods/53481"],
-    ["Daedric Shrine Overhaul Vaermina", "https://www.nexusmods.com/morrowind/mods/53242"],
+    ["New Ilunibi", "https://www.nexusmods.com/morrowind/mods/50393"],
     ["Kumarahaz - The Bandit Lair", "https://www.nexusmods.com/morrowind/mods/56192"],
+    ["Daedric Shrine Overhaul Vaermina", "https://www.nexusmods.com/morrowind/mods/53242"],
+    ["OAAB Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
     ["Unholy Trinity - Dagoth Ur - Vemynal - Odrosal Remade", "https://www.nexusmods.com/morrowind/mods/55564"]
   ]},
 
