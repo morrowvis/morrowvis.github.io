@@ -380,7 +380,6 @@ const CREDITS = [
     ["Succulent Scathecraw", "https://www.nexusmods.com/morrowind/mods/52096"],
     ["3D Vines Vanilla Mushroom Trees", "https://www.nexusmods.com/morrowind/mods/48954"],
     ["Vanilla-friendly West Gash Tree Replacer", "https://www.nexusmods.com/morrowind/mods/44173"],
-    ["Vurt's Silt Strider Retexture", "https://www.nexusmods.com/morrowind/mods/30696?tab=files"],
     ["Ket's Potions and Beverages Retexture", "https://www.nexusmods.com/morrowind/mods/44781"],
     ["Ket's Potions and Beverages Retexture", "https://www.nexusmods.com/morrowind/mods/44781"],
     ["Melchior's Magnificent Manuscripts", "https://www.nexusmods.com/morrowind/mods/45626"],
@@ -405,7 +404,8 @@ const CREDITS = [
     ["Reworked Dunmer Saint Banners", "https://www.nexusmods.com/morrowind/mods/56184"],
     ["Reworked Temple Banners", "https://www.nexusmods.com/morrowind/mods/56209"],
     ["Reworked Tribunal Tapestries", "https://www.nexusmods.com/morrowind/mods/56208"],
-    ["Sharper Normal Maps for Greymarch Dawn - Whispers of Jyggalag", "https://www.nexusmods.com/morrowind/mods/53697"]
+    ["Sharper Normal Maps for Greymarch Dawn - Whispers of Jyggalag", "https://www.nexusmods.com/morrowind/mods/53697"],
+    ["Vanilla friendly creatures retexture", "https://www.nexusmods.com/morrowind/mods/55093"]
   ]},
   { group: null, category: "Models and Textures", subhead: "Only select textures used", items: [
     ["Morroblivion Project Release v068", "https://morroblivion.com/forums/morroblivion/mods/753", "Signs"],
