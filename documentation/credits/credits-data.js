@@ -207,7 +207,6 @@ const CREDITS = [
     ["RR Mod Series - Telvanni Lighthouse Tel Vos", "https://www.nexusmods.com/morrowind/mods/42744"],
     ["The Song of the Grazelands", "https://www.nexusmods.com/morrowind/mods/54652"],
     ["Thickle-Lo Grove", "https://www.nexusmods.com/morrowind/mods/51689"],
-    ["The Fiend of Ald Andalor", "https://www.nexusmods.com/morrowind/mods/57828"]
   ]},
   { group: "Overhauls, Locations, Additions by Region", category: "Mainland, Aanthirin Region", items: [
     ["Keelhouse - A quest and house mod for Tamriel Rebuilt", "https://www.nexusmods.com/morrowind/mods/53395"]
@@ -295,6 +294,7 @@ const CREDITS = [
     ["The Wake of Hanin - Ibar-Dad Overhaul", "https://www.nexusmods.com/morrowind/mods/56206"],
     ["Drethos Ancestral Tomb", "https://www.nexusmods.com/morrowind/mods/53481"],
     ["New Ilunibi", "https://www.nexusmods.com/morrowind/mods/50393"],
+    ["The Fiend of Ald Andalor", "https://www.nexusmods.com/morrowind/mods/57828"],
     ["Kumarahaz - The Bandit Lair", "https://www.nexusmods.com/morrowind/mods/56192"],
     ["Daedric Shrine Overhaul Vaermina", "https://www.nexusmods.com/morrowind/mods/53242"],
     ["OAAB Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
