@@ -162,7 +162,6 @@ const CREDITS = [
     ["Hawia Infrastructure", "https://www.nexusmods.com/morrowind/mods/56510"]
   ]},
   { group: "Overhauls, Locations, Additions by Region", category: "Ashlands Region", items: [
-    ["Tales from the Ashlands - The Great Hive Baan Binif", "https://www.nexusmods.com/morrowind/mods/51419"],
     ["Bal'laku - The Lonely Towers", "https://www.nexusmods.com/morrowind/mods/51060"],
     ["Crown of Urshilaku", "https://www.nexusmods.com/morrowind/mods/54251"],
     ["Another Markgran Forest", "https://www.nexusmods.com/morrowind/mods/53910"],
@@ -296,6 +295,7 @@ const CREDITS = [
     ["New Ilunibi", "https://www.nexusmods.com/morrowind/mods/50393"],
     ["The Fiend of Ald Andalor", "https://www.nexusmods.com/morrowind/mods/57828"],
     ["Kumarahaz - The Bandit Lair", "https://www.nexusmods.com/morrowind/mods/56192"],
+    ["Tales from the Ashlands - The Great Hive Baan Binif", "https://www.nexusmods.com/morrowind/mods/51419"],
     ["Daedric Shrine Overhaul Vaermina", "https://www.nexusmods.com/morrowind/mods/53242"],
     ["OAAB Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
     ["Unholy Trinity - Dagoth Ur - Vemynal - Odrosal Remade", "https://www.nexusmods.com/morrowind/mods/55564"]
