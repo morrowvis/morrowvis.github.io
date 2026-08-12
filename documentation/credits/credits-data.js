@@ -43,8 +43,7 @@ const CREDITS = [
   { group: "Overhauls, Locations, Additions by City/Settlement", category: "Caldera", items: [
     ["Caldera Governors Manor Redone", "https://www.nexusmods.com/morrowind/mods/53220"],
     ["Tamrielic Treasures - A Caldera shop with mannequins", "https://www.nexusmods.com/morrowind/mods/53487"],
-    ["Caldera Legion Barracks", "https://www.nexusmods.com/morrowind/mods/55518"],
-    ["Caldera Priory and the Depths of Blood and Bone", "https://www.nexusmods.com/morrowind/mods/52898"]
+    ["Caldera Legion Barracks", "https://www.nexusmods.com/morrowind/mods/55518"]
   ]},
   { group: "Overhauls, Locations, Additions by City/Settlement", category: "Dagon Fel", items: [
     ["Dagon Fel Redone", "https://www.nexusmods.com/morrowind/mods/52375"],
@@ -311,7 +310,13 @@ const CREDITS = [
     ["OAAB Scroll Qualities", "https://www.nexusmods.com/morrowind/mods/49045"]
   ]},
 
-  { group: null, category: "Bonus", items: [
+  { group: null, category: "Bonus: Adventures & Dungeon", items: [
+    ["The Carmine Prediction", "https://www.youtube.com/watch?v=Q_PQ2sk5y4w"],
+    ["Firemoth Reclaimed", "https://www.nexusmods.com/morrowind/mods/51939"],
+    ["Caldera Priory and the Depths of Blood and Bone", "https://www.nexusmods.com/morrowind/mods/52898"]
+  ]},
+
+  { group: null, category: "Bonus: World", items: [
     ["Tamriel Rebuilt Preview - Almalexia", "https://www.tamriel-rebuilt.org/about/frequently-asked-questions/almalexia"],
     ["Tamriel Rebuild Preview - Blacklight", "https://wiki.project-tamriel.com/wiki/Blacklight"],
     ["Pelagiad Expanded WIP", "https://www.nexusmods.com/morrowind/mods/26905"],
@@ -319,7 +324,6 @@ const CREDITS = [
     ["Epic Sadrith Mora", "https://www.nexusmods.com/morrowind/mods/43057"],
     ["Epic Balmora", "https://www.nexusmods.com/morrowind/mods/43014"],
     ["Landscape Overhaul for The White Wolf of Lokken Mountain", "https://www.nexusmods.com/morrowind/mods/48862"],
-    ["Firemoth Reclaimed", "https://www.nexusmods.com/morrowind/mods/51939"],
     ["Emba-5", "https://www.youtube.com/watch?v=wj80Tg8qVXU"]
   ]},
 
