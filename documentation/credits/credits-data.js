@@ -406,7 +406,9 @@ const CREDITS = [
     ["Reworked Tribunal Tapestries", "https://www.nexusmods.com/morrowind/mods/56208"],
     ["Sharper Normal Maps for Greymarch Dawn - Whispers of Jyggalag", "https://www.nexusmods.com/morrowind/mods/53697"],
     ["Vanilla friendly creatures retexture", "https://www.nexusmods.com/morrowind/mods/55093"],
-    ["HiRez Creatures - Netch", "https://www.nexusmods.com/morrowind/mods/46421"]
+    ["HiRez Creatures - Netch", "https://www.nexusmods.com/morrowind/mods/46421"],
+    ["Ashlanders textures", "https://www.nexusmods.com/morrowind/mods/45162"],
+    ["Ashlander Banners Retexture - Aestetika of Vvardenfell - AoVv Banners Preview", "https://www.nexusmods.com/morrowind/mods/52732"]
   ]},
   { group: null, category: "Models and Textures", subhead: "Only select textures used", items: [
     ["Morroblivion Project Release v068", "https://morroblivion.com/forums/morroblivion/mods/753", "Signs"],
