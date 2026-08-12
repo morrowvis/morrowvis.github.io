@@ -1,0 +1,11 @@
+# Windows / OneDrive artifacts
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
