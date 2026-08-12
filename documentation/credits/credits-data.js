@@ -324,7 +324,7 @@ const CREDITS = [
     ["Epic Sadrith Mora", "https://www.nexusmods.com/morrowind/mods/43057"],
     ["Epic Balmora", "https://www.nexusmods.com/morrowind/mods/43014"],
     ["Landscape Overhaul for The White Wolf of Lokken Mountain", "https://www.nexusmods.com/morrowind/mods/48862"],
-    ["Emba-5", "https://www.youtube.com/watch?v=wj80Tg8qVXU"]
+    ["Emba-5", "https://www.fullrest.ru/forum/topic/8735-jemba-5-myortvyj-gorod-morrovinda/"]
   ]},
 
   { group: null, category: "Modders Resources", items: [
