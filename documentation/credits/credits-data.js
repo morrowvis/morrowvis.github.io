@@ -310,7 +310,7 @@ const CREDITS = [
     ["OAAB Scroll Qualities", "https://www.nexusmods.com/morrowind/mods/49045"]
   ]},
 
-  { group: null, category: "Bonus: Adventures & Dungeon", items: [
+  { group: null, category: "Bonus: Adventures & Dungeons", items: [
     ["The Carmine Prediction", "https://www.youtube.com/watch?v=Q_PQ2sk5y4w"],
     ["Firemoth Reclaimed", "https://www.nexusmods.com/morrowind/mods/51939"],
     ["Caldera Priory and the Depths of Blood and Bone", "https://www.nexusmods.com/morrowind/mods/52898"]
