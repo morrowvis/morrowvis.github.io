@@ -417,7 +417,7 @@ const CREDITS = [
     ["Ashlander Banners Retexture - Aestetika of Vvardenfell - AoVv Banners Preview", "https://www.nexusmods.com/morrowind/mods/52732"]
   ]},
   { group: null, category: "Models and Textures", subhead: "Only select textures used", items: [
-    ["Morroblivion Project Release v068", "https://morroblivion.com/forums/morroblivion/mods/753", "Signs"],
+    ["Morroblivion", "https://morroblivion.com/forums/morroblivion/mods/753", "Signs"],
     ["Elodie's Mystic Minimods", "https://www.nexusmods.com/morrowind/mods/47266", "Dirty Muriel's Cornerclub sign"]
   ]},
 
