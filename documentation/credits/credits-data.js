@@ -307,7 +307,8 @@ const CREDITS = [
     ["Immersive Travel - MWSE", "https://www.nexusmods.com/morrowind/mods/54063", "Asset use"],
     ["Let There Be Darkness - Lua Lighting Overhaul", "https://www.nexusmods.com/morrowind/mods/47912"],
     ["Dwemer Lightning Rods", "https://www.nexusmods.com/morrowind/mods/50236"],
-    ["OAAB Scroll Qualities", "https://www.nexusmods.com/morrowind/mods/49045"]
+    ["OAAB Scroll Qualities", "https://www.nexusmods.com/morrowind/mods/49045"],
+    ["Weapon Sheathing", "https://www.nexusmods.com/morrowind/mods/46069"]
   ]},
 
   { group: null, category: "Bonus: Adventures & Dungeons", items: [
@@ -324,6 +325,7 @@ const CREDITS = [
     ["Epic Sadrith Mora", "https://www.nexusmods.com/morrowind/mods/43057"],
     ["Epic Balmora", "https://www.nexusmods.com/morrowind/mods/43014"],
     ["Landscape Overhaul for The White Wolf of Lokken Mountain", "https://www.nexusmods.com/morrowind/mods/48862"],
+    ["Xen-Arien's Manor", "https://web.archive.org/web/20161103132913/http://mw.modhistory.com/download-44-3601"],
     ["Emba-5", "https://www.fullrest.ru/forum/topic/8735-jemba-5-myortvyj-gorod-morrovinda/"]
   ]},
 
@@ -443,7 +445,7 @@ const CREDITS = [
 
   { group: null, category: "Tools", items: [
     ["Export Sphere", "https://morrowind-modding.github.io/modding-tools/3d-modeling-tools/export-sphere"],
-    ["GitHub - Greatness7/io_scene_mw", "https://github.com/Greatness7/io_scene_mw"]
+    ["io_scene_mw", "https://github.com/Greatness7/io_scene_mw"]
   ]},
 
   { group: null, category: "Utilities", items: [
