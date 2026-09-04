@@ -491,6 +491,7 @@ const SPECIAL_THANKS = [
   ["Markond", "https://www.nexusmods.com/profile/Damius"],
   ["Kalinter", "https://www.nexusmods.com/profile/Kalinter"],
   ["Tiny Plesiosaur", "https://www.nexusmods.com/profile/TinyPlesiosaur"],
+  ["GrumblingVomit", "https://www.nexusmods.com/profile/GrumblingVomit"],
   ["Greg Coulthard", "https://www.youtube.com/@gregcoulthard5565"],
   ["Krystian Komisarek (Imaginary Blend)", "https://imaginaryblend.com/"],
   ["Iraisynn Attinom", "https://iraisynn.attinom.net/"],
