@@ -280,9 +280,8 @@ const CREDITS = [
     ["The Search for the White Wave", "https://www.nexusmods.com/morrowind/mods/52301"],
     ["No one expects the Alessian Inquisition", "https://www.nexusmods.com/morrowind/mods/59163"],
     ["Legacy of the Blades", "https://www.nexusmods.com/morrowind/mods/57935"],
-    ["Iceholme Retreat", "https://www.nexusmods.com/morrowind/mods/55221"],
     ["The last of the Ansei (Hammerfell Ansei Warrior Armour)", "https://www.nexusmods.com/morrowind/mods/53822"],
-    ["Indoril Mansion", "https://www.nexusmods.com/morrowind/mods/53022"],
+
     ["The Plague Doctor", "https://www.nexusmods.com/morrowind/mods/52885"]
   ]},
 
@@ -298,6 +297,12 @@ const CREDITS = [
     ["Daedric Shrine Overhaul Vaermina", "https://www.nexusmods.com/morrowind/mods/53242"],
     ["OAAB Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
     ["Unholy Trinity - Dagoth Ur - Vemynal - Odrosal Remade", "https://www.nexusmods.com/morrowind/mods/55564"]
+  ]},
+
+    { group: null, category: "Player Homes", items: [
+    ["Iceholme Retreat", "https://www.nexusmods.com/morrowind/mods/55221"],
+    ["Indoril Mansion", "https://www.nexusmods.com/morrowind/mods/53022"],
+    ["Telvanni Rootmaster's Boat", "https://www.nexusmods.com/morrowind/mods/59934"]
   ]},
 
   { group: null, category: "Immersion", items: [
