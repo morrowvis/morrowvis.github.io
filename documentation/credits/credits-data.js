@@ -461,6 +461,10 @@ const CREDITS = [
     ["Files for 3D Tamriel (Lady Nerevar)", "https://www.patreon.com/posts/files-for-3d-141012648"]
   ]},
 
+  { group: null, category: "Music", items: [
+    ["A Fool's Errand", "https://retconindustries.bandcamp.com/album/a-fools-errand", "by Dahliad"]
+  ]},
+
   { group: null, category: "Fab Content and Plugins", items: [
     ["Fluid Flux", "https://www.fab.com/listings/196c70cd-1283-4249-bf6b-c3019d1cbe11"],
     ["Ultra Dynamic Sky", "https://www.fab.com/listings/84fda27a-c79f-49c9-8458-82401fb37cfb"],
