@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 522 522">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-7 {
+        fill: #1e9ec1;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-3, .cls-4 {
+        clip-rule: evenodd;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="5" y="5" width="512" height="512"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <path class="cls-4" d="M261,517c141.38,0,256-114.62,256-256S402.38,5,261,5,5,119.62,5,261s114.62,256,256,256h0ZM261,517"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-2" x="5" y="5" width="512" height="512"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <polyline class="cls-3" points="310.78 341.5 124 341.5 211.22 180.49 398 180.49 310.78 341.5"/>
+    </clipPath>
+  </defs>
+  <g class="cls-5">
+    <rect class="cls-7" width="522" height="522"/>
+  </g>
+  <g class="cls-6">
+    <rect class="cls-1" x="119" y="175.49" width="284.01" height="171.01"/>
+  </g>
+</svg>

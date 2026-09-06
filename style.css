@@ -1752,7 +1752,6 @@ footer .container p:last-child {
     margin-top: 2px;
     color: var(--text-muted);
     font-size: 0.8rem;
-    font-style: italic;
 }
 
 .credits-thanks-list {
