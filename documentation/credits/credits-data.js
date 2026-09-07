@@ -286,6 +286,7 @@ const CREDITS = [
   ]},
 
   { group: null, category: "Dungeons", items: [
+    ["Dubdilla Remade", "https://www.nexusmods.com/morrowind/mods/59953"],
     ["Forge of Hilbongard Reignited", "https://www.nexusmods.com/morrowind/mods/57968"],
     ["The Vestiges of Tukushapal", "https://www.nexusmods.com/morrowind/mods/56829"],
     ["The Wake of Hanin - Ibar-Dad Overhaul", "https://www.nexusmods.com/morrowind/mods/56206"],
