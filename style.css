@@ -207,7 +207,7 @@ a:hover {
     border-bottom-color: transparent;
 }
 
-/* Home and Tools: a bright hero sits under the transparent navbar, where gold
+/* Home, Tools and Download: a bright hero sits under the transparent navbar, where gold
    is hard to read - black reads better. Three constraints are load-bearing:
      :not(.scrolled)  - scrolled, the bar is solid black; black would vanish.
      > li > a         - top-level links only; dropdown items sit on the menu's
@@ -216,13 +216,17 @@ a:hover {
                         that clears the Documentation underline. */
 body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover,
 body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover,
-body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active {
+body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active,
+body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a:hover,
+body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a.active {
     color: #000000;
 }
 
 body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
 body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
-body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.dropdown-toggle) {
+body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.dropdown-toggle),
+body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
+body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.dropdown-toggle) {
     border-bottom-color: #000000;
 }
 
@@ -926,7 +930,9 @@ footer .container p:last-child {
        so the black border-colour can't render anyway.) */
     body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover,
     body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover,
-    body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active {
+    body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active,
+    body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a:hover,
+    body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a.active {
         color: var(--gold-accent);
     }
 
