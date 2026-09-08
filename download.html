@@ -25,16 +25,48 @@
 
     <section class="downloads-section">
         <div class="container">
-            <div class="download-grid" style="display: flex; justify-content: center;">
-                <div class="download-card" style="max-width: 600px; width: 100%;">
-                    <h3>Morrowvis Executable</h3>
-                    <p class="version">Alpha Release</p>
-                    <p>Self contained package with world and level selection.</p>
-                    <div class="download-specs">
-                        <span>📦 Size: 37.2 GB</span>
-                        <span>🖥️ Windows</span>
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="download-main">
+                        <h3>Morrowvis Windows Build</h3>
+                        <p class="version">Closed Alpha</p>
+                        <p>Self contained package with world and level selection.</p>
+
+                        <!-- Shown only once download-lock.js confirms it can run. Without
+                             JavaScript, or without a payload, the fallback below stands. -->
+                        <form class="download-lock" id="downloadLock" hidden>
+                            <div class="download-lock-row">
+                                <input type="password" id="downloadPassword" name="password"
+                                       class="download-lock-input" placeholder="Password"
+                                       aria-label="Download password"
+                                       autocomplete="off" spellcheck="false" required>
+                                <button type="submit" class="btn btn-primary" id="downloadUnlock">Unlock</button>
+                            </div>
+                            <p class="download-lock-status" id="downloadStatus" role="status" aria-live="polite"></p>
+                        </form>
+
+                        <a class="btn btn-primary download-btn" id="downloadReady" hidden>Download</a>
+                        <a class="btn btn-primary download-btn" id="downloadFallback">Download not publicly available</a>
                     </div>
-                    <a class="btn btn-primary download-btn">Download not publicly available</a>
+
+                    <dl class="download-facts">
+                        <dt>Updated</dt>
+                        <dd>September 2026</dd>
+
+                        <dt>Size</dt>
+                        <dd>37.2 GB</dd>
+
+                        <dt>Required</dt>
+                        <dd>
+                            <a href="https://aka.ms/vc14/vc_redist.x64.exe">Microsoft Visual C++ 2015-2022 Redistributable (x64)</a>
+                        </dd>
+
+                        <dt>Optional</dt>
+                        <dd>
+                            <a href="downloads/Engine.ini" download="Engine.ini">Performance config</a>
+                            <span class="download-fact-note">Place in <code class="download-path">%LOCALAPPDATA%\Master\Saved\Config\Windows</code></span>
+                        </dd>
+                    </dl>
                 </div>
             </div>
         </div>
@@ -43,5 +75,7 @@
     <div id="footerMount"></div>
     <script>window.SITE_BASE = '';</script>
     <script src="nav.js"></script>
+    <script src="download-lock-payload.js"></script>
+    <script src="download-lock.js"></script>
 </body>
 </html>
