@@ -1,9 +1,15 @@
 // Credits data for Morrowind Visualisation Project.
 // Each entry: [display name, url, optional note]
 // Site caption is derived automatically from the URL's domain (see credits.html),
+// Blocks with no `group` render as top-level sections; inGroup() stamps a shared
+// group heading onto a run of blocks so the group name is written only once.
+
+function inGroup(group, blocks) {
+  return blocks.map(function (block) { return Object.assign({ group: group }, block); });
+}
 
 const CREDITS = [
-  { group: null, category: "New Lands", items: [
+  { category: "New Lands", items: [
     ["Tamriel Rebuilt", "https://www.nexusmods.com/morrowind/mods/42145"],
     ["Solstheim - Tomb of the Snow Prince", "https://www.nexusmods.com/morrowind/mods/46810"],
     ["Project Cyrodiil", "https://www.nexusmods.com/morrowind/mods/44922"],
@@ -12,263 +18,270 @@ const CREDITS = [
     ["Tamriel Rebuilt Border", "https://www.nexusmods.com/morrowind/mods/56462"],
   ]},
 
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Ald-Ruhn", items: [
-    ["Ald'ruhn", "https://www.nexusmods.com/morrowind/mods/50120"],
-    ["Ald Skar Inn Overhaul", "https://www.nexusmods.com/morrowind/mods/54495"],
-    ["Of Bones and Barbarians - An Ald Ruhn Blacksmith", "https://www.nexusmods.com/morrowind/mods/53732"],
-    ["Ald'ruhn-under-Skar", "https://www.nexusmods.com/morrowind/mods/50332"],
-    ["Redoran Council Overhall", "https://www.nexusmods.com/morrowind/mods/49817"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Ald Velothi", items: [
-    ["Properly cluttered Ald Velothi", "https://www.nexusmods.com/morrowind/mods/48811"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Almalexia", items: [
-    ["Kalinter's Miscellaneous Mod Box", "https://www.nexusmods.com/morrowind/mods/53398"],
-    ["Almalexia Splendor", "https://www.nexusmods.com/morrowind/mods/52046"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Balmora", items: [
-    ["Balmora Rooftop Apartments", "https://www.nexusmods.com/morrowind/mods/47974"],
-    ["Concept art Hlaalu Balconies", "https://www.nexusmods.com/morrowind/mods/48667"],
-    ["Kilcunda's Balmora", "https://www.nexusmods.com/morrowind/mods/44149"],
-    ["Balmora Outskirts - Stoneflower trading post", "https://www.nexusmods.com/morrowind/mods/54534"],
-    ["Balmora Temple Redone", "https://www.nexusmods.com/morrowind/mods/52724"],
-    ["Balmora Underworld", "https://www.nexusmods.com/morrowind/mods/42448"],
-    ["Balmora Arches and a Waterfall", "https://www.nexusmods.com/morrowind/mods/53386"],
-    ["Caius' Rooftop Renovations", "https://www.nexusmods.com/morrowind/mods/50272"],
-    ["Even Seedier Eight Plates", "https://www.nexusmods.com/morrowind/mods/49236"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Bodrum", items: [
-    ["Bodrum Guild of Mages", "https://www.nexusmods.com/morrowind/mods/56308"],
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Caldera", items: [
-    ["Caldera Governors Manor Redone", "https://www.nexusmods.com/morrowind/mods/53220"],
-    ["Tamrielic Treasures - A Caldera shop with mannequins", "https://www.nexusmods.com/morrowind/mods/53487"],
-    ["Caldera Legion Barracks", "https://www.nexusmods.com/morrowind/mods/55518"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Dagon Fel", items: [
-    ["Dagon Fel Redone", "https://www.nexusmods.com/morrowind/mods/52375"],
-    ["Dagon Fel Lighthouse", "https://www.nexusmods.com/morrowind/mods/52291"],
-    ["More Detailed Places - Dagon Fel", "https://www.nexusmods.com/morrowind/mods/30047"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Ebonheart", items: [
-    ["Banners of a Memorable Ebonheart", "https://www.nexusmods.com/morrowind/mods/53477"],
-    ["The Ebonheart Lighthouse", "https://www.nexusmods.com/morrowind/mods/53417"],
-    ["Ebonheart Western Docks", "https://www.nexusmods.com/morrowind/mods/47607"],
-    ["More Detailed Places - Ebonheart", "https://www.nexusmods.com/morrowind/mods/29542"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Erabenimsun Camp", items: [
-    ["Finding the Erabenimsun Ashlander Camp", "https://www.nexusmods.com/morrowind/mods/49227"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Firewatch", items: [
-    ["Firewatch Markets Restored", "https://www.nexusmods.com/morrowind/mods/56550"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Fort Buckmoth", items: [
-    ["More Detailed Places - Fort Buckmoth", "https://www.nexusmods.com/morrowind/mods/30954"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Gnaar Mok", items: [
-    ["New Gnaar Mok", "https://www.nexusmods.com/morrowind/mods/22029"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Gnisis", items: [
-    ["Lightweight Concept Art Gnisis", "https://www.nexusmods.com/morrowind/mods/48659"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Hla Oad", items: [
-    ["Hla Oad", "https://www.nexusmods.com/morrowind/mods/49035"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Khuul", items: [
-    ["URH - Khuul", "https://www.nexusmods.com/morrowind/mods/51761"],
-    ["The cool Khuul Lighthouse", "https://www.nexusmods.com/morrowind/mods/53047"],
-    ["Khuul to Ashlands Shortcut", "https://www.nexusmods.com/morrowind/mods/54412"],
-    ["More Detailed Places - Khuul", "https://www.nexusmods.com/morrowind/mods/29965"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Maar Gan", items: [
-    ["Maar Gan - Town of Pilgrimage", "https://www.nexusmods.com/morrowind/mods/53919"],
-    ["Maar Gan Walls - The Bulwark of St. Roris", "https://www.nexusmods.com/morrowind/mods/55252"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Molag Mar", items: [
-    ["Dark Molag Mar", "https://www.nexusmods.com/morrowind/mods/32101"],
-    ["Molag Mar", "https://www.nexusmods.com/morrowind/mods/49005"],
-    ["Molag Mar Outskirts - Bonesaints Temple", "https://www.nexusmods.com/morrowind/mods/59215"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Narsis", items: [
-    ["Orange Narsis - Shipal-Shin wall retexture", "https://www.nexusmods.com/morrowind/mods/57199"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Old Ebonheart", items: [
-    ["The Tea Shop in Old Ebonheart", "https://www.nexusmods.com/morrowind/mods/54507"],
-    ["Actual Old Ebonheart Stables (Tamriel Rebuilt)", "https://www.nexusmods.com/morrowind/mods/54579"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Pelagiad", items: [
-    ["The Quiet Imperial Pelagiad", "https://www.nexusmods.com/morrowind/mods/49378"],
-    ["Arkayn Rites", "https://www.nexusmods.com/morrowind/mods/59170"],
-    ["A New Windmill for Pelagiad", "https://www.nexusmods.com/morrowind/mods/50316"],
-    ["Provincial Bath Shoppe - Of Perfumes and Parvenues", "https://www.nexusmods.com/morrowind/mods/55012"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Raven Rock", items: [
-    ["Raven Rock Enhanced", "https://www.nexusmods.com/morrowind/mods/55970"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Sadrith Mora", items: [
-    ["Sadrith Mora Expanded", "https://www.nexusmods.com/morrowind/mods/44113"],
-    ["OAAB Market", "https://www.nexusmods.com/morrowind/mods/51687"],
-    ["The Merchants of Sadrith Mora", "https://www.nexusmods.com/morrowind/mods/48654"],
-    ["Telvanni Lighthouse in Sadrith Mora", "https://www.nexusmods.com/morrowind/mods/49461"],
-    ["Of Melodies and Moonlight - A Sadrith Mora Artist", "https://www.nexusmods.com/morrowind/mods/53307"],
-    ["Dirtier Cozier Muriel's Cornerclub", "https://www.nexusmods.com/morrowind/mods/49653"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Seyda Neen", items: [
-    ["OAAB Seyda Neen - Damp Little Squat", "https://www.nexusmods.com/morrowind/mods/53765"],
-    ["Shroomda Neen - Seyda Neen lightweight overhaul", "https://www.nexusmods.com/morrowind/mods/56262"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Suran", items: [
-    ["White Suran 2 - MD Edition", "https://www.nexusmods.com/morrowind/mods/44153"],
-    ["Suran - The Pearl of the Ascadian Isles", "https://www.nexusmods.com/morrowind/mods/48675"],
-    ["White Suran - White Temple and Roadmarkers Addon", "https://www.nexusmods.com/morrowind/mods/48679"],
-    ["A Flowery Bench in Suran", "https://www.nexusmods.com/morrowind/mods/53660"],
-    ["Hanging Gardens of Suran", "https://www.nexusmods.com/morrowind/mods/53316"],
-    ["Botanical Haven - Suran Apothecary Redux", "https://www.nexusmods.com/morrowind/mods/53332"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Tel Branora", items: [
-    ["Tethered Tel Branora", "https://www.nexusmods.com/morrowind/mods/53314"],
-    ["Tel Branora Expansion", "https://www.nexusmods.com/morrowind/mods/55279"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Tel Mora", items: [
-    ["OAAB Tel Mora", "https://www.nexusmods.com/morrowind/mods/46177"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Tel Fyr", items: [
-    ["Corprusarium - Sorrow Heart of Tel Fyr", "https://www.nexusmods.com/morrowind/mods/53280"],
-    ["Tel Fyr - A Village in Mourning - PHC", "https://www.nexusmods.com/morrowind/mods/43988"]
-  ]},
-  { group: "Overhauls, Locations, Additions by City/Settlement", category: "Vivec", items: [
-    ["Dramatic Vivec", "https://www.nexusmods.com/morrowind/mods/43385"],
-    ["Witness Structure - The Seawall of Vivec", "https://www.nexusmods.com/morrowind/mods/53544"],
-    ["The Waters of His Glory", "https://www.nexusmods.com/morrowind/mods/56621"],
-    ["Concept Art Palace (Vivec City)", "https://www.nexusmods.com/morrowind/mods/48136"],
-    ["Passage of Prayers - High Fane Corridor Overhaul", "https://www.nexusmods.com/morrowind/mods/46786"],
-    ["Baar Dau", "https://www.nexusmods.com/morrowind/mods/49456"],
-    ["Skywind Concept Art Arena", "https://www.nexusmods.com/morrowind/mods/53907"],
-    ["Vivec Lighthouse", "https://www.nexusmods.com/morrowind/mods/52019"],
-    ["Little Landscapes - Path to Vivec Lighthouse", "https://www.nexusmods.com/morrowind/mods/53352"],
-    ["The Striderport in Vivec", "https://www.nexusmods.com/morrowind/mods/49492"],
-    ["Concept art Vivec Ports", "https://www.nexusmods.com/morrowind/mods/48611"],
-    ["L.U.S.T. (Luxury Upgrade Sexy Transport)", "https://www.nexusmods.com/morrowind/mods/57408"],
-    ["Library of Vivec Enhanced", "https://www.nexusmods.com/morrowind/mods/50181"]
-  ]},
+  ...inGroup("Overhauls, Locations, Additions by City/Settlement", [
+    { category: "Ald-Ruhn", items: [
+      ["Ald'ruhn", "https://www.nexusmods.com/morrowind/mods/50120"],
+      ["Ald Skar Inn Overhaul", "https://www.nexusmods.com/morrowind/mods/54495"],
+      ["Of Bones and Barbarians - An Ald Ruhn Blacksmith", "https://www.nexusmods.com/morrowind/mods/53732"],
+      ["Ald'ruhn-under-Skar", "https://www.nexusmods.com/morrowind/mods/50332"],
+      ["Redoran Council Overhall", "https://www.nexusmods.com/morrowind/mods/49817"]
+    ]},
+    { category: "Ald Velothi", items: [
+      ["Properly cluttered Ald Velothi", "https://www.nexusmods.com/morrowind/mods/48811"]
+    ]},
+    { category: "Almalexia", items: [
+      ["Kalinter's Miscellaneous Mod Box", "https://www.nexusmods.com/morrowind/mods/53398"],
+      ["Almalexia Splendor", "https://www.nexusmods.com/morrowind/mods/52046"]
+    ]},
+    { category: "Balmora", items: [
+      ["Balmora Rooftop Apartments", "https://www.nexusmods.com/morrowind/mods/47974"],
+      ["Concept art Hlaalu Balconies", "https://www.nexusmods.com/morrowind/mods/48667"],
+      ["Kilcunda's Balmora", "https://www.nexusmods.com/morrowind/mods/44149"],
+      ["Balmora Outskirts - Stoneflower trading post", "https://www.nexusmods.com/morrowind/mods/54534"],
+      ["Balmora Temple Redone", "https://www.nexusmods.com/morrowind/mods/52724"],
+      ["Balmora Underworld", "https://www.nexusmods.com/morrowind/mods/42448"],
+      ["Balmora Arches and a Waterfall", "https://www.nexusmods.com/morrowind/mods/53386"],
+      ["Caius' Rooftop Renovations", "https://www.nexusmods.com/morrowind/mods/50272"],
+      ["Even Seedier Eight Plates", "https://www.nexusmods.com/morrowind/mods/49236"]
+    ]},
+    { category: "Bodrum", items: [
+      ["Bodrum Guild of Mages", "https://www.nexusmods.com/morrowind/mods/56308"],
+    ]},
+    { category: "Caldera", items: [
+      ["Caldera Governors Manor Redone", "https://www.nexusmods.com/morrowind/mods/53220"],
+      ["Tamrielic Treasures - A Caldera shop with mannequins", "https://www.nexusmods.com/morrowind/mods/53487"],
+      ["Caldera Legion Barracks", "https://www.nexusmods.com/morrowind/mods/55518"]
+    ]},
+    { category: "Dagon Fel", items: [
+      ["Dagon Fel Redone", "https://www.nexusmods.com/morrowind/mods/52375"],
+      ["Dagon Fel Lighthouse", "https://www.nexusmods.com/morrowind/mods/52291"],
+      ["More Detailed Places - Dagon Fel", "https://www.nexusmods.com/morrowind/mods/30047"]
+    ]},
+    { category: "Ebonheart", items: [
+      ["Banners of a Memorable Ebonheart", "https://www.nexusmods.com/morrowind/mods/53477"],
+      ["The Ebonheart Lighthouse", "https://www.nexusmods.com/morrowind/mods/53417"],
+      ["Ebonheart Western Docks", "https://www.nexusmods.com/morrowind/mods/47607"],
+      ["More Detailed Places - Ebonheart", "https://www.nexusmods.com/morrowind/mods/29542"]
+    ]},
+    { category: "Erabenimsun Camp", items: [
+      ["Finding the Erabenimsun Ashlander Camp", "https://www.nexusmods.com/morrowind/mods/49227"]
+    ]},
+    { category: "Firewatch", items: [
+      ["Firewatch Markets Restored", "https://www.nexusmods.com/morrowind/mods/56550"]
+    ]},
+    { category: "Fort Buckmoth", items: [
+      ["More Detailed Places - Fort Buckmoth", "https://www.nexusmods.com/morrowind/mods/30954"]
+    ]},
+    { category: "Gnaar Mok", items: [
+      ["New Gnaar Mok", "https://www.nexusmods.com/morrowind/mods/22029"]
+    ]},
+    { category: "Gnisis", items: [
+      ["Lightweight Concept Art Gnisis", "https://www.nexusmods.com/morrowind/mods/48659"]
+    ]},
+    { category: "Hla Oad", items: [
+      ["Hla Oad", "https://www.nexusmods.com/morrowind/mods/49035"]
+    ]},
+    { category: "Khuul", items: [
+      ["URH - Khuul", "https://www.nexusmods.com/morrowind/mods/51761"],
+      ["The cool Khuul Lighthouse", "https://www.nexusmods.com/morrowind/mods/53047"],
+      ["Khuul to Ashlands Shortcut", "https://www.nexusmods.com/morrowind/mods/54412"],
+      ["More Detailed Places - Khuul", "https://www.nexusmods.com/morrowind/mods/29965"]
+    ]},
+    { category: "Maar Gan", items: [
+      ["Maar Gan - Town of Pilgrimage", "https://www.nexusmods.com/morrowind/mods/53919"],
+      ["Maar Gan Walls - The Bulwark of St. Roris", "https://www.nexusmods.com/morrowind/mods/55252"]
+    ]},
+    { category: "Molag Mar", items: [
+      ["Dark Molag Mar", "https://www.nexusmods.com/morrowind/mods/32101"],
+      ["Molag Mar", "https://www.nexusmods.com/morrowind/mods/49005"],
+      ["Molag Mar Outskirts - Bonesaints Temple", "https://www.nexusmods.com/morrowind/mods/59215"]
+    ]},
+    { category: "Narsis", items: [
+      ["Orange Narsis - Shipal-Shin wall retexture", "https://www.nexusmods.com/morrowind/mods/57199"]
+    ]},
+    { category: "Old Ebonheart", items: [
+      ["The Tea Shop in Old Ebonheart", "https://www.nexusmods.com/morrowind/mods/54507"],
+      ["Actual Old Ebonheart Stables (Tamriel Rebuilt)", "https://www.nexusmods.com/morrowind/mods/54579"]
+    ]},
+    { category: "Pelagiad", items: [
+      ["The Quiet Imperial Pelagiad", "https://www.nexusmods.com/morrowind/mods/49378"],
+      ["Arkayn Rites", "https://www.nexusmods.com/morrowind/mods/59170"],
+      ["A New Windmill for Pelagiad", "https://www.nexusmods.com/morrowind/mods/50316"],
+      ["Provincial Bath Shoppe - Of Perfumes and Parvenues", "https://www.nexusmods.com/morrowind/mods/55012"]
+    ]},
+    { category: "Raven Rock", items: [
+      ["Raven Rock Enhanced", "https://www.nexusmods.com/morrowind/mods/55970"]
+    ]},
+    { category: "Sadrith Mora", items: [
+      ["Sadrith Mora Expanded", "https://www.nexusmods.com/morrowind/mods/44113"],
+      ["OAAB Market", "https://www.nexusmods.com/morrowind/mods/51687"],
+      ["The Merchants of Sadrith Mora", "https://www.nexusmods.com/morrowind/mods/48654"],
+      ["Telvanni Lighthouse in Sadrith Mora", "https://www.nexusmods.com/morrowind/mods/49461"],
+      ["Of Melodies and Moonlight - A Sadrith Mora Artist", "https://www.nexusmods.com/morrowind/mods/53307"],
+      ["Dirtier Cozier Muriel's Cornerclub", "https://www.nexusmods.com/morrowind/mods/49653"]
+    ]},
+    { category: "Seyda Neen", items: [
+      ["OAAB Seyda Neen - Damp Little Squat", "https://www.nexusmods.com/morrowind/mods/53765"],
+      ["Shroomda Neen - Seyda Neen lightweight overhaul", "https://www.nexusmods.com/morrowind/mods/56262"]
+    ]},
+    { category: "Suran", items: [
+      ["White Suran 2 - MD Edition", "https://www.nexusmods.com/morrowind/mods/44153"],
+      ["Suran - The Pearl of the Ascadian Isles", "https://www.nexusmods.com/morrowind/mods/48675"],
+      ["White Suran - White Temple and Roadmarkers Addon", "https://www.nexusmods.com/morrowind/mods/48679"],
+      ["A Flowery Bench in Suran", "https://www.nexusmods.com/morrowind/mods/53660"],
+      ["Hanging Gardens of Suran", "https://www.nexusmods.com/morrowind/mods/53316"],
+      ["Botanical Haven - Suran Apothecary Redux", "https://www.nexusmods.com/morrowind/mods/53332"]
+    ]},
+    { category: "Tel Branora", items: [
+      ["Tethered Tel Branora", "https://www.nexusmods.com/morrowind/mods/53314"],
+      ["Tel Branora Expansion", "https://www.nexusmods.com/morrowind/mods/55279"]
+    ]},
+    { category: "Tel Mora", items: [
+      ["OAAB Tel Mora", "https://www.nexusmods.com/morrowind/mods/46177"]
+    ]},
+    { category: "Tel Fyr", items: [
+      ["Corprusarium - Sorrow Heart of Tel Fyr", "https://www.nexusmods.com/morrowind/mods/53280"],
+      ["Tel Fyr - A Village in Mourning - PHC", "https://www.nexusmods.com/morrowind/mods/43988"]
+    ]},
+    { category: "Thirsk", items: [
+      ["A New Thirsk Expanded", "https://www.nexusmods.com/morrowind/mods/60144"]
+    ]},
+    { category: "Vivec", items: [
+      ["Dramatic Vivec", "https://www.nexusmods.com/morrowind/mods/43385"],
+      ["Witness Structure - The Seawall of Vivec", "https://www.nexusmods.com/morrowind/mods/53544"],
+      ["The Waters of His Glory", "https://www.nexusmods.com/morrowind/mods/56621"],
+      ["Concept Art Palace (Vivec City)", "https://www.nexusmods.com/morrowind/mods/48136"],
+      ["Passage of Prayers - High Fane Corridor Overhaul", "https://www.nexusmods.com/morrowind/mods/46786"],
+      ["Baar Dau", "https://www.nexusmods.com/morrowind/mods/49456"],
+      ["Skywind Concept Art Arena", "https://www.nexusmods.com/morrowind/mods/53907"],
+      ["Vivec Lighthouse", "https://www.nexusmods.com/morrowind/mods/52019"],
+      ["Little Landscapes - Path to Vivec Lighthouse", "https://www.nexusmods.com/morrowind/mods/53352"],
+      ["The Striderport in Vivec", "https://www.nexusmods.com/morrowind/mods/49492"],
+      ["Concept art Vivec Ports", "https://www.nexusmods.com/morrowind/mods/48611"],
+      ["L.U.S.T. (Luxury Upgrade Sexy Transport)", "https://www.nexusmods.com/morrowind/mods/57408"],
+      ["Library of Vivec Enhanced", "https://www.nexusmods.com/morrowind/mods/50181"]
+    ]},
+  ]),
 
-  { group: "Overhauls, Locations, Additions by Region", category: "Ascadian Isles Region", items: [
-    ["Ascadia - Land of Pilgrimage", "https://www.nexusmods.com/morrowind/mods/55707"],
-    ["Little Landscapes - Vivec Islands", "https://www.nexusmods.com/morrowind/mods/53276"],
-    ["OAAB - Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
-    ["Arano Plantation Windmill", "https://www.nexusmods.com/morrowind/mods/55393"],
-    ["Little Landscape - Path to Balmora", "https://www.nexusmods.com/morrowind/mods/53343"],
-    ["Hawia Infrastructure", "https://www.nexusmods.com/morrowind/mods/56510"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Ashlands Region", items: [
-    ["Bal'laku - The Lonely Towers", "https://www.nexusmods.com/morrowind/mods/51060"],
-    ["Crown of Urshilaku", "https://www.nexusmods.com/morrowind/mods/54251"],
-    ["Another Markgran Forest", "https://www.nexusmods.com/morrowind/mods/53910"],
-    ["Dunirai Town", "https://www.nexusmods.com/morrowind/mods/57587"],
-    ["Southern Ashlands Overhaul", "https://www.nexusmods.com/morrowind/mods/55254"],
-    ["A River of Fire", "https://www.nexusmods.com/morrowind/mods/54248"],
-    ["Little Landscape - Foyada of Sharp Teeth", "https://www.nexusmods.com/morrowind/mods/53355"],
-    ["OAAB - The Ashen Divide", "https://www.nexusmods.com/morrowind/mods/49047"],
-    ["Little Landscapes - Nix Hound Hunting Grounds", "https://www.nexusmods.com/morrowind/mods/53333"],
-    ["Vurt's Ashlands Overhaul", "https://www.nexusmods.com/morrowind/mods/29399"],
-    ["Strider Burial", "https://www.nexusmods.com/morrowind/mods/47661"],
-    ["Dwemer Legacy Reforged - Bthungthumz and Druscashti", "https://www.nexusmods.com/morrowind/mods/55073"],
-    ["Faces of Vel - Ash Mire", "https://www.nexusmods.com/morrowind/mods/44200"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Azura's Coast Region", items: [
-    ["Azura's Coast Redone", "https://www.nexusmods.com/morrowind/mods/53466"],
-    ["Concept Art Scamp Overhaul", "https://www.nexusmods.com/morrowind/mods/57514"],
-    ["Telvanni Sea Beacons", "https://www.nexusmods.com/morrowind/mods/50957"],
-    ["The Slavers Spire", "https://www.nexusmods.com/morrowind/mods/50662"],
-    ["RR Mod Series - Holamayan Monastery Replacer", "https://www.nexusmods.com/morrowind/mods/43524"],
-    ["Holamayan Island", "https://www.nexusmods.com/morrowind/mods/50996"],
-    ["Vassamsi Island", "https://www.nexusmods.com/morrowind/mods/52768"],
-    ["The Face of Veloth", "https://www.nexusmods.com/morrowind/mods/56072"],
-    ["Mudcrab Imports", "https://www.nexusmods.com/morrowind/mods/49463"],
-    ["Duskmoth Ruins", "https://www.nexusmods.com/morrowind/mods/51163"],
-    ["Smuggler's Market", "https://www.nexusmods.com/morrowind/mods/51698"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Bitter Coast Region", items: [
-    ["Hla Odai", "https://www.nexusmods.com/morrowind/mods/51942"],
-    ["Fishermans island", "https://www.nexusmods.com/morrowind/mods/59134"],
-    ["Little Landscapes - Bitter Coast Waterway", "https://www.nexusmods.com/morrowind/mods/53262"],
-    ["Little Landscapes - Odai River Upper Overhaul", "https://www.nexusmods.com/morrowind/mods/53274"],
-    ["Little Landscapes - Path to Pelagiad", "https://www.nexusmods.com/morrowind/mods/53281"],
-    ["Little Landscapes - Seyda Neen Swamp Pools", "https://www.nexusmods.com/morrowind/mods/53335"],
-    ["Justice for Khartag (J.F.K.)", "https://www.nexusmods.com/morrowind/mods/49832"],
-    ["The Curse of The Silent Siren", "https://www.nexusmods.com/morrowind/mods/54667"],
-    ["Seamless abandoned shack", "https://www.nexusmods.com/morrowind/mods/49527"],
-    ["Weird Science", "https://www.nexusmods.com/morrowind/mods/51416"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Grazelands Region", items: [
-    ["OAAB Grazelands", "https://www.nexusmods.com/morrowind/mods/49075"],
-    ["RR Mod Series - Telvanni Lighthouse Tel Vos", "https://www.nexusmods.com/morrowind/mods/42744"],
-    ["The Song of the Grazelands", "https://www.nexusmods.com/morrowind/mods/54652"],
-    ["Thickle-Lo Grove", "https://www.nexusmods.com/morrowind/mods/51689"],
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Mainland, Aanthirin Region", items: [
-    ["Keelhouse - A quest and house mod for Tamriel Rebuilt", "https://www.nexusmods.com/morrowind/mods/53395"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Mainland, Sunad Mora Region", items: [
-    ["Daedric Sanctuary Yamuninisharn", "https://www.nexusmods.com/morrowind/mods/59738"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Molag Amur Region", items: [
-    ["The Mountain of Fear", "https://www.nexusmods.com/morrowind/mods/52859"],
-    ["Molag Amur Mountains", "https://www.nexusmods.com/morrowind/mods/54247"],
-    ["Concept Art Molag Amur Region - The Great Scathes", "https://www.nexusmods.com/morrowind/mods/52971"],
-    ["OAAB Winged Twilight", "https://www.nexusmods.com/morrowind/mods/51643"],
-    ["We will go to mount Assarnibibi", "https://www.nexusmods.com/morrowind/mods/48867"],
-    ["Little Landscape - Arkngthand", "https://www.nexusmods.com/morrowind/mods/54761"],
-    ["Little Landscape - Foyada of Dead Mer", "https://www.nexusmods.com/morrowind/mods/54788"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Red Mountain Region", items: [
-    ["The Red Tower - Red Mountain Terrain Overhaul", "https://www.nexusmods.com/morrowind/mods/57476"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Sheogorad", items: [
-    ["Devilish Spines Of Madness", "https://www.nexusmods.com/morrowind/mods/53423"],
-    ["Redaynia Restored", "https://www.nexusmods.com/morrowind/mods/47646"],
-    ["Fort Ghostmoth", "https://www.nexusmods.com/morrowind/mods/52300"],
-    ["Ancient Foes", "https://www.nexusmods.com/morrowind/mods/44705"],
-    ["Sanctus Shrine", "https://www.nexusmods.com/morrowind/mods/47841"],
-    ["OAAB Vertical Shipwreck", "https://www.nexusmods.com/morrowind/mods/52268"],
-    ["Anna-Sera", "https://www.nexusmods.com/morrowind/mods/51343"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Solstheim, Hirstaang Forest Region", items: [
-    ["Nordic Moldy Horker", "https://www.nexusmods.com/morrowind/mods/59590"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Solstheim, Isinifier Plains Region", items: [
-    ["The Patchwork Airship - Fleshing out a vanilla quest", "https://www.nexusmods.com/morrowind/mods/53133"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "West Gash Region", items: [
-    ["The Stonewood pass reworked", "https://www.nexusmods.com/morrowind/mods/49464"],
-    ["The Haunted Tavern of the West Gash", "https://www.nexusmods.com/morrowind/mods/22286"],
-    ["Ald Gash - a Redoran Lighthouse", "https://www.nexusmods.com/morrowind/mods/52292"],
-    ["Salothan Council", "https://www.nexusmods.com/morrowind/mods/53928"],
-    ["Salothran Beacon", "https://www.nexusmods.com/morrowind/mods/52253"],
-    ["Bal Amayn - A Player Museum Stronghold", "https://www.nexusmods.com/morrowind/mods/56158"],
-    ["Dwemer Legacy Reforged - Arkngthunch-Sturdumz", "https://www.nexusmods.com/morrowind/mods/54807"],
-    ["Immersive Drulene Falen's Hut", "https://www.nexusmods.com/morrowind/mods/49623"]
-  ]},
-  { group: "Overhauls, Locations, Additions by Region", category: "Multiple Regions", items: [
-    ["Daedric Shrine Overhaul FULL", "https://www.nexusmods.com/morrowind/mods/54679"],
-    ["Shipyards of Vvardenfell (Sadrith Mora - Seyda Neen - Gnaar Mok)", "https://www.nexusmods.com/morrowind/mods/51928"],
-    ["OAAB Shipwrecks", "https://www.nexusmods.com/morrowind/mods/51364"],
-    ["The Beacons of Mamaea", "https://www.nexusmods.com/morrowind/mods/53875"],
-    ["Banners of the Imperial Forts", "https://www.nexusmods.com/morrowind/mods/53499"],
-    ["Light the Path", "https://www.nexusmods.com/morrowind/mods/54614"],
-    ["Blue Kanet Organic Integration", "https://www.nexusmods.com/morrowind/mods/54081"],
-    ["OAAB Dwemer Pavements", "https://www.nexusmods.com/morrowind/mods/50237"],
-    ["Shroomdoliers and a Fishrooman", "https://www.nexusmods.com/morrowind/mods/54330"],
-    ["OAAB Brother Junipers Twin Lamps", "https://www.nexusmods.com/morrowind/mods/51424"],
-    ["The Northern Strongholds", "https://www.nexusmods.com/morrowind/mods/53171"],
-    ["Minor Redoran Concept Art Inspired City Enhancement", "https://www.nexusmods.com/morrowind/mods/49495"],
-    ["The Ashlanders", "https://www.nexusmods.com/morrowind/mods/49221"],
-    ["More believable bandit camps - an addon for Ashfall", "https://www.nexusmods.com/morrowind/mods/50066"],
-    ["Dockside Clutter", "https://www.nexusmods.com/morrowind/mods/43055"],
-    ["Beautiful Cities of Morrowind", "https://www.nexusmods.com/morrowind/mods/49231", "Select additions only"]
-  ]},
+  ...inGroup("Overhauls, Locations, Additions by Region", [
+    { category: "Ascadian Isles Region", items: [
+      ["Ascadia - Land of Pilgrimage", "https://www.nexusmods.com/morrowind/mods/55707"],
+      ["Little Landscapes - Vivec Islands", "https://www.nexusmods.com/morrowind/mods/53276"],
+      ["OAAB - Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
+      ["Arano Plantation Windmill", "https://www.nexusmods.com/morrowind/mods/55393"],
+      ["Little Landscape - Path to Balmora", "https://www.nexusmods.com/morrowind/mods/53343"],
+      ["Hawia Infrastructure", "https://www.nexusmods.com/morrowind/mods/56510"]
+    ]},
+    { category: "Ashlands Region", items: [
+      ["Bal'laku - The Lonely Towers", "https://www.nexusmods.com/morrowind/mods/51060"],
+      ["Crown of Urshilaku", "https://www.nexusmods.com/morrowind/mods/54251"],
+      ["Another Markgran Forest", "https://www.nexusmods.com/morrowind/mods/53910"],
+      ["Dunirai Town", "https://www.nexusmods.com/morrowind/mods/57587"],
+      ["Southern Ashlands Overhaul", "https://www.nexusmods.com/morrowind/mods/55254"],
+      ["A River of Fire", "https://www.nexusmods.com/morrowind/mods/54248"],
+      ["Little Landscape - Foyada of Sharp Teeth", "https://www.nexusmods.com/morrowind/mods/53355"],
+      ["OAAB - The Ashen Divide", "https://www.nexusmods.com/morrowind/mods/49047"],
+      ["Little Landscapes - Nix Hound Hunting Grounds", "https://www.nexusmods.com/morrowind/mods/53333"],
+      ["Vurt's Ashlands Overhaul", "https://www.nexusmods.com/morrowind/mods/29399"],
+      ["Strider Burial", "https://www.nexusmods.com/morrowind/mods/47661"],
+      ["Dwemer Legacy Reforged - Bthungthumz and Druscashti", "https://www.nexusmods.com/morrowind/mods/55073"],
+      ["Faces of Vel - Ash Mire", "https://www.nexusmods.com/morrowind/mods/44200"]
+    ]},
+    { category: "Azura's Coast Region", items: [
+      ["Azura's Coast Redone", "https://www.nexusmods.com/morrowind/mods/53466"],
+      ["Concept Art Scamp Overhaul", "https://www.nexusmods.com/morrowind/mods/57514"],
+      ["Telvanni Sea Beacons", "https://www.nexusmods.com/morrowind/mods/50957"],
+      ["The Slavers Spire", "https://www.nexusmods.com/morrowind/mods/50662"],
+      ["RR Mod Series - Holamayan Monastery Replacer", "https://www.nexusmods.com/morrowind/mods/43524"],
+      ["Holamayan Island", "https://www.nexusmods.com/morrowind/mods/50996"],
+      ["Vassamsi Island", "https://www.nexusmods.com/morrowind/mods/52768"],
+      ["The Face of Veloth", "https://www.nexusmods.com/morrowind/mods/56072"],
+      ["Mudcrab Imports", "https://www.nexusmods.com/morrowind/mods/49463"],
+      ["Duskmoth Ruins", "https://www.nexusmods.com/morrowind/mods/51163"],
+      ["Smuggler's Market", "https://www.nexusmods.com/morrowind/mods/51698"]
+    ]},
+    { category: "Bitter Coast Region", items: [
+      ["Hla Odai", "https://www.nexusmods.com/morrowind/mods/51942"],
+      ["Fishermans island", "https://www.nexusmods.com/morrowind/mods/59134"],
+      ["Little Landscapes - Bitter Coast Waterway", "https://www.nexusmods.com/morrowind/mods/53262"],
+      ["Little Landscapes - Odai River Upper Overhaul", "https://www.nexusmods.com/morrowind/mods/53274"],
+      ["Little Landscapes - Path to Pelagiad", "https://www.nexusmods.com/morrowind/mods/53281"],
+      ["Little Landscapes - Seyda Neen Swamp Pools", "https://www.nexusmods.com/morrowind/mods/53335"],
+      ["Justice for Khartag (J.F.K.)", "https://www.nexusmods.com/morrowind/mods/49832"],
+      ["The Curse of The Silent Siren", "https://www.nexusmods.com/morrowind/mods/54667"],
+      ["Seamless abandoned shack", "https://www.nexusmods.com/morrowind/mods/49527"],
+      ["Weird Science", "https://www.nexusmods.com/morrowind/mods/51416"]
+    ]},
+    { category: "Grazelands Region", items: [
+      ["OAAB Grazelands", "https://www.nexusmods.com/morrowind/mods/49075"],
+      ["RR Mod Series - Telvanni Lighthouse Tel Vos", "https://www.nexusmods.com/morrowind/mods/42744"],
+      ["The Song of the Grazelands", "https://www.nexusmods.com/morrowind/mods/54652"],
+      ["Thickle-Lo Grove", "https://www.nexusmods.com/morrowind/mods/51689"],
+    ]},
+    { category: "Mainland, Aanthirin Region", items: [
+      ["Keelhouse - A quest and house mod for Tamriel Rebuilt", "https://www.nexusmods.com/morrowind/mods/53395"]
+    ]},
+    { category: "Mainland, Sunad Mora Region", items: [
+      ["Daedric Sanctuary Yamuninisharn", "https://www.nexusmods.com/morrowind/mods/59738"]
+    ]},
+    { category: "Molag Amur Region", items: [
+      ["The Mountain of Fear", "https://www.nexusmods.com/morrowind/mods/52859"],
+      ["Molag Amur Mountains", "https://www.nexusmods.com/morrowind/mods/54247"],
+      ["Concept Art Molag Amur Region - The Great Scathes", "https://www.nexusmods.com/morrowind/mods/52971"],
+      ["OAAB Winged Twilight", "https://www.nexusmods.com/morrowind/mods/51643"],
+      ["We will go to mount Assarnibibi", "https://www.nexusmods.com/morrowind/mods/48867"],
+      ["Little Landscape - Arkngthand", "https://www.nexusmods.com/morrowind/mods/54761"],
+      ["Little Landscape - Foyada of Dead Mer", "https://www.nexusmods.com/morrowind/mods/54788"]
+    ]},
+    { category: "Red Mountain Region", items: [
+      ["The Red Tower - Red Mountain Terrain Overhaul", "https://www.nexusmods.com/morrowind/mods/57476"]
+    ]},
+    { category: "Sheogorad", items: [
+      ["Devilish Spines Of Madness", "https://www.nexusmods.com/morrowind/mods/53423"],
+      ["Redaynia Restored", "https://www.nexusmods.com/morrowind/mods/47646"],
+      ["Fort Ghostmoth", "https://www.nexusmods.com/morrowind/mods/52300"],
+      ["Ancient Foes", "https://www.nexusmods.com/morrowind/mods/44705"],
+      ["Sanctus Shrine", "https://www.nexusmods.com/morrowind/mods/47841"],
+      ["OAAB Vertical Shipwreck", "https://www.nexusmods.com/morrowind/mods/52268"],
+      ["Anna-Sera", "https://www.nexusmods.com/morrowind/mods/51343"]
+    ]},
+    { category: "Solstheim, Hirstaang Forest Region", items: [
+      ["Nordic Moldy Horker", "https://www.nexusmods.com/morrowind/mods/59590"]
+    ]},
+    { category: "Solstheim, Isinifier Plains Region", items: [
+      ["The Patchwork Airship - Fleshing out a vanilla quest", "https://www.nexusmods.com/morrowind/mods/53133"]
+    ]},
+    { category: "West Gash Region", items: [
+      ["The Stonewood pass reworked", "https://www.nexusmods.com/morrowind/mods/49464"],
+      ["The Haunted Tavern of the West Gash", "https://www.nexusmods.com/morrowind/mods/22286"],
+      ["Ald Gash - a Redoran Lighthouse", "https://www.nexusmods.com/morrowind/mods/52292"],
+      ["Salothan Council", "https://www.nexusmods.com/morrowind/mods/53928"],
+      ["Salothran Beacon", "https://www.nexusmods.com/morrowind/mods/52253"],
+      ["Bal Amayn - A Player Museum Stronghold", "https://www.nexusmods.com/morrowind/mods/56158"],
+      ["Dwemer Legacy Reforged - Arkngthunch-Sturdumz", "https://www.nexusmods.com/morrowind/mods/54807"],
+      ["Immersive Drulene Falen's Hut", "https://www.nexusmods.com/morrowind/mods/49623"]
+    ]},
+    { category: "Multiple Regions", items: [
+      ["Daedric Shrine Overhaul FULL", "https://www.nexusmods.com/morrowind/mods/54679"],
+      ["Shipyards of Vvardenfell (Sadrith Mora - Seyda Neen - Gnaar Mok)", "https://www.nexusmods.com/morrowind/mods/51928"],
+      ["OAAB Shipwrecks", "https://www.nexusmods.com/morrowind/mods/51364"],
+      ["The Beacons of Mamaea", "https://www.nexusmods.com/morrowind/mods/53875"],
+      ["Banners of the Imperial Forts", "https://www.nexusmods.com/morrowind/mods/53499"],
+      ["Light the Path", "https://www.nexusmods.com/morrowind/mods/54614"],
+      ["Blue Kanet Organic Integration", "https://www.nexusmods.com/morrowind/mods/54081"],
+      ["OAAB Dwemer Pavements", "https://www.nexusmods.com/morrowind/mods/50237"],
+      ["Shroomdoliers and a Fishrooman", "https://www.nexusmods.com/morrowind/mods/54330"],
+      ["OAAB Brother Junipers Twin Lamps", "https://www.nexusmods.com/morrowind/mods/51424"],
+      ["The Northern Strongholds", "https://www.nexusmods.com/morrowind/mods/53171"],
+      ["Minor Redoran Concept Art Inspired City Enhancement", "https://www.nexusmods.com/morrowind/mods/49495"],
+      ["The Ashlanders", "https://www.nexusmods.com/morrowind/mods/49221"],
+      ["More believable bandit camps - an addon for Ashfall", "https://www.nexusmods.com/morrowind/mods/50066"],
+      ["Dockside Clutter", "https://www.nexusmods.com/morrowind/mods/43055"],
+      ["Beautiful Cities of Morrowind", "https://www.nexusmods.com/morrowind/mods/49231", "Select additions only"]
+    ]},
+  ]),
 
-  { group: null, category: "Quests and Adventures", items: [
+  { category: "Quests and Adventures", items: [
     ["The Garden of Dreams", "https://www.nexusmods.com/morrowind/mods/57831"],
     ["Secrets of the Crystal City", "https://www.nexusmods.com/morrowind/mods/51932"],
     ["Greymarch Dawn - Whispers of Jyggalag", "https://www.nexusmods.com/morrowind/mods/53679"],
@@ -285,7 +298,7 @@ const CREDITS = [
     ["The Plague Doctor", "https://www.nexusmods.com/morrowind/mods/52885"]
   ]},
 
-  { group: null, category: "Dungeons", items: [
+  { category: "Dungeons", items: [
     ["Dubdilla Remade", "https://www.nexusmods.com/morrowind/mods/59953"],
     ["Forge of Hilbongard Reignited", "https://www.nexusmods.com/morrowind/mods/57968"],
     ["The Vestiges of Tukushapal", "https://www.nexusmods.com/morrowind/mods/56829"],
@@ -300,13 +313,13 @@ const CREDITS = [
     ["Unholy Trinity - Dagoth Ur - Vemynal - Odrosal Remade", "https://www.nexusmods.com/morrowind/mods/55564"]
   ]},
 
-    { group: null, category: "Player Homes", items: [
+  { category: "Player Homes", items: [
     ["Iceholme Retreat", "https://www.nexusmods.com/morrowind/mods/55221"],
     ["Indoril Mansion", "https://www.nexusmods.com/morrowind/mods/53022"],
     ["Telvanni Rootmaster's Boat", "https://www.nexusmods.com/morrowind/mods/59934"]
   ]},
 
-  { group: null, category: "Immersion", items: [
+  { category: "Immersion", items: [
     ["Improved Lights for All Shaders", "https://www.nexusmods.com/morrowind/mods/51463"],
     ["Smoking Yurts", "https://www.nexusmods.com/morrowind/mods/52281"],
     ["Furled Sails for Ships", "https://www.nexusmods.com/morrowind/mods/57521"],
@@ -317,13 +330,13 @@ const CREDITS = [
     ["Weapon Sheathing", "https://www.nexusmods.com/morrowind/mods/46069"]
   ]},
 
-  { group: null, category: "Bonus: Adventures & Dungeons", items: [
+  { category: "Bonus: Adventures & Dungeons", items: [
     ["The Carmine Prediction", "https://www.youtube.com/watch?v=Q_PQ2sk5y4w"],
     ["Firemoth Reclaimed", "https://www.nexusmods.com/morrowind/mods/51939"],
     ["Caldera Priory and the Depths of Blood and Bone", "https://www.nexusmods.com/morrowind/mods/52898"]
   ]},
 
-  { group: null, category: "Bonus: World", items: [
+  { category: "Bonus: World", items: [
     ["Tamriel Rebuilt Preview - Almalexia", "https://www.tamriel-rebuilt.org/about/frequently-asked-questions/almalexia"],
     ["Tamriel Rebuild Preview - Blacklight", "https://wiki.project-tamriel.com/wiki/Blacklight"],
     ["Pelagiad Expanded WIP", "https://www.nexusmods.com/morrowind/mods/26905"],
@@ -335,7 +348,7 @@ const CREDITS = [
     ["Emba-5", "https://www.fullrest.ru/forum/topic/8735-jemba-5-myortvyj-gorod-morrovinda/"]
   ]},
 
-  { group: null, category: "Modders Resources", items: [
+  { category: "Modders Resources", items: [
     ["OAAB_Data", "https://www.nexusmods.com/morrowind/mods/49042"],
     ["Tamriel_Data", "https://www.nexusmods.com/morrowind/mods/44537"],
     ["Dr_Data", "https://www.nexusmods.com/morrowind/mods/51776?tab=posts"],
@@ -343,12 +356,12 @@ const CREDITS = [
     ["The Art of Morrowind - High Quality", "https://www.nexusmods.com/morrowind/mods/55590"]
   ]},
 
-  { group: null, category: "Patches", items: [
+  { category: "Patches", items: [
     ["Morrowind Optimization Patch", "https://www.nexusmods.com/morrowind/mods/45384"],
     ["Katya's Patches and mod recommendations", "https://www.nexusmods.com/morrowind/mods/56060"]
   ]},
 
-  { group: null, category: "Models and Textures", items: [
+  { category: "Models and Textures", items: [
     ["The Doors of Oblivion", "https://www.nexusmods.com/morrowind/mods/44398"],
     ["Ashfall - A Camping Survival and Needs Mod", "https://www.nexusmods.com/morrowind/mods/49057"],
     ["Articus Hlaalu 2K Retexture", "https://www.nexusmods.com/morrowind/mods/55917"],
@@ -422,51 +435,51 @@ const CREDITS = [
     ["Ashlanders textures", "https://www.nexusmods.com/morrowind/mods/45162"],
     ["Ashlander Banners Retexture - Aestetika of Vvardenfell - AoVv Banners Preview", "https://www.nexusmods.com/morrowind/mods/52732"]
   ]},
-  { group: null, category: "Models and Textures", subhead: "Only select textures used", items: [
+  { category: "Models and Textures", subhead: "Only select textures used", items: [
     ["Morroblivion", "https://morroblivion.com/forums/morroblivion/mods/753", "Signs"],
     ["Elodie's Mystic Minimods", "https://www.nexusmods.com/morrowind/mods/47266", "Dirty Muriel's Cornerclub sign"]
   ]},
 
-  { group: null, category: "Armour", items: [
+  { category: "Armour", items: [
     ["armor remodeling pack vanilla style", "https://www.nexusmods.com/morrowind/mods/48757?tab=description"]
   ]},
 
-  { group: null, category: "Groundcover", items: [
+  { category: "Groundcover", items: [
     ["Remiros' Groundcover", "https://www.nexusmods.com/morrowind/mods/46733"],
     ["Project Cyrodiil Grass", "https://www.nexusmods.com/morrowind/mods/55612"]
   ]},
 
-  { group: null, category: "Body, Face and Hair", items: [
+  { category: "Body, Face and Hair", items: [
     ["Westly's Faces Refurbished", "https://www.nexusmods.com/morrowind/mods/51214"]
   ]},
 
-  { group: null, category: "User Interface", items: [
+  { category: "User Interface", items: [
     ["TrueType fonts for OpenMW", "https://www.nexusmods.com/morrowind/mods/46854"]
   ]},
 
-  { group: null, category: "Audio", items: [
+  { category: "Audio", items: [
     ["Impact Sounds", "https://www.nexusmods.com/morrowind/mods/52747"],
     ["AURA - A Sound Overhaul Mod", "https://www.nexusmods.com/morrowind/mods/48255"]
   ]},
 
-  { group: null, category: "Tools", items: [
+  { category: "Tools", items: [
     ["Export Sphere", "https://morrowind-modding.github.io/modding-tools/3d-modeling-tools/export-sphere"],
     ["io_scene_mw", "https://github.com/Greatness7/io_scene_mw"]
   ]},
 
-  { group: null, category: "Utilities", items: [
+  { category: "Utilities", items: [
     ["MGE XE UF", "https://www.nexusmods.com/morrowind/mods/57200"]
   ]},
 
-  { group: null, category: "Heightmaps", items: [
+  { category: "Heightmaps", items: [
     ["Files for 3D Tamriel (Lady Nerevar)", "https://www.patreon.com/posts/files-for-3d-141012648"]
   ]},
 
-  { group: null, category: "Music", items: [
+  { category: "Music", items: [
     ["A Fool's Errand", "https://retconindustries.bandcamp.com/album/a-fools-errand", "by Dahliad"]
   ]},
 
-  { group: null, category: "Fab Content and Plugins", items: [
+  { category: "Fab Content and Plugins", items: [
     ["Fluid Flux", "https://www.fab.com/listings/196c70cd-1283-4249-bf6b-c3019d1cbe11"],
     ["Ultra Dynamic Sky", "https://www.fab.com/listings/84fda27a-c79f-49c9-8458-82401fb37cfb"],
     ["Screen Space Fog Scattering", "https://www.fab.com/listings/a670ac7b-392f-4ce0-ab5f-87a441d5ebb7"],
