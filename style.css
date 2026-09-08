@@ -633,16 +633,16 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
     border-left: 4px solid var(--primary-color);
     padding: var(--spacing-lg);
     border-radius: 4px;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: var(--spacing-lg);
+    align-items: start;
 }
 
-.download-card:hover {
-    border-color: var(--primary-color);
-    background-color: var(--accent-surface-medium);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px var(--accent-shadow);
+.download-main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .download-card h3 {
@@ -660,24 +660,148 @@ body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.d
     width: fit-content;
 }
 
-.download-specs {
-    display: flex;
-    gap: var(--spacing-md);
-    margin: var(--spacing-md) 0;
-    padding: var(--spacing-md) 0;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    flex-wrap: wrap;
+.download-btn {
+    margin-top: auto;
 }
 
-.download-specs span {
-    color: var(--text-muted);
+/* Password gate on the download card. .btn sets display:inline-block, which
+   would otherwise beat the hidden attribute's display:none. */
+[hidden] {
+    display: none !important;
+}
+
+.download-lock {
+    margin-top: auto;
+}
+
+.download-facts {
+    margin: 0;
+    padding-left: var(--spacing-md);
+    border-left: 1px solid var(--border-color);
     font-size: 0.9rem;
 }
 
-.download-btn {
-    margin-top: auto;
-    margin-bottom: var(--spacing-md);
+.download-facts dt {
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3em;
+}
+
+.download-facts dd {
+    margin: 0 0 var(--spacing-md);
+    color: var(--text-light);
+}
+
+.download-facts dd:last-of-type {
+    margin-bottom: 0;
+}
+
+.download-facts a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.download-fact-note {
+    display: block;
+    margin-top: 0.35em;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* Two columns need room the card does not have on narrow screens, so the
+   facts drop below the action and the divider moves from left edge to top. */
+@media (max-width: 768px) {
+    .download-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .download-facts {
+        padding-left: 0;
+        padding-top: var(--spacing-md);
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+    }
+}
+
+/* On a portrait phone the card frame costs more than it gives: its padding
+   alone claims a quarter of the screen width. Drop the box and let the
+   content use the page, keeping only the divider above the facts. */
+@media (max-width: 600px) and (orientation: portrait) {
+    .download-card {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+    }
+}
+
+.download-card code {
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size: 0.85em;
+    color: var(--gold-accent);
+    background-color: var(--accent-surface-medium);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+}
+
+.download-path {
+    overflow-wrap: anywhere;
+    user-select: all;
+}
+
+.download-lock-row {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.download-lock-input {
+    flex: 1 1 220px;
+    min-width: 0;
+    padding: var(--spacing-sm);
+    background-color: #000000;
+    color: var(--text-light);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.download-lock-input::placeholder {
+    color: var(--text-muted);
+}
+
+.download-lock-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.download-lock-input:disabled {
+    opacity: 0.6;
+}
+
+.download-lock button:disabled {
+    opacity: 0.6;
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+}
+
+.download-lock-status {
+    margin-top: var(--spacing-xs);
+    margin-bottom: 0;
+    min-height: 1.2em;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.download-lock-status.is-error {
+    color: #e06c6c;
 }
 
 /* Footer */
