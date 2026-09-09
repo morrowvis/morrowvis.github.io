@@ -7,8 +7,7 @@ const SECTIONS = [
       {
         subtitle: "NIF to glTF",
         items: [
-          'Every object is exported from Morrowind using <a href="https://github.com/morrowvis/Export_Cells">Export Cells</a>.',
-          "All files are batch processed as Blender files.",
+          "All NIF files are batch processed as Blender files and exported to glTF.",
           "The imports simplify node switching and Glow in the Dahrk geometry.",
           "The meshes are merged.",
           "Blender files are exported as a couple of glTF files with vertex colors.",
