@@ -36,14 +36,4 @@ const SECTIONS = [
       "Concatenating also causes loss of certain data, such as the Morrowind materials. However, these are not needed in Unreal since material instances are set according to name."
     ]
   },
-  {
-    title: "Parallelization",
-    items: [
-      "The script processes NIF files in parallel using PowerShell's Start-Process with -PassThru to launch each Blender instance as a separate background process.",
-      "A throttle limit ($MaxJobs, default 20) controls how many Blender instances run simultaneously.",
-      "Once all files are dispatched, the script enters a final loop that waits for every remaining process to finish before moving on to the next stage (glTF export, merging, finalization, etc.).",
-      "Each Blender instance runs independently with its own arguments and writes its own output file.",
-      'Parallelization is similarly used in <a href="https://github.com/morrowvis/Morrowind_Thumbnail_Generator">Morrowind Thumbnail Generator</a>.'
-    ]
-  }
 ];
