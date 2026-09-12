@@ -433,7 +433,8 @@ const CREDITS = [
     ["Vanilla friendly creatures retexture", "https://www.nexusmods.com/morrowind/mods/55093"],
     ["HiRez Creatures - Netch", "https://www.nexusmods.com/morrowind/mods/46421"],
     ["Ashlanders textures", "https://www.nexusmods.com/morrowind/mods/45162"],
-    ["Ashlander Banners Retexture - Aestetika of Vvardenfell - AoVv Banners Preview", "https://www.nexusmods.com/morrowind/mods/52732"]
+    ["Ashlander Banners Retexture - Aestetika of Vvardenfell - AoVv Banners Preview", "https://www.nexusmods.com/morrowind/mods/52732"],
+    ["Silt Strider", "https://www.nexusmods.com/morrowind/mods/48664"]
   ]},
   { category: "Models and Textures", subhead: "Only select textures used", items: [
     ["Morroblivion", "https://morroblivion.com/forums/morroblivion/mods/753", "Signs"],
