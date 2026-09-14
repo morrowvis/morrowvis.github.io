@@ -316,7 +316,8 @@ const CREDITS = [
   { category: "Player Homes", items: [
     ["Iceholme Retreat", "https://www.nexusmods.com/morrowind/mods/55221"],
     ["Indoril Mansion", "https://www.nexusmods.com/morrowind/mods/53022"],
-    ["Telvanni Rootmaster's Boat", "https://www.nexusmods.com/morrowind/mods/59934"]
+    ["Telvanni Rootmaster's Boat", "https://www.nexusmods.com/morrowind/mods/59934"],
+    ["Arnchenzel - Dwemer Underwater House", "https://www.nexusmods.com/morrowind/mods/52838"]
   ]},
 
   { category: "Immersion", items: [
