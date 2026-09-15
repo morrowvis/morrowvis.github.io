@@ -224,6 +224,9 @@ const CREDITS = [
     { category: "Mainland, Sunad Mora Region", items: [
       ["Daedric Sanctuary Yamuninisharn", "https://www.nexusmods.com/morrowind/mods/59738"]
     ]},
+    { category: "Mainland, Sundered Scar Region", items: [
+      ["Rocky Sundered Scar - Tamriel Rebuilt", "https://www.nexusmods.com/morrowind/mods/60251"]
+    ]},
     { category: "Molag Amur Region", items: [
       ["The Mountain of Fear", "https://www.nexusmods.com/morrowind/mods/52859"],
       ["Molag Amur Mountains", "https://www.nexusmods.com/morrowind/mods/54247"],
