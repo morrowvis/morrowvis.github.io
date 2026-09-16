@@ -452,7 +452,8 @@ const CREDITS = [
 
   { category: "Groundcover", items: [
     ["Remiros' Groundcover", "https://www.nexusmods.com/morrowind/mods/46733"],
-    ["Project Cyrodiil Grass", "https://www.nexusmods.com/morrowind/mods/55612"]
+    ["Project Cyrodiil Grass", "https://www.nexusmods.com/morrowind/mods/55612"],
+    ["Skyrim Home Of The Nords Grass", "https://www.nexusmods.com/morrowind/mods/60053"]
   ]},
 
   { category: "Body, Face and Hair", items: [
