@@ -290,6 +290,7 @@ const CREDITS = [
     ["Greymarch Dawn - Whispers of Jyggalag", "https://www.nexusmods.com/morrowind/mods/53679"],
     ["The Popular Plague", "https://www.nexusmods.com/morrowind/mods/54730"],
     ["Lord of Rebirth", "https://www.nexusmods.com/morrowind/mods/53680"],
+    ["Darkness Over Dunbal", "https://www.nexusmods.com/morrowind/mods/57830"],
     ["Investigations at Tel Eurus", "https://www.nexusmods.com/morrowind/mods/51938"],
     ["The Manifold Spires", "https://www.nexusmods.com/morrowind/mods/46128"],
     ["Under Masser's Gaze", "https://www.nexusmods.com/morrowind/mods/55445"],
