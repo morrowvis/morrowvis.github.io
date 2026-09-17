@@ -11,11 +11,14 @@ function inGroup(group, blocks) {
 const CREDITS = [
   { category: "New Lands", items: [
     ["Tamriel Rebuilt", "https://www.nexusmods.com/morrowind/mods/42145"],
+    ["Tamriel Rebuilt Border", "https://www.nexusmods.com/morrowind/mods/56462"],
     ["Solstheim - Tomb of the Snow Prince", "https://www.nexusmods.com/morrowind/mods/46810"],
     ["Project Cyrodiil", "https://www.nexusmods.com/morrowind/mods/44922"],
+    ["Project Hammerfell", "https://www.project-tamriel.com/viewforum.php?f=273&sid=0bf61400309f7718e7007cc7ae625b12"],
     ["Skyrim Home Of The Nords", "https://www.nexusmods.com/morrowind/mods/44921"],
-    ["Lyithdonea - The Azurian Isles", "https://www.nexusmods.com/morrowind/mods/43749"],
-    ["Tamriel Rebuilt Border", "https://www.nexusmods.com/morrowind/mods/56462"],
+    ["High Rock 427", "https://www.project-tamriel.com/viewforum.php?f=36&sid=0bf61400309f7718e7007cc7ae625b12"],
+    ["Padomaic Isles", "https://www.project-tamriel.com/viewforum.php?f=227"],
+    ["Lyithdonea - The Azurian Isles", "https://www.nexusmods.com/morrowind/mods/43749"]
   ]},
 
   ...inGroup("Overhauls, Locations, Additions by City/Settlement", [
