@@ -1711,6 +1711,12 @@ footer .container p:last-child {
     margin-bottom: 0;
 }
 
+/* A note closing a credits block sits under its cards; the section below already
+   supplies the gap, so it only needs its own space above. */
+.credits-block-note {
+    margin: var(--spacing-md) 0 0;
+}
+
 .doc-content h1,
 .doc-content h2,
 .doc-content h3 {
