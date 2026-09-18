@@ -19,7 +19,7 @@ const CREDITS = [
     ["High Rock 427", "https://www.project-tamriel.com/viewforum.php?f=36&sid=0bf61400309f7718e7007cc7ae625b12"],
     ["Padomaic Isles", "https://www.project-tamriel.com/viewforum.php?f=227"],
     ["Lyithdonea - The Azurian Isles", "https://www.nexusmods.com/morrowind/mods/43749"]
-  ]},
+  ], note: "Morrowind Visualisation Project is not associated with Tamriel Rebuilt or Project Tamriel and no material from this project is to be taken as official promotion material." },
 
   ...inGroup("Overhauls, Locations, Additions by City/Settlement", [
     { category: "Ald-Ruhn", items: [

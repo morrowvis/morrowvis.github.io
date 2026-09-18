@@ -23,11 +23,6 @@ const GOALS_MAIN = [
   "Inform and intersect with architectural work, as part of a wider vision of presenting and exploring spaces, imagined or built, at different scales."
 ];
 
-const GOALS_HINT = [
-  "Morrowind Visualisation Project is not a remaster. It will not aim to be playable other than exploration.",
-  "Morrowind Visualisation Project is not associated with Tamriel Rebuilt or Project Tamriel and no material from this project is to be taken as official promotion material."
-];
-
 const GOALS_SECTIONS = [
   {
     title: "Export Cells",
