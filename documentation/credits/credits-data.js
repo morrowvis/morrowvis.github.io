@@ -317,7 +317,8 @@ const CREDITS = [
     ["Tales from the Ashlands - The Great Hive Baan Binif", "https://www.nexusmods.com/morrowind/mods/51419"],
     ["Daedric Shrine Overhaul Vaermina", "https://www.nexusmods.com/morrowind/mods/53242"],
     ["OAAB Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
-    ["Unholy Trinity - Dagoth Ur - Vemynal - Odrosal Remade", "https://www.nexusmods.com/morrowind/mods/55564"]
+    ["Unholy Trinity - Dagoth Ur - Vemynal - Odrosal Remade", "https://www.nexusmods.com/morrowind/mods/55564"],
+    ["Baal Duun - Cursed Isle of the Four Corners", "https://www.nexusmods.com/morrowind/mods/54780"]
   ]},
 
   { category: "Player Homes", items: [
