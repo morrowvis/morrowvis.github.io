@@ -227,6 +227,16 @@
                 });
                 section.appendChild(grid);
 
+                // Optional disclaimer/footnote for a block, rendered under its cards.
+                if (block.note) {
+                    const note = document.createElement('div');
+                    note.className = 'doc-hint credits-block-note';
+                    const p = document.createElement('p');
+                    p.textContent = block.note;
+                    note.appendChild(p);
+                    section.appendChild(note);
+                }
+
                 currentPanel.appendChild(section);
             });
 
