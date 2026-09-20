@@ -407,6 +407,8 @@ const CREDITS = [
     ["Signposts Replacer for Tamriel Rebuilt and Vvardenfell", "https://www.nexusmods.com/morrowind/mods/55496"],
     ["Welcome Road Marker Retexture - Aestetika of Vvardenfell", "https://www.nexusmods.com/morrowind/mods/52791"],
     ["Logs on Fire - Tamriel Rebuilt", "https://www.nexusmods.com/morrowind/mods/56516"],
+    ["Logs on Fire - Cyrodiil", "https://www.nexusmods.com/morrowind/mods/55647"],
+    ["Logs on Fire - Skyrim", "https://www.nexusmods.com/morrowind/mods/55665"],
     ["I Lava Good Mesh Replacer", "https://www.nexusmods.com/morrowind/mods/49605"],
     ["Orange Narsis - Shipal-Shin wall retexture", "https://www.nexusmods.com/morrowind/mods/57199"],
     ["Hanging Vines Replacer", "https://www.nexusmods.com/morrowind/mods/45517"],
