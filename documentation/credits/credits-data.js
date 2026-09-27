@@ -515,7 +515,8 @@ const CREDITS = [
     ["Niagara Realistic Starter VFX Pack 3", "https://www.fab.com/listings/fa026ea9-3f77-4e7a-95c6-603829478c43"],
     ["WildLife Starter VFX Pack", "https://www.fab.com/listings/2b42a8ef-df03-4ede-9dab-bdecab620a61"],
     ["Water Starter VFX Pack", "https://www.fab.com/listings/46d257ab-a51f-4ffe-b268-21339973b512"],
-    ["Icicles Pack & Ice Shaders", "https://www.fab.com/listings/ff21c895-a517-4960-98c3-284a7f0c4cff"]
+    ["Icicles Pack & Ice Shaders", "https://www.fab.com/listings/ff21c895-a517-4960-98c3-284a7f0c4cff"],
+    ["Water Fountain", "https://www.fab.com/listings/ca1ca322-d262-4473-ada4-cc7f18dd4a74"]
   ]}
 ];
 
