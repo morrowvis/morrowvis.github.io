@@ -13,7 +13,7 @@ const GOALS_MAIN = [
   "Implement concepts from mods that were omitted due to technical limitations or otherwise.",
   "Emphasise vivid colours and the interplay between shadow and light, with a focus on HDR.",
   "Implement a modlist that overhauls and fleshes out Morrowind without going overboard or significantly contradicting the original vision.",
-  "Showcase bonus levels with alternate takes on locations significant to Morrowind's modding history, outside the constraints of the modlist.",
+  "Showcase bonus mods outside the constraints of the modlist which have significance in Morrowind's modding history.",
   "Bring increased accessibility and exposure to modded cells.",
   "Develop systems also applicable to architectural visualisations.",
   "Develop a powerful traversal system with real-time environmental control.",
