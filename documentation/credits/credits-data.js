@@ -517,7 +517,42 @@ const CREDITS = [
     ["Water Starter VFX Pack", "https://www.fab.com/listings/46d257ab-a51f-4ffe-b268-21339973b512"],
     ["Icicles Pack & Ice Shaders", "https://www.fab.com/listings/ff21c895-a517-4960-98c3-284a7f0c4cff"],
     ["Water Fountain", "https://www.fab.com/listings/ca1ca322-d262-4473-ada4-cc7f18dd4a74"]
-  ]}
+  ]},
+
+  ...inGroup("Export Cells GUI", [
+    { category: "Greatness7's Libraries", items: [
+      ["tes3", "https://github.com/Greatness7/tes3", "Plugin and NIF reading"],
+      ["merge_to_master", "https://github.com/Greatness7/merge_to_master", "Load order merging"],
+      ["MGE XE", "https://github.com/Greatness7/MGE-XE", "Distant land formats, terrain blending, water, fog and grass shading"],
+      ["io_scene_mw", "https://github.com/Greatness7/io_scene_mw", "Blender NIF import for the creature export"]
+    ]},
+    { category: "Rust Crates", items: [
+      ["egui / eframe", "https://github.com/emilk/egui", "User interface"],
+      ["egui_extras", "https://github.com/emilk/egui/tree/main/crates/egui_extras", "SVG map icons"],
+      ["wgpu", "https://github.com/gfx-rs/wgpu", "GPU rendering"],
+      ["naga", "https://github.com/gfx-rs/wgpu/tree/trunk/naga", "Shader compilation"],
+      ["winit", "https://github.com/rust-windowing/winit", "Windowing"],
+      ["Rapier", "https://rapier.rs/", "Physics"],
+      ["parry", "https://github.com/dimforge/parry", "Collision detection"],
+      ["glam", "https://github.com/bitshifter/glam-rs", "Maths"],
+      ["nalgebra", "https://nalgebra.rs/", "Maths"],
+      ["gltf", "https://github.com/gltf-rs/gltf", "Model import (glTF)"],
+      ["rayon", "https://github.com/rayon-rs/rayon", "Multithreading"],
+      ["gilrs", "https://gitlab.com/gilrs-project/gilrs", "Game controllers"],
+      ["image", "https://github.com/image-rs/image", "PNG, TGA and BMP decoding"],
+      ["resvg", "https://github.com/linebender/resvg", "SVG rendering"],
+      ["flate2", "https://github.com/rust-lang/flate2-rs", "Compression"],
+      ["serde", "https://serde.rs/", "Serialisation"],
+      ["toml", "https://github.com/toml-rs/toml", "Settings files"],
+      ["bytemuck", "https://github.com/Lokathor/bytemuck", "GPU buffer data"],
+      ["AccessKit", "https://github.com/AccessKit/accesskit", "Accessibility"],
+      ["pollster", "https://github.com/zesterer/pollster", "Tests"]
+    ]},
+    { category: "Resources", items: [
+      ["takram three-geospatial clouds", "https://github.com/takram-design-engineering/three-geospatial/tree/main/packages/clouds", "Volumetric clouds and their textures"],
+      ["Map Icons - MWSE", "https://www.nexusmods.com/morrowind/mods/53966", "Door icon rules"]
+    ]}
+  ])
 ];
 
 const SPECIAL_THANKS = [
