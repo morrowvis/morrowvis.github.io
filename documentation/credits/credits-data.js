@@ -561,11 +561,6 @@ const CREDITS = [
     ]},
     { category: "References", items: [
       ["OpenMW", "https://gitlab.com/OpenMW/openmw"]
-    ]},
-    { category: "Tools", items: [
-      ["Blender / Cycles", "https://www.blender.org/"],
-      ["IrfanView", "https://www.irfanview.com/"],
-      ["io_scene_mw_mvp", "https://github.com/ms-arch-mvp/io_scene_mw_mvp"]
     ]}
   ])
 ];
