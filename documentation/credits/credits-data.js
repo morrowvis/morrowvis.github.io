@@ -394,7 +394,6 @@ const CREDITS = [
     ["Ket's Paper Lanterns Retexture", "https://www.nexusmods.com/morrowind/mods/45123"],
     ["Arkitektora White Suran", "https://www.nexusmods.com/morrowind/mods/45101"],
     ["Bitter Coast Redux II - Trees and Flora", "https://www.nexusmods.com/morrowind/mods/45762"],
-    ["Glowing Bitter Coast (Reupload)", "https://www.nexusmods.com/morrowind/mods/47946"],
     ["Vurt's Animated Ascadian Isles Trees", "https://www.nexusmods.com/morrowind/mods/56334"],
     ["Vurt's Animated Grazeland Trees", "https://www.nexusmods.com/morrowind/mods/57369"],
     ["Vurt's Animated Solstheim Trees", "https://www.nexusmods.com/morrowind/mods/56442"],
@@ -410,13 +409,11 @@ const CREDITS = [
     ["Logs on Fire - Cyrodiil", "https://www.nexusmods.com/morrowind/mods/55647"],
     ["Logs on Fire - Skyrim", "https://www.nexusmods.com/morrowind/mods/55665"],
     ["I Lava Good Mesh Replacer", "https://www.nexusmods.com/morrowind/mods/49605"],
-    ["Orange Narsis - Shipal-Shin wall retexture", "https://www.nexusmods.com/morrowind/mods/57199"],
     ["Hanging Vines Replacer", "https://www.nexusmods.com/morrowind/mods/45517"],
     ["Thickle-Lo - The Succulent Hackle-Lo Mod", "https://www.nexusmods.com/morrowind/mods/47502"],
     ["Succulent Scathecraw", "https://www.nexusmods.com/morrowind/mods/52096"],
     ["3D Vines Vanilla Mushroom Trees", "https://www.nexusmods.com/morrowind/mods/48954"],
     ["Vanilla-friendly West Gash Tree Replacer", "https://www.nexusmods.com/morrowind/mods/44173"],
-    ["Ket's Potions and Beverages Retexture", "https://www.nexusmods.com/morrowind/mods/44781"],
     ["Ket's Potions and Beverages Retexture", "https://www.nexusmods.com/morrowind/mods/44781"],
     ["Melchior's Magnificent Manuscripts", "https://www.nexusmods.com/morrowind/mods/45626"],
     ["Arukinns Better Books and Scrolls", "https://www.nexusmods.com/morrowind/mods/43100"],
@@ -446,7 +443,8 @@ const CREDITS = [
     ["Ashlanders textures", "https://www.nexusmods.com/morrowind/mods/45162"],
     ["Ashlander Banners Retexture - Aestetika of Vvardenfell - AoVv Banners Preview", "https://www.nexusmods.com/morrowind/mods/52732"],
     ["Silt Strider", "https://www.nexusmods.com/morrowind/mods/48664"],
-    ["Galaxy Night Sky .iv", "https://www.nexusmods.com/morrowind/mods/45024"]
+    ["Galaxy Night Sky .iv", "https://www.nexusmods.com/morrowind/mods/45024"],
+    ["Everything Must Glow - OMI Daedrics", "https://www.nexusmods.com/morrowind/mods/57084"]
   ]},
   { category: "Models and Textures", subhead: "Only select textures used", items: [
     ["Morroblivion", "https://morroblivion.com/forums/morroblivion/mods/753", "Signs"],
@@ -474,7 +472,8 @@ const CREDITS = [
   { category: "Audio", items: [
     ["Impact Sounds", "https://www.nexusmods.com/morrowind/mods/52747"],
     ["AURA - A Sound Overhaul Mod", "https://www.nexusmods.com/morrowind/mods/48255"],
-    ["Character Sound Overhaul", "https://www.nexusmods.com/morrowind/mods/49654"]
+    ["Character Sound Overhaul", "https://www.nexusmods.com/morrowind/mods/49654"],
+    ["Bardcraft", "https://www.nexusmods.com/morrowind/mods/56814"]
   ]},
 
   { category: "Tools", items: [
@@ -523,61 +522,50 @@ const CREDITS = [
 
   ...inGroup("Vvardenworks", [
     { category: "Greatness7's Libraries", items: [
-      ["tes3", "https://github.com/Greatness7/tes3", "Plugin and NIF reading, and tes3conv JSON for the gallery data"],
-      ["tes3conv", "https://github.com/Greatness7/tes3conv", "The JSON the gallery data matches"],
-      ["merge_to_master", "https://github.com/Greatness7/merge_to_master", "Load order merging"],
-      ["MGE XE", "https://github.com/Greatness7/MGE-XE", "Distant land formats, terrain blending, water, fog and grass shading"],
-      ["io_scene_mw", "https://github.com/Greatness7/io_scene_mw", "Blender NIF import for the creature export and gallery thumbnails"]
+      ["tes3", "https://github.com/Greatness7/tes3"],
+      ["tes3conv", "https://github.com/Greatness7/tes3conv"],
+      ["merge_to_master", "https://github.com/Greatness7/merge_to_master"],
+      ["MGE XE", "https://github.com/Greatness7/MGE-XE"]
     ]},
     { category: "Rust Crates", items: [
-      ["egui / eframe", "https://github.com/emilk/egui", "User interface"],
-      ["egui_extras", "https://github.com/emilk/egui/tree/main/crates/egui_extras", "SVG map icons"],
-      ["wgpu", "https://github.com/gfx-rs/wgpu", "GPU rendering"],
-      ["naga", "https://github.com/gfx-rs/wgpu/tree/trunk/naga", "Shader compilation"],
-      ["winit", "https://github.com/rust-windowing/winit", "Windowing"],
-      ["Rapier", "https://rapier.rs/", "Physics"],
-      ["parry", "https://github.com/dimforge/parry", "Collision detection"],
-      ["glam", "https://github.com/bitshifter/glam-rs", "Maths"],
-      ["nalgebra", "https://nalgebra.rs/", "Maths"],
-      ["gltf", "https://github.com/gltf-rs/gltf", "Model import (glTF)"],
-      ["rayon", "https://github.com/rayon-rs/rayon", "Multithreading"],
-      ["gilrs", "https://gitlab.com/gilrs-project/gilrs", "Game controllers"],
-      ["rodio", "https://github.com/RustAudio/rodio", "3D sound"],
-      ["midly", "https://github.com/negamartin/midly", "MIDI reading"],
-      ["image", "https://github.com/image-rs/image", "PNG, TGA and BMP decoding"],
-      ["resvg", "https://github.com/linebender/resvg", "SVG rendering"],
-      ["flate2", "https://github.com/rust-lang/flate2-rs", "Compression"],
-      ["serde", "https://serde.rs/", "Serialisation"],
-      ["serde_json", "https://github.com/serde-rs/json", "Scene descriptions for Cycles renders"],
-      ["toml", "https://github.com/toml-rs/toml", "Settings files"],
-      ["bytemuck", "https://github.com/Lokathor/bytemuck", "GPU buffer data"],
-      ["rkyv", "https://github.com/rkyv/rkyv", "Reading MGE XE's atlas records"],
-      ["AccessKit", "https://github.com/AccessKit/accesskit", "Accessibility"],
-      ["oxipng", "https://github.com/shssoichiro/oxipng", "Gallery thumbnail compression"],
-      ["rfd", "https://github.com/PolyMeilex/rfd", "Folder pickers"],
-      ["pollster", "https://github.com/zesterer/pollster", "Tests"]
+      ["egui / eframe", "https://github.com/emilk/egui"],
+      ["egui_extras", "https://github.com/emilk/egui/tree/main/crates/egui_extras"],
+      ["wgpu", "https://github.com/gfx-rs/wgpu"],
+      ["naga", "https://github.com/gfx-rs/wgpu/tree/trunk/naga"],
+      ["winit", "https://github.com/rust-windowing/winit"],
+      ["Rapier", "https://rapier.rs/"],
+      ["parry", "https://github.com/dimforge/parry"],
+      ["glam", "https://github.com/bitshifter/glam-rs"],
+      ["nalgebra", "https://nalgebra.rs/"],
+      ["gltf", "https://github.com/gltf-rs/gltf"],
+      ["rayon", "https://github.com/rayon-rs/rayon"],
+      ["gilrs", "https://gitlab.com/gilrs-project/gilrs"],
+      ["rodio", "https://github.com/RustAudio/rodio"],
+      ["midly", "https://github.com/negamartin/midly"],
+      ["image", "https://github.com/image-rs/image"],
+      ["resvg", "https://github.com/linebender/resvg"],
+      ["flate2", "https://github.com/rust-lang/flate2-rs"],
+      ["serde", "https://serde.rs/"],
+      ["serde_json", "https://github.com/serde-rs/json"],
+      ["toml", "https://github.com/toml-rs/toml"],
+      ["bytemuck", "https://github.com/Lokathor/bytemuck"],
+      ["rkyv", "https://github.com/rkyv/rkyv"],
+      ["AccessKit", "https://github.com/AccessKit/accesskit"],
+      ["oxipng", "https://github.com/shssoichiro/oxipng"],
+      ["rfd", "https://github.com/PolyMeilex/rfd"],
+      ["pollster", "https://github.com/zesterer/pollster"]
     ]},
     { category: "Resources", items: [
-      ["takram three-geospatial clouds", "https://github.com/takram-design-engineering/three-geospatial/tree/main/packages/clouds", "Volumetric clouds and their textures"],
-      ["Map Icons - MWSE", "https://www.nexusmods.com/morrowind/mods/53966", "Door icon rules"],
-      ["Tamriel Data", "https://www.tamriel-rebuilt.org/", "The Hoom, its egg sacs, textures and sounds"],
-      ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/", "HOOM FPS shotgun blast (Shotgun 03) and pump (Realistic shotgun cocking sound)"],
-      ["Tamriel Rebuilt", "https://www.tamriel-rebuilt.org/", "The Necrom Ordinator, a HOOM FPS bot"]
-    ]},
-    { category: "Mods", items: [
-      ["Bardcraft", "https://www.nexusmods.com/morrowind/mods/56814", "Bass flute samples and songs for Hoom mode's music"],
-      ["Galaxy Night Sky", "https://www.nexusmods.com/morrowind/mods/45024", "Stars of the night sky"],
-      ["The Lunar Lorkhan", "https://www.nexusmods.com/morrowind/mods/53256", "Moons"],
-      ["Weapon Sheathing", "https://www.nexusmods.com/morrowind/mods/46069", "Sheathed weapons on assembled NPCs and the bots' skeleton"],
-      ["Everything Must Glow - OMI Daedrics", "https://www.nexusmods.com/morrowind/mods/57084", "HOOM FPS mode's dai-katana"]
+      ["takram three-geospatial clouds", "https://github.com/takram-design-engineering/three-geospatial/tree/main/packages/clouds"],
+      ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/"]
     ]},
     { category: "References", items: [
-      ["OpenMW", "https://gitlab.com/OpenMW/openmw", "Moon and star behaviour, reverse-engineered from the engine"]
+      ["OpenMW", "https://gitlab.com/OpenMW/openmw"]
     ]},
     { category: "Tools", items: [
-      ["Blender / Cycles", "https://www.blender.org/", "Path-traced renders of the Distant Land view and gallery thumbnails; HOOM FPS mode's shotgun was modelled in it"],
-      ["IrfanView", "https://www.irfanview.com/", "WebP gallery images"],
-      ["io_scene_mw_mvp", "https://github.com/ms-arch-mvp/io_scene_mw_mvp", "Clean NIF imports for gallery thumbnails"]
+      ["Blender / Cycles", "https://www.blender.org/"],
+      ["IrfanView", "https://www.irfanview.com/"],
+      ["io_scene_mw_mvp", "https://github.com/ms-arch-mvp/io_scene_mw_mvp"]
     ]}
   ])
 ];
