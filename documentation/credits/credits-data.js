@@ -521,7 +521,7 @@ const CREDITS = [
     ["Water Fountain", "https://www.fab.com/listings/ca1ca322-d262-4473-ada4-cc7f18dd4a74"]
   ]},
 
-  ...inGroup("Export Cells GUI", [
+  ...inGroup("Vvardenworks", [
     { category: "Greatness7's Libraries", items: [
       ["tes3", "https://github.com/Greatness7/tes3", "Plugin and NIF reading, and tes3conv JSON for the gallery data"],
       ["tes3conv", "https://github.com/Greatness7/tes3conv", "The JSON the gallery data matches"],
