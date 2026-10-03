@@ -5,7 +5,7 @@
 (function () {
     const BASE = window.SITE_BASE || '';
     const PAGE = document.body.dataset.page || '';
-    const DOC_PAGES = ['documentation', 'goals', 'roadmap', 'credits', 'nif-to-ue5', 'json-to-ue5'];
+    const DOC_PAGES = ['documentation', 'goals', 'roadmap', 'credits'];
 
     const HOME_HREF = BASE === '' ? './' : BASE;
 
@@ -22,10 +22,6 @@
                             '<li><a href="' + BASE + 'documentation/goals/" data-page="goals">Goals</a></li>' +
                             '<li><a href="' + BASE + 'documentation/roadmap/" data-page="roadmap">Roadmap</a></li>' +
                             '<li><a href="' + BASE + 'documentation/credits/" data-page="credits">Credits</a></li>' +
-                            '<li class="dropdown-divider"></li>' +
-                            '<li><span class="dropdown-label">Pipeline</span></li>' +
-                            '<li><a href="' + BASE + 'documentation/nif-to-ue5/" data-page="nif-to-ue5">NIF to UE5</a></li>' +
-                            '<li><a href="' + BASE + 'documentation/json-to-ue5/" data-page="json-to-ue5">JSON to UE5</a></li>' +
                         '</ul>' +
                     '</li>' +
                 '</ul>' +

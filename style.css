@@ -1112,22 +1112,6 @@ footer .container p:last-child {
     background-color: var(--accent-surface);
 }
 
-.dropdown-menu li.dropdown-divider {
-    width: auto;
-    height: 1px;
-    background-color: var(--border-color);
-    margin: var(--spacing-xs) var(--spacing-sm);
-}
-
-.dropdown-menu .dropdown-label {
-    display: block;
-    padding: var(--spacing-xs) var(--spacing-sm) 2px;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-muted);
-}
-
 /* Mobile: the Documentation submenu becomes an inline accordion inside the
    burger menu. The caret to the right of the label toggles it (see nav.js); it
    opens in flow and pushes the items below it down, rather than floating as the
@@ -1171,11 +1155,6 @@ footer .container p:last-child {
     .dropdown-menu a {
         padding-left: var(--spacing-lg);
         white-space: normal;
-    }
-
-    /* The "Pipeline" group label lines up with those items, not its base indent. */
-    .dropdown-menu .dropdown-label {
-        padding-left: var(--spacing-lg);
     }
 }
 
@@ -1241,9 +1220,9 @@ footer .container p:last-child {
     scroll-margin-top: 110px;
 }
 
-/* Extra breathing room above the first heading (Pipeline), which follows the
-   nav-card grid. Targeted via the adjacent grid so the second heading (Tools) -
-   same class, but it follows a panel - keeps the standard gap. */
+/* Extra breathing room above the first heading (Tools), which follows the
+   nav-card grid. Targeted via the adjacent grid so later headings - same class,
+   but following a panel - keep the standard gap. */
 .doc-nav-grid + .pipeline-title {
     margin-top: calc(var(--spacing-xl) * 1.5);
 }
@@ -1655,21 +1634,6 @@ footer .container p:last-child {
    and sizes, and a plain '.doc-main h3' would outrank and break them. */
 .doc-main h3:not([class]) {
     font-size: var(--font-size-lg);
-}
-
-/* Pipeline pages (NIF/JSON to UE5): sub-headings read as plain bold text rather
-   than another heading step, so the hierarchy stays as shallow as Goals/Roadmap.
-   Overrides the shared h1-h6 rule, which would otherwise make these uppercase,
-   letter-spaced and set in the heading font. */
-.doc-main .doc-subheading {
-    font-family: var(--font-family);
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--gold-accent);
-    text-transform: none;
-    letter-spacing: 0;
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-xs);
 }
 
 .doc-content .credits-section-title {

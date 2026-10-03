@@ -473,7 +473,8 @@ const CREDITS = [
 
   { category: "Audio", items: [
     ["Impact Sounds", "https://www.nexusmods.com/morrowind/mods/52747"],
-    ["AURA - A Sound Overhaul Mod", "https://www.nexusmods.com/morrowind/mods/48255"]
+    ["AURA - A Sound Overhaul Mod", "https://www.nexusmods.com/morrowind/mods/48255"],
+    ["Character Sound Overhaul", "https://www.nexusmods.com/morrowind/mods/49654"]
   ]},
 
   { category: "Tools", items: [
