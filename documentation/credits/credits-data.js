@@ -552,6 +552,7 @@ const CREDITS = [
       ["rkyv", "https://github.com/rkyv/rkyv", "Reading MGE XE's atlas records"],
       ["AccessKit", "https://github.com/AccessKit/accesskit", "Accessibility"],
       ["oxipng", "https://github.com/shssoichiro/oxipng", "Gallery thumbnail compression"],
+      ["webp", "https://github.com/jaredforth/webp", "WebP gallery images (libwebp)"],
       ["rfd", "https://github.com/PolyMeilex/rfd", "Folder pickers"],
       ["pollster", "https://github.com/zesterer/pollster", "Tests"]
     ]},
