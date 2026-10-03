@@ -522,10 +522,11 @@ const CREDITS = [
 
   ...inGroup("Export Cells GUI", [
     { category: "Greatness7's Libraries", items: [
-      ["tes3", "https://github.com/Greatness7/tes3", "Plugin and NIF reading"],
+      ["tes3", "https://github.com/Greatness7/tes3", "Plugin and NIF reading, and tes3conv JSON for the gallery data"],
+      ["tes3conv", "https://github.com/Greatness7/tes3conv", "The JSON the gallery data matches"],
       ["merge_to_master", "https://github.com/Greatness7/merge_to_master", "Load order merging"],
       ["MGE XE", "https://github.com/Greatness7/MGE-XE", "Distant land formats, terrain blending, water, fog and grass shading"],
-      ["io_scene_mw", "https://github.com/Greatness7/io_scene_mw", "Blender NIF import for the creature export"]
+      ["io_scene_mw", "https://github.com/Greatness7/io_scene_mw", "Blender NIF import for the creature export and gallery thumbnails"]
     ]},
     { category: "Rust Crates", items: [
       ["egui / eframe", "https://github.com/emilk/egui", "User interface"],
@@ -540,18 +541,42 @@ const CREDITS = [
       ["gltf", "https://github.com/gltf-rs/gltf", "Model import (glTF)"],
       ["rayon", "https://github.com/rayon-rs/rayon", "Multithreading"],
       ["gilrs", "https://gitlab.com/gilrs-project/gilrs", "Game controllers"],
+      ["rodio", "https://github.com/RustAudio/rodio", "3D sound"],
+      ["midly", "https://github.com/negamartin/midly", "MIDI reading"],
       ["image", "https://github.com/image-rs/image", "PNG, TGA and BMP decoding"],
       ["resvg", "https://github.com/linebender/resvg", "SVG rendering"],
       ["flate2", "https://github.com/rust-lang/flate2-rs", "Compression"],
       ["serde", "https://serde.rs/", "Serialisation"],
+      ["serde_json", "https://github.com/serde-rs/json", "Scene descriptions for Cycles renders"],
       ["toml", "https://github.com/toml-rs/toml", "Settings files"],
       ["bytemuck", "https://github.com/Lokathor/bytemuck", "GPU buffer data"],
+      ["rkyv", "https://github.com/rkyv/rkyv", "Reading MGE XE's atlas records"],
       ["AccessKit", "https://github.com/AccessKit/accesskit", "Accessibility"],
+      ["oxipng", "https://github.com/shssoichiro/oxipng", "Gallery thumbnail compression"],
+      ["rfd", "https://github.com/PolyMeilex/rfd", "Folder pickers"],
       ["pollster", "https://github.com/zesterer/pollster", "Tests"]
     ]},
     { category: "Resources", items: [
       ["takram three-geospatial clouds", "https://github.com/takram-design-engineering/three-geospatial/tree/main/packages/clouds", "Volumetric clouds and their textures"],
-      ["Map Icons - MWSE", "https://www.nexusmods.com/morrowind/mods/53966", "Door icon rules"]
+      ["Map Icons - MWSE", "https://www.nexusmods.com/morrowind/mods/53966", "Door icon rules"],
+      ["Tamriel Data", "https://www.tamriel-rebuilt.org/", "The Hoom, its egg sacs, textures and sounds"],
+      ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/", "HOOM FPS shotgun blast (Shotgun 03) and pump (Realistic shotgun cocking sound)"],
+      ["Tamriel Rebuilt", "https://www.tamriel-rebuilt.org/", "The Necrom Ordinator, a HOOM FPS bot"]
+    ]},
+    { category: "Mods", items: [
+      ["Bardcraft", "https://www.nexusmods.com/morrowind/mods/56814", "Bass flute samples and songs for Hoom mode's music"],
+      ["Galaxy Night Sky", "https://www.nexusmods.com/morrowind/mods/45024", "Stars of the night sky"],
+      ["The Lunar Lorkhan", "https://www.nexusmods.com/morrowind/mods/53256", "Moons"],
+      ["Weapon Sheathing", "https://www.nexusmods.com/morrowind/mods/46069", "Sheathed weapons on assembled NPCs and the bots' skeleton"],
+      ["Everything Must Glow - OMI Daedrics", "https://www.nexusmods.com/morrowind/mods/57084", "HOOM FPS mode's dai-katana"]
+    ]},
+    { category: "References", items: [
+      ["OpenMW", "https://gitlab.com/OpenMW/openmw", "Moon and star behaviour, reverse-engineered from the engine"]
+    ]},
+    { category: "Tools", items: [
+      ["Blender / Cycles", "https://www.blender.org/", "Path-traced renders of the Distant Land view and gallery thumbnails; HOOM FPS mode's shotgun was modelled in it"],
+      ["IrfanView", "https://www.irfanview.com/", "WebP gallery images"],
+      ["io_scene_mw_mvp", "https://github.com/ms-arch-mvp/io_scene_mw_mvp", "Clean NIF imports for gallery thumbnails"]
     ]}
   ])
 ];
