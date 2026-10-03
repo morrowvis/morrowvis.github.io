@@ -336,7 +336,8 @@ const CREDITS = [
     ["Let There Be Darkness - Lua Lighting Overhaul", "https://www.nexusmods.com/morrowind/mods/47912"],
     ["Dwemer Lightning Rods", "https://www.nexusmods.com/morrowind/mods/50236"],
     ["OAAB Scroll Qualities", "https://www.nexusmods.com/morrowind/mods/49045"],
-    ["Weapon Sheathing", "https://www.nexusmods.com/morrowind/mods/46069"]
+    ["Weapon Sheathing", "https://www.nexusmods.com/morrowind/mods/46069"],
+    ["Glowbugs", "https://www.nexusmods.com/morrowind/mods/50538"]
   ]},
 
   { category: "Bonus: Adventures & Dungeons", items: [
@@ -538,6 +539,7 @@ const CREDITS = [
       ["glam", "https://github.com/bitshifter/glam-rs", "Maths"],
       ["nalgebra", "https://nalgebra.rs/", "Maths"],
       ["gltf", "https://github.com/gltf-rs/gltf", "Model import (glTF)"],
+      ["earcut", "https://github.com/georust/earcut", "Polygon triangulation (IFC import)"],
       ["rayon", "https://github.com/rayon-rs/rayon", "Multithreading"],
       ["gilrs", "https://gitlab.com/gilrs-project/gilrs", "Game controllers"],
       ["rodio", "https://github.com/RustAudio/rodio", "3D sound"],
