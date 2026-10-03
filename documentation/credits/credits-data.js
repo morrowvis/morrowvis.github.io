@@ -561,7 +561,8 @@ const CREDITS = [
       ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/"]
     ]},
     { category: "References", items: [
-      ["OpenMW", "https://gitlab.com/OpenMW/openmw"]
+      ["OpenMW", "https://gitlab.com/OpenMW/openmw"],
+      ["OAAB Library", "https://oaab-modding.github.io/"]
     ]}
   ])
 ];
