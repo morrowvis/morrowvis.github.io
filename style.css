@@ -528,97 +528,6 @@ body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a.active:not
     flex-wrap: wrap;
 }
 
-/* Info Box */
-/* Orthographics only (the sole user of this class). Sits under the grid.
-   Colours match the .doc-hint box on the documentation pages, and the 780px cap
-   matches the width of the doc content column (.doc-main-wrap) that .doc-hint
-   fills over there. */
-.info-box {
-    background-color: var(--accent-surface);
-    border-left: 4px solid var(--primary-color);
-    border-radius: 4px;
-    padding: var(--spacing-md) var(--spacing-lg);
-    max-width: 780px;
-    margin: var(--spacing-lg) auto 0;
-    color: var(--text-light);
-    font-size: 0.95rem;
-}
-
-/* Orthographics Section */
-.orthographics-section {
-    padding: var(--spacing-xl) var(--spacing-md);
-}
-
-.ortho-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
-}
-
-.ortho-item {
-    background-color: rgba(10, 10, 10, 0.8);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.ortho-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px var(--accent-shadow);
-    border-color: var(--primary-color);
-}
-
-.ortho-image-container {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-.ortho-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.placeholder {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    display: none;
-}
-
-.ortho-image-container:has(img[style*="display: none"]) .placeholder {
-    display: block;
-}
-
-.ortho-item h3 {
-    padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm);
-    margin: 0;
-}
-
-.ortho-item p {
-    padding: 0 var(--spacing-md);
-    margin: 0 0 var(--spacing-md);
-    font-size: 0.95rem;
-    color: var(--text-muted);
-}
-
-.ortho-item .btn-link {
-    display: block;
-    padding: var(--spacing-md);
-    margin-top: auto;
-}
-
 /* Downloads Section */
 .downloads-section {
     padding: var(--spacing-xl) var(--spacing-md);
@@ -960,8 +869,8 @@ footer .container p:last-child {
         padding-top: 105px;
     }
 
-    /* Content section right after a hero banner. Docs, tools, download and
-       orthographics all share this shape - a hero, then a <section> whose first
+    /* Content section right after a hero banner. Docs, tools and download all
+       share this shape - a hero, then a <section> whose first
        child is a grid - so one rule governs them all: trim the xl vertical
        padding that's too much on small screens, and zero the first block's top
        margin so it doesn't stack on top of the section's own top padding. */
@@ -995,7 +904,6 @@ footer .container p:last-child {
         max-width: 300px;
     }
 
-    .ortho-grid,
     .download-grid,
     .utility-grid {
         grid-template-columns: 1fr;
@@ -2065,35 +1973,6 @@ footer .container p:last-child {
 
     .doc-tools-panel {
         margin-bottom: var(--spacing-md);
-    }
-}
-
-/* Orthographics: tighten padding in portrait only so the images get more of
-   the narrow screen. Landscape is deliberately left as-is. */
-@media (orientation: portrait) and (max-width: 1024px) {
-    .orthographics-section {
-        /* Extra horizontal trim so the wide ortho images get more of the narrow
-           screen. Vertical padding is handled globally by `.hero + section`. */
-        padding-left: var(--spacing-sm);
-        padding-right: var(--spacing-sm);
-    }
-
-    /* The WIP note below the grid: tighten its gap from the images on phones. */
-    .info-box {
-        margin-top: var(--spacing-md);
-    }
-
-    .ortho-item h3 {
-        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-xs);
-    }
-
-    .ortho-item p {
-        padding: 0 var(--spacing-sm);
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .ortho-item .btn-link {
-        padding: var(--spacing-sm);
     }
 }
 
