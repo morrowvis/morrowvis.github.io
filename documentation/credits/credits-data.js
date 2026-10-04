@@ -565,6 +565,7 @@ const CREDITS = [
     ]},
     { category: "References", items: [
       ["OpenMW", "https://github.com/openmw/openmw"],
+      ["Steam Audio", "https://github.com/ValveSoftware/steam-audio"],
       ["OAAB-Modding.github.io", "https://github.com/OAAB-Modding/OAAB-Modding.github.io"],
       ["Devilish Snow", "https://www.nexusmods.com/morrowind/mods/60380"],
       ["Devilish Ash", "https://www.nexusmods.com/morrowind/mods/60447"],
