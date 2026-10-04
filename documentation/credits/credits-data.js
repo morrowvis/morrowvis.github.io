@@ -564,7 +564,10 @@ const CREDITS = [
     ]},
     { category: "References", items: [
       ["OpenMW", "https://gitlab.com/OpenMW/openmw"],
-      ["OAAB Library", "https://oaab-modding.github.io/"]
+      ["OAAB Library", "https://oaab-modding.github.io/"],
+      ["Devilish Snow", "https://www.nexusmods.com/morrowind/mods/60380"],
+      ["Devilish Ash (ash texture by Saintj)", "https://www.nexusmods.com/morrowind/mods/60447"],
+      ["YARG", "https://github.com/YARC-Official/YARG"]
     ]}
   ])
 ];
