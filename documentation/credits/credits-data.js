@@ -563,8 +563,8 @@ const CREDITS = [
       ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/"]
     ]},
     { category: "References", items: [
-      ["OpenMW", "https://gitlab.com/OpenMW/openmw"],
-      ["OAAB Library", "https://oaab-modding.github.io/"],
+      ["OpenMW", "https://github.com/openmw/openmw"],
+      ["OAAB-Modding.github.io", "https://github.com/OAAB-Modding/OAAB-Modding.github.io"],
       ["Devilish Snow", "https://www.nexusmods.com/morrowind/mods/60380"],
       ["Devilish Ash (ash texture by Saintj)", "https://www.nexusmods.com/morrowind/mods/60447"],
       ["YARG", "https://github.com/YARC-Official/YARG"]
