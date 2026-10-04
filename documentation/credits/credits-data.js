@@ -337,7 +337,8 @@ const CREDITS = [
     ["Dwemer Lightning Rods", "https://www.nexusmods.com/morrowind/mods/50236"],
     ["OAAB Scroll Qualities", "https://www.nexusmods.com/morrowind/mods/49045"],
     ["Weapon Sheathing", "https://www.nexusmods.com/morrowind/mods/46069"],
-    ["Glowbugs", "https://www.nexusmods.com/morrowind/mods/50538"]
+    ["Glowbugs", "https://www.nexusmods.com/morrowind/mods/50538"],
+    ["Immersive Grotto Entrances", "https://www.nexusmods.com/morrowind/mods/54014"]
   ]},
 
   { category: "Bonus: Adventures & Dungeons", items: [
