@@ -544,10 +544,12 @@ const CREDITS = [
       ["earcut", "https://github.com/georust/earcut", "Polygon triangulation (IFC import)"],
       ["meshopt", "https://github.com/gwihlidal/meshopt-rs", "Simplified distant cells (meshoptimizer)"],
       ["rayon", "https://github.com/rayon-rs/rayon", "Multithreading"],
+      ["mimalloc", "https://github.com/purpleprotocol/mimalloc_rust", "Memory allocator (Microsoft's mimalloc)"],
       ["gilrs", "https://gitlab.com/gilrs-project/gilrs", "Game controllers"],
       ["rodio", "https://github.com/RustAudio/rodio", "3D sound"],
       ["midly", "https://github.com/negamartin/midly", "MIDI reading"],
       ["image", "https://github.com/image-rs/image", "PNG, TGA and BMP decoding"],
+      ["image_dds", "https://github.com/ScanMountGoat/image_dds", "DDS decoding (BC1-7 and other formats)"],
       ["resvg", "https://github.com/linebender/resvg", "SVG rendering"],
       ["flate2", "https://github.com/rust-lang/flate2-rs", "Compression"],
       ["serde", "https://serde.rs/", "Serialisation"],
@@ -560,6 +562,10 @@ const CREDITS = [
       ["oxipng", "https://github.com/shssoichiro/oxipng", "Gallery thumbnail compression"],
       ["webp", "https://github.com/jaredforth/webp", "WebP gallery images (libwebp)"],
       ["rfd", "https://github.com/PolyMeilex/rfd", "Folder pickers"],
+      ["nucleo", "https://github.com/helix-editor/nucleo", "Fuzzy search"],
+      ["notify", "https://github.com/notify-rs/notify", "Reloading models saved while shown"],
+      ["puffin", "https://github.com/EmbarkStudios/puffin", "Profiler"],
+      ["wgpu-profiler", "https://github.com/Wumpf/wgpu-profiler", "GPU time per render pass"],
       ["pollster", "https://github.com/zesterer/pollster", "Tests"]
     ]},
     { category: "Resources", items: [
