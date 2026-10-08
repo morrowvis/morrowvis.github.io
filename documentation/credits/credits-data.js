@@ -564,6 +564,7 @@ const CREDITS = [
     ]},
     { category: "Resources", items: [
       ["takram three-geospatial clouds", "https://github.com/takram-design-engineering/three-geospatial/tree/main/packages/clouds"],
+      ["Combat Sounds Overhaul (Impact Sounds)", "https://www.nexusmods.com/morrowind/mods/52747"],
       ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/"]
     ]},
     { category: "References", items: [
