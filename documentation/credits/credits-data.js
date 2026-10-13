@@ -579,7 +579,9 @@ const CREDITS = [
       ["OAAB-Modding.github.io", "https://github.com/OAAB-Modding/OAAB-Modding.github.io"],
       ["Devilish Snow", "https://www.nexusmods.com/morrowind/mods/60380"],
       ["Devilish Ash", "https://www.nexusmods.com/morrowind/mods/60447"],
-      ["YARG", "https://github.com/YARC-Official/YARG"]
+      ["YARG", "https://github.com/YARC-Official/YARG"],
+      ["spttools", "https://github.com/anahuj/spttools"],
+      ["ByroRedux", "https://github.com/matiaszanolli/ByroRedux"]
     ]}
   ])
 ];
