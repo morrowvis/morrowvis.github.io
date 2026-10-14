@@ -552,6 +552,8 @@ const CREDITS = [
       ["image_dds", "https://github.com/ScanMountGoat/image_dds", "DDS decoding (BC1-7 and other formats)"],
       ["resvg", "https://github.com/linebender/resvg", "SVG rendering"],
       ["flate2", "https://github.com/rust-lang/flate2-rs", "Compression"],
+      ["lz4_flex", "https://github.com/PSeitz/lz4_flex", "Skyrim Special Edition archives (LZ4)"],
+      ["windows", "https://github.com/microsoft/windows-rs", "Media Foundation: Skyrim's .xwm sounds"],
       ["serde", "https://serde.rs/", "Serialisation"],
       ["serde_json", "https://github.com/serde-rs/json", "Scene descriptions for Cycles renders"],
       ["toml", "https://github.com/toml-rs/toml", "Settings files"],
