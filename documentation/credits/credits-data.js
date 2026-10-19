@@ -283,7 +283,8 @@ const CREDITS = [
       ["The Ashlanders", "https://www.nexusmods.com/morrowind/mods/49221"],
       ["More believable bandit camps - an addon for Ashfall", "https://www.nexusmods.com/morrowind/mods/50066"],
       ["Dockside Clutter", "https://www.nexusmods.com/morrowind/mods/43055"],
-      ["Beautiful Cities of Morrowind", "https://www.nexusmods.com/morrowind/mods/49231", "Select additions only"]
+      ["Beautiful Cities of Morrowind", "https://www.nexusmods.com/morrowind/mods/49231", "Select additions only"],
+      ["Red Wisdom", "https://www.nexusmods.com/morrowind/mods/54525"]
     ]},
   ]),
 
