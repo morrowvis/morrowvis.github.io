@@ -29,14 +29,17 @@ const GOALS_SECTIONS = [
     title: "Vvardenworks",
     seeAlso: 'See <a href="https://github.com/morrowvis/Vvardenworks">Vvardenworks</a> on GitHub.',
     items: [
-      "Develop a robust, artist-friendly framework for exporting cells and landmasses from Morrowind for use in other programs such as UE5.",
+      "Develop a robust, artist-friendly framework for exporting cells and landmasses for use in other programs such as UE5.",
+      "Ensure accuracy of Morrowind scene graph representation, with comparisons to JSON exports from Export Cells.",
       "Develop a versatile, unified toolset within Vvardenworks to support the project as well as modders.",
-      "Support viewing Bethesda games, modlists and total conversions from Morrowind to Fallout 4.",
+      "Allow use for review and co-ordination, inspired by federated BIM projects.",
+      "Support the viewing of Bethesda games, modlists and total conversions from Morrowind to Fallout 4.",
       "Support worldspaces in Morrowind and multiple Bethesda games.",
       "Support and simplify switching between modlists for comparisons.",
       "Maximise the use of Distant Land and LODs as a foundation for maps, overviews and orthographics.",
       "Develop a fleshed out sandbox for screw-around gameplay and experimentation.",
-      "Provide a lightweight alternative to Morrowind Visualisation Project, especially for lower end hardware."
+      "Provide a lightweight alternative to Morrowind Visualisation Project, especially for lower end hardware.",
+      "Explore the possibilities of Rust and build a foundation for other projects."
     ]
   },
   {
