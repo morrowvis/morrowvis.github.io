@@ -528,7 +528,7 @@ const CREDITS = [
       ["tes3", "https://github.com/Greatness7/tes3"],
       ["tes3conv", "https://github.com/Greatness7/tes3conv"],
       ["merge_to_master", "https://github.com/Greatness7/merge_to_master"],
-      ["MGE XE", "https://github.com/Greatness7/MGE-XE"]
+      ["MGE XE", "https://github.com/Greatness7/MGE-XE", "Distant land: reading it, and the built-in generator (its distantland crates)"]
     ]},
     { category: "Rust Crates", items: [
       ["egui / eframe", "https://github.com/emilk/egui", "User interface"],
@@ -572,6 +572,7 @@ const CREDITS = [
       ["pollster", "https://github.com/zesterer/pollster", "Tests"]
     ]},
     { category: "Resources", items: [
+      ["Bevy's bevy_solari", "https://github.com/bevyengine/bevy/tree/main/crates/bevy_solari", "Solari path-traced lighting, ported (MIT OR Apache-2.0)"],
       ["takram three-geospatial clouds", "https://github.com/takram-design-engineering/three-geospatial/tree/main/packages/clouds"],
       ["Combat Sounds Overhaul (Impact Sounds)", "https://www.nexusmods.com/morrowind/mods/52747"],
       ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/"]

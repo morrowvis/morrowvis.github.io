@@ -70,6 +70,35 @@
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="download-main">
+                        <h3>Vvardenworks</h3>
+                        <p class="version">Closed Alpha</p>
+                        <p>GitHub release.</p>
+
+                        <!-- Shown only once download-lock.js confirms it can run. Without
+                             JavaScript, or without a payload, the fallback below stands. -->
+                        <form class="download-lock" id="downloadLock" hidden>
+                            <p class="download-lock-status" id="downloadStatus" role="status" aria-live="polite"></p>
+                        </form>
+
+                        <a class="btn btn-primary download-btn" id="downloadReady" hidden>Download</a>
+                        <a class="btn btn-primary download-btn" id="downloadFallback">Coming later</a>
+                    </div>
+
+                    <dl class="download-facts">
+                        <dt>Updated</dt>
+                        <dd>October 2026</dd>
+
+                        <dt>Size</dt>
+                        <dd>17.5 MB</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div id="footerMount"></div>

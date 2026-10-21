@@ -17,6 +17,7 @@ const GOALS_MAIN = [
   "Bring increased accessibility and exposure to modded cells.",
   "Develop systems also applicable to architectural visualisations.",
   "Develop a powerful traversal system with real-time environmental control.",
+  "Develop the crepuscular ray plugin to achieve a striking atmosphere.",
   "Act as a proof of concept for what's possible with this approach.",
   "Keep the scope feasible, including handling mod updates.",
   "Keep the workflow straightforward and elegant to allow continual expansion.",
@@ -25,13 +26,17 @@ const GOALS_MAIN = [
 
 const GOALS_SECTIONS = [
   {
-    title: "Export Cells",
-    seeAlso: 'See <a href="https://github.com/morrowvis/Export_Cells">Export Cells</a> on GitHub.',
+    title: "Vvardenworks",
+    seeAlso: 'See <a href="https://github.com/morrowvis/Vvardenworks">Vvardenworks</a> on GitHub.',
     items: [
-      "Develop a robust, artist-friendly framework for exporting modded cells from Morrowind using MWSE.",
-      "Design the JSON exporter module to streamline complexity and readability.",
-      'Develop <a href="https://github.com/morrowvis/io_scene_mw_mvp">io_scene_mw_mvp</a> to effectively handle imports from Export Cells.',
-      "Develop extended export modes to handle multiple scenarios."
+      "Develop a robust, artist-friendly framework for exporting cells and landmasses from Morrowind for use in other programs such as UE5.",
+      "Develop a versatile, unified toolset within Vvardenworks to support the project as well as modders.",
+      "Support viewing Bethesda games, modlists and total conversions from Morrowind to Fallout 4.",
+      "Support worldspaces in Morrowind and multiple Bethesda games.",
+      "Support and simplify switching between modlists for comparisons.",
+      "Maximise the use of Distant Land and LODs as a foundation for maps, overviews and orthographics.",
+      "Develop a fleshed out sandbox for screw-around gameplay and experimentation.",
+      "Provide a lightweight alternative to Morrowind Visualisation Project, especially for lower end hardware."
     ]
   },
   {
@@ -47,7 +52,7 @@ const GOALS_SECTIONS = [
   {
     title: "Modlist",
     items: [
-      "Populate and fill out Vvardenfel while keeping it familiar.",
+      "Populate and fill out Vvardenfell while keeping it familiar.",
       "Avoid changing the footprint of any major city.",
       "Add more lights.",
       "Add more clutter.",
