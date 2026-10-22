@@ -3,25 +3,21 @@
 // Items can include inline HTML (e.g. links).
 
 const GOALS_MAIN = [
-  "Showcase Morrowind mods in a new light, using UE5 for visualisation and exploration: rendered videos, screen-captured walkthroughs, high resolution orthographics, and executable packages.",
-  'Develop an ecosystem of export, data, and visualisation <a href="../../tools">tools</a> as part of the overall project.',
+  "Showcase Morrowind mods in a new light, using UE5 for visualisation and exploration.",
   "Continually develop the project long term.",
-  "Visualise all of Vvardenfell with Tamriel Rebuilt and Project Tamriel combined, once they join up.",
-  "Push technical boundaries with few compromises on rendering worlds in their entirety with thousands of shadow-casting lights.",
+  "Push technical boundaries with few compromises on rendering worlds in their entirety.",
   "Build immersive experiences and linear, intentional exploration paths in non-world maps that guide the player through multiple cells toward points of interest.",
   "Integrate commentary nodes that provide a guided experience and receive direct input from mod authors.",
   "Implement concepts from mods that were omitted due to technical limitations or otherwise.",
-  "Emphasise vivid colours and the interplay between shadow and light, with a focus on HDR.",
-  "Implement a modlist that overhauls and fleshes out Morrowind without going overboard or significantly contradicting the original vision.",
   "Showcase bonus mods outside the constraints of the modlist which have significance in Morrowind's modding history.",
   "Bring increased accessibility and exposure to modded cells.",
-  "Develop systems also applicable to architectural visualisations.",
   "Develop a powerful traversal system with real-time environmental control.",
   "Develop the crepuscular ray plugin to achieve a striking atmosphere.",
   "Act as a proof of concept for what's possible with this approach.",
   "Keep the scope feasible, including handling mod updates.",
   "Keep the workflow straightforward and elegant to allow continual expansion.",
-  "Inform and intersect with architectural work, as part of a wider vision of presenting and exploring spaces, imagined or built, at different scales."
+  "Develop systems also applicable to architectural visualisations.",
+  "Be a driving part of a wider vision about immersive digital spaces."
 ];
 
 const GOALS_SECTIONS = [
