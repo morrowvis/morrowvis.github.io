@@ -35,6 +35,7 @@ const GOALS_SECTIONS = [
       "Maximise the use of Distant Land and LODs as a foundation for maps, overviews and orthographics.",
       "Develop a fleshed out sandbox for screw-around gameplay and experimentation.",
       "Provide a lightweight alternative to Morrowind Visualisation Project, especially for lower end hardware.",
+      "Achieve fast load times and optimised performance.",
       "Explore the possibilities of Rust and build a foundation for other projects."
     ]
   },
