@@ -11,10 +11,8 @@ const GOALS_MAIN = [
   "Implement concepts from mods that were omitted due to technical limitations or otherwise.",
   "Showcase bonus mods outside the constraints of the modlist which have significance in Morrowind's modding history.",
   "Bring increased accessibility and exposure to modded cells.",
-  "Develop a powerful traversal system with real-time environmental control.",
   "Develop the crepuscular ray plugin to achieve a striking atmosphere.",
   "Act as a proof of concept for what's possible with this approach.",
-  "Keep the scope feasible, including handling mod updates.",
   "Keep the workflow straightforward and elegant to allow continual expansion.",
   "Develop systems also applicable to architectural visualisations.",
   "Be a driving part of a wider vision about immersive digital spaces."
@@ -52,7 +50,7 @@ const GOALS_SECTIONS = [
   {
     title: "Modlist",
     items: [
-      "Populate and fill out Vvardenfell while keeping it familiar.",
+      "Extensively overhaul Vvardenfell while keeping it familiar.",
       "Avoid changing the footprint of any major city.",
       "Add more lights.",
       "Add more clutter.",
