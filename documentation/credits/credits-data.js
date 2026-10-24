@@ -22,7 +22,7 @@ const CREDITS = [
   ], note: "Morrowind Visualisation Project is not associated with Tamriel Rebuilt or Project Tamriel and no material from this project is to be taken as official promotion material." },
 
   ...inGroup("Overhauls, Locations, Additions by City/Settlement", [
-    { category: "Ald-Ruhn", items: [
+    { category: "Ald'ruhn", items: [
       ["Ald'ruhn", "https://www.nexusmods.com/morrowind/mods/50120"],
       ["Ald Skar Inn Overhaul", "https://www.nexusmods.com/morrowind/mods/54495"],
       ["Of Bones and Barbarians - An Ald Ruhn Blacksmith", "https://www.nexusmods.com/morrowind/mods/53732"],
