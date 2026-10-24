@@ -50,7 +50,7 @@ const GOALS_SECTIONS = [
   {
     title: "Modlist",
     items: [
-      "Extensively overhaul Vvardenfell while keeping it familiar.",
+      "Overhaul Vvardenfell with mods and new assets while keeping it familiar.",
       "Avoid changing the footprint of any major city.",
       "Add more lights.",
       "Add more clutter.",
