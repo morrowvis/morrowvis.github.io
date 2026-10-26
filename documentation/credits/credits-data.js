@@ -170,7 +170,6 @@ const CREDITS = [
     { category: "Ascadian Isles Region", items: [
       ["Ascadia - Land of Pilgrimage", "https://www.nexusmods.com/morrowind/mods/55707"],
       ["Little Landscapes - Vivec Islands", "https://www.nexusmods.com/morrowind/mods/53276"],
-      ["OAAB - Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
       ["Arano Plantation Windmill", "https://www.nexusmods.com/morrowind/mods/55393"],
       ["Little Landscape - Path to Balmora", "https://www.nexusmods.com/morrowind/mods/53343"],
       ["Hawia Infrastructure", "https://www.nexusmods.com/morrowind/mods/56510"]
@@ -317,7 +316,7 @@ const CREDITS = [
     ["Kumarahaz - The Bandit Lair", "https://www.nexusmods.com/morrowind/mods/56192"],
     ["Tales from the Ashlands - The Great Hive Baan Binif", "https://www.nexusmods.com/morrowind/mods/51419"],
     ["Daedric Shrine Overhaul Vaermina", "https://www.nexusmods.com/morrowind/mods/53242"],
-    ["OAAB Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
+    ["OAAB - Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
     ["Unholy Trinity - Dagoth Ur - Vemynal - Odrosal Remade", "https://www.nexusmods.com/morrowind/mods/55564"],
     ["Baal Duun - Cursed Isle of the Four Corners", "https://www.nexusmods.com/morrowind/mods/54780"]
   ]},
