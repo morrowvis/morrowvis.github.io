@@ -135,6 +135,9 @@ const CREDITS = [
       ["Hanging Gardens of Suran", "https://www.nexusmods.com/morrowind/mods/53316"],
       ["Botanical Haven - Suran Apothecary Redux", "https://www.nexusmods.com/morrowind/mods/53332"]
     ]},
+    { category: "Tel Aruhn", items: [
+      ["Tel Aruhn Chronicles", "https://www.nexusmods.com/morrowind/mods/49171"]
+    ]},
     { category: "Tel Branora", items: [
       ["Tethered Tel Branora", "https://www.nexusmods.com/morrowind/mods/53314"],
       ["Tel Branora Expansion", "https://www.nexusmods.com/morrowind/mods/55279"]
@@ -204,7 +207,7 @@ const CREDITS = [
     ]},
     { category: "Bitter Coast Region", items: [
       ["Hla Odai", "https://www.nexusmods.com/morrowind/mods/51942"],
-      ["Fishermans island", "https://www.nexusmods.com/morrowind/mods/59134"],
+      ["Fishermans Island", "https://www.nexusmods.com/morrowind/mods/59134"],
       ["Little Landscapes - Bitter Coast Waterway", "https://www.nexusmods.com/morrowind/mods/53262"],
       ["Little Landscapes - Odai River Upper Overhaul", "https://www.nexusmods.com/morrowind/mods/53274"],
       ["Little Landscapes - Path to Pelagiad", "https://www.nexusmods.com/morrowind/mods/53281"],
