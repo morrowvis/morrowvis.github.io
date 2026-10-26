@@ -171,7 +171,7 @@ const CREDITS = [
       ["Ascadia - Land of Pilgrimage", "https://www.nexusmods.com/morrowind/mods/55707"],
       ["Little Landscapes - Vivec Islands", "https://www.nexusmods.com/morrowind/mods/53276"],
       ["Arano Plantation Windmill", "https://www.nexusmods.com/morrowind/mods/55393"],
-      ["Little Landscape - Path to Balmora", "https://www.nexusmods.com/morrowind/mods/53343"],
+      ["Little Landscapes - Path to Balmora", "https://www.nexusmods.com/morrowind/mods/53343"],
       ["Hawia Infrastructure", "https://www.nexusmods.com/morrowind/mods/56510"]
     ]},
     { category: "Ashlands Region", items: [
@@ -181,8 +181,8 @@ const CREDITS = [
       ["Dunirai Town", "https://www.nexusmods.com/morrowind/mods/57587"],
       ["Southern Ashlands Overhaul", "https://www.nexusmods.com/morrowind/mods/55254"],
       ["A River of Fire", "https://www.nexusmods.com/morrowind/mods/54248"],
-      ["Little Landscape - Foyada of Sharp Teeth", "https://www.nexusmods.com/morrowind/mods/53355"],
-      ["OAAB - The Ashen Divide", "https://www.nexusmods.com/morrowind/mods/49047"],
+      ["Little Landscapes - Foyada of Sharp Teeth", "https://www.nexusmods.com/morrowind/mods/53355"],
+      ["OAAB The Ashen Divide", "https://www.nexusmods.com/morrowind/mods/49047"],
       ["Little Landscapes - Nix Hound Hunting Grounds", "https://www.nexusmods.com/morrowind/mods/53333"],
       ["Vurt's Ashlands Overhaul", "https://www.nexusmods.com/morrowind/mods/29399"],
       ["Strider Burial", "https://www.nexusmods.com/morrowind/mods/47661"],
@@ -300,8 +300,7 @@ const CREDITS = [
     ["The Search for the White Wave", "https://www.nexusmods.com/morrowind/mods/52301"],
     ["No one expects the Alessian Inquisition", "https://www.nexusmods.com/morrowind/mods/59163"],
     ["Legacy of the Blades", "https://www.nexusmods.com/morrowind/mods/57935"],
-    ["The last of the Ansei (Hammerfell Ansei Warrior Armour)", "https://www.nexusmods.com/morrowind/mods/53822"],
-
+    ["The Last of the Ansei (Hammerfell Ansei Warrior Armour)", "https://www.nexusmods.com/morrowind/mods/53822"],
     ["The Plague Doctor", "https://www.nexusmods.com/morrowind/mods/52885"]
   ]},
 
@@ -316,7 +315,7 @@ const CREDITS = [
     ["Kumarahaz - The Bandit Lair", "https://www.nexusmods.com/morrowind/mods/56192"],
     ["Tales from the Ashlands - The Great Hive Baan Binif", "https://www.nexusmods.com/morrowind/mods/51419"],
     ["Daedric Shrine Overhaul Vaermina", "https://www.nexusmods.com/morrowind/mods/53242"],
-    ["OAAB - Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
+    ["OAAB Hawia Egg Mine", "https://www.nexusmods.com/morrowind/mods/51846"],
     ["Unholy Trinity - Dagoth Ur - Vemynal - Odrosal Remade", "https://www.nexusmods.com/morrowind/mods/55564"],
     ["Baal Duun - Cursed Isle of the Four Corners", "https://www.nexusmods.com/morrowind/mods/54780"]
   ]},
