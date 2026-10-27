@@ -546,6 +546,7 @@ const CREDITS = [
       ["earcut", "https://github.com/georust/earcut", "Polygon triangulation (IFC import)"],
       ["meshopt", "https://github.com/gwihlidal/meshopt-rs", "Simplified distant cells (meshoptimizer)"],
       ["rayon", "https://github.com/rayon-rs/rayon", "Multithreading"],
+      ["bevy_ecs", "https://github.com/bevyengine/bevy/tree/main/crates/bevy_ecs", "Actors and animated objects as entities"],
       ["mimalloc", "https://github.com/purpleprotocol/mimalloc_rust", "Memory allocator (Microsoft's mimalloc)"],
       ["gilrs", "https://gitlab.com/gilrs-project/gilrs", "Game controllers"],
       ["rodio", "https://github.com/RustAudio/rodio", "3D sound"],
