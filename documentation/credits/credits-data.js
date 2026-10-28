@@ -575,6 +575,8 @@ const CREDITS = [
     ]},
     { category: "Resources", items: [
       ["Bevy's bevy_solari", "https://github.com/bevyengine/bevy/tree/main/crates/bevy_solari", "Solari path-traced lighting, ported (MIT OR Apache-2.0)"],
+      ["NVIDIA Streamline", "https://github.com/NVIDIA-RTX/Streamline", "DLSS, Ray Reconstruction, Frame Generation and Reflex"],
+      ["Bevy's dlss_wgpu", "https://github.com/bevyengine/dlss_wgpu", "How DLSS is recorded into wgpu's own command stream"],
       ["takram three-geospatial clouds", "https://github.com/takram-design-engineering/three-geospatial/tree/main/packages/clouds"],
       ["Combat Sounds Overhaul (Impact Sounds)", "https://www.nexusmods.com/morrowind/mods/52747"],
       ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/"]

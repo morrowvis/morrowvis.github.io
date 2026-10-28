@@ -11,7 +11,8 @@ const GOALS_MAIN = [
   "Implement concepts from mods that were omitted due to technical limitations or otherwise.",
   "Showcase bonus mods outside the constraints of the modlist which have significance in Morrowind's modding history.",
   "Bring increased accessibility and exposure to modded cells.",
-  "Develop the crepuscular ray plugin to achieve a striking atmosphere.",
+  "Develop the crepuscular ray plugin to enhance atmosphere.",
+  "Make changes where appropriate to improve visuals.",
   "Act as a proof of concept for what's possible with this approach.",
   "Keep the workflow straightforward and elegant to allow continual expansion.",
   "Develop systems also applicable to architectural visualisations.",
@@ -25,6 +26,7 @@ const GOALS_SECTIONS = [
     items: [
       "Develop a robust, artist-friendly framework for exporting cells and landmasses for use in other programs such as UE5.",
       "Ensure accuracy of Morrowind scene graph representation, with comparisons to JSON exports from Export Cells.",
+      "Ensure accuracy of NIF representation.",
       "Develop a versatile, unified toolset within Vvardenworks to support the project as well as modders.",
       "Allow use for review and co-ordination, inspired by federated BIM projects.",
       "Support the viewing of Bethesda games, modlists and total conversions from Morrowind to Fallout 4.",
