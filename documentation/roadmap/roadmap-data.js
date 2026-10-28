@@ -7,10 +7,7 @@ const ROADMAP = [
     title: "Deliverables",
     items: [
       "Public release of Morrowind Visualisation Project executable",
-      "Rendered and edited videos",
-      "2nd May 2027 Morrowind 25th anniversary video",
-      "High resolution orthographic renders",
-      "Testing all current PTR exteriors development"
+      "Rendered and edited videos"
     ]
   },
   {
@@ -39,12 +36,6 @@ const ROADMAP = [
     ]
   },
   {
-    title: "Materials",
-    items: [
-      "Manual pass over materials to ensure correct material parent assignments and setup"
-    ]
-  },
-  {
     title: "Life Additions",
     items: [
       "Add more wildlife: birds, creatures, etc.",
@@ -53,22 +44,8 @@ const ROADMAP = [
     ]
   },
   {
-    title: "Immersion",
-    items: [
-      'Lightning strikes to hit dwemer rods to match <a href="https://www.nexusmods.com/morrowind/mods/50236">Dwemer Lightning Rods</a>'
-    ]
-  },
-  {
-    title: "Blueprints",
-    items: [
-      "Windmills",
-      "Think about how ropes can be attached to lanterns, if at all"
-    ]
-  },
-  {
     title: "Water",
     items: [
-      "Boats and other objects to have buoyancy",
       "Wind affecting ocean waves"
     ]
   },
