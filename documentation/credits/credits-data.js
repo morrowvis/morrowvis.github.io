@@ -142,12 +142,15 @@ const CREDITS = [
       ["Tethered Tel Branora", "https://www.nexusmods.com/morrowind/mods/53314"],
       ["Tel Branora Expansion", "https://www.nexusmods.com/morrowind/mods/55279"]
     ]},
-    { category: "Tel Mora", items: [
-      ["OAAB Tel Mora", "https://www.nexusmods.com/morrowind/mods/46177"]
-    ]},
     { category: "Tel Fyr", items: [
       ["Corprusarium - Sorrow Heart of Tel Fyr", "https://www.nexusmods.com/morrowind/mods/53280"],
       ["Tel Fyr - A Village in Mourning - PHC", "https://www.nexusmods.com/morrowind/mods/43988"]
+    ]},
+    { category: "Tel Ouada", items: [
+      ["Tel Ouada - The Tower on the River", "https://www.nexusmods.com/morrowind/mods/60241"]
+    ]},
+    { category: "Tel Mora", items: [
+      ["OAAB Tel Mora", "https://www.nexusmods.com/morrowind/mods/46177"]
     ]},
     { category: "Thirsk", items: [
       ["A New Thirsk Expanded", "https://www.nexusmods.com/morrowind/mods/60144"]
