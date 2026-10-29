@@ -24,8 +24,7 @@ const GOALS_SECTIONS = [
     title: "Vvardenworks",
     seeAlso: 'See <a href="https://github.com/morrowvis/Vvardenworks">Vvardenworks</a> on GitHub.',
     items: [
-      "Develop a robust, artist-friendly framework for exporting cells and landmasses for use in other programs such as UE5.",
-      "Ensure accuracy of Morrowind scene graph representation, with comparisons to JSON exports from Export Cells.",
+      "Develop a robust and accurate framework for targeted cell and landmass JSON exports.",
       "Ensure accuracy of NIF representation.",
       "Develop a versatile, unified toolset within Vvardenworks to support the project as well as modders.",
       "Allow use for review and co-ordination, inspired by federated BIM projects.",
