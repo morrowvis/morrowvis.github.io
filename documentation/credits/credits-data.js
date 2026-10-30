@@ -288,8 +288,7 @@ const CREDITS = [
       ["The Ashlanders", "https://www.nexusmods.com/morrowind/mods/49221"],
       ["More believable bandit camps - an addon for Ashfall", "https://www.nexusmods.com/morrowind/mods/50066"],
       ["Dockside Clutter", "https://www.nexusmods.com/morrowind/mods/43055"],
-      ["Beautiful Cities of Morrowind", "https://www.nexusmods.com/morrowind/mods/49231", "Select additions only"],
-      ["Red Wisdom", "https://www.nexusmods.com/morrowind/mods/54525"]
+      ["Beautiful Cities of Morrowind", "https://www.nexusmods.com/morrowind/mods/49231", "Select additions only"]
     ]},
   ]),
 
@@ -308,7 +307,8 @@ const CREDITS = [
     ["No one expects the Alessian Inquisition", "https://www.nexusmods.com/morrowind/mods/59163"],
     ["Legacy of the Blades", "https://www.nexusmods.com/morrowind/mods/57935"],
     ["The Last of the Ansei (Hammerfell Ansei Warrior Armour)", "https://www.nexusmods.com/morrowind/mods/53822"],
-    ["The Plague Doctor", "https://www.nexusmods.com/morrowind/mods/52885"]
+    ["The Plague Doctor", "https://www.nexusmods.com/morrowind/mods/52885"],
+    ["Red Wisdom", "https://www.nexusmods.com/morrowind/mods/54525"]
   ]},
 
   { category: "Dungeons", items: [
