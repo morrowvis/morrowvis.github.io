@@ -452,7 +452,9 @@ const CREDITS = [
     ["Ashlander Banners Retexture - Aestetika of Vvardenfell - AoVv Banners Preview", "https://www.nexusmods.com/morrowind/mods/52732"],
     ["Silt Strider", "https://www.nexusmods.com/morrowind/mods/48664"],
     ["Galaxy Night Sky .iv", "https://www.nexusmods.com/morrowind/mods/45024"],
-    ["Everything Must Glow - OMI Daedrics", "https://www.nexusmods.com/morrowind/mods/57084"]
+    ["Everything Must Glow - OMI Daedrics", "https://www.nexusmods.com/morrowind/mods/57084"],
+    ["Fix and Loading in Vvardenfell - Malbogatra Overhauls Meshes Fixes", "https://www.nexusmods.com/morrowind/mods/60816"],
+    ["Correct Diverse Ore Variants - Variation Framework Mod - Tyddy's Edition", "https://www.nexusmods.com/morrowind/mods/60799"]
   ]},
   { category: "Models and Textures", subhead: "Only select textures used", items: [
     ["Morroblivion", "https://morroblivion.com/forums/morroblivion/mods/753", "Signs"],
