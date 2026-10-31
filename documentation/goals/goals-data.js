@@ -39,6 +39,14 @@ const GOALS_SECTIONS = [
     ]
   },
   {
+    title: "Why Morrowind",
+    items: [
+      "Impressive, diverse modded worlds that can be meaningfully transformed.",
+      "Permission friendly, cathedral aligned modding scene.",
+      "Unique low poly art style emphasised by UE5 lighting."
+    ]
+  },
+  {
     title: "Pipeline",
     items: [
       "Maximise speed, accuracy, and ease of use when setting up UE5 levels from Morrowind's exported scene graph data.",
