@@ -18,8 +18,16 @@ const GOALS_MAIN = [
   "Develop systems also applicable to architectural visualisations.",
   "Be a driving part of a wider vision about immersive digital spaces."
 ];
-
 const GOALS_SECTIONS = [
+  {
+    title: "Why Morrowind",
+    items: [
+      "Impressive, diverse modded worlds that can be meaningfully transformed.",
+      "One of the most compelling settings to work with.",
+      "Permission friendly, cathedral aligned modding scene.",
+      "Unique low poly art style to be emphasised by UE5 lighting."
+    ]
+  },
   {
     title: "Vvardenworks",
     seeAlso: 'See <a href="https://github.com/morrowvis/Vvardenworks">Vvardenworks</a> on GitHub.',
@@ -35,17 +43,11 @@ const GOALS_SECTIONS = [
       "Develop a fleshed out sandbox for screw-around gameplay and experimentation.",
       "Provide a lightweight alternative to Morrowind Visualisation Project, especially for lower end hardware.",
       "Achieve fast load times and optimised performance.",
-      "Explore the possibilities of Rust and build a foundation for other projects."
+      "Explore the possibilities of Rust and build a foundation for other projects.",
+      "Provide accessible exploration of worldspaces free from certain constraints of their original engines, including installed version."
     ]
   },
-  {
-    title: "Why Morrowind",
-    items: [
-      "Impressive, diverse modded worlds that can be meaningfully transformed.",
-      "Permission friendly, cathedral aligned modding scene.",
-      "Unique low poly art style emphasised by UE5 lighting."
-    ]
-  },
+
   {
     title: "Pipeline",
     items: [
