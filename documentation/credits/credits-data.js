@@ -152,6 +152,9 @@ const CREDITS = [
     { category: "Tel Mora", items: [
       ["OAAB Tel Mora", "https://www.nexusmods.com/morrowind/mods/46177"]
     ]},
+    { category: "Urshilaku Camp", items: [
+      ["Urshilaku Outskirts - Glass and Shalk", "https://www.nexusmods.com/morrowind/mods/60815"]
+    ]},
     { category: "Thirsk", items: [
       ["A New Thirsk Expanded", "https://www.nexusmods.com/morrowind/mods/60144"]
     ]},
@@ -193,7 +196,8 @@ const CREDITS = [
       ["Vurt's Ashlands Overhaul", "https://www.nexusmods.com/morrowind/mods/29399"],
       ["Strider Burial", "https://www.nexusmods.com/morrowind/mods/47661"],
       ["Dwemer Legacy Reforged - Bthungthumz and Druscashti", "https://www.nexusmods.com/morrowind/mods/55073"],
-      ["Faces of Vel - Ash Mire", "https://www.nexusmods.com/morrowind/mods/44200"]
+      ["Faces of Vel - Ash Mire", "https://www.nexusmods.com/morrowind/mods/44200"],
+      
     ]},
     { category: "Azura's Coast Region", items: [
       ["Azura's Coast Redone", "https://www.nexusmods.com/morrowind/mods/53466"],
