@@ -44,6 +44,7 @@ const GOALS_SECTIONS = [
       "Develop a fleshed out sandbox for screw-around gameplay and experimentation.",
       "Provide a lightweight alternative to Morrowind Visualisation Project, especially for lower end hardware.",
       "Achieve fast load times and optimised performance, at least at medium settings.",
+      "Allow easy modlist review, particularly for additions or updates along with easy integrated Distant Land generation for every game.",
       "Explore the possibilities of Rust and build a foundation for other projects.",
     ]
   },
