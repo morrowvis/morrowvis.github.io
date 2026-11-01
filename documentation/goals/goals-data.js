@@ -37,7 +37,7 @@ const GOALS_SECTIONS = [
       "Develop a versatile, unified toolset within Vvardenworks to support the project as well as modders and video creators.",
       "Focus on developing useful functions such as object window, linked cells and map overlays.",
       "Allow use for review and co-ordination, inspired by federated BIM projects.",
-      "Support the viewing of Bethesda games, modlists (particularly from MO2) as well as total conversions from Morrowind to Fallout 4.",
+      "Support the viewing of Bethesda games, modlists (particularly from Mod Organizer 2) as well as total conversions from Morrowind to Fallout 4.",
       "Provide accessible exploration of worldspaces free from certain constraints of their engines, including installed version.",
       "Render Bethesda games in a way that is truer to concept than what their vanilla engines would allow.",
       "Support and simplify switching between modlists for comparisons.",
