@@ -32,8 +32,8 @@ const GOALS_SECTIONS = [
     title: "Vvardenworks",
     seeAlso: 'See <a href="https://github.com/morrowvis/Vvardenworks">Vvardenworks</a> on GitHub.',
     items: [
-      "Develop a robust, accurate framework for targeted cell JSON exports with a basis in Blender scene graph translation.",
-      "Ensure accuracy of NIF representation.",
+      "Develop a robust, accurate framework for targeted cell JSON exports with a basis in Blender scene graph translation first and foremost.",
+      "Ensure accuracy of NIF representation with some tweaks to ensure better graphical results.",
       "Develop a versatile, unified toolset within Vvardenworks to support the project as well as modders and video creators.",
       "Focus on developing useful functions such as object window, linked cells and map overlays.",
       "Allow use for review and co-ordination, inspired by federated BIM projects.",
