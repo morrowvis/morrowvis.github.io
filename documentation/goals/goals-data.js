@@ -5,7 +5,8 @@
 const GOALS_MAIN = [
   "Showcase Morrowind mods in a new light, using UE5 for visualisation and exploration.",
   "Continually develop the project long term.",
-  "Push technical boundaries with few compromises on rendering worlds in their entirety.",
+  "Push technical boundaries with few compromises on rendering Morrowind worlds in their entirety.",
+  "Integrate mods such as adventures and dungeons which can be explored separately.",
   "Build immersive experiences and linear, intentional exploration paths in non-world maps that guide the player through multiple cells toward points of interest.",
   "Integrate commentary nodes that provide a guided experience and receive direct input from mod authors.",
   "Implement concepts from mods that were omitted due to technical limitations or otherwise.",
@@ -25,7 +26,8 @@ const GOALS_SECTIONS = [
       "Impressive, diverse modded worlds that can be meaningfully transformed.",
       "One of the most compelling settings to work with.",
       "Permission friendly, cathedral aligned modding scene.",
-      "Unique low poly art style to be emphasised by UE5 lighting."
+      "Unique low poly art style that is complemented by UE5 lighting.",
+      "The modlist can change the game into something almost entirely new."
     ]
   },
   {
@@ -39,6 +41,7 @@ const GOALS_SECTIONS = [
       "Allow use for review and co-ordination, inspired by federated BIM projects.",
       "Support the viewing of Bethesda games, modlists (particularly from Mod Organizer 2) as well as total conversions from Morrowind to Fallout 4.",
       "Provide accessible exploration of worldspaces free from certain constraints of their engines, including installed version.",
+      "Provide prototypical support for worldspaces in Morrowind.",
       "Render Bethesda games in a way that is truer to concept than what their vanilla engines would allow.",
       "Support and simplify switching between modlists for comparisons.",
       "Maximise the use of Distant Land and LODs as a foundation for maps, overviews and orthographics.",
@@ -63,7 +66,7 @@ const GOALS_SECTIONS = [
   {
     title: "Modlist",
     items: [
-      "Overhaul Vvardenfell with mods and new assets while keeping it familiar.",
+      "Overhaul Vvardenfell with many areas and assets redone, while still keeping the world familiar.",
       "Avoid changing the footprint of any major city.",
       "Add more lights.",
       "Add more clutter.",
