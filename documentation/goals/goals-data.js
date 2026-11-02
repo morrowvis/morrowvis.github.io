@@ -27,7 +27,8 @@ const GOALS_SECTIONS = [
       "One of the most compelling settings to work with.",
       "Permission friendly, cathedral aligned modding scene.",
       "Unique low poly art style that is complemented by UE5 lighting.",
-      "The modlist can change the game into something almost entirely new."
+      "The modlist can change the game into something almost entirely new.",
+      "Has a proven longevity for mods and is bound to continue for many more years."
     ]
   },
   {
