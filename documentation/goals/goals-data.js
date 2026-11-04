@@ -50,6 +50,7 @@ const GOALS_SECTIONS = [
       "Provide a lightweight alternative to Morrowind Visualisation Project, especially for lower end hardware.",
       "Achieve fast load times, easy streaming and optimised performance, at least at medium settings.",
       "Allow easy modlist review, particularly for additions or updates along with easy integrated Distant Land generation for every game.",
+      "Achieve stability throughout every game.",
       "Explore the possibilities of Rust and build a foundation for other projects.",
     ]
   },
