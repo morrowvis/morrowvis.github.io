@@ -38,7 +38,7 @@ const GOALS_SECTIONS = [
       "Develop a robust, accurate framework for targeted cell JSON exports with a basis in Blender scene graph translation first and foremost.",
       "Ensure accuracy of NIF representation with some tweaks to ensure better graphical results.",
       "Develop a versatile, unified toolset within Vvardenworks to support the project as well as modders and video creators.",
-      "Focus on developing useful functions such as object window, linked cells and map overlays.",
+      "Focus on developing useful functions such as object window, linked cells, map overlays, contours and 3d cutaways.",
       "Allow use for review and co-ordination, inspired by federated BIM projects.",
       "Support the viewing of Bethesda games, modlists (particularly from Mod Organizer 2) as well as total conversions from Morrowind to Fallout 4.",
       "Provide accessible exploration of worldspaces free from certain constraints of their engines, including installed version.",
