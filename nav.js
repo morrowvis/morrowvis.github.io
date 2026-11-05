@@ -12,7 +12,7 @@
     const navHTML =
         '<nav class="navbar">' +
             '<div class="container">' +
-                '<div class="logo"><h1><a href="' + HOME_HREF + '">MVP</a></h1></div>' +
+                '<div class="logo"><h1><a href="' + HOME_HREF + '">MWV</a></h1></div>' +
                 '<ul class="nav-links" id="navLinks">' +
                     '<li><a href="' + BASE + 'download" data-page="download">Download</a></li>' +
                     '<li><a href="' + BASE + 'tools" data-page="tools">Tools</a></li>' +
@@ -33,7 +33,7 @@
         '<footer>' +
             '<div class="container">' +
                 '<p>The Elder Scrolls III: Morrowind <span class="footer-bethesda">&copy; Bethesda Softworks.</span>' +
-                    '<br>Morrowind Visualisation Project is an unofficial, fan-made project.</br>' +
+                    '<br>Morrowvis Project is an unofficial, fan-made project.</br>' +
                 '</p>' +
                 '<p><a href="https://www.youtube.com/@ms-arch">YouTube</a> <span class="footer-sep">|</span> ' +
                 '<a href="https://github.com/morrowvis">GitHub</a> <span class="footer-sep">|</span> ' +

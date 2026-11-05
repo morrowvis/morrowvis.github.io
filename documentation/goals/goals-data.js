@@ -1,7 +1,3 @@
-// Goals data for Morrowind Visualisation Project.
-// Edit this file to add/remove/reorder goals - the page renders from it directly.
-// Items can include inline HTML (e.g. links).
-
 const GOALS_MAIN = [
   "Showcase Morrowind mods in a new light, using UE5 for visualisation and exploration.",
   "Continually develop the project long term.",
@@ -47,7 +43,7 @@ const GOALS_SECTIONS = [
       "Support and simplify switching between modlists for comparisons.",
       "Maximise the use of Distant Land and LODs as a foundation for maps, overviews and orthographics.",
       "Develop a fleshed out sandbox for screw-around gameplay and experimentation.",
-      "Provide a lightweight alternative to Morrowind Visualisation Project, especially for lower end hardware.",
+      "Provide a lightweight alternative to Morrowvis, especially for lower end hardware.",
       "Achieve fast load times, easy streaming and optimised performance, at least at medium settings.",
       "Allow easy modlist review, particularly for additions or updates along with easy integrated Distant Land generation for every game.",
       "Achieve stability throughout every game.",

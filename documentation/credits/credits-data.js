@@ -1,9 +1,3 @@
-// Credits data for Morrowind Visualisation Project.
-// Each entry: [display name, url, optional note]
-// Site caption is derived automatically from the URL's domain (see credits.html),
-// Blocks with no `group` render as top-level sections; inGroup() stamps a shared
-// group heading onto a run of blocks so the group name is written only once.
-
 function inGroup(group, blocks) {
   return blocks.map(function (block) { return Object.assign({ group: group }, block); });
 }
@@ -19,7 +13,7 @@ const CREDITS = [
     ["High Rock 427", "https://www.project-tamriel.com/viewforum.php?f=36&sid=0bf61400309f7718e7007cc7ae625b12"],
     ["Padomaic Isles", "https://www.project-tamriel.com/viewforum.php?f=227"],
     ["Lyithdonea - The Azurian Isles", "https://www.nexusmods.com/morrowind/mods/43749"]
-  ], note: "Morrowind Visualisation Project is not associated with Tamriel Rebuilt or Project Tamriel and no material from this project is to be taken as official promotion material." },
+  ], note: "Morrowvis is not associated with Tamriel Rebuilt or Project Tamriel and no material from this project is to be taken as official promotion material." },
 
   ...inGroup("Overhauls, Locations, Additions by City/Settlement", [
     { category: "Ald'ruhn", items: [

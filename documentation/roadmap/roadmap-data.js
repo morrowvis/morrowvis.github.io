@@ -1,12 +1,8 @@
-// Roadmap data for Morrowind Visualisation Project.
-// Edit this file to add/remove/reorder roadmap groups and items - the page renders from it directly.
-// Items can include inline HTML (e.g. links).
-
 const ROADMAP = [
   {
     title: "Deliverables",
     items: [
-      "Public release of Morrowind Visualisation Project executable",
+      "Public release of Morrowvis executable",
       "Rendered and edited videos"
     ]
   },
