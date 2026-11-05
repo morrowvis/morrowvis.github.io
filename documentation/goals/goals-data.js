@@ -43,7 +43,7 @@ const GOALS_SECTIONS = [
       "Support and simplify switching between modlists for comparisons.",
       "Maximise the use of Distant Land and LODs as a foundation for maps, overviews and orthographics.",
       "Develop a fleshed out sandbox for screw-around gameplay and experimentation.",
-      "Provide a lightweight alternative to Morrowvis, especially for lower end hardware.",
+      "Provide a lightweight alternative to morrowvis, especially for lower end hardware.",
       "Achieve fast load times, easy streaming and optimised performance, at least at medium settings.",
       "Allow easy modlist review, particularly for additions or updates along with easy integrated Distant Land generation for every game.",
       "Achieve stability throughout every game.",

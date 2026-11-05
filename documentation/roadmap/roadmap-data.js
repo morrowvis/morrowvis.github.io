@@ -2,7 +2,7 @@ const ROADMAP = [
   {
     title: "Deliverables",
     items: [
-      "Public release of Morrowvis executable",
+      "Public release of morrowvis executable",
       "Rendered and edited videos"
     ]
   },
