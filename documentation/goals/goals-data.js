@@ -76,11 +76,26 @@ const GOALS_SECTIONS = [
   {
     title: "Inspirations / References",
     items: [
-      '<a href="https://www.youtube.com/@gregcoulthard5565/videos">Bethesda Unreal projects by Greg Coulthard</a><span class="goal-note">MorrowindUnreal, ObliviUnreal, SkyrimUnreal, FalloutNVUnreal</span>',
-      '<a href="https://www.youtube.com/watch?v=n89NFtIUWDI">Morrowind to Elden Ring</a>',
-      '<a href="https://www.nexusmods.com/games/oblivion/search?keyword=twmp">TWMP for Oblivion</a>',
-      '<a href="https://noclip.website/">noclip.website</a>',
-      '<a href="https://kida-mnesia.com/">Radiohead \u2013 KID A MNESIA EXHIBITION</a>'
+      '<a href="https://www.youtube.com/@gregcoulthard5565/videos"> Bethesda Unreal projects by Greg Coulthard</a><span class="goal-note">MorrowindUnreal, ObliviUnreal, SkyrimUnreal, FalloutNVUnreal</span>',
+      '<a href="https://www.youtube.com/watch?v=n89NFtIUWDI"> Morrowind to Elden Ring</a>',
+      '<a href="https://www.nexusmods.com/games/oblivion/search?keyword=twmp"> TWMP for Oblivion</a>',
+      '<a href="https://noclip.website/"> noclip.website</a>',
+      '<a href="https://kida-mnesia.com/"> Radiohead - KID A MNESIA EXHIBITION</a>'
+    ]
+  },
+  {
+    title: "Game inspirations for Vvardenworks",
+    items: [
+      '<a href="https://store.steampowered.com/app/1229490/ULTRAKILL/">ULTRAKILL</a>',
+      '<a href="https://store.steampowered.com/app/20500/Red_Faction_Guerrilla_Steam_Edition/">Red Faction Guerrilla</a>',
+      '<a href="https://store.steampowered.com/app/235460/METAL_GEAR_RISING_REVENGEANCE/">METAL GEAR RISING: REVENGEANCE</a>',
+      '<a href="https://store.steampowered.com/app/601150/Devil_May_Cry_5/">Devil May Cry 5</a>',
+      '<a href="https://store.steampowered.com/app/933110/Age_of_Empires_III_Definitive_Edition/">Age of Empires III</a>',
+      '<a href="https://store.steampowered.com/app/2537590/Microsoft_Flight_Simulator_2024/">Microsoft Flight Simulator 2024</a>',
+      '<a href="https://store.steampowered.com/app/3240220/Grand_Theft_Auto_V_Enhanced/">Grand Theft Auto V</a>',
+      '<a href="https://en.wikipedia.org/wiki/Black_%26_White_2">Black & White 2</a>',
+      '<a href="https://en.wikipedia.org/wiki/Guitar_Hero_III:_Legends_of_Rock">Guitar Hero III: Legends of Rock</a>',
+      '<a href="https://en.wikipedia.org/wiki/Black_%26_White_2">Black & White 2</a>'
     ]
   }
 ];
