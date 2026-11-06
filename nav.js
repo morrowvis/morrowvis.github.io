@@ -35,9 +35,8 @@
                 '<p>The Elder Scrolls III: Morrowind <span class="footer-bethesda">&copy; Bethesda Softworks.</span>' +
                     '<br>morrowvis is an unofficial, fan-made project.</br>' +
                 '</p>' +
-                '<p><a href="https://www.youtube.com/@ms-arch">YouTube</a> <span class="footer-sep">|</span> ' +
-                '<a href="https://github.com/morrowvis">GitHub</a> <span class="footer-sep">|</span> ' +
-                '<a href="https://ms-arch.gitbook.io/morrowvis/">GitBook</a></p>' +
+                '<p><a href="https://www.youtube.com/@morrowvis">YouTube</a> <span class="footer-sep">|</span> ' +
+                '<a href="https://github.com/morrowvis">GitHub</a>'
             '</div>' +
         '</footer>';
 
