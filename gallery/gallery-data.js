@@ -1,13 +1,7 @@
 const GALLERY = [
-  { file: "screenshot-2026-06-09-165712.jpg", w: 3839, h: 2159 },
-  { file: "screenshot-2026-06-09-174137.jpg", w: 3839, h: 2159 },
-  { file: "screenshot-2026-06-09-174259.jpg", w: 3839, h: 2159 },
-  { file: "screenshot-2026-06-09-174418.jpg", w: 3839, h: 2159 },
-  { file: "screenshot-2026-06-11-161828.jpg", w: 3839, h: 2159 },
-  { file: "screenshot-2026-06-11-170439.jpg", w: 3839, h: 2103 },
-  { file: "screenshot-2026-06-11-181425.jpg", w: 3839, h: 2159 },
-  { file: "screenshot-2026-06-13-133152.jpg", w: 3839, h: 2159 },
-  { file: "screenshot-2026-06-13-133239.jpg", w: 3839, h: 2159 },
-  { file: "screenshot-2026-06-13-141904.jpg", w: 3839, h: 2103 },
-  { file: "screenshot-2026-07-14-174543.jpg", w: 3839, h: 2159 }
+  { file: "20.jpg", w: 3840, h: 2160 },
+  { file: "21.jpg", w: 3840, h: 2160 },
+  { file: "22.jpg", w: 3840, h: 2160 },
+  { file: "23.jpg", w: 3840, h: 2160 },
+  { file: "24.jpg", w: 3840, h: 2160 }
 ];
