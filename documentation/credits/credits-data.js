@@ -391,6 +391,7 @@ const CREDITS = [
     ["Tribunal Traditions", "https://www.nexusmods.com/morrowind/mods/56104"],
     ["Daedric Intervention", "https://www.nexusmods.com/morrowind/mods/46044"],
     ["Full Dwemer Retexture", "https://www.nexusmods.com/morrowind/mods/44264"],
+    ["Necrom - Arkitektora of Morrowind", "https://www.nexusmods.com/morrowind/mods/46289"],
     ["Vanilla Land", "https://www.nexusmods.com/morrowind/mods/45953"],
     ["Glow in the Dahrk", "https://www.nexusmods.com/morrowind/mods/45886"],
     ["Glowing Bitter Coast (Reupload)", "https://www.nexusmods.com/morrowind/mods/47946"],
@@ -456,7 +457,8 @@ const CREDITS = [
   ]},
   { category: "Models and Textures", subhead: "Only select textures used", items: [
     ["Morroblivion", "https://morroblivion.com/forums/morroblivion/mods/753", "Signs"],
-    ["Elodie's Mystic Minimods", "https://www.nexusmods.com/morrowind/mods/47266", "Dirty Muriel's Cornerclub sign"]
+    ["Elodie's Mystic Minimods", "https://www.nexusmods.com/morrowind/mods/47266", "Dirty Muriel's Cornerclub sign"],
+    ["Tamriel Data Texture Upscale", "https://www.nexusmods.com/morrowind/mods/54947"]
   ]},
 
   { category: "Armour", items: [
