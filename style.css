@@ -1741,11 +1741,15 @@ footer .container p:last-child {
     left: 0;
     right: 0;
     z-index: 20;
+    max-height: min(60vh, 360px);
     padding: 4px;
     background: #080808;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-accent) var(--dark-bg);
 }
 
 .doc-sidebar-dropdown.open .doc-sidebar-dropdown-list {

@@ -65,6 +65,7 @@ window.renderDocSidebarSwitcher = function (mountEl, labelText, options, selecte
     }
 
     function choose(option) {
+        const changed = selected.value !== option.value;
         selected = option;
         trigger.querySelector('.doc-sidebar-dropdown-value').textContent = option.label;
         optionButtons.forEach(function (button) {
@@ -72,7 +73,7 @@ window.renderDocSidebarSwitcher = function (mountEl, labelText, options, selecte
         });
         close();
         trigger.focus();
-        onChange(option.value);
+        if (changed) onChange(option.value);
     }
 
     const value = document.createElement('span');

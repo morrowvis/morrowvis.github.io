@@ -67,9 +67,9 @@
                 }),
                 game.slug,
                 function (value) {
-                const nextParams = new URLSearchParams(window.location.search);
-                nextParams.set('game', value);
-                window.location.href = window.location.pathname + '?' + nextParams.toString();
+                    const nextParams = new URLSearchParams(window.location.search);
+                    nextParams.set('game', value);
+                    window.location.href = window.location.pathname + '?' + nextParams.toString();
                 }
             );
 
