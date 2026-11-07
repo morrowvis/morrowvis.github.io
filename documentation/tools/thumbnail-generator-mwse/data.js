@@ -100,32 +100,11 @@ window.THUMBNAIL_DATA = {
                         ]
                     },
                     {
-                        heading: 'Galleries',
-                        id: 'galleries',
-                        content: [
-                            'Use <a href="https://github.com/morrowvis/Morrowind_Library_Tools" target="_blank" rel="noopener noreferrer">Build_Gallery_Images</a> to build WebP image galleries after render.',
-                        ]
-                    },
-                    {
                         heading: 'Icons',
                         id: 'icons',
                         content: [
                             'This tool can be made to use icons directly by setting output to 32×32 and format to DDS.',
                             'Icons for weapons are generally cropped, so these can be instead rendered at a higher resolution from preview, and cropped down to suit.',
-                        ]
-                    },
-                    {
-                        heading: 'Morrowind Blender Thumbnail Generator',
-                        id: 'blender-thumbnail-generator',
-                        content: [
-                            '<a href="https://github.com/ms-arch-mvp/Morrowind_Blender_Thumbnail_Generator" target="_blank" rel="noopener noreferrer">Morrowind Blender Thumbnail Generator</a> can be useful for specific secondary tasks including:',
-                        ],
-                        list: [
-                            'Rendering vertex normals.',
-                            'Rendering loose files.',
-                            'Render WIP Blender files.',
-                            'Further debugging.',
-                            'Rendering any thumbnails that failed.',
                         ]
                     },
                 ]

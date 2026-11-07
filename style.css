@@ -1213,6 +1213,17 @@ footer .container p:last-child {
     border-color: rgba(78, 65, 130, 0.7);
 }
 
+.about.tools-page {
+    padding-top: 160px;
+    border-top: 0;
+}
+
+.about.tools-page .pipeline-title {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+}
+
 /* Each section heading sits under a rule. Matches .credits-divider's weight and
    colour; margin-top is the gap above the line, padding-top the gap from the
    line down to the text. */
@@ -1483,6 +1494,16 @@ footer .container p:last-child {
         z-index: 410;
     }
 
+    #modlistsSidebar {
+        display: block;
+        max-height: none;
+    }
+
+    #modlistsSidebarMount {
+        min-height: auto;
+        overflow: visible;
+    }
+
     .doc-sidebar.mobile-open {
         transform: translateX(0);
     }
@@ -1662,6 +1683,78 @@ footer .container p:last-child {
 
 .credits-hero {
     padding: 160px var(--spacing-md) var(--spacing-md);
+}
+
+.modlists-sidebar-switcher {
+    padding: 0 12px var(--spacing-md);
+}
+
+.modlists-sidebar-switcher label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.modlists-sidebar-switcher select {
+    width: 100%;
+    padding: 9px 10px;
+    color: var(--text-light);
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font: inherit;
+}
+
+@media (min-width: 1401px) {
+    #modlistsSidebar {
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100vh - 140px);
+    }
+
+    #modlistsSidebarMount {
+        min-height: 0;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--gold-accent) var(--dark-bg);
+    }
+
+    #modlistsSidebarMount::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #modlistsSidebarMount::-webkit-scrollbar-track {
+        background: var(--dark-bg);
+    }
+
+    #modlistsSidebarMount::-webkit-scrollbar-thumb {
+        background-color: var(--gold-accent);
+        border-radius: 4px;
+    }
+
+    #modlistsSidebarMount::-webkit-scrollbar-thumb:hover {
+        background-color: var(--primary-color);
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    #modlistsSidebar {
+        display: block;
+        max-height: none;
+    }
+
+    #modlistsSidebarMount {
+        min-height: auto;
+        overflow: visible;
+    }
+}
+
+.modlists-empty {
+    padding: var(--spacing-md);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
 }
 
 .credits-section {
@@ -1855,7 +1948,8 @@ footer .container p:last-child {
        gallery mobile block below - its base rule is defined later in the file,
        so it has to be overridden after that to win on source order.) */
     .doc-content,
-    .credits-hero {
+    .credits-hero,
+    .about.tools-page {
         padding-top: 105px;
         padding-left: var(--spacing-sm);
         padding-right: var(--spacing-sm);

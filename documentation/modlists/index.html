@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modlist - Morrowvis</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Morrowvis">
+    <meta property="og:title" content="Modlist">
+    <meta property="og:url" content="https://morrowvis.com/documentation/modlists/">
+    <meta property="og:image" content="https://morrowvis.com/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body data-page="modlists">
+    <div id="navbarMount"></div>
+
+    <section class="credits-hero">
+        <div class="container">
+            <h1 id="modlistsPageTitle">Modlist</h1>
+        </div>
+    </section>
+
+    <section class="doc-content" style="padding-top: 0;">
+        <div class="container doc-layout doc-layout--wide">
+            <div class="doc-main-wrap">
+                <main class="doc-main">
+                    <div id="modlistsRoot"></div>
+                </main>
+            </div>
+            <aside class="doc-sidebar" id="modlistsSidebar">
+                <div class="modlists-sidebar-switcher">
+                    <label for="modlistsGameSelect">Game</label>
+                    <select id="modlistsGameSelect"></select>
+                </div>
+                <div id="modlistsSidebarMount"></div>
+            </aside>
+        </div>
+    </section>
+
+    <div id="footerMount"></div>
+
+    <script>window.SITE_BASE = '../../';</script>
+    <script src="../../nav.js"></script>
+    <script src="../doc-sidebar.js"></script>
+    <script src="modlists-data.js"></script>
+    <script>
+        (function () {
+            const games = window.MODLISTS;
+            const root = document.getElementById('modlistsRoot');
+            const gameSelect = document.getElementById('modlistsGameSelect');
+            const sidebarMount = document.getElementById('modlistsSidebarMount');
+            const pageTitle = document.getElementById('modlistsPageTitle');
+            const params = new URLSearchParams(window.location.search);
+            const requestedGame = params.get('game');
+            const game = games.find(function (item) { return item.slug === requestedGame; }) || games[0];
+            const nexusLogo = (window.SITE_BASE || '') + 'images/logos/nexus.svg';
+            const titleText = 'Modlist - ' + game.name;
+            pageTitle.textContent = titleText;
+            addHeadingAnchor(pageTitle, 'modlists-current-game');
+            document.title = titleText + ' - Morrowvis';
+            document.querySelector('meta[property="og:title"]').content = titleText;
+
+            games.forEach(function (item) {
+                const option = document.createElement('option');
+                option.value = item.slug;
+                option.textContent = item.name;
+                gameSelect.appendChild(option);
+            });
+            gameSelect.value = game.slug;
+            gameSelect.addEventListener('change', function () {
+                const nextParams = new URLSearchParams(window.location.search);
+                nextParams.set('game', gameSelect.value);
+                window.location.href = window.location.pathname + '?' + nextParams.toString();
+            });
+
+            const groupedItems = new Map();
+            game.items.forEach(function (item) {
+                const category = item.category || 'Uncategorized';
+                if (!groupedItems.has(category)) groupedItems.set(category, []);
+                groupedItems.get(category).push(item);
+            });
+
+            const sidebarTree = [];
+            Array.from(groupedItems.keys()).sort(function (a, b) {
+                return a.localeCompare(b);
+            }).forEach(function (category, index) {
+                const sectionId = 'modlists-category-' + index;
+                const section = document.createElement('section');
+                section.className = 'credits-panel panel-black modlists-category-panel';
+
+                const heading = document.createElement('h3');
+                heading.className = 'credits-section-title';
+                heading.textContent = category;
+                addHeadingAnchor(heading, sectionId);
+                section.appendChild(heading);
+
+                const grid = document.createElement('div');
+                grid.className = 'credit-grid';
+                groupedItems.get(category).forEach(function (item) {
+                    const card = document.createElement('a');
+                    card.className = 'credit-card';
+                    card.href = item.url;
+                    card.target = '_blank';
+                    card.rel = 'noopener noreferrer';
+
+                    const icon = document.createElement('span');
+                    icon.className = 'credit-icon';
+                    const logo = document.createElement('img');
+                    logo.className = 'credit-logo';
+                    logo.src = nexusLogo;
+                    logo.alt = '';
+                    logo.loading = 'lazy';
+                    icon.appendChild(logo);
+
+                    const text = document.createElement('span');
+                    text.className = 'credit-text';
+                    const name = document.createElement('span');
+                    name.className = 'credit-name';
+                    name.textContent = item.name;
+                    text.appendChild(name);
+                    card.appendChild(icon);
+                    card.appendChild(text);
+                    grid.appendChild(card);
+                });
+                section.appendChild(grid);
+                root.appendChild(section);
+                sidebarTree.push({ label: heading.textContent, id: sectionId });
+            });
+
+            if (!game.items.length) {
+                const empty = document.createElement('p');
+                empty.className = 'modlists-empty';
+                empty.textContent = 'No mods used.';
+                root.appendChild(empty);
+            }
+
+            renderDocSidebar(sidebarMount, sidebarTree);
+        })();
+    </script>
+</body>
+</html>
