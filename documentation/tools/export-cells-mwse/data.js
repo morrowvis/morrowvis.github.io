@@ -19,7 +19,6 @@ window.EXPORT_CELLS_DATA = {
                         heading: '<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> → Export 3×3 Active Cells',
                         id: 'ctrl-shift-e',
                         content: [
-                            '<span class="export-grid">🟨🟨🟨<br>🟨🟢🟨<br>🟨🟨🟨</span>',
                             '<strong>Exteriors:</strong> exports all currently loaded cells around the player.',
                             '<strong>Interiors:</strong> exports entire interior cells as 1 file.',
                             'Default export mode: JSON.',
@@ -30,7 +29,6 @@ window.EXPORT_CELLS_DATA = {
                         heading: '<kbd>Shift</kbd> + <kbd>1</kbd> → 1×1 Export Menu',
                         id: 'shift-1',
                         content: [
-                            '<span class="export-grid">🟢🟢🟢<br>🟢🟢🟢 →<br>🟢🟢🟢</span>',
                             '<strong>Exteriors:</strong> exports a grid of cells centered on the player (1×1, 3×3, 5×5, …)',
                             '<strong>Interiors:</strong> see Export Interiors below.',
                             'Default export mode: Disabled.',
@@ -41,7 +39,6 @@ window.EXPORT_CELLS_DATA = {
                         heading: '<kbd>Shift</kbd> + <kbd>2</kbd> → 2×2 Export Menu',
                         id: 'shift-2',
                         content: [
-                            '<span class="export-grid">⬛⬛⬛<br>⬛🟢🟨 →<br>⬛🟨🟨</span>',
                             '<strong>Exteriors:</strong> exports 2×2 cells, steps by multiples of 2 in a grid and exports plus +1X, −1Y in exteriors.',
                             '<strong>Interiors:</strong> see Export Interiors below.',
                             'Designed to handle edge decals that are only on the bottom and right borders of the active cells.',
@@ -54,23 +51,11 @@ window.EXPORT_CELLS_DATA = {
                         heading: '<kbd>Shift</kbd> + <kbd>3</kbd> → 3×3 Export Menu',
                         id: 'shift-3',
                         content: [
-                            '<span class="export-grid">🟨🟨🟨<br>🟨🟢🟨 →<br>🟨🟨🟨</span>',
                             '<strong>Exteriors:</strong> exports 3×3 active cells, steps by multiples of 3 in a grid in exteriors.',
                             '<strong>Interiors:</strong> see Export Interiors below.',
                             'Teleports to closest cell that is a multiple of 3 at the start.',
                             'Default export mode: JSON.',
                             'Recommended for: exporting everything other than landscapes in exteriors, capturing world state.',
-                        ]
-                    },
-                    {
-                        heading: 'Legend',
-                        id: 'legend',
-                        table: [
-                            ['Symbol', 'Description'],
-                            ['🟢', 'Player'],
-                            ['🟨', 'Active Cells exported'],
-                            ['⬛', 'Active Cells ignored'],
-                            ['→', 'Grid movement'],
                         ]
                     },
                     {

@@ -386,7 +386,7 @@ body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a.active:not
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
 }
 
 .btn-primary {
@@ -1555,6 +1555,25 @@ footer .container p:last-child {
     margin-bottom: var(--spacing-sm);
 }
 
+body[data-page="morrowind-modding-history"] .doc-main {
+    container-type: inline-size;
+}
+
+.mmh-title {
+    font-size: clamp(0.625rem, 4cqi, 2rem);
+    white-space: nowrap;
+}
+
+@media (max-width: 450px) {
+    .mmh-title {
+        font-size: 3.7cqi;
+    }
+}
+
+.tool-page-actions {
+    margin-bottom: var(--spacing-md);
+}
+
 .doc-content ul.goal-list,
 .doc-content ul.roadmap-list {
     list-style: none;
@@ -2407,8 +2426,8 @@ body.lightbox-open {
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
+    color: var(--text-light);
+    border: 1px solid var(--text-light);
     border-radius: 3px;
     padding: 0.1em 0.45em 0.08em;
     vertical-align: middle;

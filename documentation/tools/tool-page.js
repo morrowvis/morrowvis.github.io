@@ -4,6 +4,8 @@
 // config = {
 //   tabs:      [{id, label}]       — tab definitions; single-tab pages omit the switcher
 //   data:      {[tabId]: tabData}  — content keyed by tab id
+//   githubUrl: string              — optional project repository URL
+//   googleDriveUrl: string         — optional Google Drive download URL
 //   rootEl:    HTMLElement         — where to render the main content
 //   sidebarEl: HTMLElement         — the doc-sidebar aside
 // }
@@ -53,6 +55,25 @@ window.renderToolPage = function (config) {
     }
 
     // ── 2. Content area ───────────────────────────────────────────────────────
+
+    if (config.githubUrl || config.googleDriveUrl) {
+        var actions = document.createElement('div');
+        actions.className = 'tool-page-actions';
+
+        function addActionLink(label, url) {
+            var link = document.createElement('a');
+            link.href = url;
+            link.className = 'btn btn-secondary';
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = label;
+            actions.appendChild(link);
+        }
+
+        if (config.githubUrl) addActionLink('GitHub', config.githubUrl);
+        if (config.googleDriveUrl) addActionLink('Google Drive', config.googleDriveUrl);
+        rootEl.appendChild(actions);
+    }
 
     var contentWrap = document.createElement('div');
     contentWrap.className = 'tool-content-wrap';

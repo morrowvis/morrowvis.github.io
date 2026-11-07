@@ -22,7 +22,7 @@ window.THUMBNAIL_DATA = {
                         ]
                     },
                     {
-                        heading: '<kbd>Shift</kbd> + <kbd>G</kbd> — Batch',
+                        heading: '<kbd>Shift</kbd> + <kbd>G</kbd> → Batch',
                         id: 'shift-g-batch',
                         content: [
                             'Allows rendering of entire Morrowind library of objects.',
