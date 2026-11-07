@@ -1,8 +1,8 @@
 const ROADMAP_PROJECTS = [
   {
     slug: "morrowvis-windows-build",
-    name: "Morrowvis Windows Build",
-    switcherName: "Morrowvis",
+    name: "Morrowvis UE5 Windows Build",
+    switcherName: "Morrowvis UE5 Windows Build",
     groups: [
       {
         title: "Deliverables",
