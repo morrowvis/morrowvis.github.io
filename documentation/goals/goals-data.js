@@ -42,7 +42,7 @@ const GOALS_SECTIONS = [
       "Render Bethesda games in a way that is truer to concept than what their vanilla engines would allow.",
       "Support and simplify switching between modlists for comparisons.",
       "Maximise the use of Distant Land and LODs as a foundation for maps, overviews and orthographics.",
-      "Develop a fleshed out sandbox for screw-around gameplay and experimentation.",
+      "Develop a fleshed out sandbox with meaningful interactions between systems.",
       "Provide a lightweight alternative to morrowvis, especially for lower end hardware.",
       "Achieve fast load times, easy streaming and optimised performance, at least at medium settings.",
       "Allow easy modlist review, particularly for additions or updates along with easy integrated Distant Land generation for every game.",
