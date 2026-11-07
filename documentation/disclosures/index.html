@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclosures - Morrowvis</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Morrowvis">
+    <meta property="og:title" content="Disclosures">
+    <meta property="og:url" content="https://morrowvis.com/documentation/disclosures/">
+    <meta property="og:image" content="https://morrowvis.com/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body data-page="disclosures">
+    <div id="navbarMount"></div>
+
+    <section class="doc-content">
+        <div class="container doc-layout">
+            <div class="doc-main-wrap">
+            <div class="doc-main">
+                <h1>Disclosures</h1>
+                <div id="disclosuresRoot"></div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footerMount"></div>
+    <script>window.SITE_BASE = '../../';</script>
+    <script src="../../nav.js"></script>
+    <script>
+        (function () {
+            const root = document.getElementById('disclosuresRoot');
+
+            const items = [
+                'AI assisted code is used extensively in the project for tools and plugins.',
+                'The foundation for the UE5 master project is the product of many years of work and research.',
+                'UE5 levels are manually edited and art directed.',
+                'Documentation is largely handwritten, but is sometimes reviewed by AI to check for accuracy.',
+                'The project avoids using AI image generation or AI texture upscaling where possible.'
+            ];
+
+            const wrap = document.createElement('div');
+            wrap.id = 'disclosures';
+            wrap.style.scrollMarginTop = '110px';
+
+            const ul = document.createElement('ul');
+            ul.className = 'goal-list';
+            items.forEach(function (text) {
+                const li = document.createElement('li');
+                li.textContent = text;
+                ul.appendChild(li);
+            });
+            wrap.appendChild(ul);
+            root.appendChild(wrap);
+
+        })();
+    </script>
+</body>
+</html>

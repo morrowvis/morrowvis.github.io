@@ -1161,7 +1161,7 @@ footer .container p:last-child {
 /* Doc nav cards */
 .doc-nav-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
 }
@@ -1177,6 +1177,7 @@ footer .container p:last-child {
     display: block;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .doc-nav-card:hover {
@@ -1190,21 +1191,26 @@ footer .container p:last-child {
     margin-bottom: 0;
 }
 
-/* Brighter than the credits panels' 0.26 - these are nav targets rather than
-   background tint, so the outline is doing the identifying. */
+/* Sample the same yellow-to-slate hue sweep used by the credits panels at
+   four evenly spaced points. Disclosures stays neutral below. */
 .doc-nav-card--goals {
-    border-color: rgba(80, 110, 180, 0.45);
+    border-color: rgba(166, 96, 37, 0.7);
 }
 
 .doc-nav-card--roadmap {
-    border-color: rgba(150, 88, 42, 0.45);
+    border-color: rgba(154, 49, 79, 0.7);
 }
 
-/* Matches the colour at the top of the credits page's own gradient, so the card
-   previews the page it links to. Derived from that sweep's opening values
-   (hue 50, sat 0.82, val 0.58) - if those move, this needs moving with them. */
 .doc-nav-card--credits {
-    border-color: rgba(171, 137, 32, 0.45);
+    border-color: rgba(138, 58, 142, 0.7);
+}
+
+.doc-nav-card--disclosures {
+    border-color: rgba(160, 160, 160, 0.26);
+}
+
+.doc-nav-card--tools {
+    border-color: rgba(78, 65, 130, 0.7);
 }
 
 /* Each section heading sits under a rule. Matches .credits-divider's weight and
@@ -2217,5 +2223,242 @@ body.lightbox-open {
         top: auto;
         bottom: 22%;
         transform: none;
+    }
+}
+
+/* ============================================
+   Tool pages (tab-switched doc pages)
+   ============================================ */
+
+/* Tag badge after h1 (e.g. "MWSE", "Offline Mirror") */
+.tool-tag {
+    display: inline-block;
+    font-size: 0.65em;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 3px;
+    padding: 0.1em 0.45em 0.08em;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    opacity: 0.75;
+}
+
+/* ── Sidebar tab switcher ─────────────────────────────────────────────────── */
+
+.tool-tab-switcher {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tool-tab-switcher-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+}
+
+.tool-tab-switcher-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tool-tab-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.35rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    transition: color 0.15s, background-color 0.15s;
+    font-family: var(--font-family);
+}
+
+.tool-tab-btn:hover {
+    color: var(--text-light);
+    background-color: var(--accent-surface);
+}
+
+.tool-tab-btn.active {
+    color: var(--accent-color);
+    background-color: var(--accent-surface);
+    font-weight: 600;
+}
+
+/* ── Tool content items ───────────────────────────────────────────────────── */
+
+.tool-content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.doc-tool-item {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.doc-tool-item:last-child {
+    border-bottom: none;
+}
+
+.doc-tool-item-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-family);
+}
+
+.doc-tool-item-heading .heading-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.doc-tool-item-heading .heading-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.doc-tool-item p {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    margin-bottom: 0.4rem;
+}
+
+.doc-tool-item p:last-child {
+    margin-bottom: 0;
+}
+
+.doc-tool-item code {
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size: 0.875em;
+    color: var(--text-light);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+}
+
+/* Sub-section separator heading (file paths, sub-groups) */
+.doc-tool-subhead {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: var(--spacing-sm);
+    margin-bottom: 0.25rem;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--border-color);
+    font-family: var(--font-family);
+}
+
+.doc-tool-subhead a.heading-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.doc-tool-subhead a.heading-link:hover {
+    color: var(--text-light);
+}
+
+/* Bullet lists inside tool items */
+.doc-tool-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.doc-tool-list li {
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-md);
+    position: relative;
+}
+
+.doc-tool-list li::before {
+    content: '\2022';
+    position: absolute;
+    left: 0;
+    color: #aeaeae;
+    font-weight: bold;
+}
+
+.tool-content-wrap > h3 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Tables inside tool items */
+.doc-tool-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.doc-tool-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--accent-surface);
+    color: var(--text-light);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.doc-tool-table td {
+    padding: 0.45rem 0.75rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+}
+
+.doc-tool-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Keyboard shortcuts */
+kbd {
+    display: inline-block;
+    padding: 0.1em 0.4em;
+    font-size: 0.8em;
+    font-family: var(--font-family);
+    background-color: var(--accent-surface-medium);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 3px;
+    color: var(--text-light);
+    white-space: nowrap;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Emoji grid display for export cell diagrams */
+.export-grid {
+    display: inline-block;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* ── Mobile adjustments for tab switcher ─────────────────────────────────── */
+@media (max-width: 1400px) {
+    /* On mobile the sidebar becomes a drawer; keep the switcher visible inside it */
+    .tool-tab-switcher {
+        padding: var(--spacing-sm) 0 var(--spacing-md);
     }
 }
