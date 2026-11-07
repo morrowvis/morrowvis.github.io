@@ -62,6 +62,11 @@
                 sidebarTree.push({ label: group.title, id: id });
             });
 
+            root.querySelectorAll('a[href^="http://"], a[href^="https://"]').forEach(function (link) {
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+            });
+
             renderDocSidebar(document.getElementById('roadmapSidebarMount'), sidebarTree);
         })();
     </script>

@@ -81,6 +81,11 @@
                 sidebarTree.push({ label: section.title, id: id });
             });
 
+            root.querySelectorAll('a[href^="http://"], a[href^="https://"]').forEach(function (link) {
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+            });
+
             renderDocSidebar(document.getElementById('goalsSidebarMount'), sidebarTree);
         })();
     </script>
