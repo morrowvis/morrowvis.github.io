@@ -83,21 +83,28 @@ const ROADMAP_PROJECTS = [
     name: "Vvardenworks",
     groups: [
       {
+        title: "Devlierables",
+        items: [
+          "Builds for Windows and Linux",
+          "Source code"
+        ]
+      },
+      {
         title: "General",
         items: [
-          "Proper support of all worldspaces and location mods from Morrowind to Fallout 4."
+          "Proper support of all worldspaces and location mods from Morrowind to Fallout 4"
         ]
       },
       {
         title: "Performance",
         items: [
-          "Investigate further improvements to streaming."
+          "Investigate further improvements to streaming"
         ]
       },
       {
         title: "Rendering",
         items: [
-          "Keep pushing the Solari renderer."
+          "Keep pushing the Solari renderer"
         ]
       }
     ]
