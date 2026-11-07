@@ -22,10 +22,14 @@
             <div class="doc-main-wrap">
             <div class="doc-main">
                 <h1>Roadmap</h1>
+                <h2 id="roadmapProjectTitle"></h2>
                 <div id="roadmapRoot"></div>
             </div>
             </div>
-            <aside class="doc-sidebar" id="roadmapSidebarMount"></aside>
+            <aside class="doc-sidebar" id="roadmapSidebar">
+                <div id="roadmapProjectSwitcher"></div>
+                <div id="roadmapSidebarMount"></div>
+            </aside>
         </div>
     </section>
 
@@ -38,9 +42,27 @@
         (function () {
             const root = document.getElementById('roadmapRoot');
             const sidebarTree = [];
+            const params = new URLSearchParams(window.location.search);
+            const requestedProject = params.get('project');
+            const project = ROADMAP_PROJECTS.find(function (item) {
+                return item.slug === requestedProject;
+            }) || ROADMAP_PROJECTS[0];
 
-            ROADMAP.forEach(function (group) {
-                const id = docSlugify(group.title);
+            document.getElementById('roadmapProjectTitle').textContent = project.name;
+            renderDocSidebarSwitcher(
+                document.getElementById('roadmapProjectSwitcher'),
+                'Project',
+                ROADMAP_PROJECTS.map(function (item) {
+                    return { value: item.slug, label: item.switcherName || item.name };
+                }),
+                project.slug,
+                function (value) {
+                    window.location.href = window.location.pathname + '?project=' + encodeURIComponent(value);
+                }
+            );
+
+            project.groups.forEach(function (group) {
+                const id = 'roadmap-' + project.slug + '-' + docSlugify(group.title);
                 const wrap = document.createElement('div');
                 wrap.className = 'roadmap-group';
 

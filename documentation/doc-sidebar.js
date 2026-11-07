@@ -17,6 +17,117 @@ window.addHeadingAnchor = function (headingEl, id) {
     headingEl.appendChild(a);
 };
 
+window.renderDocSidebarSwitcher = function (mountEl, labelText, options, selectedValue, onChange) {
+    const wrap = document.createElement('div');
+    wrap.className = 'doc-sidebar-switcher';
+
+    const label = document.createElement('span');
+    label.className = 'doc-sidebar-switcher-label';
+    label.textContent = labelText;
+    wrap.appendChild(label);
+
+    const dropdown = document.createElement('div');
+    dropdown.className = 'doc-sidebar-dropdown';
+
+    const trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'doc-sidebar-dropdown-trigger';
+    trigger.id = 'doc-sidebar-dropdown-trigger';
+    trigger.setAttribute('aria-haspopup', 'listbox');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-label', labelText);
+    dropdown.appendChild(trigger);
+
+    const list = document.createElement('div');
+    list.className = 'doc-sidebar-dropdown-list';
+    list.id = 'doc-sidebar-dropdown-list';
+    list.setAttribute('role', 'listbox');
+    list.setAttribute('aria-labelledby', trigger.id);
+    dropdown.appendChild(list);
+    wrap.appendChild(dropdown);
+    mountEl.appendChild(wrap);
+
+    let selected = options.find(function (option) { return option.value === selectedValue; }) || options[0];
+    let optionButtons = [];
+
+    function close() {
+        dropdown.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    function open() {
+        dropdown.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+        const selectedButton = optionButtons.find(function (button) {
+            return button.getAttribute('aria-selected') === 'true';
+        });
+        if (selectedButton) selectedButton.focus();
+    }
+
+    function choose(option) {
+        selected = option;
+        trigger.querySelector('.doc-sidebar-dropdown-value').textContent = option.label;
+        optionButtons.forEach(function (button) {
+            button.setAttribute('aria-selected', String(button.dataset.value === option.value));
+        });
+        close();
+        trigger.focus();
+        onChange(option.value);
+    }
+
+    const value = document.createElement('span');
+    value.className = 'doc-sidebar-dropdown-value';
+    trigger.appendChild(value);
+    const chevron = document.createElement('span');
+    chevron.className = 'doc-sidebar-dropdown-chevron';
+    chevron.setAttribute('aria-hidden', 'true');
+    chevron.textContent = '\u25be';
+    trigger.appendChild(chevron);
+    value.textContent = selected.label;
+
+    optionButtons = options.map(function (option) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'doc-sidebar-dropdown-option';
+        button.setAttribute('role', 'option');
+        button.setAttribute('aria-selected', String(option.value === selected.value));
+        button.dataset.value = option.value;
+        button.textContent = option.label;
+        button.addEventListener('click', function () { choose(option); });
+        button.addEventListener('keydown', function (event) {
+            const index = optionButtons.indexOf(button);
+            if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+                event.preventDefault();
+                const direction = event.key === 'ArrowDown' ? 1 : -1;
+                optionButtons[(index + direction + optionButtons.length) % optionButtons.length].focus();
+            } else if (event.key === 'Home' || event.key === 'End') {
+                event.preventDefault();
+                optionButtons[event.key === 'Home' ? 0 : optionButtons.length - 1].focus();
+            } else if (event.key === 'Escape') {
+                event.preventDefault();
+                close();
+                trigger.focus();
+            }
+        });
+        list.appendChild(button);
+        return button;
+    });
+
+    trigger.addEventListener('click', function () {
+        if (dropdown.classList.contains('open')) close();
+        else open();
+    });
+    trigger.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp' || event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            open();
+        }
+    });
+    document.addEventListener('click', function (event) {
+        if (!dropdown.contains(event.target)) close();
+    });
+};
+
 // Set by renderDocSidebar() once the mobile drawer exists on this page.
 let closeMobileDrawer = function () {};
 

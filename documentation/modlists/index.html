@@ -31,10 +31,7 @@
                 </main>
             </div>
             <aside class="doc-sidebar" id="modlistsSidebar">
-                <div class="modlists-sidebar-switcher">
-                    <label for="modlistsGameSelect">Game</label>
-                    <select id="modlistsGameSelect"></select>
-                </div>
+                <div id="modlistsGameSwitcher"></div>
                 <div id="modlistsSidebarMount"></div>
             </aside>
         </div>
@@ -50,7 +47,6 @@
         (function () {
             const games = window.MODLISTS;
             const root = document.getElementById('modlistsRoot');
-            const gameSelect = document.getElementById('modlistsGameSelect');
             const sidebarMount = document.getElementById('modlistsSidebarMount');
             const pageTitle = document.getElementById('modlistsPageTitle');
             const params = new URLSearchParams(window.location.search);
@@ -63,18 +59,19 @@
             document.title = titleText + ' - Morrowvis';
             document.querySelector('meta[property="og:title"]').content = titleText;
 
-            games.forEach(function (item) {
-                const option = document.createElement('option');
-                option.value = item.slug;
-                option.textContent = item.name;
-                gameSelect.appendChild(option);
-            });
-            gameSelect.value = game.slug;
-            gameSelect.addEventListener('change', function () {
+            renderDocSidebarSwitcher(
+                document.getElementById('modlistsGameSwitcher'),
+                'Game',
+                games.map(function (item) {
+                    return { value: item.slug, label: item.name };
+                }),
+                game.slug,
+                function (value) {
                 const nextParams = new URLSearchParams(window.location.search);
-                nextParams.set('game', gameSelect.value);
+                nextParams.set('game', value);
                 window.location.href = window.location.pathname + '?' + nextParams.toString();
-            });
+                }
+            );
 
             const groupedItems = new Map();
             game.items.forEach(function (item) {
