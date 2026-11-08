@@ -40,14 +40,109 @@
                     '<br>morrowvis is an unofficial, fan-made project.</br>' +
                 '</p>' +
                 '<p><a href="https://www.youtube.com/@morrowvis" target="_blank" rel="noopener noreferrer">YouTube</a> <span class="footer-sep">|</span> ' +
-                '<a href="https://github.com/morrowvis" target="_blank" rel="noopener noreferrer">GitHub</a>' +
+                '<a href="https://github.com/morrowvis" target="_blank" rel="noopener noreferrer">GitHub</a> <span class="footer-sep">|</span> ' +
+                '<button type="button" class="btn-link footer-contact-trigger" aria-haspopup="dialog" aria-controls="contactModal">Contact</button></p>' +
             '</div>' +
-        '</footer>';
+        '</footer>' +
+        '<div class="contact-modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-label="Contact">' +
+            '<div class="contact-modal">' +
+                '<button type="button" class="contact-modal-close" aria-label="Close contact popup">&times;</button>' +
+                '<img class="contact-modal-profile" src="' + BASE + 'images/profile.jpg" alt="MS profile">' +
+                '<div class="contact-info-box">' +
+                    '<p class="contact-info-intro">MS can be contacted via Discord at</p>' +
+                    '<p class="contact-info-username">Username: ' +
+                        '<button type="button" class="btn btn-secondary contact-copy-button" aria-label="Copy Discord username morrowvis">morrowvis</button>' +
+                    '</p>' +
+                '</div>' +
+                '<p class="contact-copy-status" aria-live="polite"></p>' +
+            '</div>' +
+        '</div>';
 
     const navMount = document.getElementById('navbarMount');
     const footerMount = document.getElementById('footerMount');
     if (navMount) navMount.outerHTML = navHTML;
     if (footerMount) footerMount.outerHTML = footerHTML;
+
+    const contactTrigger = document.querySelector('.footer-contact-trigger');
+    const contactModal = document.getElementById('contactModal');
+    const contactClose = contactModal && contactModal.querySelector('.contact-modal-close');
+    const contactCopy = contactModal && contactModal.querySelector('.contact-copy-button');
+    const contactCopyStatus = contactModal && contactModal.querySelector('.contact-copy-status');
+
+    function closeContactModal() {
+        if (!contactModal || !contactModal.classList.contains('open')) return;
+        contactModal.classList.remove('open');
+        resetCopyResult();
+        if (contactTrigger) contactTrigger.focus();
+    }
+
+    function resetCopyResult() {
+        if (!contactCopyStatus) return;
+        contactCopyStatus.textContent = '';
+        contactCopyStatus.classList.remove('is-error');
+    }
+
+    function fallbackCopyUsername() {
+        const input = document.createElement('textarea');
+        input.value = 'morrowvis';
+        input.setAttribute('readonly', '');
+        input.style.position = 'fixed';
+        input.style.opacity = '0';
+        document.body.appendChild(input);
+        input.select();
+        let copied = false;
+        try {
+            copied = document.execCommand('copy');
+        } catch (error) {
+            copied = false;
+        }
+        input.remove();
+        return copied;
+    }
+
+    function showCopyResult(copied) {
+        if (contactCopyStatus && contactModal.classList.contains('open')) {
+            contactCopyStatus.textContent = copied ? 'Copied!' : 'Copy failed';
+            contactCopyStatus.classList.toggle('is-error', !copied);
+        }
+    }
+
+    if (contactTrigger && contactModal && contactClose && contactCopy) {
+        contactTrigger.addEventListener('click', function () {
+            resetCopyResult();
+            contactModal.classList.add('open');
+            contactClose.focus();
+        });
+        contactCopy.addEventListener('click', function () {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText('morrowvis').then(function () {
+                    showCopyResult(true);
+                }, function () {
+                    showCopyResult(fallbackCopyUsername());
+                });
+            } else {
+                showCopyResult(fallbackCopyUsername());
+            }
+        });
+        contactClose.addEventListener('click', closeContactModal);
+        contactModal.addEventListener('click', function (event) {
+            if (event.target === contactModal) closeContactModal();
+        });
+        contactModal.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeContactModal();
+            } else if (event.key === 'Tab') {
+                event.preventDefault();
+                if (event.shiftKey && document.activeElement === contactClose) {
+                    contactCopy.focus();
+                } else if (!event.shiftKey && document.activeElement === contactCopy) {
+                    contactClose.focus();
+                } else if (document.activeElement !== contactClose && document.activeElement !== contactCopy) {
+                    contactClose.focus();
+                }
+            }
+        });
+    }
 
     document.querySelectorAll('.nav-links a[data-page]').forEach(function (a) {
         if (a.dataset.page === PAGE) {
