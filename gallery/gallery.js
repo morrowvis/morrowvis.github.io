@@ -1,6 +1,6 @@
 // Reusable thumbnail grid + full-screen lightbox.
-// initGallery({ mount, images, base }) - images is the { file, w, h } list from
-// build_images.bat. Call it once per grid; all grids share one lightbox.
+// initGallery({ mount, images, base }) - images is a list of { file, w, h } entries.
+// Call it once per grid; all grids share one lightbox.
 
 (function () {
     'use strict';

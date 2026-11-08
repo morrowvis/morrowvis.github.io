@@ -2375,7 +2375,7 @@ body.lightbox-open {
     display: none;
 }
 
-/* Applied only once a load is known to be slow (see gallery.html). Fades the
+/* Applied only once a load is known to be slow (see gallery/index.html). Fades the
    outgoing image away rather than clearing it, so a cached image swaps straight
    in with no black frame between. */
 .lightbox.is-loading .lightbox-img {
@@ -2451,7 +2451,7 @@ body.lightbox-open {
     font-size: 1.6rem;
 }
 
-/* Hidden until the pointer approaches that side of the screen (see gallery.html).
+/* Hidden until the pointer approaches that side of the screen (see gallery/index.html).
    pointer-events is dropped with the opacity, so an invisible arrow can't
    swallow a click meant for the backdrop. */
 .lightbox-nav {

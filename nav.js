@@ -37,7 +37,7 @@
         '<footer>' +
             '<div class="container">' +
                 '<p>The Elder Scrolls III: Morrowind <span class="footer-bethesda">&copy; Bethesda Softworks.</span>' +
-                    '<br>morrowvis is an unofficial, fan-made project.</br>' +
+                    '<br>morrowvis is an unofficial, fan-made project.' +
                 '</p>' +
                 '<p><a href="https://www.youtube.com/@morrowvis" target="_blank" rel="noopener noreferrer">YouTube</a> <span class="footer-sep">|</span> ' +
                 '<a href="https://github.com/morrowvis" target="_blank" rel="noopener noreferrer">GitHub</a> <span class="footer-sep">|</span> ' +
