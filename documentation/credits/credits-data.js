@@ -451,7 +451,7 @@ const CREDITS = [
     ["Ashlander Banners Retexture - Aestetika of Vvardenfell - AoVv Banners Preview", "https://www.nexusmods.com/morrowind/mods/52732"],
     ["Silt Strider", "https://www.nexusmods.com/morrowind/mods/48664"],
     ["Galaxy Night Sky .iv", "https://www.nexusmods.com/morrowind/mods/45024"],
-    ["Everything Must Glow - OMI Daedrics", "https://www.nexusmods.com/morrowind/mods/57084"],
+    ["Oriental Mesh Improvements", "https://www.nexusmods.com/morrowind/mods/29906"],
     ["Fix and Loading in Vvardenfell - Malbogatra Overhauls Meshes Fixes", "https://www.nexusmods.com/morrowind/mods/60816"],
     ["Correct Diverse Ore Variants - Variation Framework Mod - Tyddy's Edition", "https://www.nexusmods.com/morrowind/mods/60799"]
   ]},
@@ -589,6 +589,7 @@ const CREDITS = [
       ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/"]
     ]},
     { category: "References", items: [
+      ["Additional Scrap Cars by EdgeUK90", "https://www.nexusmods.com/fallout4/mods/42723", "Optional download, not included: the FPS Mode car's model"],
       ["OpenMW", "https://github.com/openmw/openmw"],
       ["Steam Audio", "https://github.com/ValveSoftware/steam-audio"],
       ["OAAB-Modding.github.io", "https://github.com/OAAB-Modding/OAAB-Modding.github.io"],
