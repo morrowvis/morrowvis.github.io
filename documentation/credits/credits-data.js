@@ -581,7 +581,8 @@ const CREDITS = [
       ["pollster", "https://github.com/zesterer/pollster", "Tests"],
       ["bincode", "https://github.com/bincode-org/bincode", "The disk cache's entries"],
       ["sevenz-rust2", "https://github.com/hasenbanck/sevenz-rust", "Installing dependencies from 7z downloads"],
-      ["lzma-rust2", "https://github.com/hasenbanck/lzma-rust2", "Installing dependencies from 7z downloads"]
+      ["lzma-rust2", "https://github.com/hasenbanck/lzma-rust2", "Installing dependencies from 7z downloads"],
+      ["ciborium", "https://github.com/enarx/ciborium", "The disk cache's Morrowind world (CBOR)"]
     ]},
     { category: "Resources", items: [
       ["Bevy's bevy_solari", "https://github.com/bevyengine/bevy/tree/main/crates/bevy_solari", "Solari path-traced lighting, ported (MIT OR Apache-2.0)"],
@@ -599,6 +600,8 @@ const CREDITS = [
       ["Combat Sounds Overhaul", "https://www.nexusmods.com/morrowind/mods/53859", "Optional, not included: FPS Mode's weapon swings"],
       ["Impact Sounds", "https://www.nexusmods.com/morrowind/mods/52747", "Optional, not included: footsteps, and FPS Mode's impacts by material and weapon draws"],
       ["MAO Spell Sounds", "https://www.nexusmods.com/morrowind/mods/50486", "Optional, not included: FPS Mode's spell sounds"],
+      ["IHSS - Improved Horse Step Sounds by Crystan", "https://www.nexusmods.com/skyrimspecialedition/mods/848", "Optional, not included: horses' hoof steps by ground"],
+      ["bevy_tnua", "https://github.com/idanarye/bevy-tnua", "The floating-body idea behind the horse's ride, written from its description"],
       ["Khronos PBR Neutral tone mapper", "https://github.com/KhronosGroup/ToneMapping", "The highlight roll-off's shoulder, written from its description"],
       ["OpenMW", "https://github.com/openmw/openmw"],
       ["Steam Audio", "https://github.com/ValveSoftware/steam-audio"],

@@ -24,7 +24,7 @@ window.MODLISTS = [
         "category": "Models And Textures"
       },
       {
-        "name": "Blue's Engine Fixes",
+        "name": "Blue\u0027s Engine Fixes",
         "url": "https://www.nexusmods.com/oblivion/mods/52700",
         "category": "Patches"
       },
@@ -81,7 +81,7 @@ window.MODLISTS = [
       {
         "name": "Faster Horses by Lord Dagobert",
         "url": "https://www.nexusmods.com/oblivion/mods/38896",
-        "category": "Animals, Creatures, Mounts  & Horses"
+        "category": "Animals, Creatures, Mounts  \u0026 Horses"
       },
       {
         "name": "Faster Sleep Wait (OBSE)",
@@ -119,7 +119,7 @@ window.MODLISTS = [
         "category": "Models And Textures"
       },
       {
-        "name": "Kezyma's Open Cities Classic Flag Remover",
+        "name": "Kezyma\u0027s Open Cities Classic Flag Remover",
         "url": "https://www.nexusmods.com/oblivion/mods/51080",
         "category": "Patches"
       },
@@ -129,7 +129,7 @@ window.MODLISTS = [
         "category": "Quests And Adventures"
       },
       {
-        "name": "Lena's Companions",
+        "name": "Lena\u0027s Companions",
         "url": "https://www.nexusmods.com/oblivion/mods/52488",
         "category": "Companions - Other"
       },
@@ -234,7 +234,7 @@ window.MODLISTS = [
         "category": "Utilities"
       },
       {
-        "name": "Snowy's Water of Cyrodiil - Distant LOD (VWD)",
+        "name": "Snowy\u0027s Water of Cyrodiil - Distant LOD (VWD)",
         "url": "https://www.nexusmods.com/oblivion/mods/54789",
         "category": "Environmental"
       },
@@ -281,7 +281,7 @@ window.MODLISTS = [
       {
         "name": "TWMP Valenwood Improved - Elsweyr Anequina - UL Merged Fallenleaf Everglades Patch",
         "url": "https://www.nexusmods.com/oblivion/mods/52099",
-        "category": "Animals, Creatures, Mounts  & Horses"
+        "category": "Animals, Creatures, Mounts  \u0026 Horses"
       },
       {
         "name": "UL Compatibility Patches Compilation WIZBAIN",
@@ -296,7 +296,7 @@ window.MODLISTS = [
       {
         "name": "Under the sign of the dragon - Tamriel Landscape Pack -",
         "url": "https://www.nexusmods.com/oblivion/mods/36887",
-        "category": "Modders Resources & Tutorials"
+        "category": "Modders Resources \u0026 Tutorials"
       },
       {
         "name": "Under the sign of the dragon - Tamriel Landscapes - Black Marsh",
@@ -306,7 +306,7 @@ window.MODLISTS = [
       {
         "name": "Under the sign of the dragon - Tamriel Resource Pack -",
         "url": "https://www.nexusmods.com/oblivion/mods/24822",
-        "category": "Modders Resources & Tutorials"
+        "category": "Modders Resources \u0026 Tutorials"
       },
       {
         "name": "Unique Landscapes Compilation",
@@ -412,7 +412,7 @@ window.MODLISTS = [
       {
         "name": "Allied Arvak",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/7385",
-        "category": "Magic - Spells & Enchantments"
+        "category": "Magic - Spells \u0026 Enchantments"
       },
       {
         "name": "Ambient Templates for Lighting Mods",
@@ -617,7 +617,7 @@ window.MODLISTS = [
       {
         "name": "Considerate Followers - Followers are Silent During Dialogue",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/133659",
-        "category": "Followers & Companions"
+        "category": "Followers \u0026 Companions"
       },
       {
         "name": "Consistent and Open Capital WIndhelm",
@@ -690,12 +690,12 @@ window.MODLISTS = [
         "category": "Immersion"
       },
       {
-        "name": "Drengin's Blue Palace Terrace. Renewed version",
+        "name": "Drengin\u0027s Blue Palace Terrace. Renewed version",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/35180",
         "category": "Buildings"
       },
       {
-        "name": "dTry's Key Utils",
+        "name": "dTry\u0027s Key Utils",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/69944",
         "category": "Utilities"
       },
@@ -737,7 +737,7 @@ window.MODLISTS = [
       {
         "name": "Enchantment Art Extender",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/105492",
-        "category": "Magic - Spells & Enchantments"
+        "category": "Magic - Spells \u0026 Enchantments"
       },
       {
         "name": "Enhanced Landscapes",
@@ -822,7 +822,7 @@ window.MODLISTS = [
       {
         "name": "Follower AI Tweaks",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/26737",
-        "category": "Followers & Companions"
+        "category": "Followers \u0026 Companions"
       },
       {
         "name": "Fuz Ro D-oh - Silent Voice",
@@ -880,7 +880,7 @@ window.MODLISTS = [
         "category": "Models and Textures"
       },
       {
-        "name": "Hestra's Nest",
+        "name": "Hestra\u0027s Nest",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/70098",
         "category": "Locations -  New"
       },
@@ -905,7 +905,7 @@ window.MODLISTS = [
         "category": "Models and Textures"
       },
       {
-        "name": "Iconic's Arvak Retexture",
+        "name": "Iconic\u0027s Arvak Retexture",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/88283",
         "category": "Models and Textures"
       },
@@ -985,287 +985,287 @@ window.MODLISTS = [
         "category": "Modders Resources"
       },
       {
-        "name": "JK's Angeline's Aromatics",
+        "name": "JK\u0027s Angeline\u0027s Aromatics",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/44482",
         "category": "Buildings"
       },
       {
-        "name": "JK's Arcadia's Cauldron",
+        "name": "JK\u0027s Arcadia\u0027s Cauldron",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/33565",
         "category": "Buildings"
       },
       {
-        "name": "JK's Arnleif and Sons Trading Company",
+        "name": "JK\u0027s Arnleif and Sons Trading Company",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/54166",
         "category": "Buildings"
       },
       {
-        "name": "JK's Belethor's General Goods",
+        "name": "JK\u0027s Belethor\u0027s General Goods",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/33636",
         "category": "Buildings"
       },
       {
-        "name": "JK's Bits and Pieces",
+        "name": "JK\u0027s Bits and Pieces",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/44642",
         "category": "Buildings"
       },
       {
-        "name": "JK's Candlehearth Hall",
+        "name": "JK\u0027s Candlehearth Hall",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/45617",
         "category": "Buildings"
       },
       {
-        "name": "JK's Castle Dour",
+        "name": "JK\u0027s Castle Dour",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/74309",
         "category": "Buildings"
       },
       {
-        "name": "JK's Castle Volkihar",
+        "name": "JK\u0027s Castle Volkihar",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/116314",
         "category": "Buildings"
       },
       {
-        "name": "JK's College of Winterhold",
+        "name": "JK\u0027s College of Winterhold",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/65676",
         "category": "Buildings"
       },
       {
-        "name": "JK's Dark Brotherhood Sanctuaries",
+        "name": "JK\u0027s Dark Brotherhood Sanctuaries",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/121950",
         "category": "Buildings"
       },
       {
-        "name": "JK's Dragonsreach",
+        "name": "JK\u0027s Dragonsreach",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/34000",
         "category": "Buildings"
       },
       {
-        "name": "JK's Elgrim's Elixirs",
+        "name": "JK\u0027s Elgrim\u0027s Elixirs",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/49934",
         "category": "Buildings"
       },
       {
-        "name": "JK's Fort Dawnguard",
+        "name": "JK\u0027s Fort Dawnguard",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/110645",
         "category": "Buildings"
       },
       {
-        "name": "JK's Guild HQ Interiors Patch Collection",
+        "name": "JK\u0027s Guild HQ Interiors Patch Collection",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/61416",
         "category": "Patches"
       },
       {
-        "name": "JK's Haelga's Bunkhouse",
+        "name": "JK\u0027s Haelga\u0027s Bunkhouse",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/60085",
         "category": "Buildings"
       },
       {
-        "name": "JK's High Hrothgar",
+        "name": "JK\u0027s High Hrothgar",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/62219",
         "category": "Buildings"
       },
       {
-        "name": "JK's Interiors Patch Collection",
+        "name": "JK\u0027s Interiors Patch Collection",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/35910",
         "category": "Patches"
       },
       {
-        "name": "JK's Jorrvaskr",
+        "name": "JK\u0027s Jorrvaskr",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/60738",
         "category": "Buildings"
       },
       {
-        "name": "JK's Markarth Outskirts",
+        "name": "JK\u0027s Markarth Outskirts",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/93006",
         "category": "Cities, Towns, Villages, and Hamlets"
       },
       {
-        "name": "JK's Markarth Outskirts Patch Collection",
+        "name": "JK\u0027s Markarth Outskirts Patch Collection",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/95750",
         "category": "Patches"
       },
       {
-        "name": "JK's Mistveil Keep",
+        "name": "JK\u0027s Mistveil Keep",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/52462",
         "category": "Buildings"
       },
       {
-        "name": "JK's Nightgate Inn",
+        "name": "JK\u0027s Nightgate Inn",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/161218",
         "category": "Buildings"
       },
       {
-        "name": "JK's Nightingale Hall",
+        "name": "JK\u0027s Nightingale Hall",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/128116",
         "category": "Buildings"
       },
       {
-        "name": "JK's Palace of the Kings",
+        "name": "JK\u0027s Palace of the Kings",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/48902",
         "category": "Buildings"
       },
       {
-        "name": "JK's Radiant Raiment",
+        "name": "JK\u0027s Radiant Raiment",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/44858",
         "category": "Buildings"
       },
       {
-        "name": "JK's Raven Rock",
+        "name": "JK\u0027s Raven Rock",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/141070",
         "category": "Cities, Towns, Villages, and Hamlets"
       },
       {
-        "name": "JK's Rift Retreat",
+        "name": "JK\u0027s Rift Retreat",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/183887",
         "category": "Player homes"
       },
       {
-        "name": "JK's Riften Outskirts",
+        "name": "JK\u0027s Riften Outskirts",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/90864",
         "category": "Cities, Towns, Villages, and Hamlets"
       },
       {
-        "name": "JK's Riften Outskirts Patch Collection",
+        "name": "JK\u0027s Riften Outskirts Patch Collection",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/91642",
         "category": "Patches"
       },
       {
-        "name": "JK's Riverwood Trader",
+        "name": "JK\u0027s Riverwood Trader",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/55959",
         "category": "Buildings"
       },
       {
-        "name": "JK's Sadri's Used Wares",
+        "name": "JK\u0027s Sadri\u0027s Used Wares",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/47942",
         "category": "Buildings"
       },
       {
-        "name": "JK's Septimus Signus's Outpost",
+        "name": "JK\u0027s Septimus Signus\u0027s Outpost",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/66915",
         "category": "Buildings"
       },
       {
-        "name": "JK's Silver-Blood Inn",
+        "name": "JK\u0027s Silver-Blood Inn",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/53554",
         "category": "Buildings"
       },
       {
-        "name": "JK's Sinderion's Field Laboratory",
+        "name": "JK\u0027s Sinderion\u0027s Field Laboratory",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/68154",
         "category": "Buildings"
       },
       {
-        "name": "JK's Sky Haven Temple",
+        "name": "JK\u0027s Sky Haven Temple",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/63039",
         "category": "Buildings"
       },
       {
-        "name": "JK's Sleeping Giant Inn",
+        "name": "JK\u0027s Sleeping Giant Inn",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/35806",
         "category": "Buildings"
       },
       {
-        "name": "JK's Tel Mithryn",
+        "name": "JK\u0027s Tel Mithryn",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/151512",
         "category": "Cities, Towns, Villages, and Hamlets"
       },
       {
-        "name": "JK's Temple of Dibella",
+        "name": "JK\u0027s Temple of Dibella",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/56371",
         "category": "Buildings"
       },
       {
-        "name": "JK's Temple of Kynareth",
+        "name": "JK\u0027s Temple of Kynareth",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/56737",
         "category": "Buildings"
       },
       {
-        "name": "JK's Temple of Talos",
+        "name": "JK\u0027s Temple of Talos",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/56971",
         "category": "Buildings"
       },
       {
-        "name": "JK's Temple of the Divines",
+        "name": "JK\u0027s Temple of the Divines",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/57304",
         "category": "Buildings"
       },
       {
-        "name": "JK's The Bannered Mare",
+        "name": "JK\u0027s The Bannered Mare",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/33845",
         "category": "Buildings"
       },
       {
-        "name": "JK's The Bards College",
+        "name": "JK\u0027s The Bards College",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/71054",
         "category": "Buildings"
       },
       {
-        "name": "JK's The Bee and Barb",
+        "name": "JK\u0027s The Bee and Barb",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/49516",
         "category": "Buildings"
       },
       {
-        "name": "JK's The Drunken Huntsman",
+        "name": "JK\u0027s The Drunken Huntsman",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/33783",
         "category": "Buildings"
       },
       {
-        "name": "JK's The Hag's Cure",
+        "name": "JK\u0027s The Hag\u0027s Cure",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/54587",
         "category": "Buildings"
       },
       {
-        "name": "JK's The Pawned Prawn",
+        "name": "JK\u0027s The Pawned Prawn",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/50135",
         "category": "Buildings"
       },
       {
-        "name": "JK's The Ragged Flagon",
+        "name": "JK\u0027s The Ragged Flagon",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/50765",
         "category": "Buildings"
       },
       {
-        "name": "JK's The Temple of Mara",
+        "name": "JK\u0027s The Temple of Mara",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/52724",
         "category": "Buildings"
       },
       {
-        "name": "JK's The Winking Skeever",
+        "name": "JK\u0027s The Winking Skeever",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/43991",
         "category": "Buildings"
       },
       {
-        "name": "JK's Thieves Guild HQ",
+        "name": "JK\u0027s Thieves Guild HQ",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/133787",
         "category": "Buildings"
       },
       {
-        "name": "JK's Understone Keep",
+        "name": "JK\u0027s Understone Keep",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/55571",
         "category": "Buildings"
       },
       {
-        "name": "JK's Warmaiden's",
+        "name": "JK\u0027s Warmaiden\u0027s",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/33685",
         "category": "Buildings"
       },
       {
-        "name": "JK's White Phial",
+        "name": "JK\u0027s White Phial",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/47713",
         "category": "Buildings"
       },
       {
-        "name": "JK's Whiterun Outskirts",
+        "name": "JK\u0027s Whiterun Outskirts",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/78351",
         "category": "Cities, Towns, Villages, and Hamlets"
       },
       {
-        "name": "JK's Windhelm Outskirts",
+        "name": "JK\u0027s Windhelm Outskirts",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/86975",
         "category": "Cities, Towns, Villages, and Hamlets"
       },
       {
-        "name": "JK's Windhelm Outskirts Patch Collection",
+        "name": "JK\u0027s Windhelm Outskirts Patch Collection",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/87964",
         "category": "Patches"
       },
@@ -1470,12 +1470,12 @@ window.MODLISTS = [
         "category": "Visuals and Graphics"
       },
       {
-        "name": "powerofthree's Papyrus Extender",
+        "name": "powerofthree\u0027s Papyrus Extender",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/22854",
         "category": "Modders Resources"
       },
       {
-        "name": "powerofthree's Tweaks",
+        "name": "powerofthree\u0027s Tweaks",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/51073",
         "category": "Bug Fixes"
       },
@@ -1510,7 +1510,7 @@ window.MODLISTS = [
         "category": "User Interface"
       },
       {
-        "name": "Rally's Banners of Skyrim",
+        "name": "Rally\u0027s Banners of Skyrim",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/116289",
         "category": "Models and Textures"
       },
@@ -1535,12 +1535,12 @@ window.MODLISTS = [
         "category": "Quests and Adventures"
       },
       {
-        "name": "Rob's Bug Fixes - Capital Windhelm Expansion",
+        "name": "Rob\u0027s Bug Fixes - Capital Windhelm Expansion",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/64740",
         "category": "Bug Fixes"
       },
       {
-        "name": "Rob's Bug Fixes - TGC Solitude",
+        "name": "Rob\u0027s Bug Fixes - TGC Solitude",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/72117",
         "category": "Bug Fixes"
       },
@@ -1695,7 +1695,7 @@ window.MODLISTS = [
         "category": "Bug Fixes"
       },
       {
-        "name": "Sokco's Helmet Hider (SHH)",
+        "name": "Sokco\u0027s Helmet Hider (SHH)",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/74487",
         "category": "Armour"
       },
@@ -1770,6 +1770,11 @@ window.MODLISTS = [
         "category": "Locations -  New"
       },
       {
+        "name": "The Gray Cowl of Nocturnal SE",
+        "url": "https://www.nexusmods.com/skyrimspecialedition/mods/4509",
+        "category": "Quests and Adventures"
+      },
+      {
         "name": "The Great Cities - Unofficial Compatibility Patches",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/33969",
         "category": "Cities, Towns, Villages, and Hamlets"
@@ -1825,7 +1830,7 @@ window.MODLISTS = [
         "category": "Cities, Towns, Villages, and Hamlets"
       },
       {
-        "name": "The Great Town of Shor's Stone SSE",
+        "name": "The Great Town of Shor\u0027s Stone SSE",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/35977",
         "category": "Cities, Towns, Villages, and Hamlets"
       },
@@ -1865,7 +1870,7 @@ window.MODLISTS = [
         "category": "User Interface"
       },
       {
-        "name": "Tomato's 8K Assorted Mountain Textures",
+        "name": "Tomato\u0027s 8K Assorted Mountain Textures",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/109986",
         "category": "Models and Textures"
       },
@@ -2032,7 +2037,7 @@ window.MODLISTS = [
       {
         "name": "Vibrant Weapons EAE - Enchantment Lights",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/136564",
-        "category": "Magic - Spells & Enchantments"
+        "category": "Magic - Spells \u0026 Enchantments"
       },
       {
         "name": "VIGILANT SE",
@@ -2045,7 +2050,7 @@ window.MODLISTS = [
         "category": "Environmental"
       },
       {
-        "name": "We Don't Float",
+        "name": "We Don\u0027t Float",
         "url": "https://www.nexusmods.com/skyrimspecialedition/mods/16088",
         "category": "Immersion"
       },
@@ -2648,7 +2653,7 @@ window.MODLISTS = [
         "category": "Models and Textures"
       },
       {
-        "name": "DM's Jacobstown",
+        "name": "DM\u0027s Jacobstown",
         "url": "https://www.nexusmods.com/newvegas/mods/92068",
         "category": "Overhauls"
       },
@@ -2813,7 +2818,7 @@ window.MODLISTS = [
         "category": "Models and Textures"
       },
       {
-        "name": "Lime's Fort Overhaul",
+        "name": "Lime\u0027s Fort Overhaul",
         "url": "https://www.nexusmods.com/newvegas/mods/73749",
         "category": "Overhauls"
       },
@@ -2938,7 +2943,7 @@ window.MODLISTS = [
         "category": "Models and Textures"
       },
       {
-        "name": "PM's Med-Textures - HD Chems and Venoms",
+        "name": "PM\u0027s Med-Textures - HD Chems and Venoms",
         "url": "https://www.nexusmods.com/newvegas/mods/62946",
         "category": "Models and Textures"
       },
@@ -3088,7 +3093,7 @@ window.MODLISTS = [
         "category": "Models and Textures"
       },
       {
-        "name": "Th3Overseer's Core ESM",
+        "name": "Th3Overseer\u0027s Core ESM",
         "url": "https://www.nexusmods.com/newvegas/mods/65975",
         "category": "Miscellaneous"
       },
@@ -3194,6 +3199,11 @@ window.MODLISTS = [
     "name": "Fallout 4",
     "items": [
       {
+        "name": "Additional Scrap Cars",
+        "url": "https://www.nexusmods.com/fallout4/mods/42723",
+        "category": "Vehicles"
+      },
+      {
         "name": "Address Library for F4SE Plugins",
         "url": "https://www.nexusmods.com/fallout4/mods/47327",
         "category": "Utilities"
@@ -3229,7 +3239,7 @@ window.MODLISTS = [
         "category": "New Lands"
       },
       {
-        "name": "Bottles' Label Overhaul",
+        "name": "Bottles\u0027 Label Overhaul",
         "url": "https://www.nexusmods.com/fallout4/mods/1500",
         "category": "Models and Textures"
       },
@@ -3399,7 +3409,7 @@ window.MODLISTS = [
         "category": "New Lands"
       },
       {
-        "name": "Maxwell's World",
+        "name": "Maxwell\u0027s World",
         "url": "https://www.nexusmods.com/fallout4/mods/18949",
         "category": "Quests and Adventures"
       },
@@ -3469,7 +3479,7 @@ window.MODLISTS = [
         "category": "Environment"
       },
       {
-        "name": "South of the Sea - Atom's Storm",
+        "name": "South of the Sea - Atom\u0027s Storm",
         "url": "https://www.nexusmods.com/fallout4/mods/63152",
         "category": "Locations - New"
       },
@@ -3494,7 +3504,7 @@ window.MODLISTS = [
         "category": "New Lands"
       },
       {
-        "name": "The Fens Sheriff's Department - Textures",
+        "name": "The Fens Sheriff\u0027s Department - Textures",
         "url": "https://www.nexusmods.com/fallout4/mods/68276",
         "category": "Quests and Adventures"
       },
@@ -3529,7 +3539,7 @@ window.MODLISTS = [
         "category": "Locations - Vanilla"
       },
       {
-        "name": "Vic's Commonwealth Map Extended Project",
+        "name": "Vic\u0027s Commonwealth Map Extended Project",
         "url": "https://www.nexusmods.com/fallout4/mods/41082",
         "category": "Locations - New"
       },
@@ -3544,12 +3554,12 @@ window.MODLISTS = [
         "category": "Player Settlement"
       },
       {
-        "name": "Xander's Aid - DLC",
+        "name": "Xander\u0027s Aid - DLC",
         "url": "https://www.nexusmods.com/fallout4/mods/17050",
         "category": "Quests and Adventures"
       },
       {
-        "name": "ZP's Flora - Vanilla Trees",
+        "name": "ZP\u0027s Flora - Vanilla Trees",
         "url": "https://www.nexusmods.com/fallout4/mods/86511",
         "category": "Visuals and Graphics"
       }
