@@ -585,11 +585,15 @@ const CREDITS = [
       ["NVIDIA Streamline", "https://github.com/NVIDIA-RTX/Streamline", "DLSS, Ray Reconstruction, Frame Generation and Reflex"],
       ["Bevy's dlss_wgpu", "https://github.com/bevyengine/dlss_wgpu", "How DLSS is recorded into wgpu's own command stream"],
       ["takram three-geospatial clouds", "https://github.com/takram-design-engineering/three-geospatial/tree/main/packages/clouds"],
-      ["Combat Sounds Overhaul (Impact Sounds)", "https://www.nexusmods.com/morrowind/mods/52747"],
-      ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/"]
+      ["Combat Sounds Overhaul", "https://www.nexusmods.com/morrowind/mods/53859", "FPS Mode's sword swings"],
+      ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/"],
+      ["Map Icons - MWSE by Spammer", "https://www.nexusmods.com/morrowind/mods/53966", "Door map icon rules"],
+      ["The games' own map icons (Bethesda Softworks)", "https://bethesda.net/", "Oblivion, Skyrim, Fallout 3, New Vegas and Fallout 4 map icon sets, collected from UESP and the Elder Scrolls and Fallout wikis"]
     ]},
     { category: "References", items: [
       ["Additional Scrap Cars by EdgeUK90", "https://www.nexusmods.com/fallout4/mods/42723", "Optional download, not included: the FPS Mode car's model"],
+      ["Impact Sounds", "https://www.nexusmods.com/morrowind/mods/52747", "Optional, not included: FPS Mode's impacts by material, and weapon draws"],
+      ["MAO Spell Sounds", "https://www.nexusmods.com/morrowind/mods/50486", "Optional, not included: FPS Mode's spell sounds"],
       ["OpenMW", "https://github.com/openmw/openmw"],
       ["Steam Audio", "https://github.com/ValveSoftware/steam-audio"],
       ["OAAB-Modding.github.io", "https://github.com/OAAB-Modding/OAAB-Modding.github.io"],
