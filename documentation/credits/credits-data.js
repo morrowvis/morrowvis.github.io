@@ -561,7 +561,7 @@ const CREDITS = [
       ["image_dds", "https://github.com/ScanMountGoat/image_dds", "DDS decoding (BC1-7 and other formats)"],
       ["resvg", "https://github.com/linebender/resvg", "SVG rendering"],
       ["flate2", "https://github.com/rust-lang/flate2-rs", "Compression"],
-      ["lz4_flex", "https://github.com/PSeitz/lz4_flex", "Skyrim Special Edition archives (LZ4)"],
+      ["lz4_flex", "https://github.com/PSeitz/lz4_flex", "Skyrim Special Edition archives (LZ4) and the disk cache"],
       ["md-5", "https://github.com/RustCrypto/hashes", "Datasmith import (mesh checksums)"],
       ["windows", "https://github.com/microsoft/windows-rs", "Media Foundation: Skyrim's .xwm sounds"],
       ["serde", "https://serde.rs/", "Serialisation"],
@@ -578,7 +578,10 @@ const CREDITS = [
       ["notify", "https://github.com/notify-rs/notify", "Reloading models saved while shown"],
       ["puffin", "https://github.com/EmbarkStudios/puffin", "Profiler"],
       ["wgpu-profiler", "https://github.com/Wumpf/wgpu-profiler", "GPU time per render pass"],
-      ["pollster", "https://github.com/zesterer/pollster", "Tests"]
+      ["pollster", "https://github.com/zesterer/pollster", "Tests"],
+      ["bincode", "https://github.com/bincode-org/bincode", "The disk cache's entries"],
+      ["sevenz-rust2", "https://github.com/hasenbanck/sevenz-rust", "Installing dependencies from 7z downloads"],
+      ["lzma-rust2", "https://github.com/hasenbanck/lzma-rust2", "Installing dependencies from 7z downloads"]
     ]},
     { category: "Resources", items: [
       ["Bevy's bevy_solari", "https://github.com/bevyengine/bevy/tree/main/crates/bevy_solari", "Solari path-traced lighting, ported (MIT OR Apache-2.0)"],
@@ -586,6 +589,8 @@ const CREDITS = [
       ["Bevy's dlss_wgpu", "https://github.com/bevyengine/dlss_wgpu", "How DLSS is recorded into wgpu's own command stream"],
       ["takram three-geospatial clouds", "https://github.com/takram-design-engineering/three-geospatial/tree/main/packages/clouds"],
       ["Freesound community (Pixabay)", "https://pixabay.com/users/freesound_community-46691455/"],
+      ["Inter by Rasmus Andersson", "https://github.com/rsms/inter", "HUD text (SIL Open Font License)"],
+      ["Pelagiad by Isak Larborn", "https://www.nexusmods.com/morrowind/mods/46854", "Morrowind's in-game text, from TrueType fonts for OpenMW (SIL Open Font License)"],
       ["Map Icons - MWSE by Spammer", "https://www.nexusmods.com/morrowind/mods/53966", "Door map icon rules"],
       ["The games' own map icons (Bethesda Softworks)", "https://bethesda.net/", "Oblivion, Skyrim, Fallout 3, New Vegas and Fallout 4 map icon sets, collected from UESP and the Elder Scrolls and Fallout wikis"]
     ]},
@@ -594,6 +599,7 @@ const CREDITS = [
       ["Combat Sounds Overhaul", "https://www.nexusmods.com/morrowind/mods/53859", "Optional, not included: FPS Mode's weapon swings"],
       ["Impact Sounds", "https://www.nexusmods.com/morrowind/mods/52747", "Optional, not included: footsteps, and FPS Mode's impacts by material and weapon draws"],
       ["MAO Spell Sounds", "https://www.nexusmods.com/morrowind/mods/50486", "Optional, not included: FPS Mode's spell sounds"],
+      ["Khronos PBR Neutral tone mapper", "https://github.com/KhronosGroup/ToneMapping", "The highlight roll-off's shoulder, written from its description"],
       ["OpenMW", "https://github.com/openmw/openmw"],
       ["Steam Audio", "https://github.com/ValveSoftware/steam-audio"],
       ["OAAB-Modding.github.io", "https://github.com/OAAB-Modding/OAAB-Modding.github.io"],
