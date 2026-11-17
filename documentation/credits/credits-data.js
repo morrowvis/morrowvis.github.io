@@ -544,6 +544,7 @@ const CREDITS = [
       ["ash", "https://github.com/ash-rs/ash", "Vulkan through NVIDIA Streamline (DLSS)"],
       ["naga", "https://github.com/gfx-rs/wgpu/tree/trunk/naga", "Shader compilation"],
       ["winit", "https://github.com/rust-windowing/winit", "Windowing"],
+      ["webbrowser", "https://github.com/amodm/webbrowser-rs", "Opening links in the browser"],
       ["Rapier", "https://rapier.rs/", "Physics"],
       ["parry", "https://github.com/dimforge/parry", "Collision detection"],
       ["glam", "https://github.com/bitshifter/glam-rs", "Maths"],

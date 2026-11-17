@@ -37,7 +37,7 @@ const GOALS_SECTIONS = [
       "Focus on developing useful functions such as object window, linked cells, map overlays, contours and 3d cutaways.",
       "Allow use for review and co-ordination, inspired by federated BIM projects.",
       "Support the viewing of Bethesda games, modlists (particularly from Mod Organizer 2) as well as total conversions from Morrowind to Fallout 4.",
-      "Provide accessible exploration of worldspaces free from certain constraints of their engines, including installed version.",
+      "Provide accessible exploration of worldspaces free from certain constraints of their engines, including installed version and memory limits.",
       "Provide prototypical support for worldspaces in Morrowind.",
       "Render Bethesda games in a way that is truer to concept than what their vanilla engines would allow.",
       "Support and simplify switching between modlists for comparisons.",
