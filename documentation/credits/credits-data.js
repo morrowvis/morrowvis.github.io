@@ -596,11 +596,6 @@ const CREDITS = [
       ["The games' own map icons (Bethesda Softworks)", "https://bethesda.net/", "Oblivion, Skyrim, Fallout 3, New Vegas and Fallout 4 map icon sets, collected from UESP and the Elder Scrolls and Fallout wikis"]
     ]},
     { category: "References", items: [
-      ["Additional Scrap Cars by EdgeUK90", "https://www.nexusmods.com/fallout4/mods/42723", "Optional download, not included: the FPS Mode car's model"],
-      ["Combat Sounds Overhaul", "https://www.nexusmods.com/morrowind/mods/53859", "Optional, not included: FPS Mode's weapon swings"],
-      ["Impact Sounds", "https://www.nexusmods.com/morrowind/mods/52747", "Optional, not included: footsteps, and FPS Mode's impacts by material and weapon draws"],
-      ["MAO Spell Sounds", "https://www.nexusmods.com/morrowind/mods/50486", "Optional, not included: FPS Mode's spell sounds"],
-      ["IHSS - Improved Horse Step Sounds by Crystan", "https://www.nexusmods.com/skyrimspecialedition/mods/848", "Optional, not included: horses' hoof steps by ground"],
       ["bevy_tnua", "https://github.com/idanarye/bevy-tnua", "The floating-body idea behind the horse's ride, written from its description"],
       ["Khronos PBR Neutral tone mapper", "https://github.com/KhronosGroup/ToneMapping", "The highlight roll-off's shoulder, written from its description"],
       ["OpenMW", "https://github.com/openmw/openmw"],
@@ -612,6 +607,17 @@ const CREDITS = [
       ["spttools", "https://github.com/anahuj/spttools"],
       ["ByroRedux", "https://github.com/matiaszanolli/ByroRedux"],
       ["FaceGenBaseLibrary (Singular Inversions)", "https://github.com/SingularInversions/FaceGenBaseLibrary"]
+    ]},
+    { category: "Dependencies (optional downloads, not included)", items: [
+      ["Additional Scrap Cars by EdgeUK90", "https://www.nexusmods.com/fallout4/mods/42723", "The FPS Mode car's model"],
+      ["Fallout: The Frontier", "https://www.nexusmods.com/newvegas/mods/68009", "The FPS Mode car's engine, tyre, wind and suspension sounds"],
+      ["Tamriel_Data", "https://www.nexusmods.com/morrowind/mods/44537", "The Hoom's model and animation"],
+      ["Combat Sounds Overhaul", "https://www.nexusmods.com/morrowind/mods/53859", "FPS Mode's weapon swings"],
+      ["Impact Sounds", "https://www.nexusmods.com/morrowind/mods/52747", "Footsteps, and FPS Mode's impacts by material and weapon draws"],
+      ["MAO Spell Sounds", "https://www.nexusmods.com/morrowind/mods/50486", "FPS Mode's spell sounds"],
+      ["IHSS - Improved Horse Step Sounds by Crystan", "https://www.nexusmods.com/skyrimspecialedition/mods/848", "Horses' hoof steps by ground"],
+      ["True Storms Special Edition - Thunder Rain and Weather Redone by fadingsignal", "https://www.nexusmods.com/skyrimspecialedition/mods/2472", "Every game's rain, thunder, wind and dust storm sounds"],
+      ["True Storms Wasteland Edition by fadingsignal", "https://www.nexusmods.com/fallout4/mods/4472", "Every game's rain, thunder, wind and dust storm sounds"]
     ]}
   ])
 ];
