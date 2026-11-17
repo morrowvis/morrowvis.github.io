@@ -535,7 +535,7 @@ const CREDITS = [
       ["tes3", "https://github.com/Greatness7/tes3"],
       ["tes3conv", "https://github.com/Greatness7/tes3conv"],
       ["merge_to_master", "https://github.com/Greatness7/merge_to_master"],
-      ["MGE XE", "https://github.com/Greatness7/MGE-XE", "Distant land: reading it, and the built-in generator (its distantland crates)"]
+      ["MGE XE", "https://github.com/Greatness7/MGE-XE", "Distant land: reading it, and its built-in generator (the distantland crates)"]
     ]},
     { category: "Rust Crates", items: [
       ["egui / eframe", "https://github.com/emilk/egui", "User interface"],
@@ -561,7 +561,7 @@ const CREDITS = [
       ["image_dds", "https://github.com/ScanMountGoat/image_dds", "DDS decoding (BC1-7 and other formats)"],
       ["resvg", "https://github.com/linebender/resvg", "SVG rendering"],
       ["flate2", "https://github.com/rust-lang/flate2-rs", "Compression"],
-      ["lz4_flex", "https://github.com/PSeitz/lz4_flex", "Skyrim Special Edition archives (LZ4) and the disk cache"],
+      ["lz4_flex", "https://github.com/PSeitz/lz4_flex", "Skyrim Special Edition archives (LZ4), disk cache"],
       ["md-5", "https://github.com/RustCrypto/hashes", "Datasmith import (mesh checksums)"],
       ["windows", "https://github.com/microsoft/windows-rs", "Media Foundation: Skyrim's .xwm sounds"],
       ["serde", "https://serde.rs/", "Serialisation"],
@@ -579,10 +579,10 @@ const CREDITS = [
       ["puffin", "https://github.com/EmbarkStudios/puffin", "Profiler"],
       ["wgpu-profiler", "https://github.com/Wumpf/wgpu-profiler", "GPU time per render pass"],
       ["pollster", "https://github.com/zesterer/pollster", "Tests"],
-      ["bincode", "https://github.com/bincode-org/bincode", "The disk cache's entries"],
+      ["bincode", "https://github.com/bincode-org/bincode", "Disk cache entries"],
       ["sevenz-rust2", "https://github.com/hasenbanck/sevenz-rust", "Installing dependencies from 7z downloads"],
       ["lzma-rust2", "https://github.com/hasenbanck/lzma-rust2", "Installing dependencies from 7z downloads"],
-      ["ciborium", "https://github.com/enarx/ciborium", "The disk cache's Morrowind world (CBOR)"]
+      ["ciborium", "https://github.com/enarx/ciborium", "Disk cache: Morrowind world (CBOR)"]
     ]},
     { category: "Resources", items: [
       ["Bevy's bevy_solari", "https://github.com/bevyengine/bevy/tree/main/crates/bevy_solari", "Solari path-traced lighting, ported (MIT OR Apache-2.0)"],
@@ -593,11 +593,11 @@ const CREDITS = [
       ["Inter by Rasmus Andersson", "https://github.com/rsms/inter", "HUD text (SIL Open Font License)"],
       ["Pelagiad by Isak Larborn", "https://www.nexusmods.com/morrowind/mods/46854", "Morrowind's in-game text, from TrueType fonts for OpenMW (SIL Open Font License)"],
       ["Map Icons - MWSE by Spammer", "https://www.nexusmods.com/morrowind/mods/53966", "Door map icon rules"],
-      ["The games' own map icons (Bethesda Softworks)", "https://bethesda.net/", "Oblivion, Skyrim, Fallout 3, New Vegas and Fallout 4 map icon sets, collected from UESP and the Elder Scrolls and Fallout wikis"]
+      ["Games' own map icons (Bethesda Softworks)", "https://bethesda.net/", "Oblivion, Skyrim, Fallout 3, New Vegas and Fallout 4 map icon sets, collected from UESP and Elder Scrolls and Fallout wikis"]
     ]},
     { category: "References", items: [
-      ["bevy_tnua", "https://github.com/idanarye/bevy-tnua", "The floating-body idea behind the horse's ride, written from its description"],
-      ["Khronos PBR Neutral tone mapper", "https://github.com/KhronosGroup/ToneMapping", "The highlight roll-off's shoulder, written from its description"],
+      ["bevy_tnua", "https://github.com/idanarye/bevy-tnua", "Floating-body idea behind the horse ride, written from its description"],
+      ["Khronos PBR Neutral tone mapper", "https://github.com/KhronosGroup/ToneMapping", "Highlight roll-off shoulder, written from its description"],
       ["OpenMW", "https://github.com/openmw/openmw"],
       ["Steam Audio", "https://github.com/ValveSoftware/steam-audio"],
       ["OAAB-Modding.github.io", "https://github.com/OAAB-Modding/OAAB-Modding.github.io"],
@@ -609,15 +609,15 @@ const CREDITS = [
       ["FaceGenBaseLibrary (Singular Inversions)", "https://github.com/SingularInversions/FaceGenBaseLibrary"]
     ]},
     { category: "Dependencies (optional downloads, not included)", items: [
-      ["Additional Scrap Cars by EdgeUK90", "https://www.nexusmods.com/fallout4/mods/42723", "The FPS Mode car's model"],
-      ["Fallout: The Frontier", "https://www.nexusmods.com/newvegas/mods/68009", "The FPS Mode car's engine, tyre, wind and suspension sounds"],
-      ["Tamriel_Data", "https://www.nexusmods.com/morrowind/mods/44537", "The Hoom's model and animation"],
-      ["Combat Sounds Overhaul", "https://www.nexusmods.com/morrowind/mods/53859", "FPS Mode's weapon swings"],
-      ["Impact Sounds", "https://www.nexusmods.com/morrowind/mods/52747", "Footsteps, and FPS Mode's impacts by material and weapon draws"],
-      ["MAO Spell Sounds", "https://www.nexusmods.com/morrowind/mods/50486", "FPS Mode's spell sounds"],
-      ["IHSS - Improved Horse Step Sounds by Crystan", "https://www.nexusmods.com/skyrimspecialedition/mods/848", "Horses' hoof steps by ground"],
-      ["True Storms Special Edition - Thunder Rain and Weather Redone by fadingsignal", "https://www.nexusmods.com/skyrimspecialedition/mods/2472", "Every game's rain, thunder, wind and dust storm sounds"],
-      ["True Storms Wasteland Edition by fadingsignal", "https://www.nexusmods.com/fallout4/mods/4472", "Every game's rain, thunder, wind and dust storm sounds"]
+      ["Additional Scrap Cars by EdgeUK90", "https://www.nexusmods.com/fallout4/mods/42723", "FPS car model"],
+      ["Fallout: The Frontier", "https://www.nexusmods.com/newvegas/mods/68009", "FPS car engine, tyre, wind and suspension sounds"],
+      ["Tamriel_Data", "https://www.nexusmods.com/morrowind/mods/44537", "Hoom model and animation"],
+      ["Combat Sounds Overhaul", "https://www.nexusmods.com/morrowind/mods/53859", "FPS weapon swings"],
+      ["Impact Sounds", "https://www.nexusmods.com/morrowind/mods/52747", "Footsteps, FPS impacts by material and weapon draws"],
+      ["MAO Spell Sounds", "https://www.nexusmods.com/morrowind/mods/50486", "FPS spell sounds"],
+      ["IHSS - Improved Horse Step Sounds by Crystan", "https://www.nexusmods.com/skyrimspecialedition/mods/848", "Horse hoof steps by ground"],
+      ["True Storms Special Edition - Thunder Rain and Weather Redone by fadingsignal", "https://www.nexusmods.com/skyrimspecialedition/mods/2472", "Rain, thunder, wind and dust storm sounds in every game"],
+      ["True Storms Wasteland Edition by fadingsignal", "https://www.nexusmods.com/fallout4/mods/4472", "Rain, thunder, wind and dust storm sounds in every game"]
     ]}
   ])
 ];
