@@ -93,6 +93,7 @@ const GOALS_SECTIONS = [
       '<a href="https://store.steampowered.com/app/933110/Age_of_Empires_III_Definitive_Edition/">Age of Empires III</a>',
       '<a href="https://store.steampowered.com/app/2537590/Microsoft_Flight_Simulator_2024/">Microsoft Flight Simulator 2024</a>',
       '<a href="https://store.steampowered.com/app/3240220/Grand_Theft_Auto_V_Enhanced/">Grand Theft Auto V</a>',
+      '<a href="https://store.steampowered.com/app/3884520/Blood_Refreshed_Supply/">Blood',
       '<a href="https://en.wikipedia.org/wiki/Black_%26_White_2">Black & White 2</a>',
       '<a href="https://en.wikipedia.org/wiki/Guitar_Hero_III:_Legends_of_Rock">Guitar Hero III: Legends of Rock</a>',
       '<a href="https://en.wikipedia.org/wiki/Black_%26_White_2">Black & White 2</a>'
