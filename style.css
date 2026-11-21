@@ -215,18 +215,18 @@ a:hover {
      :not(.dropdown-toggle) on the border - these selectors outrank the rule
                         that clears the Documentation underline. */
 body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover,
-body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover,
-body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active,
-body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a:hover,
-body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a.active {
+body[data-page="ue5"] .navbar:not(.scrolled) .nav-links > li > a:hover,
+body[data-page="ue5"] .navbar:not(.scrolled) .nav-links > li > a.active,
+body[data-page="vvardenworks"] .navbar:not(.scrolled) .nav-links > li > a:hover,
+body[data-page="vvardenworks"] .navbar:not(.scrolled) .nav-links > li > a.active {
     color: #000000;
 }
 
 body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
-body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
-body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.dropdown-toggle),
-body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
-body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.dropdown-toggle) {
+body[data-page="ue5"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
+body[data-page="ue5"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.dropdown-toggle),
+body[data-page="vvardenworks"] .navbar:not(.scrolled) .nav-links > li > a:hover:not(.dropdown-toggle),
+body[data-page="vvardenworks"] .navbar:not(.scrolled) .nav-links > li > a.active:not(.dropdown-toggle) {
     border-bottom-color: #000000;
 }
 
@@ -955,10 +955,10 @@ footer .container p:last-child {
        (The border needs no reset: 'border-bottom: none' above kills the style,
        so the black border-colour can't render anyway.) */
     body[data-page="home"] .navbar:not(.scrolled) .nav-links > li > a:hover,
-    body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a:hover,
-    body[data-page="tools"] .navbar:not(.scrolled) .nav-links > li > a.active,
-    body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a:hover,
-    body[data-page="download"] .navbar:not(.scrolled) .nav-links > li > a.active {
+    body[data-page="ue5"] .navbar:not(.scrolled) .nav-links > li > a:hover,
+    body[data-page="ue5"] .navbar:not(.scrolled) .nav-links > li > a.active,
+    body[data-page="vvardenworks"] .navbar:not(.scrolled) .nav-links > li > a:hover,
+    body[data-page="vvardenworks"] .navbar:not(.scrolled) .nav-links > li > a.active {
         color: var(--gold-accent);
     }
 

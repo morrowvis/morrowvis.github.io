@@ -15,8 +15,8 @@
             '<div class="container">' +
                 '<div class="logo"><h1><a href="' + HOME_HREF + '">MWV</a></h1></div>' +
                 '<ul class="nav-links" id="navLinks">' +
-                    '<li><a href="' + BASE + 'download" data-page="download">Download</a></li>' +
-                    '<li><a href="' + BASE + 'tools" data-page="tools">Tools</a></li>' +
+                    '<li><a href="' + BASE + 'ue5" data-page="ue5">UE5</a></li>' +
+                    '<li><a href="' + BASE + 'vvardenworks" data-page="vvardenworks">Vvardenworks</a></li>' +
                     '<li class="has-dropdown">' +
                         '<a href="' + BASE + 'documentation/" class="dropdown-toggle" data-page="documentation">Documentation <i class="fa fa-caret-down"></i></a>' +
                         '<ul class="dropdown-menu">' +
@@ -24,7 +24,6 @@
                             '<li><a href="' + BASE + 'documentation/roadmap/" data-page="roadmap">Roadmap</a></li>' +
                             '<li><a href="' + BASE + 'documentation/credits/" data-page="credits">Credits</a></li>' +
                             '<li><a href="' + BASE + 'documentation/modlists/" data-page="modlists">Modlists</a></li>' +
-                            '<li><a href="' + BASE + 'documentation/tools/" data-page="documentation-tools">Tools</a></li>' +
                             '<li><a href="' + BASE + 'documentation/disclosures/" data-page="disclosures">Disclosures</a></li>' +
                         '</ul>' +
                     '</li>' +
