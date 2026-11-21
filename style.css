@@ -1872,9 +1872,11 @@ body[data-page="morrowind-modding-history"] .doc-main {
 .doc-sidebar-dropdown-list {
     display: none;
     position: absolute;
-    top: calc(100% + 6px);
-    left: 0;
-    right: 0;
+    top: 0;
+    left: auto;
+    right: calc(100% + 16px);
+    width: 280px;
+    max-width: calc(100vw - 24px);
     z-index: 20;
     max-height: min(60vh, 360px);
     padding: 4px;
