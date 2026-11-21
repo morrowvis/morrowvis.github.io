@@ -1308,8 +1308,7 @@ footer .container p:last-child {
     margin-bottom: 0;
 }
 
-/* Sample the same yellow-to-slate hue sweep used by the credits panels at
-   four evenly spaced points. Disclosures stays neutral below. */
+/* Sample the yellow-to-blue hue sweep used by the credits panels. */
 .doc-nav-card--goals {
     border-color: rgba(166, 96, 37, 0.7);
 }
@@ -1326,7 +1325,7 @@ footer .container p:last-child {
     border-color: rgba(160, 160, 160, 0.26);
 }
 
-.doc-nav-card--tools {
+.doc-nav-card--modlists {
     border-color: rgba(78, 65, 130, 0.7);
 }
 

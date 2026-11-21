@@ -5,8 +5,7 @@
 (function () {
     const BASE = window.SITE_BASE || '';
     const PAGE = document.body.dataset.page || '';
-    const DOC_PAGES = ['documentation', 'documentation-tools', 'goals', 'roadmap', 'credits', 'modlists', 'disclosures',
-        'io-scene-mw-mwv', 'export-cells-mwse', 'thumbnail-generator-mwse', 'morrowind-modding-history'];
+    const DOC_PAGES = ['documentation', 'goals', 'roadmap', 'credits', 'modlists', 'disclosures'];
 
     const HOME_HREF = BASE === '' ? './' : BASE;
 
