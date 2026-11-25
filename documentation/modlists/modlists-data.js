@@ -2923,6 +2923,11 @@ window.MODLISTS = [
         "category": "New Lands and Locations"
       },
       {
+        "name": "NVTF - New Vegas Tick Fix",
+        "url": "https://www.nexusmods.com/newvegas/mods/66537",
+        "category": "Miscellaneous"
+      },
+      {
         "name": "Office Doorverhaul",
         "url": "https://www.nexusmods.com/newvegas/mods/93336",
         "category": "Models and Textures"
@@ -3166,6 +3171,11 @@ window.MODLISTS = [
         "name": "Xander Root HD",
         "url": "https://www.nexusmods.com/newvegas/mods/84150",
         "category": "Models and Textures"
+      },
+      {
+        "name": "Yvile\u0027s Crash Logger",
+        "url": "https://www.nexusmods.com/newvegas/mods/82540",
+        "category": "Bug Fixes"
       },
       {
         "name": "Zion Bridges ReHammered",
@@ -3539,6 +3549,11 @@ window.MODLISTS = [
         "category": "Locations - Vanilla"
       },
       {
+        "name": "True Storms Wasteland Edition v2.0.3",
+        "url": "https://www.nexusmods.com/fallout4/mods/4472",
+        "category": "Weather and Lighting"
+      },
+      {
         "name": "Vic\u0027s Commonwealth Map Extended Project",
         "url": "https://www.nexusmods.com/fallout4/mods/41082",
         "category": "Locations - New"
@@ -3564,5 +3579,10 @@ window.MODLISTS = [
         "category": "Visuals and Graphics"
       }
     ]
+  },
+  {
+    "slug": "fallout-76",
+    "name": "Fallout 76",
+    "items": []
   }
 ];

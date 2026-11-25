@@ -62,7 +62,7 @@ const GOALS_SECTIONS = [
     ]
   },
   {
-    title: "Modlist",
+    title: "Morrowind Modlist (See Credits)",
     items: [
       "Overhaul Vvardenfell with many areas and assets redone, while still keeping the world familiar.",
       "Avoid changing the footprint of any major city.",

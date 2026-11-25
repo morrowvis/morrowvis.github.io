@@ -1894,6 +1894,13 @@ body[data-page="morrowind-modding-history"] .doc-main {
     gap: 2px;
 }
 
+@media (min-width: 1025px) {
+    #modlistsGameSwitcher .doc-sidebar-dropdown-list {
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+
 .doc-sidebar-dropdown-option {
     width: 100%;
     padding: 9px 10px;
