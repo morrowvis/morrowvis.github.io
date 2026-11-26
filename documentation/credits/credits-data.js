@@ -411,6 +411,8 @@ const CREDITS = [
     ["Unique Banners and Signs Replacer", "https://www.nexusmods.com/morrowind/mods/57577"],
     ["Unique Tavern Signs for Tamriel Rebuilt", "https://www.nexusmods.com/morrowind/mods/46794"],
     ["Signposts Replacer for Tamriel Rebuilt and Vvardenfell", "https://www.nexusmods.com/morrowind/mods/55496"],
+    ["Signposts Replacer for Skyrim Home of the Nords", "https://www.nexusmods.com/morrowind/mods/55656"],
+    ["Signposts Replacer for Project Cyrodiil Abecean Shores", "https://www.nexusmods.com/morrowind/mods/55648"],
     ["Welcome Road Marker Retexture - Aestetika of Vvardenfell", "https://www.nexusmods.com/morrowind/mods/52791"],
     ["Logs on Fire - Tamriel Rebuilt", "https://www.nexusmods.com/morrowind/mods/56516"],
     ["Logs on Fire - Cyrodiil", "https://www.nexusmods.com/morrowind/mods/55647"],
