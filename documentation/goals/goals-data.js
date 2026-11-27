@@ -24,6 +24,7 @@ const GOALS_SECTIONS = [
       "Permission friendly, cathedral aligned modding scene.",
       "Unique low poly art style that is complemented by UE5 lighting.",
       "Modded areas have taken on their own identity in terms of design and realisation, separate from official depictions.",
+      "Mods add a layer of detailed world building that is unique to Morrowind.",
       "Has a proven longevity for mods and is bound to continue for many more years."
     ]
   },
